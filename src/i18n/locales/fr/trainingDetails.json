@@ -1,0 +1,29 @@
+{
+  "breadcrumb": {
+    "home": "Accueil",
+    "catalog": "Formations"
+  },
+  "objectives": "Objectifs",
+  "targetAudience": "Public concerné",
+  "prerequisites": "Prérequis",
+  "program": "Programme",
+  "methodology": "Méthodologie",
+  "trainers": "Formateur(s)",
+  "practicalInfo": "Informations pratiques",
+  "nextSessions": "Prochaines sessions",
+  "faq": "Questions fréquentes",
+  "relatedTrainings": "Formations similaires",
+  "testimonials": "Ce qu'en disent les participants",
+  "cta": {
+    "requestInfo": "Demander des informations",
+    "requestQuote": "Demander un devis",
+    "registerInterest": "Inscrire mon intérêt",
+    "contact": "Contacter un conseiller",
+    "brochure": "Télécharger la brochure"
+  },
+  "notFound": {
+    "title": "Formation introuvable",
+    "description": "Cette formation n'existe pas ou n'est plus disponible.",
+    "backToCatalog": "Retour au catalogue"
+  }
+}

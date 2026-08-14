@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Register Interest",
+    "description": "Register your interest in an ISTAM training program and be notified of upcoming sessions."
+  },
+  "hero": {
+    "eyebrow": "Register interest",
+    "title": "Register my interest",
+    "description": "Interested in a training program but no session fits your schedule? Leave us your details and we'll keep you posted."
+  },
+  "success": {
+    "title": "Thank you for registering your interest.",
+    "description": "The ISTAM team will keep you posted about upcoming sessions.",
+    "primaryCta": "Browse our training",
+    "secondaryCta": "Back to home"
+  }
+}

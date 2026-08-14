@@ -1,0 +1,27 @@
+{
+  "seo": {
+    "title": "Nos partenaires",
+    "description": "Découvrez les organisations qui font confiance à ISTAM pour la formation de leurs équipes."
+  },
+  "hero": {
+    "eyebrow": "Nos partenaires",
+    "title": "Une confiance construite avec des organisations de tous secteurs",
+    "description": "Nous accompagnons des entreprises de toutes tailles dans le développement des compétences de leurs équipes."
+  },
+  "approach": {
+    "eyebrow": "Notre approche",
+    "title": "Une collaboration dans la durée",
+    "description": "Chaque partenariat commence par un diagnostic des besoins et se poursuit par un accompagnement adapté, dans la durée — pas une formation isolée, mais un partenaire de développement des compétences."
+  },
+  "disclaimer": "Partenaires de démonstration",
+  "empty": {
+    "title": "Aucun partenaire à afficher",
+    "description": "Revenez bientôt pour découvrir nos partenaires."
+  },
+  "cta": {
+    "title": "Devenir partenaire d'ISTAM",
+    "description": "Parlons de la façon dont nous pouvons accompagner le développement des compétences de vos équipes.",
+    "primaryCta": "Solutions pour entreprises",
+    "secondaryCta": "Nous contacter"
+  }
+}

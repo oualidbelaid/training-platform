@@ -1,0 +1,303 @@
+@import 'tailwindcss';
+@import './fonts.css';
+@import './vendor/fontawesome/css/all.min.css';
+
+/**
+ * Design System — Section 6 (M0 foundation), finalized in M1.
+ * Every token below is consumed as a Tailwind utility automatically
+ * (e.g. --color-primary-600 -> bg-primary-600 / text-primary-600).
+ * See docs/DESIGN_SYSTEM.md for the full rationale and usage rules.
+ * Never hardcode a color/spacing/radius/shadow/font value in a component —
+ * extend the token set here instead.
+ */
+@theme {
+  /* ============================================================
+   * Color — brand (ISTAM wine/burgundy, derived from the client logo).
+   * The logo is two colors: this burgundy mark + a neutral charcoal
+   * wordmark — see docs/DESIGN_SYSTEM.md → "Branding" for the exact
+   * inspection. Same L/C curve shape as the original navy scale (vivid
+   * mid-scale, muted extremes), hue swapped from 255 (blue) to 345
+   * (wine/magenta-red) to match. Large full-bleed dark surfaces use
+   * `neutral-900`/`950` (the logo's charcoal), not a dark shade of this
+   * scale — burgundy is reserved for interactive/brand moments (buttons,
+   * links, icons, badges), mirroring the logo's own color proportion.
+   * ============================================================ */
+  --color-primary-50: oklch(0.97 0.01 345);
+  --color-primary-100: oklch(0.93 0.03 345);
+  --color-primary-200: oklch(0.85 0.06 345);
+  --color-primary-300: oklch(0.74 0.1 345);
+  --color-primary-400: oklch(0.6 0.14 345);
+  --color-primary-500: oklch(0.48 0.16 345);
+  --color-primary-600: oklch(0.38 0.15 345);
+  --color-primary-700: oklch(0.3 0.13 345);
+  --color-primary-800: oklch(0.23 0.1 345);
+  --color-primary-900: oklch(0.17 0.07 345);
+  --color-primary-950: oklch(0.12 0.05 345);
+
+  /* Color — neutral (graphite / off-white) */
+  --color-neutral-0: oklch(1 0 0);
+  --color-neutral-50: oklch(0.98 0.002 255);
+  --color-neutral-100: oklch(0.95 0.003 255);
+  --color-neutral-200: oklch(0.89 0.004 255);
+  --color-neutral-300: oklch(0.78 0.005 255);
+  --color-neutral-400: oklch(0.64 0.006 255);
+  --color-neutral-500: oklch(0.5 0.006 255);
+  --color-neutral-600: oklch(0.4 0.006 255);
+  --color-neutral-700: oklch(0.3 0.005 255);
+  --color-neutral-800: oklch(0.21 0.004 255);
+  --color-neutral-900: oklch(0.15 0.003 255);
+  --color-neutral-950: oklch(0.09 0.002 255);
+
+  /* Color — accent (warm gold, CTAs only — used sparingly per spec §8) */
+  --color-accent-400: oklch(0.78 0.14 75);
+  --color-accent-500: oklch(0.7 0.15 75);
+  --color-accent-600: oklch(0.6 0.15 75);
+
+  /* Color — semantic status, each with a subtle background tint for badges */
+  --color-success-50: oklch(0.95 0.03 155);
+  --color-success-600: oklch(0.6 0.13 155);
+  --color-success-700: oklch(0.48 0.12 155);
+  --color-warning-50: oklch(0.96 0.04 85);
+  --color-warning-600: oklch(0.75 0.15 85);
+  --color-warning-700: oklch(0.6 0.14 85);
+  --color-error-50: oklch(0.95 0.04 25);
+  --color-error-600: oklch(0.55 0.19 25);
+  --color-error-700: oklch(0.45 0.18 25);
+  --color-info-50: var(--color-primary-50);
+  --color-info-600: var(--color-primary-500);
+  --color-info-700: var(--color-primary-600);
+
+  /* Color — semantic surface/text aliases. Prefer these over raw scales in
+   * components; the raw primary/neutral/accent scales stay available for
+   * one-off needs (e.g. a specific badge tint). */
+  --color-background: var(--color-neutral-0);
+  --color-surface: var(--color-neutral-0);
+  --color-surface-subtle: var(--color-neutral-50);
+  --color-foreground: var(--color-neutral-900);
+  --color-foreground-muted: var(--color-neutral-600);
+  --color-foreground-faint: var(--color-neutral-400);
+  --color-foreground-inverse: var(--color-neutral-0);
+  --color-border: var(--color-neutral-200);
+  --color-border-strong: var(--color-neutral-300);
+  --color-brand: var(--color-primary-600);
+  --color-brand-foreground: var(--color-neutral-0);
+
+  /* Semantic aliases requested for the ISTAM palette (branding refinement
+   * §3) — layered on top of the scales above rather than duplicating them,
+   * so there is exactly one source of truth per hue. `secondary` is the
+   * logo's charcoal, used for large dark surfaces (see the primary-scale
+   * comment above); it is deliberately an alias to `neutral`, not a new
+   * 11-step scale, since a two-color logo doesn't need a third hue family. */
+  --color-primary: var(--color-primary-600);
+  --color-primary-hover: var(--color-primary-700);
+  --color-primary-soft: var(--color-primary-100);
+  --color-secondary: var(--color-neutral-800);
+  --color-muted: var(--color-neutral-500);
+
+  /* ============================================================
+   * Typography
+   * ============================================================ */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+  /* Named type-scale roles (spec M1 §3). Each becomes one utility class
+   * combining size + line-height (+ tracking/weight where prescribed):
+   * text-display, text-h1, text-h2, text-h3, text-body-lg, text-body,
+   * text-small, text-caption, text-button, text-nav. Headings default to
+   * font-sans (Inter, heavy weight, tight tracking) for a modern corporate
+   * feel — font-display (Fraunces) is opt-in only, for a rare editorial
+   * accent, not the default heading treatment (redesigned post-M2 review:
+   * the serif-display-everywhere direction read as editorial/dated rather
+   * than premium-corporate). */
+  /* Reduced across the board in the branding-refinement pass (§6) — the
+   * previous ceiling values read as oversized/volume-over-sophistication
+   * rather than a confident editorial hierarchy. */
+  --text-display: clamp(2.5rem, 1.9rem + 2.4vw, 4rem);
+  --text-display--line-height: 1.08;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 800;
+
+  --text-h1: clamp(2rem, 1.65rem + 1.5vw, 2.75rem);
+  --text-h1--line-height: 1.15;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 700;
+
+  --text-h2: clamp(1.5rem, 1.3rem + 0.9vw, 2.125rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h2--font-weight: 700;
+
+  --text-h3: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+  --text-h3--line-height: 1.3;
+  --text-h3--font-weight: 600;
+
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0.01em;
+
+  --text-button: 0.875rem;
+  --text-button--line-height: 1;
+  --text-button--font-weight: 500;
+
+  --text-nav: 0.9375rem;
+  --text-nav--line-height: 1;
+  --text-nav--font-weight: 500;
+
+  /* ============================================================
+   * Spacing / radius / border / shadow / blur
+   * ============================================================ */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  --shadow-xs: 0 1px 2px oklch(0.15 0.003 255 / 0.04);
+  --shadow-sm: 0 1px 3px oklch(0.15 0.003 255 / 0.06), 0 1px 2px oklch(0.15 0.003 255 / 0.04);
+  --shadow-md: 0 4px 12px oklch(0.15 0.003 255 / 0.08), 0 2px 4px oklch(0.15 0.003 255 / 0.04);
+  --shadow-lg: 0 12px 32px oklch(0.15 0.003 255 / 0.1), 0 4px 8px oklch(0.15 0.003 255 / 0.04);
+  --shadow-xl: 0 24px 64px oklch(0.15 0.003 255 / 0.14), 0 8px 16px oklch(0.15 0.003 255 / 0.06);
+  --shadow-brand: 0 1px 2px oklch(0.38 0.1 255 / 0.3), 0 8px 20px oklch(0.38 0.1 255 / 0.2);
+
+  --blur-xs: 4px;
+  --blur-sm: 8px;
+  --blur-md: 12px;
+  --blur-lg: 20px;
+  --blur-xl: 32px;
+
+  /* Signature gradients (spec M1 §2/§8) — applied via the .bg-gradient-brand
+   * / .bg-gradient-glow / .bg-gradient-hero / .text-gradient-brand utility
+   * classes defined below, not used raw. */
+  --gradient-brand: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-900));
+  --gradient-glow: radial-gradient(circle at 30% 20%, oklch(0.7 0.15 75 / 0.2), transparent 60%);
+  --gradient-hero: radial-gradient(
+      ellipse 70% 60% at 75% 25%,
+      oklch(0.88 0.05 345 / 0.5),
+      transparent 65%
+    ),
+    linear-gradient(180deg, oklch(0.97 0.01 345), oklch(1 0 0) 70%);
+  --gradient-text-brand: linear-gradient(135deg, var(--color-primary-400), var(--color-primary-700));
+
+  /* Breakpoints — adds ultra-wide support on top of Tailwind defaults */
+  --breakpoint-3xl: 120rem;
+
+  /* ============================================================
+   * Motion — shared across Framer Motion / GSAP / CSS (spec §12)
+   * ============================================================ */
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Continuous logo-marquee (TrustLogosSection) — linear/constant-speed by
+   * design, never eased, so the perceived speed never changes. Direction
+   * is picked in the component based on document direction (RTL mirrors
+   * it, matching every other directional element in the app). */
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 32s linear infinite;
+
+  /* Z-index scale */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1100;
+  --z-index-header: 1200;
+  --z-index-drawer: 1300;
+  --z-index-modal: 1400;
+  --z-index-toast: 1500;
+}
+
+/* Keyframes backing --animate-marquee/--animate-marquee-reverse above.
+ * Percentage-based translate, not a fixed px value, so it stays exact
+ * regardless of how wide the (duplicated) logo track actually renders —
+ * -50%/50% always lands exactly on the boundary between the two identical
+ * copies, which is what makes the loop seamless. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+/* Arabic uses a strong sans weight for display roles instead of the Latin
+ * display serif (Fraunces has no Arabic glyphs) — spec M1 §3/§14. Scoped by
+ * :lang(ar), which DirectionProvider keeps in sync with the active locale,
+ * so no component needs to branch on language itself. */
+:lang(ar) {
+  --font-sans: 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'IBM Plex Sans Arabic', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base layer */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .bg-gradient-brand {
+    background-image: var(--gradient-brand);
+  }
+
+  .bg-gradient-glow {
+    background-image: var(--gradient-glow);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .text-gradient-brand {
+    background-image: var(--gradient-text-brand);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}

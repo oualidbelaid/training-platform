@@ -1,0 +1,70 @@
+{
+  "seo": {
+    "title": "Solutions for Companies",
+    "description": "Tailor-made training pathways to develop your teams' skills."
+  },
+  "hero": {
+    "eyebrow": "Companies",
+    "title": "Tailor-made training solutions for your company",
+    "description": "We design pathways adapted to your organization's challenges, teams and skills strategy."
+  },
+  "approach": {
+    "eyebrow": "Our approach",
+    "title": "Training that starts with your challenges, not a catalog",
+    "description": "Every corporate program starts with understanding your business objectives, before even discussing course content."
+  },
+  "needsAnalysis": {
+    "title": "Needs analysis",
+    "description": "Interviews with HR teams and managers to identify critical skills and real priorities."
+  },
+  "customPrograms": {
+    "title": "Custom programs",
+    "description": "Pathways built around your specific challenges, not generic modules adapted at the margins."
+  },
+  "formats": {
+    "eyebrow": "Formats",
+    "title": "A format adapted to how your teams are organized",
+    "description": "In-person at your premises, remote online, or hybrid — the format adapts to your constraints, not the other way around."
+  },
+  "learningPaths": {
+    "title": "Learning paths",
+    "description": "Modular pathways that support skills development over time, not a one-off session."
+  },
+  "businessImpact": {
+    "title": "Business impact",
+    "description": "Training objectives tied to your performance indicators, for an investment whose impact can be measured."
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "A clear process, from first conversation to results review",
+    "steps": {
+      "discover": {
+        "title": "Initial conversation",
+        "description": "A first meeting to understand your challenges and constraints."
+      },
+      "design": {
+        "title": "Program design",
+        "description": "Building a tailored pathway and a detailed proposal."
+      },
+      "deliver": {
+        "title": "Rollout",
+        "description": "Sessions delivered by our expert trainers, in the format chosen."
+      },
+      "followUp": {
+        "title": "Review and follow-up",
+        "description": "Measuring results and supporting long-term skills retention."
+      }
+    }
+  },
+  "relatedLinks": {
+    "title": "Curious how this works in practice?",
+    "successStories": "See our success stories",
+    "industries": "Explore the industries we serve"
+  },
+  "cta": {
+    "title": "Ready to grow your teams?",
+    "description": "Let's discuss your goals and build the program best suited to you.",
+    "primaryCta": "Request a quote",
+    "secondaryCta": "Request a consultation"
+  }
+}

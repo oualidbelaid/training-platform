@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Demander une consultation",
+    "description": "Échangez avec un conseiller ISTAM sur les besoins de formation de votre entreprise."
+  },
+  "hero": {
+    "eyebrow": "Consultation",
+    "title": "Demander une consultation",
+    "description": "Vous souhaitez faire le point sur les besoins de formation de votre organisation ? Un conseiller ISTAM vous propose un échange sans engagement."
+  },
+  "success": {
+    "title": "Merci pour votre demande de consultation.",
+    "description": "Notre équipe ISTAM vous contactera prochainement pour convenir d'un échange.",
+    "primaryCta": "Solutions pour entreprises",
+    "secondaryCta": "Retour à l'accueil"
+  }
+}

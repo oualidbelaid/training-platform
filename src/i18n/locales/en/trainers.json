@@ -1,0 +1,36 @@
+{
+  "seo": {
+    "title": "Our Trainers",
+    "description": "Meet ISTAM's team of expert trainers, practitioners of the professions they teach."
+  },
+  "hero": {
+    "eyebrow": "Our team",
+    "title": "Experts who have lived what they teach",
+    "description": "Every ISTAM trainer combines field experience with proven teaching methods, for training grounded in professional reality."
+  },
+  "intro": {
+    "title": "A multidisciplinary team",
+    "description": "Our trainers work across a wide range of fields — leadership, project management, digital, finance, human resources and communication — with one shared requirement: having practiced the profession they teach."
+  },
+  "expertise": {
+    "eyebrow": "Areas of expertise",
+    "title": "Expertise covering all your needs",
+    "description": "Whatever the subject, our trainers bring concrete, up-to-date experience of the profession.",
+    "items": {
+      "leadership": "Leadership & Management",
+      "digital": "Digital & IT",
+      "finance": "Finance & Operations",
+      "communication": "Communication"
+    }
+  },
+  "empty": {
+    "title": "No trainers found",
+    "description": "Try a different search."
+  },
+  "cta": {
+    "title": "Want to meet our trainers?",
+    "description": "Get in touch to discuss your needs and be connected with the trainer best suited to you.",
+    "primaryCta": "Explore our training",
+    "secondaryCta": "Contact us"
+  }
+}

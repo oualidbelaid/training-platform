@@ -1,0 +1,86 @@
+{
+  "seo": {
+    "title": "About ISTAM",
+    "description": "Discover ISTAM's mission, values and teaching approach as a professional training organization."
+  },
+  "hero": {
+    "eyebrow": "About us",
+    "title": "Growing skills, sustainably",
+    "description": "ISTAM designs and delivers practical professional training, built to have a real impact on teams and organizations."
+  },
+  "intro": {
+    "title": "A team of practitioners, not just educators",
+    "paragraph1": "ISTAM was founded on a simple observation: professional training has the most impact when it's led by experts who have themselves worked in the fields they teach.",
+    "paragraph2": "From the start, we've designed pathways that combine pedagogical rigor, immediate practice and long-term follow-up — for skills that stick, well after the training ends."
+  },
+  "mission": {
+    "title": "Our mission",
+    "description": "Give professionals and organizations the concrete skills they need to progress, through training grounded in real-world practice."
+  },
+  "vision": {
+    "title": "Our vision",
+    "description": "Make continuous learning a natural reflex in every organization — a measurable investment, not just an obligation."
+  },
+  "values": {
+    "eyebrow": "What guides us",
+    "title": "Our values",
+    "items": {
+      "expertise": {
+        "title": "Field expertise",
+        "description": "Trainers who practice or have practiced the profession they teach, not only educators."
+      },
+      "impact": {
+        "title": "Measurable impact",
+        "description": "Every program is built around clear objectives and progress that can genuinely be observed."
+      },
+      "integrity": {
+        "title": "Rigor and transparency",
+        "description": "Clear commitments on content, expected outcomes and how each training unfolds."
+      },
+      "proximity": {
+        "title": "Proximity",
+        "description": "Human support, from the first conversation with an advisor through to follow-up after training."
+      }
+    }
+  },
+  "approach": {
+    "eyebrow": "Our approach",
+    "title": "A method built for impact",
+    "description": "Every ISTAM program follows the same methodological rigor, from initial diagnosis to results follow-up.",
+    "steps": {
+      "diagnose": {
+        "title": "Diagnose",
+        "description": "Understand your teams' real needs before designing the program."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Build a learning pathway suited to participants' level and objectives."
+      },
+      "deliver": {
+        "title": "Deliver",
+        "description": "Deliver the training with hands-on scenarios and a trainer who is an expert in the subject."
+      },
+      "followUp": {
+        "title": "Follow up",
+        "description": "Measure progress and support the application of new skills over time."
+      }
+    }
+  },
+  "figures": {
+    "eyebrow": "By the numbers",
+    "title": "A recognized expertise",
+    "disclaimer": "Demonstration figures",
+    "items": {
+      "learners": { "value": "25,000+", "label": "professionals trained" },
+      "programs": { "value": "300+", "label": "training programs" },
+      "companies": { "value": "1,200+", "label": "companies supported" },
+      "satisfaction": { "value": "98%", "label": "satisfaction rate" }
+    }
+  },
+  "cta": {
+    "title": "Want to know more about our training programs?",
+    "description": "Our advisors are here to help you find the program best suited to your goals.",
+    "primaryCta": "Explore our training",
+    "secondaryCta": "Contact us"
+  }
+}

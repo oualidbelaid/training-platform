@@ -1,0 +1,48 @@
+{
+  "fields": {
+    "firstName": { "label": "Prénom", "placeholder": "Votre prénom" },
+    "lastName": { "label": "Nom", "placeholder": "Votre nom" },
+    "email": { "label": "E-mail professionnel", "placeholder": "vous@entreprise.com" },
+    "phone": { "label": "Téléphone", "placeholder": "+213 ..." },
+    "company": { "label": "Entreprise", "placeholder": "Nom de votre entreprise" },
+    "jobTitle": { "label": "Fonction", "placeholder": "Votre fonction" },
+    "message": { "label": "Message", "placeholder": "Précisez votre demande (facultatif)" },
+    "training": { "label": "Formation concernée", "placeholder": "Sélectionner une formation" },
+    "preferredContactMethod": { "legend": "Moyen de contact préféré", "email": "E-mail", "phone": "Téléphone" },
+    "participantsCount": { "label": "Nombre de participants", "placeholder": "Ex. 8" },
+    "preferredFormat": { "label": "Format préféré", "placeholder": "Sélectionner un format" },
+    "preferredDate": { "label": "Date souhaitée" },
+    "location": { "label": "Lieu souhaité", "placeholder": "Ex. dans vos locaux, Alger" },
+    "trainingNeeds": { "label": "Besoins en formation", "placeholder": "Décrivez vos besoins (facultatif)" },
+    "areasOfInterest": { "label": "Domaines d'intérêt", "placeholder": "Ex. leadership, gestion de projet..." },
+    "subject": { "label": "Sujet", "placeholder": "Objet de votre message" }
+  },
+  "sections": {
+    "personal": "Informations personnelles",
+    "company": "Informations sur l'entreprise",
+    "training": "Besoin en formation",
+    "message": "Message",
+    "consent": "Confidentialité"
+  },
+  "validation": {
+    "tooShort": "Ce champ doit contenir au moins {{min}} caractères.",
+    "tooLong": "Ce champ ne doit pas dépasser {{max}} caractères.",
+    "invalidEmail": "Veuillez indiquer une adresse e-mail valide.",
+    "invalidPhone": "Veuillez indiquer un numéro de téléphone valide.",
+    "invalidNumber": "Veuillez indiquer un nombre valide.",
+    "consentRequired": "Vous devez accepter cette condition pour continuer."
+  },
+  "actions": {
+    "submit": "Envoyer la demande",
+    "submitting": "Envoi en cours...",
+    "retry": "Réessayer"
+  },
+  "error": {
+    "title": "Une erreur est survenue",
+    "description": "Votre demande n'a pas pu être envoyée. Vos informations ont été conservées — veuillez réessayer."
+  },
+  "privacy": {
+    "consentLabel": "J'accepte que mes informations soient utilisées par ISTAM pour traiter ma demande, conformément à sa politique de confidentialité.",
+    "notice": "Les informations recueillies via ce formulaire sont utilisées uniquement pour traiter votre demande et ne sont jamais partagées avec des tiers sans votre consentement."
+  }
+}

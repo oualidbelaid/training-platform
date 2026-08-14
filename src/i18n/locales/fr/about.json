@@ -1,0 +1,86 @@
+{
+  "seo": {
+    "title": "À propos d'ISTAM",
+    "description": "Découvrez la mission, les valeurs et l'approche pédagogique d'ISTAM, organisme de formation professionnelle."
+  },
+  "hero": {
+    "eyebrow": "À propos",
+    "title": "Faire grandir les compétences, durablement",
+    "description": "ISTAM conçoit et anime des formations professionnelles concrètes, pensées pour avoir un impact réel sur les équipes et les organisations."
+  },
+  "intro": {
+    "title": "Une équipe de praticiens, pas seulement de pédagogues",
+    "paragraph1": "ISTAM est né d'un constat simple : la formation professionnelle a le plus d'impact lorsqu'elle est animée par des experts qui ont eux-mêmes exercé les métiers qu'ils enseignent.",
+    "paragraph2": "Depuis nos débuts, nous concevons des parcours qui combinent rigueur pédagogique, mise en pratique immédiate et suivi dans la durée — pour des compétences qui restent, bien après la fin de la formation."
+  },
+  "mission": {
+    "title": "Notre mission",
+    "description": "Donner aux professionnels et aux organisations les compétences concrètes dont ils ont besoin pour progresser, avec des formations ancrées dans la réalité du terrain."
+  },
+  "vision": {
+    "title": "Notre vision",
+    "description": "Faire de la formation continue un réflexe naturel dans chaque organisation — un investissement mesurable, pas une simple obligation."
+  },
+  "values": {
+    "eyebrow": "Ce qui nous guide",
+    "title": "Nos valeurs",
+    "items": {
+      "expertise": {
+        "title": "Expertise terrain",
+        "description": "Des formateurs qui exercent ou ont exercé le métier qu'ils enseignent, pas uniquement des pédagogues."
+      },
+      "impact": {
+        "title": "Impact mesurable",
+        "description": "Chaque programme est conçu autour d'objectifs clairs et d'une progression que l'on peut réellement observer."
+      },
+      "integrity": {
+        "title": "Exigence et transparence",
+        "description": "Des engagements clairs sur le contenu, les résultats attendus et le déroulement de chaque formation."
+      },
+      "proximity": {
+        "title": "Proximité",
+        "description": "Un accompagnement humain, du premier échange avec un conseiller jusqu'au suivi après la formation."
+      }
+    }
+  },
+  "approach": {
+    "eyebrow": "Notre approche",
+    "title": "Une méthode pensée pour l'impact",
+    "description": "Chaque formation ISTAM suit la même exigence méthodologique, du diagnostic initial au suivi des résultats.",
+    "steps": {
+      "diagnose": {
+        "title": "Diagnostic",
+        "description": "Comprendre les besoins réels de vos équipes avant de concevoir le programme."
+      },
+      "design": {
+        "title": "Conception",
+        "description": "Construire un parcours pédagogique adapté au niveau et aux objectifs des participants."
+      },
+      "deliver": {
+        "title": "Animation",
+        "description": "Délivrer la formation avec des mises en situation concrètes et un formateur expert du sujet."
+      },
+      "followUp": {
+        "title": "Suivi",
+        "description": "Mesurer la progression et accompagner l'application des acquis dans la durée."
+      }
+    }
+  },
+  "figures": {
+    "eyebrow": "En quelques chiffres",
+    "title": "Une expertise reconnue",
+    "disclaimer": "Chiffres de démonstration",
+    "items": {
+      "learners": { "value": "25 000+", "label": "professionnels formés" },
+      "programs": { "value": "300+", "label": "programmes de formation" },
+      "companies": { "value": "1 200+", "label": "entreprises accompagnées" },
+      "satisfaction": { "value": "98 %", "label": "taux de satisfaction" }
+    }
+  },
+  "cta": {
+    "title": "Envie d'en savoir plus sur nos formations ?",
+    "description": "Nos conseillers sont à votre écoute pour vous orienter vers le programme le plus adapté à vos objectifs.",
+    "primaryCta": "Découvrir nos formations",
+    "secondaryCta": "Nous contacter"
+  }
+}

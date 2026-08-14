@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Demander un devis",
+    "description": "Demandez un devis personnalisé pour une formation professionnelle ISTAM, en intra-entreprise ou pour un groupe."
+  },
+  "hero": {
+    "eyebrow": "Demande de devis",
+    "title": "Demander un devis",
+    "description": "Partagez-nous vos besoins et un conseiller ISTAM vous transmettra un devis adapté à votre équipe."
+  },
+  "success": {
+    "title": "Merci pour votre demande de devis.",
+    "description": "Notre équipe ISTAM prépare votre devis et reviendra vers vous prochainement.",
+    "primaryCta": "Voir nos formations",
+    "secondaryCta": "Retour à l'accueil"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "seo": {
+    "title": "Contact",
+    "description": "Contactez l'équipe ISTAM — formulaire de contact, coordonnées et localisation."
+  },
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Contactez-nous",
+    "description": "Une question, un projet de formation ? Écrivez-nous, notre équipe vous répond rapidement."
+  },
+  "info": {
+    "title": "Nos coordonnées"
+  },
+  "success": {
+    "title": "Merci pour votre message.",
+    "description": "Notre équipe ISTAM reviendra vers vous prochainement.",
+    "primaryCta": "Voir nos formations",
+    "secondaryCta": "Retour à l'accueil"
+  }
+}

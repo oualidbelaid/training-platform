@@ -1,0 +1,199 @@
+{
+  "seo": {
+    "title": "Professional Training for Companies and Individuals",
+    "description": "Practical training in leadership, project management, digital, finance, HR and communication, led by experts with real field experience."
+  },
+  "nav": {
+    "training": "Training",
+    "solutions": "Solutions for Companies",
+    "about": "About",
+    "resources": "Resources",
+    "contact": "Contact",
+    "cta": "Request Information",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "Professional training that delivers results",
+    "headline": {
+      "line1": "Develop skills.",
+      "line2": "Transform people.",
+      "prefix": "",
+      "accent": "Grow",
+      "suffix": "your business."
+    },
+    "subheadline": "Practical, impact-driven training programs led by experts who have actually done the jobs they teach.",
+    "primaryCta": "Explore training",
+    "secondaryCta": "Solutions for Companies",
+    "trustLabel": "{{rating}}/5 from {{count}}+ participants",
+    "cards": {
+      "impactTitle": "Business Impact",
+      "impactDescription": "Measurable results for your organization",
+      "expertsTitle": "Expert Trainers",
+      "expertsDescription": "Industry professionals with real experience"
+    }
+  },
+  "trust": {
+    "eyebrow": "Trusted by professionals",
+    "title": "Recognized expertise for over fifteen years",
+    "stats": {
+      "learners": { "suffix": "+", "label": "Learners trained" },
+      "programs": { "suffix": "+", "label": "Training programs" },
+      "companies": { "suffix": "+", "label": "Companies trust us" },
+      "countries": { "suffix": "", "label": "Countries served" },
+      "satisfaction": { "suffix": "%", "label": "Satisfaction rate" }
+    },
+    "disclaimer": "Demonstration figures"
+  },
+  "trustLogos": {
+    "eyebrow": "Trusted by organizations",
+    "description": "Trust built with organizations across every sector.",
+    "disclaimer": "Demonstration logos",
+    "cta": "View our partners"
+  },
+  "categories": {
+    "eyebrow": "Catalog",
+    "title": "Training for every need",
+    "description": "Explore our areas of expertise and find the program that matches your goals.",
+    "cta": "View all training"
+  },
+  "professionalDevelopment": {
+    "eyebrow": "Professional development",
+    "title": "Skills that evolve. People who grow.",
+    "description": "Growth doesn't happen in a single session. Scroll to follow the path our programs are built around.",
+    "stepLabel": "Step {{number}}",
+    "stages": {
+      "leadership": {
+        "label": "Leadership",
+        "title": "Leadership",
+        "description": "Give new and experienced managers the posture, tools and confidence to guide a team — not just manage a function."
+      },
+      "management": {
+        "label": "Management",
+        "title": "Management",
+        "description": "Turn day-to-day execution into a repeatable system: clear priorities, structured decisions, and teams that know where they stand."
+      },
+      "digitalTransformation": {
+        "label": "Digital",
+        "title": "Digital Transformation",
+        "description": "Help your organization adopt new tools and ways of working without losing the people behind the process."
+      },
+      "communication": {
+        "label": "Communication",
+        "title": "Communication",
+        "description": "Build the clarity and confidence to be understood — by your team, your clients and your leadership."
+      },
+      "strategy": {
+        "label": "Strategy",
+        "title": "Strategic Development",
+        "description": "Connect individual growth to business direction, so every skill built moves the organization forward."
+      }
+    }
+  },
+  "featuredTrainings": {
+    "eyebrow": "Popular training",
+    "title": "Our most requested programs",
+    "description": "A selection of programs designed for immediate impact on your professional practice.",
+    "cta": "View all training",
+    "cardCta": "Learn more"
+  },
+  "valueProposition": {
+    "eyebrow": "Why choose us",
+    "title": "From learning to impact.",
+    "items": {
+      "experts": {
+        "title": "Expert trainers",
+        "description": "Instructors who currently work or have worked in the field they teach — not just educators."
+      },
+      "practical": {
+        "title": "Practical learning",
+        "description": "Real-world exercises and tools you can apply the day after training."
+      },
+      "impact": {
+        "title": "Measurable impact",
+        "description": "Clear objectives and follow-up to track your teams' real progress."
+      },
+      "flexible": {
+        "title": "Flexible formats",
+        "description": "In-person, online or hybrid — a format that fits how your teams work."
+      }
+    }
+  },
+  "trainers": {
+    "eyebrow": "Our team",
+    "title": "Experts who have lived what they teach",
+    "description": "Every trainer combines field experience with proven teaching methods.",
+    "cta": "Meet all our trainers"
+  },
+  "companies": {
+    "eyebrow": "Companies",
+    "title": "Tailored training solutions for your organization",
+    "description": "We design learning paths adapted to your challenges, your teams and your skills strategy.",
+    "points": {
+      "needs": "Adapted to your organization's real needs",
+      "teams": "Deployable for your teams, wherever they are",
+      "skills": "Aligned with your skills-development strategy",
+      "transformation": "Designed to support your transformation projects"
+    },
+    "cta": "Solutions for companies",
+    "imageCaption": "Trusted by 1,200+ organizations"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What our clients say",
+    "disclaimer": "Demonstration testimonials",
+    "cta": "View all testimonials"
+  },
+  "location": {
+    "eyebrow": "Visit us",
+    "title": "Find us",
+    "companyName": "ISTAM — Professional Training",
+    "description": "Come meet our team in person or reach out — we're happy to help.",
+    "hours": {
+      "weekdays": "Monday – Friday",
+      "saturday": "Saturday"
+    },
+    "cta": "Get directions",
+    "mapUnavailable": "Map unavailable — see the address above"
+  },
+  "events": {
+    "eyebrow": "Events",
+    "title": "Upcoming events",
+    "description": "Meet our team and discover our teaching approach.",
+    "cta": "View all events"
+  },
+  "finalCta": {
+    "title": "Ready to help your teams grow?",
+    "description": "Let's talk about your goals and build the program that fits best.",
+    "primaryCta": "Request a quote",
+    "secondaryCta": "Contact us"
+  },
+  "footer": {
+    "tagline": "Professional training for demanding organizations and individuals.",
+    "columns": {
+      "training": {
+        "title": "Training",
+        "categories": "Categories",
+        "allTrainings": "All training"
+      },
+      "company": {
+        "title": "Company",
+        "about": "About",
+        "trainers": "Our trainers",
+        "events": "Events"
+      },
+      "contact": {
+        "title": "Contact",
+        "requestInfo": "Request information",
+        "requestQuote": "Request a quote",
+        "contactUs": "Contact us"
+      }
+    },
+    "legal": {
+      "legalNotice": "Legal notice",
+      "privacyPolicy": "Privacy policy",
+      "cookiePolicy": "Cookie policy"
+    },
+    "copyright": "All rights reserved."
+  }
+}

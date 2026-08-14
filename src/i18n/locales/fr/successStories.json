@@ -1,0 +1,26 @@
+{
+  "seo": {
+    "title": "Réussites clients",
+    "description": "Découvrez comment nos formations ont aidé nos clients à relever leurs défis concrets."
+  },
+  "hero": {
+    "eyebrow": "Réussites clients",
+    "title": "Des résultats concrets, pour des défis concrets",
+    "description": "Chaque parcours de formation part d'un besoin réel — voici comment nous avons accompagné quelques-uns de nos clients."
+  },
+  "card": {
+    "challenge": "Le défi",
+    "approach": "Notre approche"
+  },
+  "disclaimer": "Études de cas de démonstration, illustrant le type d'accompagnement proposé",
+  "empty": {
+    "title": "Aucune réussite à afficher",
+    "description": "Revenez bientôt pour découvrir nos études de cas."
+  },
+  "cta": {
+    "title": "Votre organisation a un défi similaire ?",
+    "description": "Parlons de vos enjeux et construisons ensemble un parcours de formation adapté.",
+    "primaryCta": "Demander un devis",
+    "secondaryCta": "Nous contacter"
+  }
+}

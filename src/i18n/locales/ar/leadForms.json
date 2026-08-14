@@ -1,0 +1,48 @@
+{
+  "fields": {
+    "firstName": { "label": "الاسم الأول", "placeholder": "اسمك الأول" },
+    "lastName": { "label": "اسم العائلة", "placeholder": "اسم عائلتك" },
+    "email": { "label": "البريد الإلكتروني المهني", "placeholder": "you@company.com" },
+    "phone": { "label": "الهاتف", "placeholder": "+213 ..." },
+    "company": { "label": "الشركة", "placeholder": "اسم شركتكم" },
+    "jobTitle": { "label": "المنصب", "placeholder": "منصبكم" },
+    "message": { "label": "الرسالة", "placeholder": "أضف أي تفاصيل (اختياري)" },
+    "training": { "label": "التدريب المعني", "placeholder": "اختر تدريباً" },
+    "preferredContactMethod": { "legend": "وسيلة التواصل المفضلة", "email": "البريد الإلكتروني", "phone": "الهاتف" },
+    "participantsCount": { "label": "عدد المشاركين", "placeholder": "مثال: 8" },
+    "preferredFormat": { "label": "الصيغة المفضلة", "placeholder": "اختر صيغة" },
+    "preferredDate": { "label": "التاريخ المفضل" },
+    "location": { "label": "المكان المفضل", "placeholder": "مثال: في مقركم، الجزائر" },
+    "trainingNeeds": { "label": "احتياجات التدريب", "placeholder": "صف احتياجاتكم (اختياري)" },
+    "areasOfInterest": { "label": "مجالات الاهتمام", "placeholder": "مثال: القيادة، إدارة المشاريع..." },
+    "subject": { "label": "الموضوع", "placeholder": "ما هو موضوع رسالتكم؟" }
+  },
+  "sections": {
+    "personal": "المعلومات الشخصية",
+    "company": "معلومات الشركة",
+    "training": "احتياجات التدريب",
+    "message": "الرسالة",
+    "consent": "الخصوصية"
+  },
+  "validation": {
+    "tooShort": "يجب أن يحتوي هذا الحقل على {{min}} أحرف على الأقل.",
+    "tooLong": "يجب ألا يتجاوز هذا الحقل {{max}} حرفاً.",
+    "invalidEmail": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+    "invalidPhone": "يرجى إدخال رقم هاتف صالح.",
+    "invalidNumber": "يرجى إدخال رقم صالح.",
+    "consentRequired": "يجب الموافقة على هذا الشرط للمتابعة."
+  },
+  "actions": {
+    "submit": "إرسال الطلب",
+    "submitting": "جارٍ الإرسال...",
+    "retry": "إعادة المحاولة"
+  },
+  "error": {
+    "title": "حدث خطأ ما",
+    "description": "تعذر إرسال طلبكم. تم الاحتفاظ بمعلوماتكم — يرجى المحاولة مرة أخرى."
+  },
+  "privacy": {
+    "consentLabel": "أوافق على استخدام ISTAM لمعلوماتي لمعالجة طلبي، وفقاً لسياسة الخصوصية الخاصة بها.",
+    "notice": "تُستخدم المعلومات التي يتم جمعها عبر هذا النموذج فقط لمعالجة طلبكم ولا تتم مشاركتها مع أطراف ثالثة دون موافقتكم."
+  }
+}

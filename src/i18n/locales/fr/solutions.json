@@ -1,0 +1,70 @@
+{
+  "seo": {
+    "title": "Solutions pour entreprises",
+    "description": "Des parcours de formation sur mesure pour développer les compétences de vos équipes."
+  },
+  "hero": {
+    "eyebrow": "Entreprises",
+    "title": "Des solutions de formation sur mesure pour votre entreprise",
+    "description": "Nous concevons des parcours adaptés aux enjeux, aux équipes et à la stratégie de compétences de votre organisation."
+  },
+  "approach": {
+    "eyebrow": "Notre approche",
+    "title": "Une formation qui part de vos enjeux, pas d'un catalogue",
+    "description": "Chaque programme entreprise commence par la compréhension de vos objectifs business, avant même de parler contenu pédagogique."
+  },
+  "needsAnalysis": {
+    "title": "Analyse des besoins",
+    "description": "Entretiens avec les équipes RH et les managers pour identifier les compétences critiques et les priorités réelles."
+  },
+  "customPrograms": {
+    "title": "Programmes sur mesure",
+    "description": "Des parcours construits à partir de vos enjeux spécifiques, pas de modules génériques adaptés a minima."
+  },
+  "formats": {
+    "eyebrow": "Formats",
+    "title": "Un format adapté à l'organisation de vos équipes",
+    "description": "Présentiel dans vos locaux, en ligne à distance ou hybride — le format s'adapte à vos contraintes, pas l'inverse."
+  },
+  "learningPaths": {
+    "title": "Parcours de progression",
+    "description": "Des parcours modulaires qui accompagnent la montée en compétences dans la durée, pas une session isolée."
+  },
+  "businessImpact": {
+    "title": "Impact business",
+    "description": "Des objectifs de formation reliés à vos indicateurs de performance, pour un investissement dont l'impact peut être mesuré."
+  },
+  "process": {
+    "eyebrow": "Comment nous travaillons",
+    "title": "Un processus clair, du premier échange au bilan",
+    "steps": {
+      "discover": {
+        "title": "Échange initial",
+        "description": "Un premier rendez-vous pour comprendre vos enjeux et vos contraintes."
+      },
+      "design": {
+        "title": "Conception du programme",
+        "description": "Élaboration d'un parcours sur mesure et d'une proposition détaillée."
+      },
+      "deliver": {
+        "title": "Déploiement",
+        "description": "Animation des sessions par nos formateurs experts, selon le format retenu."
+      },
+      "followUp": {
+        "title": "Bilan et suivi",
+        "description": "Mesure des résultats et accompagnement pour ancrer les compétences dans la durée."
+      }
+    }
+  },
+  "relatedLinks": {
+    "title": "Envie de voir cela en pratique ?",
+    "successStories": "Découvrir nos réussites clients",
+    "industries": "Explorer les secteurs que nous accompagnons"
+  },
+  "cta": {
+    "title": "Prêt à faire progresser vos équipes ?",
+    "description": "Parlons de vos objectifs et construisons ensemble le programme le plus adapté.",
+    "primaryCta": "Demander un devis",
+    "secondaryCta": "Demander une consultation"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "seo": {
+    "title": "دليل التدريبات",
+    "description": "اكتشف جميع برامج ISTAM التدريبية المهنية: القيادة، إدارة المشاريع، الرقمنة، المالية، الموارد البشرية والتواصل."
+  },
+  "hero": {
+    "eyebrow": "الدليل",
+    "title": "جميع تدريباتنا",
+    "description": "ابحث وصفِّ برامجنا لإيجاد التدريب الذي يناسب أهدافك."
+  },
+  "filters": {
+    "searchLabel": "البحث عن تدريب",
+    "searchPlaceholder": "ابحث بالعنوان أو كلمة مفتاحية…",
+    "clearSearch": "مسح البحث",
+    "categoryLabel": "الفئة",
+    "allCategories": "جميع الفئات",
+    "formatLabel": "الصيغة",
+    "allFormats": "جميع الصيغ",
+    "levelLabel": "المستوى",
+    "allLevels": "جميع المستويات",
+    "sortLabel": "الترتيب حسب",
+    "sort": {
+      "relevance": "الأكثر صلة",
+      "durationAsc": "المدة الأقصر",
+      "durationDesc": "المدة الأطول"
+    }
+  },
+  "results": {
+    "count_zero": "لا توجد تدريبات",
+    "count_one": "تدريب واحد",
+    "count_two": "تدريبان",
+    "count_few": "{{count}} تدريبات",
+    "count_many": "{{count}} تدريبًا",
+    "count_other": "{{count}} تدريب"
+  },
+  "pagination": {
+    "status": "الصفحة {{page}} من {{pageCount}}",
+    "previous": "الصفحة السابقة",
+    "next": "الصفحة التالية"
+  },
+  "empty": {
+    "title": "لم يتم العثور على تدريبات",
+    "description": "حاول تعديل عوامل التصفية أو البحث."
+  }
+}

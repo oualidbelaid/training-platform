@@ -1,0 +1,41 @@
+{
+  "seo": {
+    "title": "Catalogue de formations",
+    "description": "Découvrez l'ensemble des formations professionnelles ISTAM : leadership, gestion de projet, digital, finance, RH et communication."
+  },
+  "hero": {
+    "eyebrow": "Catalogue",
+    "title": "Toutes nos formations",
+    "description": "Recherchez et filtrez nos programmes pour trouver la formation adaptée à vos objectifs."
+  },
+  "filters": {
+    "searchLabel": "Rechercher une formation",
+    "searchPlaceholder": "Rechercher par titre ou mot-clé…",
+    "clearSearch": "Effacer la recherche",
+    "categoryLabel": "Catégorie",
+    "allCategories": "Toutes les catégories",
+    "formatLabel": "Format",
+    "allFormats": "Tous les formats",
+    "levelLabel": "Niveau",
+    "allLevels": "Tous les niveaux",
+    "sortLabel": "Trier par",
+    "sort": {
+      "relevance": "Pertinence",
+      "durationAsc": "Durée croissante",
+      "durationDesc": "Durée décroissante"
+    }
+  },
+  "results": {
+    "count_one": "{{count}} formation trouvée",
+    "count_other": "{{count}} formations trouvées"
+  },
+  "pagination": {
+    "status": "Page {{page}} sur {{pageCount}}",
+    "previous": "Page précédente",
+    "next": "Page suivante"
+  },
+  "empty": {
+    "title": "Aucune formation trouvée",
+    "description": "Essayez d'ajuster vos filtres ou votre recherche."
+  }
+}

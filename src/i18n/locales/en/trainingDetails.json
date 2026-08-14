@@ -1,0 +1,29 @@
+{
+  "breadcrumb": {
+    "home": "Home",
+    "catalog": "Training"
+  },
+  "objectives": "Objectives",
+  "targetAudience": "Who it's for",
+  "prerequisites": "Prerequisites",
+  "program": "Program",
+  "methodology": "Methodology",
+  "trainers": "Trainer(s)",
+  "practicalInfo": "Practical information",
+  "nextSessions": "Upcoming sessions",
+  "faq": "Frequently asked questions",
+  "relatedTrainings": "Related training",
+  "testimonials": "What participants say",
+  "cta": {
+    "requestInfo": "Request information",
+    "requestQuote": "Request a quote",
+    "registerInterest": "Register my interest",
+    "contact": "Contact an advisor",
+    "brochure": "Download the brochure"
+  },
+  "notFound": {
+    "title": "Training not found",
+    "description": "This training doesn't exist or is no longer available.",
+    "backToCatalog": "Back to the catalog"
+  }
+}

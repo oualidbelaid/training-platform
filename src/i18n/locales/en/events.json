@@ -1,0 +1,27 @@
+{
+  "seo": {
+    "title": "Events",
+    "description": "Webinars, open days and gatherings organized by ISTAM."
+  },
+  "hero": {
+    "eyebrow": "Events",
+    "title": "Meet our teams and our approach",
+    "description": "Webinars, open days and professional gatherings, online or on-site."
+  },
+  "tabs": {
+    "upcoming": "Upcoming",
+    "past": "Past"
+  },
+  "empty": {
+    "upcomingTitle": "No upcoming events",
+    "upcomingDescription": "New events will be announced soon — check back shortly.",
+    "pastTitle": "No past events",
+    "pastDescription": "Our event history will appear here."
+  },
+  "cta": {
+    "title": "Never miss one of our events",
+    "description": "Get in touch to be notified about our upcoming gatherings and webinars.",
+    "primaryCta": "Request information",
+    "secondaryCta": "Contact us"
+  }
+}

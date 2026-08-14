@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Demander des informations",
+    "description": "Demandez des informations sur nos formations professionnelles — un conseiller ISTAM vous répond rapidement."
+  },
+  "hero": {
+    "eyebrow": "Demande d'informations",
+    "title": "Demander des informations",
+    "description": "Une question sur une formation ? Laissez-nous vos coordonnées, un conseiller ISTAM vous répond sous 48 heures ouvrées."
+  },
+  "success": {
+    "title": "Merci pour votre demande.",
+    "description": "Notre équipe ISTAM reviendra vers vous prochainement.",
+    "primaryCta": "Voir nos formations",
+    "secondaryCta": "Retour à l'accueil"
+  }
+}

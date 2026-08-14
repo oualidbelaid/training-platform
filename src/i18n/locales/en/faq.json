@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "title": "Frequently Asked Questions",
+    "description": "Answers to the most common questions about our training, registration, formats and certification."
+  },
+  "hero": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "description": "Find answers to the most common questions about our training, registration and logistics."
+  },
+  "categoryFilterLabel": "Category",
+  "allCategories": "All categories",
+  "empty": {
+    "title": "No questions in this category",
+    "description": "Choose a different category or contact us directly."
+  },
+  "cta": {
+    "title": "Have another question?",
+    "description": "Our team is here to answer any question you may have.",
+    "primaryCta": "Contact us",
+    "secondaryCta": "Request information"
+  }
+}

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-hidden="true">
+  <defs>
+  <linearGradient id="testimonial-bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#f7eef2"/>
+    <stop offset="60%" stop-color="#ffffff"/>
+    <stop offset="100%" stop-color="#ecd0dd"/>
+  </linearGradient>
+  <radialGradient id="testimonial-glow" cx="78%" cy="20%" r="65%">
+    <stop offset="0%" stop-color="#dba7c0" stop-opacity="0.7"/>
+    <stop offset="100%" stop-color="#dba7c0" stop-opacity="0"/>
+  </radialGradient>
+  
+  <filter id="testimonial-grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise"/>
+    <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.02 0"/>
+  </filter></defs>
+  
+  <rect width="1200" height="900" fill="url(#testimonial-bg)"/>
+  <rect width="1200" height="900" fill="url(#testimonial-glow)"/>
+  <text x="120" y="640" font-family="Georgia, serif" font-size="620" fill="#4f5259" opacity="0.09">&#8220;</text>
+  <circle cx="900" cy="620" r="200" fill="none" stroke="#cf9a3e" stroke-opacity="0.25" stroke-width="1.5"/>
+  <rect width="1200" height="900" filter="url(#testimonial-grain)" />
+</svg>

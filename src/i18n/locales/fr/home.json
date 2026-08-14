@@ -1,0 +1,199 @@
+{
+  "seo": {
+    "title": "Formations professionnelles pour entreprises et particuliers",
+    "description": "Des formations concrètes en leadership, gestion de projet, digital, finance, RH et communication, animées par des experts terrain."
+  },
+  "nav": {
+    "training": "Formations",
+    "solutions": "Solutions entreprises",
+    "about": "À propos",
+    "resources": "Ressources",
+    "contact": "Contact",
+    "cta": "Demander des informations",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "hero": {
+    "eyebrow": "Une formation professionnelle qui donne des résultats",
+    "headline": {
+      "line1": "Développez les compétences.",
+      "line2": "Transformez les équipes.",
+      "prefix": "Faites",
+      "accent": "grandir",
+      "suffix": "votre entreprise."
+    },
+    "subheadline": "Des programmes concrets et un impact mesurable, animés par des experts qui ont exercé les métiers qu'ils enseignent.",
+    "primaryCta": "Découvrir nos formations",
+    "secondaryCta": "Solutions entreprises",
+    "trustLabel": "{{rating}}/5 sur {{count}}+ participants",
+    "cards": {
+      "impactTitle": "Impact mesurable",
+      "impactDescription": "Des résultats concrets pour votre organisation",
+      "expertsTitle": "Formateurs experts",
+      "expertsDescription": "Des professionnels expérimentés du terrain"
+    }
+  },
+  "trust": {
+    "eyebrow": "Ils nous font confiance",
+    "title": "Une expertise reconnue depuis plus de quinze ans",
+    "stats": {
+      "learners": { "suffix": "+", "label": "professionnels formés" },
+      "programs": { "suffix": "+", "label": "programmes de formation" },
+      "companies": { "suffix": "+", "label": "entreprises accompagnées" },
+      "countries": { "suffix": "", "label": "pays couverts" },
+      "satisfaction": { "suffix": " %", "label": "taux de satisfaction" }
+    },
+    "disclaimer": "Chiffres de démonstration"
+  },
+  "trustLogos": {
+    "eyebrow": "Ils nous font confiance",
+    "description": "Une confiance construite avec des organisations de tous secteurs.",
+    "disclaimer": "Logos de démonstration",
+    "cta": "Voir nos partenaires"
+  },
+  "categories": {
+    "eyebrow": "Catalogue",
+    "title": "Des formations pour chaque besoin",
+    "description": "Explorez nos domaines d'expertise et trouvez le programme adapté à vos objectifs.",
+    "cta": "Voir toutes les formations"
+  },
+  "professionalDevelopment": {
+    "eyebrow": "Développement professionnel",
+    "title": "Des compétences qui évoluent. Des personnes qui grandissent.",
+    "description": "La montée en compétences ne tient pas en une seule session. Faites défiler pour suivre le parcours autour duquel nos programmes sont construits.",
+    "stepLabel": "Étape {{number}}",
+    "stages": {
+      "leadership": {
+        "label": "Leadership",
+        "title": "Leadership",
+        "description": "Donnez aux managers, nouveaux comme expérimentés, la posture, les outils et la confiance nécessaires pour guider une équipe — pas seulement piloter une fonction."
+      },
+      "management": {
+        "label": "Management",
+        "title": "Management",
+        "description": "Transformez l'exécution quotidienne en un système reproductible : priorités claires, décisions structurées, équipes qui savent où elles en sont."
+      },
+      "digitalTransformation": {
+        "label": "Digital",
+        "title": "Transformation digitale",
+        "description": "Aidez votre organisation à adopter de nouveaux outils et façons de travailler sans perdre de vue les personnes derrière chaque processus."
+      },
+      "communication": {
+        "label": "Communication",
+        "title": "Communication",
+        "description": "Développez la clarté et l'aisance nécessaires pour être compris — par votre équipe, vos clients et votre hiérarchie."
+      },
+      "strategy": {
+        "label": "Stratégie",
+        "title": "Développement stratégique",
+        "description": "Reliez la progression individuelle à la direction de l'entreprise, pour que chaque compétence acquise fasse avancer l'organisation."
+      }
+    }
+  },
+  "featuredTrainings": {
+    "eyebrow": "Formations populaires",
+    "title": "Nos formations les plus demandées",
+    "description": "Une sélection de programmes conçus pour un impact immédiat sur vos pratiques professionnelles.",
+    "cta": "Voir toutes les formations",
+    "cardCta": "En savoir plus"
+  },
+  "valueProposition": {
+    "eyebrow": "Pourquoi nous choisir",
+    "title": "De l'apprentissage à l'impact.",
+    "items": {
+      "experts": {
+        "title": "Formateurs experts",
+        "description": "Des intervenants qui exercent ou ont exercé le métier qu'ils enseignent, pas uniquement des pédagogues."
+      },
+      "practical": {
+        "title": "Apprentissage concret",
+        "description": "Des mises en situation et des outils applicables dès le lendemain de la formation."
+      },
+      "impact": {
+        "title": "Impact mesurable",
+        "description": "Des objectifs clairs et un suivi pour évaluer la progression réelle des équipes."
+      },
+      "flexible": {
+        "title": "Formats flexibles",
+        "description": "Présentiel, en ligne ou hybride : un format adapté à l'organisation de vos équipes."
+      }
+    }
+  },
+  "trainers": {
+    "eyebrow": "Notre équipe",
+    "title": "Des experts qui ont vécu ce qu'ils enseignent",
+    "description": "Chaque formateur combine expérience terrain et pédagogie éprouvée.",
+    "cta": "Découvrir tous nos formateurs"
+  },
+  "companies": {
+    "eyebrow": "Entreprises",
+    "title": "Des solutions de formation sur mesure pour votre entreprise",
+    "description": "Nous concevons des parcours adaptés aux enjeux, aux équipes et à la stratégie de compétences de votre organisation.",
+    "points": {
+      "needs": "Adaptées aux besoins réels de votre organisation",
+      "teams": "Déployables pour vos équipes, où qu'elles se trouvent",
+      "skills": "Alignées sur votre stratégie de développement des compétences",
+      "transformation": "Conçues pour accompagner vos projets de transformation"
+    },
+    "cta": "Solutions pour entreprises",
+    "imageCaption": "Plus de 1 200 organisations nous font confiance"
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ce que nos clients en disent",
+    "disclaimer": "Témoignages de démonstration",
+    "cta": "Voir tous les témoignages"
+  },
+  "location": {
+    "eyebrow": "Nous rendre visite",
+    "title": "Nous trouver",
+    "companyName": "ISTAM — Formation professionnelle",
+    "description": "Venez rencontrer notre équipe ou contactez-nous — nous sommes à votre écoute.",
+    "hours": {
+      "weekdays": "Lundi – Vendredi",
+      "saturday": "Samedi"
+    },
+    "cta": "Itinéraire",
+    "mapUnavailable": "Carte indisponible — voir l'adresse ci-dessus"
+  },
+  "events": {
+    "eyebrow": "Événements",
+    "title": "Prochains rendez-vous",
+    "description": "Rencontrez nos équipes et découvrez notre approche pédagogique.",
+    "cta": "Voir tous les événements"
+  },
+  "finalCta": {
+    "title": "Prêt à faire progresser vos équipes ?",
+    "description": "Parlons de vos objectifs et construisons ensemble le programme le plus adapté.",
+    "primaryCta": "Demander un devis",
+    "secondaryCta": "Nous contacter"
+  },
+  "footer": {
+    "tagline": "Formations professionnelles pour organisations et individus exigeants.",
+    "columns": {
+      "training": {
+        "title": "Formations",
+        "categories": "Catégories",
+        "allTrainings": "Toutes les formations"
+      },
+      "company": {
+        "title": "Entreprise",
+        "about": "À propos",
+        "trainers": "Nos formateurs",
+        "events": "Événements"
+      },
+      "contact": {
+        "title": "Contact",
+        "requestInfo": "Demander des informations",
+        "requestQuote": "Demander un devis",
+        "contactUs": "Nous contacter"
+      }
+    },
+    "legal": {
+      "legalNotice": "Mentions légales",
+      "privacyPolicy": "Politique de confidentialité",
+      "cookiePolicy": "Politique de cookies"
+    },
+    "copyright": "Tous droits réservés."
+  }
+}

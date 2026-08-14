@@ -1,0 +1,31 @@
+{
+  "seo": {
+    "title": "Resources",
+    "description": "Articles and practical advice on management, digital, communication and professional training."
+  },
+  "hero": {
+    "eyebrow": "Resources",
+    "title": "Our latest articles",
+    "description": "Practical advice written by our trainers, on management, digital, communication and corporate training."
+  },
+  "featuredLabel": "Featured",
+  "readingTime_one": "{{count}} min read",
+  "readingTime_other": "{{count}} min read",
+  "readArticle": "Read article",
+  "empty": {
+    "title": "No articles available",
+    "description": "New articles will be published soon."
+  },
+  "details": {
+    "back": "Back to resources",
+    "relatedTitle": "You might also like",
+    "notFoundTitle": "Article not found",
+    "notFoundDescription": "This article doesn't exist or has been moved."
+  },
+  "cta": {
+    "title": "Have a specific training need?",
+    "description": "Let's discuss your goals and find the program best suited to you.",
+    "primaryCta": "Explore our training",
+    "secondaryCta": "Contact us"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": {
+    "in-person": "Présentiel",
+    "online": "En ligne",
+    "hybrid": "Hybride"
+  },
+  "level": {
+    "beginner": "Débutant",
+    "intermediate": "Intermédiaire",
+    "advanced": "Avancé"
+  },
+  "duration": "{{count}} h",
+  "viewDetails": "En savoir plus",
+  "programCount_one": "{{count}} programme",
+  "programCount_other": "{{count}} programmes",
+  "eventImageAlt": "Professionnels participant à une session de formation"
+}

@@ -1,0 +1,18 @@
+{
+  "seo": {
+    "title": "Industries",
+    "description": "See how our training programs adapt to the specific challenges of each industry."
+  },
+  "hero": {
+    "eyebrow": "Industries",
+    "title": "Training tailored to your industry",
+    "description": "Every industry has its own challenges — our training adapts to the context and vocabulary of your field."
+  },
+  "disclaimer": "These industries illustrate our areas of expertise and are not an exhaustive list of our current clients.",
+  "cta": {
+    "title": "Don't see your industry listed?",
+    "description": "Our programs adapt to any professional context — let's talk about your specific needs.",
+    "primaryCta": "Contact us",
+    "secondaryCta": "Solutions for companies"
+  }
+}

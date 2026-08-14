@@ -1,0 +1,27 @@
+{
+  "seo": {
+    "title": "Our Partners",
+    "description": "Discover the organizations that trust ISTAM to train their teams."
+  },
+  "hero": {
+    "eyebrow": "Our partners",
+    "title": "Trust built with organizations across every sector",
+    "description": "We support companies of every size in developing their teams' skills."
+  },
+  "approach": {
+    "eyebrow": "Our approach",
+    "title": "A long-term collaboration",
+    "description": "Every partnership starts with a needs diagnosis and continues with ongoing, tailored support — not a one-off training, but a genuine skills-development partner."
+  },
+  "disclaimer": "Demonstration partners",
+  "empty": {
+    "title": "No partners to display",
+    "description": "Check back soon to discover our partners."
+  },
+  "cta": {
+    "title": "Become an ISTAM partner",
+    "description": "Let's talk about how we can support your teams' skills development.",
+    "primaryCta": "Solutions for companies",
+    "secondaryCta": "Contact us"
+  }
+}

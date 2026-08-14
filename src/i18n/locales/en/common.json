@@ -1,0 +1,34 @@
+{
+  "app": {
+    "name": "ISTAM"
+  },
+  "nav": {
+    "home": "Home"
+  },
+  "language": {
+    "fr": "Français",
+    "en": "English",
+    "ar": "العربية",
+    "switchTo": "Switch language"
+  },
+  "feedback": {
+    "loading": "Loading…",
+    "error": {
+      "title": "Something went wrong",
+      "description": "We couldn't display this content right now. Please try again.",
+      "retry": "Try again"
+    },
+    "empty": {
+      "title": "Nothing here yet",
+      "description": "Check back soon — this content will be available shortly."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

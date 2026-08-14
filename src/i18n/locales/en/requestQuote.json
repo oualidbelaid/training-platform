@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Request a Quote",
+    "description": "Request a tailored quote for an ISTAM training program, in-house or for a group."
+  },
+  "hero": {
+    "eyebrow": "Quote request",
+    "title": "Request a quote",
+    "description": "Share your needs with us and an ISTAM advisor will send you a quote tailored to your team."
+  },
+  "success": {
+    "title": "Thank you for your quote request.",
+    "description": "The ISTAM team is preparing your quote and will get back to you shortly.",
+    "primaryCta": "Browse our training",
+    "secondaryCta": "Back to home"
+  }
+}

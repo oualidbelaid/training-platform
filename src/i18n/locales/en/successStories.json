@@ -1,0 +1,26 @@
+{
+  "seo": {
+    "title": "Success Stories",
+    "description": "See how our training programs have helped clients tackle real challenges."
+  },
+  "hero": {
+    "eyebrow": "Success stories",
+    "title": "Real results, for real challenges",
+    "description": "Every training pathway starts with a genuine need — here's how we've supported some of our clients."
+  },
+  "card": {
+    "challenge": "The challenge",
+    "approach": "Our approach"
+  },
+  "disclaimer": "Demonstration case studies, illustrating the type of support we provide",
+  "empty": {
+    "title": "No success stories to display",
+    "description": "Check back soon to see our case studies."
+  },
+  "cta": {
+    "title": "Facing a similar challenge?",
+    "description": "Let's talk about your goals and build a training pathway together.",
+    "primaryCta": "Request a quote",
+    "secondaryCta": "Contact us"
+  }
+}

@@ -1,0 +1,23 @@
+/**
+ * Self-hosted brand fonts (spec M1 §3, §16 performance — avoids an external
+ * Google Fonts request). Only the weights the type scale actually uses are
+ * imported, to keep the font payload controlled.
+ *
+ * - Inter            → --font-sans (UI/body, fr & en)
+ * - Fraunces         → --font-display (editorial display/H1-H2, fr & en only)
+ * - IBM Plex Sans Arabic → --font-arabic (body + display, ar — see :lang(ar)
+ *   override in globals.css; most Latin display serifs have no Arabic
+ *   glyphs, so Arabic uses a strong sans weight for display instead)
+ */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@import '@fontsource/fraunces/500.css';
+@import '@fontsource/fraunces/600.css';
+
+@import '@fontsource/ibm-plex-sans-arabic/400.css';
+@import '@fontsource/ibm-plex-sans-arabic/500.css';
+@import '@fontsource/ibm-plex-sans-arabic/600.css';
+@import '@fontsource/ibm-plex-sans-arabic/700.css';

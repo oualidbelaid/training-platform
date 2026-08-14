@@ -1,0 +1,48 @@
+{
+  "fields": {
+    "firstName": { "label": "First name", "placeholder": "Your first name" },
+    "lastName": { "label": "Last name", "placeholder": "Your last name" },
+    "email": { "label": "Work email", "placeholder": "you@company.com" },
+    "phone": { "label": "Phone", "placeholder": "+213 ..." },
+    "company": { "label": "Company", "placeholder": "Your company name" },
+    "jobTitle": { "label": "Job title", "placeholder": "Your job title" },
+    "message": { "label": "Message", "placeholder": "Share any details (optional)" },
+    "training": { "label": "Training program", "placeholder": "Select a training" },
+    "preferredContactMethod": { "legend": "Preferred contact method", "email": "Email", "phone": "Phone" },
+    "participantsCount": { "label": "Number of participants", "placeholder": "E.g. 8" },
+    "preferredFormat": { "label": "Preferred format", "placeholder": "Select a format" },
+    "preferredDate": { "label": "Preferred date" },
+    "location": { "label": "Preferred location", "placeholder": "E.g. at your premises, Algiers" },
+    "trainingNeeds": { "label": "Training needs", "placeholder": "Describe your needs (optional)" },
+    "areasOfInterest": { "label": "Areas of interest", "placeholder": "E.g. leadership, project management..." },
+    "subject": { "label": "Subject", "placeholder": "What is this about?" }
+  },
+  "sections": {
+    "personal": "Personal information",
+    "company": "Company information",
+    "training": "Training needs",
+    "message": "Message",
+    "consent": "Privacy"
+  },
+  "validation": {
+    "tooShort": "This field must be at least {{min}} characters.",
+    "tooLong": "This field must not exceed {{max}} characters.",
+    "invalidEmail": "Please enter a valid email address.",
+    "invalidPhone": "Please enter a valid phone number.",
+    "invalidNumber": "Please enter a valid number.",
+    "consentRequired": "You must accept this to continue."
+  },
+  "actions": {
+    "submit": "Send request",
+    "submitting": "Sending...",
+    "retry": "Retry"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "Your request couldn't be sent. Your information has been kept — please try again."
+  },
+  "privacy": {
+    "consentLabel": "I agree that my information may be used by ISTAM to process my request, in accordance with its privacy policy.",
+    "notice": "Information collected through this form is used only to process your request and is never shared with third parties without your consent."
+  }
+}

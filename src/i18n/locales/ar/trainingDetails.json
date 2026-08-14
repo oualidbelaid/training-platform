@@ -1,0 +1,29 @@
+{
+  "breadcrumb": {
+    "home": "الرئيسية",
+    "catalog": "التدريبات"
+  },
+  "objectives": "الأهداف",
+  "targetAudience": "الجمهور المستهدف",
+  "prerequisites": "المتطلبات المسبقة",
+  "program": "البرنامج",
+  "methodology": "المنهجية",
+  "trainers": "المدرب (المدربون)",
+  "practicalInfo": "معلومات عملية",
+  "nextSessions": "الجلسات القادمة",
+  "faq": "الأسئلة الشائعة",
+  "relatedTrainings": "تدريبات مشابهة",
+  "testimonials": "آراء المشاركين",
+  "cta": {
+    "requestInfo": "طلب معلومات",
+    "requestQuote": "طلب عرض سعر",
+    "registerInterest": "تسجيل اهتمامي",
+    "contact": "التواصل مع مستشار",
+    "brochure": "تحميل الكتيّب"
+  },
+  "notFound": {
+    "title": "التدريب غير موجود",
+    "description": "هذا التدريب غير موجود أو لم يعد متاحًا.",
+    "backToCatalog": "العودة إلى الدليل"
+  }
+}

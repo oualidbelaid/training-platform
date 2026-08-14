@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Client Testimonials",
+    "description": "See what our clients say about their training experience with ISTAM."
+  },
+  "hero": {
+    "eyebrow": "Testimonials",
+    "title": "What our clients say",
+    "description": "Managers, HR leaders and executives share their experience of ISTAM training programs."
+  },
+  "disclaimer": "Demonstration testimonials",
+  "empty": {
+    "title": "No testimonials available",
+    "description": "Check back soon to see what our clients are saying."
+  },
+  "cta": {
+    "title": "Ready for the same experience?",
+    "description": "Let's discuss your goals and find the training best suited to your teams.",
+    "primaryCta": "Request a quote",
+    "secondaryCta": "Contact us"
+  }
+}
