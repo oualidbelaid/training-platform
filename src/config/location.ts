@@ -10,7 +10,7 @@ export const LOCATION = {
   "address": "Résidence des deux bassins, Bâtiment 1H / 1A, Oued Romane, El Achour, 16000 Alger, Algérie",
   "latitude": 36.7412,
   "longitude": 2.9934,
-  "phone": "+213 560 91 86 69",
+  "phone": "0555 07 96 00",
   "email": "contact@istam.fr",
   "hours": [
     { "day": "weekdays", "value": "08:30 – 16:30" },

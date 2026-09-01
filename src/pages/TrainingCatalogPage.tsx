@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 import { Grid } from '@/components/layout/Grid'
+import { Accordion, type AccordionItemData } from '@/components/ui/Accordion'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { Pagination } from '@/components/ui/Pagination'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -16,6 +17,7 @@ import { Seo } from '@/components/seo/Seo'
 import { useCategories } from '@/features/categories/hooks/useCategories'
 import { TrainingCard } from '@/features/trainings/components/TrainingCard'
 import { TrainingFilters, type TrainingFiltersValue } from '@/features/trainings/components/TrainingFilters'
+import { useTrainingDomains } from '@/features/trainings/hooks/useTrainingDomains'
 import { useTrainings } from '@/features/trainings/hooks/useTrainings'
 import type { SupportedLanguage } from '@/i18n'
 import type { TrainingSortBy } from '@/repositories/training'
@@ -39,8 +41,10 @@ export default function TrainingCatalogPage() {
   const [searchParams, setSearchParams] = useSearchParams()
 
   const categoriesQuery = useCategories()
+  const domainsQuery = useTrainingDomains()
   const categorySlug = searchParams.get('category') ?? ''
-  const categoryId = categoriesQuery.data?.find((category) => category.slug === categorySlug)?.id
+  const selectedCategory = categoriesQuery.data?.find((category) => category.slug === categorySlug)
+  const categoryId = selectedCategory?.id
 
   const page = Number(searchParams.get('page') ?? '1') || 1
   const filters: TrainingFiltersValue = {
@@ -66,6 +70,33 @@ export default function TrainingCatalogPage() {
     () => new Map(categoriesQuery.data?.map((category) => [category.id, category])),
     [categoriesQuery.data],
   )
+
+  const domainAccordionItems: AccordionItemData[] = useMemo(() => {
+    if (!categoryId || !domainsQuery.data) return []
+    return domainsQuery.data
+      .filter((domain) => domain.categoryId === categoryId)
+      .map((domain) => ({
+        id: domain.id,
+        question: (
+          <span className="flex flex-1 items-center justify-between gap-4">
+            <span>{getLocalizedText(domain.name, language)}</span>
+            <span className="shrink-0 text-caption font-normal text-foreground-faint">
+              {t('domains.courseCount', { count: domain.courses.length })}
+            </span>
+          </span>
+        ),
+        answer: (
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {domain.courses.map((course) => (
+              <li key={getLocalizedText(course.name, language)} className="flex items-start gap-2">
+                <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground-faint" />
+                {getLocalizedText(course.name, language)}
+              </li>
+            ))}
+          </ul>
+        ),
+      }))
+  }, [categoryId, domainsQuery.data, language, t])
 
   function updateFilters(patch: Partial<TrainingFiltersValue>) {
     const next = new URLSearchParams(searchParams)
@@ -122,6 +153,17 @@ export default function TrainingCatalogPage() {
               language={language}
             />
           </RevealOnScroll>
+
+          {selectedCategory && domainAccordionItems.length > 0 ? (
+            <RevealOnScroll className="flex flex-col gap-4 rounded-2xl border border-border bg-surface-subtle p-6 sm:p-8">
+              <SectionHeading
+                eyebrow={t('domains.eyebrow')}
+                title={t('domains.title', { category: getLocalizedText(selectedCategory.name, language) })}
+                description={t('domains.description')}
+              />
+              <Accordion items={domainAccordionItems} />
+            </RevealOnScroll>
+          ) : null}
 
           {trainingsQuery.isLoading ? <LoadingState /> : null}
           {trainingsQuery.isError ? <ErrorState onRetry={() => void trainingsQuery.refetch()} /> : null}

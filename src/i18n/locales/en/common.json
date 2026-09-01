@@ -2,6 +2,9 @@
   "app": {
     "name": "ISTAM"
   },
+  "a11y": {
+    "skipToContent": "Skip to main content"
+  },
   "nav": {
     "home": "Home"
   },

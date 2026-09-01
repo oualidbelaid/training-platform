@@ -37,5 +37,12 @@
   "empty": {
     "title": "Aucune formation trouvée",
     "description": "Essayez d'ajuster vos filtres ou votre recherche."
+  },
+  "domains": {
+    "eyebrow": "Catalogue complet",
+    "title": "Tous les domaines de {{category}}",
+    "description": "L'ensemble des thématiques et modules que nous proposons dans ce domaine — issu de notre présentation institutionnelle. Les programmes ci-dessous sont une sélection détaillée ; contactez-nous pour tout module de cette liste.",
+    "courseCount_one": "{{count}} module",
+    "courseCount_other": "{{count}} modules"
   }
 }

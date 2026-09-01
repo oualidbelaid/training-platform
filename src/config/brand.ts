@@ -7,10 +7,12 @@ import istamLogo from '@/assets/brand/istam-logo.png'
  * separate compact icon-only version, favicon exports) is a one-file change.
  *
  * Only one lockup exists today — the full "mark + wordmark" PNG the client
- * supplied — so every context currently renders the same file at different
- * sizes. There is no separate icon-only mark to crop to a favicon from
- * without image-editing tooling; `public/favicon.svg` is unchanged until a
- * real favicon export is supplied (see docs/DESIGN_SYSTEM.md → "Branding").
+ * supplied — so every context here still renders that same file at
+ * different sizes. The browser-tab favicon is the one exception: there's
+ * no separate icon-only source asset, so `public/favicon.png` and
+ * `public/apple-touch-icon.png` are a square crop of this same PNG's icon
+ * mark (generated once, not hand-drawn — see docs/DESIGN_SYSTEM.md →
+ * "Branding"), not a second entry in this registry.
  */
 export const BRAND = {
   name: 'ISTAM',

@@ -3,12 +3,10 @@ import { Link as RouterLink } from 'react-router-dom'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
-import { MEDIA } from '@/config/media'
+import { usePartners } from '@/features/partners/hooks/usePartners'
 import { useDirection } from '@/hooks/useDirection'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { cn } from '@/lib/cn'
-
-const PARTNER_LOGOS = [MEDIA.partner1, MEDIA.partner2, MEDIA.partner3, MEDIA.partner4, MEDIA.partner5, MEDIA.partner6]
 
 const LOGO_CLASSNAME =
   'h-7 w-auto shrink-0 opacity-50 transition-opacity duration-(--duration-base) hover:opacity-100'
@@ -32,11 +30,19 @@ const LOGO_CLASSNAME =
  * `prefers-reduced-motion` renders the original static, wrapped, centered
  * row instead (no duplication, no animation) — the section stays fully
  * readable without motion.
+ *
+ * Logo source is now `usePartners()` (real ISTAM clients, ISTAM Full
+ * Catalogue pass) rather than a hardcoded asset array — only partners with
+ * a real sourced `logoUrl` appear here (name-only entries render as text
+ * wordmark tiles on the dedicated Partners page instead, where there's room
+ * for that treatment). The marquee's CSS/animation logic is unchanged.
  */
 export function TrustLogosSection() {
   const { t } = useTranslation('home')
   const prefersReducedMotion = useReducedMotion()
   const direction = useDirection()
+  const { data: partners } = usePartners()
+  const logoPartners = partners?.filter((partner) => partner.logoUrl) ?? []
 
   return (
     <Section spacing="sm">
@@ -55,8 +61,8 @@ export function TrustLogosSection() {
         <RevealOnScroll>
           {prefersReducedMotion ? (
             <div className="mt-8 flex flex-wrap justify-center gap-10">
-              {PARTNER_LOGOS.map((src, index) => (
-                <img key={index} src={src} alt="" className={LOGO_CLASSNAME} />
+              {logoPartners.map((partner) => (
+                <img key={partner.id} src={partner.logoUrl} alt={partner.name} className={LOGO_CLASSNAME} />
               ))}
             </div>
           ) : (
@@ -69,8 +75,13 @@ export function TrustLogosSection() {
               >
                 {[0, 1].map((copy) => (
                   <div key={copy} className="flex shrink-0 gap-10" aria-hidden={copy === 1 || undefined}>
-                    {PARTNER_LOGOS.map((src, index) => (
-                      <img key={index} src={src} alt="" className={LOGO_CLASSNAME} />
+                    {logoPartners.map((partner) => (
+                      <img
+                        key={partner.id}
+                        src={partner.logoUrl}
+                        alt={copy === 1 ? '' : partner.name}
+                        className={LOGO_CLASSNAME}
+                      />
                     ))}
                   </div>
                 ))}

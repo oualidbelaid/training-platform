@@ -19,8 +19,6 @@ import { Seo } from '@/components/seo/Seo'
 import { useCategories } from '@/features/categories/hooks/useCategories'
 import { TestimonialCard } from '@/features/testimonials/components/TestimonialCard'
 import { useTestimonials } from '@/features/testimonials/hooks/useTestimonials'
-import { TrainerPreviewCard } from '@/features/trainers/components/TrainerPreviewCard'
-import { useTrainers } from '@/features/trainers/hooks/useTrainers'
 import { TrainingCard } from '@/features/trainings/components/TrainingCard'
 import { useTraining } from '@/features/trainings/hooks/useTraining'
 import { useTrainings } from '@/features/trainings/hooks/useTrainings'
@@ -46,7 +44,6 @@ export default function TrainingDetailsPage() {
 
   const trainingQuery = useTraining(slug)
   const categoriesQuery = useCategories()
-  const trainersQuery = useTrainers()
   const relatedQuery = useTrainings(
     trainingQuery.data ? { categoryId: trainingQuery.data.categoryId, pageSize: 4 } : undefined,
   )
@@ -90,7 +87,6 @@ export default function TrainingDetailsPage() {
 
   const category = categoriesQuery.data?.find((item) => item.id === training.categoryId)
   const categoryName = category ? getLocalizedText(category.name, language) : undefined
-  const trainers = (trainersQuery.data ?? []).filter((trainer) => training.trainerIds.includes(trainer.id))
   const related = (relatedQuery.data?.items ?? []).filter((item) => item.id !== training.id).slice(0, 3)
   const testimonials = (testimonialsQuery.data ?? []).filter((item) => item.trainingId === training.id)
   const requestParams = `?training=${training.slug}`
@@ -207,17 +203,6 @@ export default function TrainingDetailsPage() {
               <h2 className="text-h3 font-semibold text-foreground">{t('methodology')}</h2>
               <p className="text-body text-foreground-muted">{getLocalizedText(training.methodology, language)}</p>
             </RevealOnScroll>
-
-            {trainers.length > 0 ? (
-              <RevealOnScroll className="flex flex-col gap-4">
-                <h2 className="text-h3 font-semibold text-foreground">{t('trainers')}</h2>
-                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-                  {trainers.map((trainer) => (
-                    <TrainerPreviewCard key={trainer.id} trainer={trainer} language={language} />
-                  ))}
-                </div>
-              </RevealOnScroll>
-            ) : null}
 
             {training.faq.length > 0 ? (
               <RevealOnScroll className="flex flex-col gap-4">

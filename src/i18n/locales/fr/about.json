@@ -1,52 +1,57 @@
 {
   "seo": {
     "title": "À propos d'ISTAM",
-    "description": "Découvrez la mission, les valeurs et l'approche pédagogique d'ISTAM, organisme de formation professionnelle."
+    "description": "Organisme de Conseil et de Formation agréé par l'État N°1967, ISTAM accompagne depuis 2006 les entreprises et organisations dans leur recherche de performance."
   },
   "hero": {
     "eyebrow": "À propos",
-    "title": "Faire grandir les compétences, durablement",
-    "description": "ISTAM conçoit et anime des formations professionnelles concrètes, pensées pour avoir un impact réel sur les équipes et les organisations."
+    "title": "ISTAM — Conseil et formation professionnelle",
+    "description": "Organisme de Conseil et de Formation agréé par l'État N°1967, ISTAM accompagne depuis 2006 les entreprises et organisations dans leur recherche de performance et d'excellence opérationnelle."
   },
   "intro": {
-    "title": "Une équipe de praticiens, pas seulement de pédagogues",
-    "paragraph1": "ISTAM est né d'un constat simple : la formation professionnelle a le plus d'impact lorsqu'elle est animée par des experts qui ont eux-mêmes exercé les métiers qu'ils enseignent.",
-    "paragraph2": "Depuis nos débuts, nous concevons des parcours qui combinent rigueur pédagogique, mise en pratique immédiate et suivi dans la durée — pour des compétences qui restent, bien après la fin de la formation."
+    "title": "Conseil, gestion de projet et formation au service de la performance",
+    "paragraph1": "Fondé en 2006, l'Institut ISTAM accompagne les entreprises et organisations dans leur recherche de performance et d'excellence opérationnelle, à travers trois expertises complémentaires : le conseil en stratégie, dédié à l'optimisation organisationnelle et au développement durable des entreprises ; la gestion de projet (PMO/PMA), avec une expérience solide sur les environnements ERP ; et la formation continue.",
+    "paragraph2": "Nos programmes de formation couvrent le leadership, le management, la gestion de projet et le développement des soft-skills, animés par une équipe de collaborateurs permanents et un large réseau de consultants experts qui conçoivent des programmes de conseil et de formation adaptés à chaque projet professionnel."
   },
   "mission": {
     "title": "Notre mission",
-    "description": "Donner aux professionnels et aux organisations les compétences concrètes dont ils ont besoin pour progresser, avec des formations ancrées dans la réalité du terrain."
+    "description": "Permettre aux individus et aux organisations de révéler leur plein potentiel, en cultivant une dynamique d'apprentissage et de progrès continus."
   },
   "vision": {
     "title": "Notre vision",
-    "description": "Faire de la formation continue un réflexe naturel dans chaque organisation — un investissement mesurable, pas une simple obligation."
+    "description": "Former la prochaine génération de leaders, à travers des programmes d'accompagnement complets et sur mesure."
   },
   "values": {
-    "eyebrow": "Ce qui nous guide",
-    "title": "Nos valeurs",
+    "eyebrow": "Nos valeurs",
+    "title": "Intégrité • Savoir • Transformation • Ambition • Maîtrise",
+    "description": "Cinq principes qui épellent ISTAM et guident chacune de nos actions.",
     "items": {
-      "expertise": {
-        "title": "Expertise terrain",
-        "description": "Des formateurs qui exercent ou ont exercé le métier qu'ils enseignent, pas uniquement des pédagogues."
-      },
-      "impact": {
-        "title": "Impact mesurable",
-        "description": "Chaque programme est conçu autour d'objectifs clairs et d'une progression que l'on peut réellement observer."
-      },
       "integrity": {
-        "title": "Exigence et transparence",
-        "description": "Des engagements clairs sur le contenu, les résultats attendus et le déroulement de chaque formation."
+        "title": "Intégrité",
+        "description": "Nous agissons avec honnêteté, éthique et transparence dans toutes nos relations. « La confiance est le fondement de notre réussite. »"
       },
-      "proximity": {
-        "title": "Proximité",
-        "description": "Un accompagnement humain, du premier échange avec un conseiller jusqu'au suivi après la formation."
+      "knowledge": {
+        "title": "Savoir",
+        "description": "Nous croyons que le savoir est le premier levier de transformation des individus et des organisations. « Apprendre aujourd'hui pour réussir demain. »"
+      },
+      "transformation": {
+        "title": "Transformation",
+        "description": "Nous développons des compétences qui produisent des résultats concrets et durables. « Transformer les connaissances en performance. »"
+      },
+      "ambition": {
+        "title": "Ambition",
+        "description": "Nous encourageons chacun à viser l'excellence et à dépasser ses limites. « Oser, progresser et réussir. »"
+      },
+      "mastery": {
+        "title": "Maîtrise",
+        "description": "Nous recherchons l'excellence dans nos formations, nos méthodes et nos interventions. « L'expertise au service de la performance. »"
       }
     }
   },
   "approach": {
-    "eyebrow": "Notre approche",
-    "title": "Une méthode pensée pour l'impact",
-    "description": "Chaque formation ISTAM suit la même exigence méthodologique, du diagnostic initial au suivi des résultats.",
+    "eyebrow": "Notre méthode",
+    "title": "Une méthode ancrée dans le terrain",
+    "description": "Nous coconstruisons chaque intervention avec vos équipes, en tenant compte de la culture et des réalités propres à votre organisation. Du diagnostic initial à la mise en œuvre, nous appliquons une méthodologie rigoureuse qui allie conseil stratégique, gestion de projet et développement des compétences.",
     "steps": {
       "diagnose": {
         "title": "Diagnostic",
@@ -67,14 +72,13 @@
     }
   },
   "figures": {
-    "eyebrow": "En quelques chiffres",
-    "title": "Une expertise reconnue",
-    "disclaimer": "Chiffres de démonstration",
+    "eyebrow": "ISTAM en quelques chiffres",
+    "title": "Une structure au service de nos clients",
     "items": {
-      "learners": { "value": "25 000+", "label": "professionnels formés" },
-      "programs": { "value": "300+", "label": "programmes de formation" },
-      "companies": { "value": "1 200+", "label": "entreprises accompagnées" },
-      "satisfaction": { "value": "98 %", "label": "taux de satisfaction" }
+      "founded": { "value": "2006", "label": "année de création" },
+      "staff": { "value": "10", "label": "collaborateurs permanents" },
+      "consultants": { "value": "100+", "label": "consultants experts" },
+      "accreditation": { "value": "N°1967", "label": "agrément de formation délivré par l'État" }
     }
   },
   "cta": {

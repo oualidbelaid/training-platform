@@ -13,12 +13,10 @@ interface CategoryVisual {
  * repository/service/hook pipeline).
  */
 export const CATEGORY_VISUALS: Record<string, CategoryVisual> = {
-  'leadership-management': { icon: 'user-group', badgeClassName: 'bg-primary-100 text-primary-600' },
-  'project-management': { icon: 'bullseye', badgeClassName: 'bg-warning-50 text-warning-700' },
-  'it-digital': { icon: 'microchip', badgeClassName: 'bg-success-50 text-success-700' },
-  finance: { icon: 'wallet', badgeClassName: 'bg-accent-400/20 text-accent-600' },
-  'human-resources': { icon: 'user-group', badgeClassName: 'bg-error-50 text-error-700' },
-  communication: { icon: 'bullhorn', badgeClassName: 'bg-primary-100 text-primary-600' },
+  'business-functional-excellence': { icon: 'briefcase', badgeClassName: 'bg-primary-100 text-primary-600' },
+  'sales-customer-growth': { icon: 'arrow-trend-up', badgeClassName: 'bg-warning-50 text-warning-700' },
+  'leadership-people-development': { icon: 'user-group', badgeClassName: 'bg-success-50 text-success-700' },
+  'culture-compliance-sustainability': { icon: 'shield', badgeClassName: 'bg-accent-400/20 text-accent-600' },
 }
 
 export const DEFAULT_CATEGORY_VISUAL: CategoryVisual = {

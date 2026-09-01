@@ -19,7 +19,6 @@ import resourcesAr from './locales/ar/resources.json'
 import solutionsAr from './locales/ar/solutions.json'
 import successStoriesAr from './locales/ar/successStories.json'
 import testimonialsAr from './locales/ar/testimonials.json'
-import trainerPagesAr from './locales/ar/trainers.json'
 import trainingDetailsAr from './locales/ar/trainingDetails.json'
 import trainingsAr from './locales/ar/trainings.json'
 import aboutEn from './locales/en/about.json'
@@ -40,7 +39,6 @@ import resourcesEn from './locales/en/resources.json'
 import solutionsEn from './locales/en/solutions.json'
 import successStoriesEn from './locales/en/successStories.json'
 import testimonialsEn from './locales/en/testimonials.json'
-import trainerPagesEn from './locales/en/trainers.json'
 import trainingDetailsEn from './locales/en/trainingDetails.json'
 import trainingsEn from './locales/en/trainings.json'
 import aboutFr from './locales/fr/about.json'
@@ -61,7 +59,6 @@ import resourcesFr from './locales/fr/resources.json'
 import solutionsFr from './locales/fr/solutions.json'
 import successStoriesFr from './locales/fr/successStories.json'
 import testimonialsFr from './locales/fr/testimonials.json'
-import trainerPagesFr from './locales/fr/trainers.json'
 import trainingDetailsFr from './locales/fr/trainingDetails.json'
 import trainingsFr from './locales/fr/trainings.json'
 
@@ -81,11 +78,6 @@ export const languageDirection: Record<SupportedLanguage, 'ltr' | 'rtl'> = {
 export const defaultLanguage: SupportedLanguage = 'fr'
 
 /**
- * `trainerPages` (not `trainers`) is the M4 dedicated-page namespace — the
- * `trainings` namespace already existed pre-M4 for shared training-domain
- * strings (format/level labels, etc.) and has nothing to do with the
- * Trainers page, so the two aren't interchangeable despite the similar name.
- *
  * `leadForms` (M5) is the shared field-label/validation/action namespace
  * every one of the 5 lead forms pulls from; `requestInformation`,
  * `requestQuote`, `contact`, `registerInterest`, `consultation` each hold
@@ -103,7 +95,6 @@ void i18n
         catalog: catalogFr,
         trainingDetails: trainingDetailsFr,
         about: aboutFr,
-        trainerPages: trainerPagesFr,
         testimonials: testimonialsFr,
         partners: partnersFr,
         successStories: successStoriesFr,
@@ -126,7 +117,6 @@ void i18n
         catalog: catalogEn,
         trainingDetails: trainingDetailsEn,
         about: aboutEn,
-        trainerPages: trainerPagesEn,
         testimonials: testimonialsEn,
         partners: partnersEn,
         successStories: successStoriesEn,
@@ -149,7 +139,6 @@ void i18n
         catalog: catalogAr,
         trainingDetails: trainingDetailsAr,
         about: aboutAr,
-        trainerPages: trainerPagesAr,
         testimonials: testimonialsAr,
         partners: partnersAr,
         successStories: successStoriesAr,
@@ -176,7 +165,6 @@ void i18n
       'catalog',
       'trainingDetails',
       'about',
-      'trainerPages',
       'testimonials',
       'partners',
       'successStories',

@@ -80,13 +80,12 @@ Several take a `variant`/`featured` prop pair (`'featured' | 'compact'` or a boo
 |---|---|---|
 | `TrainingCard` | `Card`, `Image`, `Badge` | Uses `training.image` (real photography — see `docs/DESIGN_SYSTEM.md` → "Imagery"). `featured` renders a dominant horizontal card (image left, large type); default is a compact vertical card. |
 | `CategoryTile` | `TiltCard`, `Link`, `Icon` | `variant="featured"` — one large panel (icon, `text-h2` name, full description, live program count from `useTrainings()`). `variant="compact"` — a slim list row (icon + name + count + arrow), not a second card shape, so `CategoriesSection` reads as "one panel + a list." Icon/color still come from `category-visuals.ts` (presentation, not on the `Category` entity) — now `IconName` string keys instead of component references. |
-| `TrainerPreviewCard` | `Card`, `Image` | **Simplified in the branding-refinement pass** to a single compact directory-card shape (square portrait, name, role only — no more `featured`/`compact` variant) — the earlier large-portrait-plus-pull-quote treatment took up too much footprint; `TrainersSection` now renders a uniform 2–5 column grid instead of one dominant + two supporting. |
 | `TestimonialCard` | `Avatar`, `Card` | `variant="featured"` — large pull-quote panel with the decorative `MEDIA.testimonial` texture and an oversized `font-display` quotation mark. `variant="compact"` — the original small card, for the supporting testimonials. |
 | `EventPreviewCard` | `Badge`, `Card`, `Image` | `variant="featured"` — image (if the event has one) + a large day/month date block (`formatEventDay`/`formatEventMonth`). `variant="compact"` — the original text-forward card with the full localized date. |
 | `ProfessionalDevelopmentSection` | `TiltCard`, `Icon`, Framer `AnimatePresence`, GSAP `ScrollTrigger` | The signature scroll-driven "moment" — see `docs/ANIMATION_GUIDE.md`. |
 | `TrustLogosSection` | — | "Ils nous font confiance" — eyebrow + one line + a row of demonstration partner logos (`MEDIA.partner1`–`6`), opacity-only hover, no other motion. |
 | `LocationSection` | `Map`, `Icon` | Two-column contact-details + map layout, sourced from `src/config/location.ts`. |
-| 13 Home Page sections (`pages/home/sections/`) | — | `Hero`, `TrustSection`, `TrustLogosSection`, `CategoriesSection`, `ProfessionalDevelopmentSection`, `FeaturedTrainingsSection`, `ValuePropositionSection`, `TrainersSection`, `CompaniesSection`, `TestimonialsSection`, `LocationSection`, `EventsSection`, `FinalCtaSection` — each fetches via its feature hook, never inline mock data. |
+| 12 Home Page sections (`pages/home/sections/`) | — | `Hero`, `TrustSection`, `TrustLogosSection`, `CategoriesSection`, `ProfessionalDevelopmentSection`, `FeaturedTrainingsSection`, `ValuePropositionSection`, `CompaniesSection`, `TestimonialsSection`, `LocationSection`, `EventsSection`, `FinalCtaSection` — each fetches via its feature hook, never inline mock data. (`TrainersSection` existed here from M2 through the branding-refinement pass but was removed — see "Removed: public Trainers functionality" below.) |
 | `TrainingFilters` (M3; filters refined to `FilterSelect`) | `SearchBar`, `FilterSelect` ×4 | The Catalog's search + category/format/level/sort toolbar. Purely a controlled view over a `TrainingFiltersValue` the caller owns (`TrainingCatalogPage` syncs it to the URL) — the component itself holds no state. |
 
 ## Pages (`src/pages/`) — M3 additions
@@ -94,7 +93,7 @@ Several take a `variant`/`featured` prop pair (`'featured' | 'compact'` or a boo
 | Page | Route | Notes |
 |---|---|---|
 | `TrainingCatalogPage` | `/trainings` | Search/filter/sort/page state lives in the URL (`useSearchParams`), not local state — shareable/bookmarkable, and it's exactly the URL shape `CategoryTile` already links to from the Home Page (`?category=<slug>`), so nothing there needed to change. Grid of (non-featured-variant) `TrainingCard`s + `Pagination`. |
-| `TrainingDetailsPage` | `/trainings/:slug` | Hero, description, objectives, program, methodology, trainers (`TrainerPreviewCard`, resolved via the new `useTrainers()` hook), practical-info sidebar (duration/format/level/audience/prerequisites/next sessions), testimonials filtered by `trainingId`, related trainings (same category, current excluded), FAQ (`Accordion`), closing CTA panel. Loading/error/not-found states are explicit branches, not just an empty page. Every CTA is lead-generation (`/request-information`, `/request-quote`, `/contact`) — no cart, no checkout, matching CLAUDE.md §19/§49. |
+| `TrainingDetailsPage` | `/trainings/:slug` | Hero, description, objectives, program, methodology, practical-info sidebar (duration/format/level/audience/prerequisites/next sessions), testimonials filtered by `trainingId`, related trainings (same category, current excluded), FAQ (`Accordion`), closing CTA panel. Loading/error/not-found states are explicit branches, not just an empty page. Every CTA is lead-generation (`/request-information`, `/request-quote`, `/contact`) — no cart, no checkout, matching CLAUDE.md §19/§49. (A per-training trainer section — `TrainerPreviewCard`s resolved via `useTrainers()` — existed here from M3 but was removed, see below.) |
 
 ## New UI/business components — M4
 
@@ -111,7 +110,6 @@ Several take a `variant`/`featured` prop pair (`'featured' | 'compact'` or a boo
 | Page | Route | Notes |
 |---|---|---|
 | `AboutPage` | `/about` | Mission/vision/values/approach/key-figures — static copy (`about.json`), not a mock-data domain. |
-| `TrainersPage` | `/trainers` | Full directory grid, reuses `useTrainers()` + `TrainerPreviewCard` as-is. |
 | `TestimonialsPage` | `/testimonials` | Full listing, reuses `useTestimonials()` + `TestimonialCard` as-is (mock data expanded 3 → 7). |
 | `PartnersPage` | `/partners` | New `Partner` domain + `PartnerCard`. |
 | `SuccessStoriesPage` | `/success-stories` | New `SuccessStory` domain + `SuccessStoryCard`. |
@@ -140,6 +138,10 @@ Several take a `variant`/`featured` prop pair (`'featured' | 'compact'` or a boo
 | `ContactPage` | `/contact` | Subject field; keeps ISTAM's real contact details + `Map`/`LOCATION` (same pieces as Home's `LocationSection`, this page's own layout/copy). |
 | `RegisterInterestPage` | `/register-interest` | New entry point on `TrainingDetailsPage`'s sidebar. |
 | `ConsultationPage` | `/consultation` | New entry point: `SolutionsForCompaniesPage`'s secondary CTA. |
+
+## Removed: public Trainers functionality
+
+At the client's explicit request, **ISTAM does not publicly expose individual trainer identities, profiles, photos or biographies.** Removed entirely: the `TrainersPage` (`/trainers`), Home's `TrainersSection`, `TrainingDetailsPage`'s per-training trainer block, the `TrainerPreviewCard` component, the `useTrainers`/`useFeaturedTrainers` hooks, the trainer-avatar stack in Home's `Hero`, the `trainerPages` i18n namespace, the 10 trainer portrait photos, and the `/trainers` sitemap entry. The generic `Trainer` DTO/entity/repository/service/mapper chain was deliberately **kept** (mock data emptied, not deleted) as reusable infrastructure a future private/admin surface could still use — see `docs/ARCHITECTURE.md` and `docs/ROADMAP.md` for the full removal record. Generic, non-identifying mentions of "expert trainers" as a marketing claim (no name/photo) remain where they already existed (Hero's trust card, Home's value-proposition section, etc.).
 
 ## Not built yet
 

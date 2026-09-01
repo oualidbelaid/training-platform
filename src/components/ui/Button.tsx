@@ -17,7 +17,12 @@ const buttonVariants = cva(
         secondary: 'bg-neutral-100 text-neutral-900 hover:bg-neutral-200',
         outline: 'border border-neutral-300 text-neutral-900 hover:bg-neutral-50',
         ghost: 'text-neutral-900 hover:bg-neutral-100',
-        inverse: 'border border-neutral-0/40 text-neutral-0 hover:bg-neutral-0/10',
+        // M8 a11y audit: the shared base `focus-visible:outline-primary-500`
+        // is only 2.75:1 against the neutral-900/950 backgrounds this
+        // variant is used on (CompaniesSection, ProfessionalDevelopmentSection,
+        // dark CtaBanner usages) — fails the 3:1 non-text contrast minimum.
+        // Overridden here to a white ring (19.67:1 on neutral-900).
+        inverse: 'border border-neutral-0/40 text-neutral-0 hover:bg-neutral-0/10 focus-visible:outline-neutral-0',
       },
       size: {
         sm: 'h-9 px-3',

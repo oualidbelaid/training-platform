@@ -10,7 +10,7 @@
 | M5 | Lead Generation Forms (Request Info, Request Quote, Contact, Register Interest, Consultation) | **Done** |
 | M6 | 3D & Advanced Scroll Animation Pass | **Done — reviewed and approved as-is** |
 | M7 | SEO Pass (full metadata, structured data, sitemap, robots.txt) | **Done** |
-| M8 | Accessibility & Responsive Audit | Not started |
+| M8 | Accessibility & Responsive Audit | **Done** |
 | M9 | Performance Audit (Lighthouse > 90) | Not started |
 | M10 | Full Test Coverage Pass | Not started |
 | M11 | Documentation Finalization | Not started |
@@ -457,33 +457,63 @@ No changes to the approved Navbar or a Footer redesign — both explicitly out o
 
 - No Dolibarr connection (M12).
 - No live-browser QA — same disclosed tooling limitation as every prior milestone; verified through code review, TypeScript, lint, tests, and build instead.
-- `apple-touch-icon` deliberately not added — no square icon-only ISTAM asset exists (only a wide mark+wordmark lockup, per `config/brand.ts`'s own comment); forcing that into a square slot would itself be an unauthorized visual-asset invention.
+- `apple-touch-icon` deliberately not added at the time — no square icon-only ISTAM asset existed (only a wide mark+wordmark lockup). **Resolved in a later client-directed favicon-branding pass**: a square icon-only crop was generated programmatically from the existing lockup's icon mark (not hand-drawn/invented) and used for both the browser-tab favicon and `apple-touch-icon` — see "Client-directed change — Favicon/tab branding" below.
 - The `env-*.js` bundle chunk grew (~69KB → ~340KB) after adding sitewide SEO components, due to Rollup's automatic chunk consolidation (the new components share `react-router-dom` reachability with more of the app now). Investigated and confirmed this is normal Rollup behavior, not a regression introduced by unnecessary code — bundle-splitting/Lighthouse work belongs to M9, not M7.
 
 ---
 
 # M8 — Accessibility & Responsive Audit
 
-**Status: NOT STARTED**
+**Status: DONE**
 
-Perform a complete audit.
+Audited the approved M0–M7 site against WCAG 2.2 AA plus a responsive/RTL/mobile/keyboard/screen-reader pass, as a **bug-fix pass, not a redesign** — no visual design, spacing, cards, navigation, animation, scroll behavior, or 3D was changed. No live browser was available (same disclosed limitation as every prior milestone); the audit was performed via systematic code reading plus computed WCAG contrast ratios (OKLCH → sRGB → relative luminance, using the exact conversion math implemented in `src/styles/globals.css`'s token definitions) for every color-token pairing actually used as text/UI across the codebase.
 
-Verify:
+Because M0–M7 were already built with accessibility discipline baked in (global `:focus-visible` styling, `IconButton.aria-label` required at the type level, native form controls, `role="alert"` errors, a full `Drawer` focus trap, an ARIA-listbox `LanguageSwitcher`, `Image` with mandatory `alt`, mobile-first `Grid`, RTL logical-property discipline), this audit surfaced a **small number of real, confirmed issues** rather than a large rewrite.
 
-- WCAG-conscious implementation
-- keyboard navigation
-- focus states
-- screen-reader behavior
-- semantic HTML
-- forms
-- contrast
-- images
-- RTL
-- mobile
-- tablet
-- desktop
+## Issues found and fixed
 
-Test multiple viewport sizes.
+1. **No skip-to-content link** (WCAG 2.4.1 Bypass Blocks) — every page forced keyboard users through the full Navbar (logo, 5 links, language switcher, CTA) before reaching content, with no way to bypass it. Added a visually-hidden-until-focused "Skip to main content" link as the first focusable element in `MainLayout.tsx`, targeting a new `id="main-content"` on `<main>`. New `a11y.skipToContent` key (fr/en/ar `common.json`).
+2. **No route-change focus management** — `<main>` had no `tabIndex` and nothing moved focus there on navigation, so a screen-reader user following a link got no signal a new page loaded. Added `tabIndex={-1}` to `<main>` and a `useEffect` keyed on `useLocation().pathname` that focuses it on every route change (skipped on first mount, so it doesn't steal focus from the skip link on initial load) — the standard React Router SPA accessibility pattern.
+3. **Color contrast — two token fixes** (`src/styles/globals.css`), computed for every pairing actually used in the app:
+   - `--color-foreground-faint` (aliased `neutral-400`) on white = 3.36:1 — used at 12–14px for disclaimers, form hints, card meta text, badges. Fails AA's 4.5:1 for text. Re-aliased to `neutral-500` → 6.00:1. The raw `neutral-400` step itself is untouched (confirmed only used elsewhere as a non-text hover-border color).
+   - `--color-warning-700` on `--color-warning-50` = 3.54:1 (`Badge`'s `warning` variant, `TrustSection`'s "Training programs" stat badge). Darkened `oklch(0.6 0.14 85)` → `oklch(0.48 0.14 85)` → 5.84:1, same hue/chroma. (`success-700`/`error-700` on their own `-50` tints already passed — 5.38:1/6.83:1 — untouched.)
+4. **Focus ring invisible on dark sections** (WCAG 1.4.11 / 2.4.11) — the global `:focus-visible` ring (`primary-500`) is 7.16:1 on white but only 2.75:1 against the `neutral-900`/`950` backgrounds used by `CompaniesSection`, `ProfessionalDevelopmentSection`, and dark `CtaBanner` usages, failing the 3:1 non-text minimum — keyboard focus was nearly invisible on every `inverse`-variant `Button`/`IconButton`. Added a `focus-visible:outline-neutral-0` override to the `inverse` variant of both components (19.67:1 on `neutral-900`).
+5. **Decorative 3D canvas not hidden from assistive tech** — Home's `Hero.tsx` wraps the ambient `Scene3D` orb in a div with no `aria-hidden`, inconsistent with `Scene3D`'s own static fallback (which already has it). Added `aria-hidden="true"` to that wrapper — purely decorative, zero visual change.
+
+## Verified correct — no fix needed (checked, not assumed)
+
+- **RTL**: zero physical-direction Tailwind classes (`ml-`/`mr-`/`pl-`/`pr-`/`left-`/`right-`/`text-left`/`text-right`/`rounded-l-`/`rounded-r-`) found anywhere in `src` — only one doc comment mentioning `border-l-2` as a negative example. Logical properties (`border-s`/`border-e`, `ms-`/`me-`/`ps-`/`pe-`, `start-`/`end-`) are used consistently throughout.
+- **Images**: the `Image` primitive requires `alt` at the type level; every `alt=""` usage audited is a defensible decorative/stock-photo case (an adjacent heading already conveys the same information); `PartnerCard` and other meaningful logos already carry real alt text.
+- **Landmarks**: `<header>`, two `<nav aria-label>` (desktop + mobile drawer), `<main>`, and `<footer>` with three `<nav aria-label>` columns — all present and correctly labeled.
+- **Mobile drawer** (`Drawer.tsx`): full focus trap (Tab/Shift+Tab), Escape close, backdrop click close, focus return to trigger, body scroll lock — already correct, matches the WAI-ARIA dialog pattern.
+- **`LanguageSwitcher`**: full WAI-ARIA listbox popover pattern — roving tabindex, Arrow Up/Down/Home/End, Escape, outside-click close, and an already-implemented mobile viewport-flip fix for when it opens inside the Drawer near the bottom of the screen.
+- **Forms** (all 5 lead-generation forms + the catalog filter toolbar): every field has an associated `<label>`, `aria-invalid`/`aria-describedby` wiring, `role="alert"` error messages, `<fieldset>/<legend>` radio groups, and a honeypot anti-spam field. React Hook Form's `shouldFocusError` option (default `true`) is never overridden anywhere in the codebase (confirmed by grep), so focus already moves to the first invalid field automatically on a failed submit — no additional code needed.
+- **Touch targets**: `Button` sizes are 36/44/48px, `IconButton` 36/44px (default `md` = 44px) — all pass WCAG 2.2's 24×24 CSS px AA minimum (SC 2.5.8) with comfortable margin.
+- **Responsive**: `Grid`/`Container`/`Section` are mobile-first by construction (1 column below `sm`, expanding via `sm`/`md`/`lg`); a sitewide grep for fixed pixel widths (`w-[…px]`) in page/component code returned zero matches; the Training Catalog's filter toolbar stacks via `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`.
+- **Motion/3D**: `useCanRender3D`/`useReducedMotion` gating and all four GSAP `ScrollTrigger` instances' reduced-motion skip + unmount cleanup are unchanged and were already re-confirmed correct during the M6 review in M7.
+
+## Known limitation (not fixed — out of M8's charter)
+
+The Footer links to `/legal`, `/privacy`, `/cookies`, which have no routes yet (real 404s). This is a **missing content page**, not an accessibility or responsive defect — building three full legal pages is a future content milestone per `CLAUDE.md`, not something an accessibility bug-fix pass should improvise content for.
+
+## Breakpoints / RTL / mobile "tested"
+
+No live browser was available (disclosed limitation, consistent with every prior milestone) — verification was via code review against Tailwind's breakpoint system (`sm` 640/`md` 768/`lg` 1024/`xl` 1280/`2xl` 1536/`3xl` 1920, covering the requested 360–1440px range), confirming every layout primitive is mobile-first and free of fixed pixel widths, and confirming zero RTL-breaking physical-direction classes exist anywhere in the codebase.
+
+## Quality gate
+
+`tsc -b` clean, `oxlint` clean, full Vitest suite passing, production build succeeding — no test changes were needed since none of the 5 fixes touch component behavior/props, only CSS tokens, `aria-*` attributes, and a layout-level focus effect.
+
+## Files modified
+
+`src/layouts/MainLayout.tsx`, `src/i18n/locales/{fr,en,ar}/common.json`, `src/styles/globals.css`, `src/components/ui/Button.tsx`, `src/components/ui/IconButton.tsx`, `src/pages/home/sections/Hero.tsx`.
+
+## Not done in M8 (by design)
+
+- No Dolibarr connection (M12).
+- No live-browser QA — same disclosed tooling limitation as every prior milestone.
+- Legal pages (`/legal`, `/privacy`, `/cookies`) remain unbuilt — a content milestone, not an M8 fix.
+- Lighthouse/bundle-size work is M9's scope, not M8's.
 
 ---
 
@@ -596,13 +626,64 @@ Potential data domains:
 
 - Trainings
 - Categories
-- Trainers
+- Trainers (private/admin use only — not publicly displayed, see "Removed: public Trainers functionality" below)
 - Events
 - Companies
 - Contact/lead information
 - Other approved ERP data
 
 Mock API must remain available for development/testing.
+
+---
+
+# Client-directed change — Removed: public Trainers functionality
+
+**Status: Done.** Not a numbered milestone — a client-directed content/information-architecture change, requested after M4–M8 were already approved.
+
+The client explicitly confirmed trainers/formateurs cannot be publicly displayed. **Rule going forward: ISTAM does not publicly expose individual trainer identities, profiles, photos or biographies.**
+
+## Removed
+
+- `TrainersPage` (`/trainers` route, page, lazy-page export)
+- Home's `TrainersSection` (and its usage in `HomePage.tsx`)
+- `TrainingDetailsPage`'s per-training trainer block (`{t('trainers')}` heading + `TrainerPreviewCard` grid, plus the `useTrainers()` fetch and `trainers` derived list)
+- The 3-avatar trainer stack in Home's `Hero` trust row (and its `useFeaturedTrainers()` call) — the `Rating`/trust-label text beside it, which doesn't identify anyone, was kept
+- `TrainerPreviewCard` component; `useTrainers`/`useFeaturedTrainers` hooks; the now-empty `features/trainers/` folder
+- Footer's "Our trainers" link and its `footer.columns.company.trainers` i18n key (fr/en/ar)
+- The `trainerPages` i18n namespace (`trainers.json` × 3 languages, plus its import/registration/`ns` entry in `src/i18n/index.ts`)
+- `home.json`'s `trainers.*` section (eyebrow/title/description/cta) — fr/en/ar
+- `trainingDetails.json`'s `trainers` key (the removed section's heading) — fr/en/ar
+- 10 trainer portrait photos (`src/assets/images/trainers/trainer-{01..10}.webp`) and their `MEDIA.trainer1..10` imports/exports
+- `/trainers` from the sitemap generator's static route list
+- One event description ("Meet our trainers and discover our methodology on campus") rephrased to drop the trainer-meeting framing while keeping the open-day event itself (methodology discovery) — fr/en/ar, in `mocks/data/events.ts`
+
+## Deliberately kept (generic, non-public architecture)
+
+`types/dto/trainer.dto.ts`, `types/entities/trainer.ts`, `repositories/trainer/*`, `services/trainer.service.ts` — the same Mock → DTO → Mapper → Repository → Service → Hook shape every domain uses. `mocks/data/trainers.ts` is now an intentionally empty array (`mockTrainerDTOs: TrainerDTO[] = []`) rather than deleted, so the pipeline stays exercised and ready for a future private/admin surface without rebuilding it. Nothing in the public UI calls it anymore.
+
+Also kept: generic, non-identifying mentions of "expert trainers"/"formateurs experts" as a marketing claim (Hero's trust card, Home's value-proposition section, About/Solutions copy, one FAQ answer, one testimonial, one success story) — none show a name, photo, or bio, matching the client's actual concern (identifiable individuals), not the word itself. The "Formation de formateurs" (Train-the-Trainer) catalogue domain in `mocks/data/training-domains.ts` is a real ISTAM service offering, also kept.
+
+## Verification
+
+`tsc -b` clean, `oxlint` clean, full Vitest suite passing, production build succeeding. Re-grepped the full source tree for `trainer`/`formateur` after the pass — every remaining hit is either the kept generic architecture above, a kept non-identifying mention, or a doc-comment example (`Card.tsx`, `DesignSystemPreviewPage.tsx`) updated to reference `EventCard` instead. No live-browser QA (disclosed limitation, as always) — verified via code review that removing each section leaves no fixed-height gap (all conditional/flex-stacked, no absolute positioning depended on the removed content) and that no other approved section, animation, or the 3D hero were touched.
+
+---
+
+# Client-directed change — Favicon / browser-tab branding
+
+**Status: Done.** Not a numbered milestone — a small client-directed branding fix. The browser tab was still showing the default Vite scaffold favicon (a purple Vite-brand SVG, never replaced since M0), because M7 had explicitly deferred it: no square icon-only ISTAM asset existed, only the wide "mark + wordmark" lockup (`src/assets/brand/istam-logo.png`, 738×222px).
+
+## What changed
+
+- Cropped a square icon-only favicon from the **existing** lockup's icon mark (the burgundy/charcoal shape left of the "ISTAM" wordmark) — no new artwork invented. Done programmatically (bounding-box detection + crop + resize via a temporary, not-persisted `jimp` install — `npm install --no-save`, never touched `package.json`/`package-lock.json`), not hand-drawn.
+- `public/favicon.png` (64×64) and `public/apple-touch-icon.png` (180×180) generated from that crop.
+- `public/favicon.svg` (the default Vite icon) **deleted**.
+- `index.html`: `<link rel="icon">` now points at `/favicon.png` (was `/favicon.svg`); added `<link rel="apple-touch-icon" href="/apple-touch-icon.png">`; `<title>` tightened to "ISTAM — Formations professionnelles" (the static pre-hydration/crawler fallback only — every real page's rendered `<title>` already came from `Seo.tsx`/`seoConfig.siteName` since M7 and was untouched).
+- `src/config/brand.ts` and `docs/DESIGN_SYSTEM.md` → "Branding" updated to document the new favicon files instead of the old "not yet possible" note.
+
+## Verification
+
+`tsc -b` clean, `oxlint` clean, full Vitest suite passing, production build succeeding. Confirmed no duplicate/conflicting `<link rel="icon">` declarations, no remaining `vite.svg`/`favicon.svg` references anywhere in the repo. `public/icons.svg` (an unrelated Vite-scaffold social-icon sprite still used by the internal `/_design-system` gallery page) was deliberately left untouched — out of scope for a favicon fix. No design/layout/animation/scroll/3D/color changes.
 
 ---
 
@@ -642,12 +723,13 @@ M4 ✅
 M5 ✅
 M6 ✅ (reviewed and approved as-is, no new work built — see M6 writeup above)
 M7 ✅
+M8 ✅
 
 CURRENT NEXT MILESTONE:
 
-## M8 — Accessibility & Responsive Audit
+## M9 — Performance Audit
 
-The Home Page, Training Catalog/Details, all M4 content pages, all M5 lead-generation forms, the M6 motion/3D layer, and the M7 SEO layer are approved.
+The Home Page, Training Catalog/Details, all M4 content pages, all M5 lead-generation forms, the M6 motion/3D layer, the M7 SEO layer, and the M8 accessibility/responsive fixes are approved.
 
 Future work must preserve the existing ISTAM visual identity and
 approved page designs.

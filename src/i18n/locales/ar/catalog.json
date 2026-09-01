@@ -41,5 +41,16 @@
   "empty": {
     "title": "لم يتم العثور على تدريبات",
     "description": "حاول تعديل عوامل التصفية أو البحث."
+  },
+  "domains": {
+    "eyebrow": "الدليل الكامل",
+    "title": "جميع مجالات {{category}}",
+    "description": "مجموع المحاور والوحدات التي نقدمها في هذا المجال — وفق عرضنا التعريفي المؤسسي. البرامج أدناه هي مجموعة مفصلة مختارة؛ تواصلوا معنا بخصوص أي وحدة من هذه القائمة.",
+    "courseCount_zero": "لا توجد وحدات",
+    "courseCount_one": "وحدة واحدة",
+    "courseCount_two": "وحدتان",
+    "courseCount_few": "{{count}} وحدات",
+    "courseCount_many": "{{count}} وحدة",
+    "courseCount_other": "{{count}} وحدة"
   }
 }

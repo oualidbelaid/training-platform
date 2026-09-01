@@ -15,7 +15,9 @@ const iconButtonVariants = cva(
         primary: 'bg-primary-600 text-neutral-0 hover:bg-primary-700',
         outline: 'border border-neutral-300 text-neutral-900 hover:bg-neutral-50',
         ghost: 'text-neutral-700 hover:bg-neutral-100',
-        inverse: 'text-neutral-0 hover:bg-neutral-0/10',
+        // M8 a11y audit: see the matching comment in Button.tsx — the
+        // shared base focus ring isn't visible enough on dark backgrounds.
+        inverse: 'text-neutral-0 hover:bg-neutral-0/10 focus-visible:outline-neutral-0',
       },
       size: {
         sm: 'h-9 w-9',

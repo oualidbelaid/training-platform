@@ -1,52 +1,57 @@
 {
   "seo": {
     "title": "About ISTAM",
-    "description": "Discover ISTAM's mission, values and teaching approach as a professional training organization."
+    "description": "A Consulting and Training organization accredited by the State under N°1967, ISTAM has supported companies and organizations in their pursuit of performance since 2006."
   },
   "hero": {
     "eyebrow": "About us",
-    "title": "Growing skills, sustainably",
-    "description": "ISTAM designs and delivers practical professional training, built to have a real impact on teams and organizations."
+    "title": "ISTAM — Consulting and professional training",
+    "description": "A Consulting and Training organization accredited by the State under N°1967, ISTAM has supported companies and organizations in their pursuit of performance and operational excellence since 2006."
   },
   "intro": {
-    "title": "A team of practitioners, not just educators",
-    "paragraph1": "ISTAM was founded on a simple observation: professional training has the most impact when it's led by experts who have themselves worked in the fields they teach.",
-    "paragraph2": "From the start, we've designed pathways that combine pedagogical rigor, immediate practice and long-term follow-up — for skills that stick, well after the training ends."
+    "title": "Consulting, project management and training in the service of performance",
+    "paragraph1": "Founded in 2006, ISTAM supports companies and organizations in their pursuit of performance and operational excellence, through three complementary areas of expertise: strategy consulting, dedicated to organizational optimization and sustainable business development; project management (PMO/PMA), with solid experience across ERP environments; and continuing professional training.",
+    "paragraph2": "Our training programs cover leadership, management, project management and soft-skills development, delivered by a team of permanent staff and a wide network of expert consultants who design consulting and training programs tailored to each professional project."
   },
   "mission": {
     "title": "Our mission",
-    "description": "Give professionals and organizations the concrete skills they need to progress, through training grounded in real-world practice."
+    "description": "Enable individuals and organizations to reveal their full potential, by cultivating a dynamic of continuous learning and progress."
   },
   "vision": {
     "title": "Our vision",
-    "description": "Make continuous learning a natural reflex in every organization — a measurable investment, not just an obligation."
+    "description": "Train the next generation of leaders, through comprehensive, tailor-made development programs."
   },
   "values": {
-    "eyebrow": "What guides us",
-    "title": "Our values",
+    "eyebrow": "Our values",
+    "title": "Integrity • Knowledge • Transformation • Ambition • Mastery",
+    "description": "Five principles that spell out ISTAM and guide everything we do.",
     "items": {
-      "expertise": {
-        "title": "Field expertise",
-        "description": "Trainers who practice or have practiced the profession they teach, not only educators."
-      },
-      "impact": {
-        "title": "Measurable impact",
-        "description": "Every program is built around clear objectives and progress that can genuinely be observed."
-      },
       "integrity": {
-        "title": "Rigor and transparency",
-        "description": "Clear commitments on content, expected outcomes and how each training unfolds."
+        "title": "Integrity",
+        "description": "We act with honesty, ethics and transparency in all our relationships. \"Trust is the foundation of our success.\""
       },
-      "proximity": {
-        "title": "Proximity",
-        "description": "Human support, from the first conversation with an advisor through to follow-up after training."
+      "knowledge": {
+        "title": "Knowledge",
+        "description": "We believe knowledge is the primary lever for transforming individuals and organizations. \"Learning today to succeed tomorrow.\""
+      },
+      "transformation": {
+        "title": "Transformation",
+        "description": "We build skills that produce concrete, lasting results. \"Turning knowledge into performance.\""
+      },
+      "ambition": {
+        "title": "Ambition",
+        "description": "We encourage everyone to aim for excellence and push past their limits. \"Dare, progress and succeed.\""
+      },
+      "mastery": {
+        "title": "Mastery",
+        "description": "We pursue excellence in our training, our methods and our interventions. \"Expertise in the service of performance.\""
       }
     }
   },
   "approach": {
-    "eyebrow": "Our approach",
-    "title": "A method built for impact",
-    "description": "Every ISTAM program follows the same methodological rigor, from initial diagnosis to results follow-up.",
+    "eyebrow": "Our method",
+    "title": "A method grounded in the field",
+    "description": "We co-build every engagement with your teams, taking into account your organization's culture and specific realities. From initial diagnosis to implementation, we apply a rigorous methodology that combines strategic consulting, project management and skills development.",
     "steps": {
       "diagnose": {
         "title": "Diagnose",
@@ -67,14 +72,13 @@
     }
   },
   "figures": {
-    "eyebrow": "By the numbers",
-    "title": "A recognized expertise",
-    "disclaimer": "Demonstration figures",
+    "eyebrow": "ISTAM by the numbers",
+    "title": "A structure built to serve our clients",
     "items": {
-      "learners": { "value": "25,000+", "label": "professionals trained" },
-      "programs": { "value": "300+", "label": "training programs" },
-      "companies": { "value": "1,200+", "label": "companies supported" },
-      "satisfaction": { "value": "98%", "label": "satisfaction rate" }
+      "founded": { "value": "2006", "label": "founding year" },
+      "staff": { "value": "10", "label": "permanent staff" },
+      "consultants": { "value": "100+", "label": "expert consultants" },
+      "accreditation": { "value": "N°1967", "label": "State training accreditation" }
     }
   },
   "cta": {

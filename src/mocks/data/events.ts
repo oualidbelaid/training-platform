@@ -56,9 +56,9 @@ export const mockEventDTOs: EventDTO[] = [
     title_en: 'Open Day — Project Management',
     title_ar: 'يوم مفتوح — إدارة المشاريع',
     description_fr:
-      'Rencontrez nos formateurs et découvrez notre méthodologie sur notre campus.',
-    description_en: 'Meet our trainers and discover our methodology on campus.',
-    description_ar: 'تعرّف على مدربينا واكتشف منهجيتنا في مقرنا.',
+      'Découvrez notre méthodologie et nos programmes lors d’une visite de notre campus.',
+    description_en: 'Discover our methodology and programs during a visit to our campus.',
+    description_ar: 'اكتشف منهجيتنا وبرامجنا خلال زيارة إلى مقرنا.',
     start_date: '2026-10-02',
     format: 'in-person',
     location_fr: 'Paris, France',

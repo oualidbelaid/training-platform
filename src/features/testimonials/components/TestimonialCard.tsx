@@ -8,7 +8,17 @@ import { getLocalizedText } from '@/utils/localized-text'
 interface TestimonialCardProps {
   testimonial: Testimonial
   language: SupportedLanguage
-  variant?: 'featured' | 'compact'
+  /**
+   * `featured` — large pull-quote panel (Home's `TestimonialsSection` only).
+   * `compact` — the original card, used standalone on `TestimonialsPage`'s
+   * 3-column grid — untouched, so that page's layout is unaffected.
+   * `compact-dense` — a tighter version of `compact` (smaller quote text,
+   * reduced padding/gap) used only for the 2-column supporting-testimonial
+   * grid next to the featured card, so that grid doesn't unbalance the
+   * section's height — kept as its own variant rather than changing
+   * `compact` itself, precisely to leave `TestimonialsPage` unchanged.
+   */
+  variant?: 'featured' | 'compact' | 'compact-dense'
 }
 
 /**
@@ -21,7 +31,7 @@ interface TestimonialCardProps {
 export function TestimonialCard({ testimonial, language, variant = 'compact' }: TestimonialCardProps) {
   if (variant === 'featured') {
     return (
-      <div className="relative overflow-hidden rounded-3xl border border-border bg-surface p-8 shadow-md sm:p-12">
+      <div className="relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-md sm:p-9">
         <div
           aria-hidden="true"
           className="absolute inset-0"
@@ -31,8 +41,8 @@ export function TestimonialCard({ testimonial, language, variant = 'compact' }: 
             backgroundPosition: 'center',
           }}
         />
-        <div className="relative flex h-full flex-col gap-8">
-          <span aria-hidden="true" className="font-display text-display leading-none text-primary-300">
+        <div className="relative flex h-full flex-col gap-6">
+          <span aria-hidden="true" className="font-display text-h1 leading-none text-primary-300">
             “
           </span>
           <p className="max-w-2xl text-h3 font-medium text-foreground">
@@ -52,10 +62,14 @@ export function TestimonialCard({ testimonial, language, variant = 'compact' }: 
     )
   }
 
+  const dense = variant === 'compact-dense'
+
   return (
     <Card className="h-full" hoverable={false}>
-      <CardContent className="flex h-full flex-col gap-5">
-        <p className="flex-1 text-body text-foreground">{getLocalizedText(testimonial.quote, language)}</p>
+      <CardContent className={dense ? 'flex h-full flex-col gap-4 p-5' : 'flex h-full flex-col gap-5'}>
+        <p className={dense ? 'flex-1 text-small text-foreground' : 'flex-1 text-body text-foreground'}>
+          {getLocalizedText(testimonial.quote, language)}
+        </p>
         <div className="flex items-center gap-3">
           <Avatar name={testimonial.authorName} size="sm" />
           <div>

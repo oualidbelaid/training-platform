@@ -39,14 +39,21 @@ src/
   config/         env.ts, seo.config.ts, query-client.config.ts, brand.ts, location.ts, media.ts
   core/           http.ts (axios instance), ErrorBoundary.tsx
   features/
-    trainings/    hooks/ — useTrainings, useTraining, useFeaturedTrainings
+    trainings/    hooks/ — useTrainings, useTraining, useFeaturedTrainings,
+                  useTrainingDomains (ISTAM Full Catalogue pass — the 51 real
+                  skill domains/204 course names under the 4 pillars; see
+                  "Training vs. TrainingDomain" below)
                   components/ — TrainingCard, CategoryTile, TrainingFilters (M3)
                   config/ — category-visuals.ts, development-stages.ts
-    trainers/     hooks/ — useFeaturedTrainers, useTrainers (M3 — all trainers)
-                  components/ — TrainerPreviewCard
     categories/, testimonials/, events/  — same hooks/components/ shape (events/ hooks: useUpcomingEvents, useEvents (M4 — all))
     partners/, success-stories/, articles/, faq/, industries/ — M4, same hooks/components/ shape;
                   industries/ additionally has config/industry-visuals.ts (mirrors category-visuals.ts)
+    (a `trainers/` folder — `useFeaturedTrainers`, `useTrainers`, `TrainerPreviewCard` —
+                  existed from M3–M4 but was **removed** at the client's explicit request:
+                  ISTAM does not publicly expose individual trainer identities, profiles,
+                  photos or biographies. The `Trainer` DTO/entity/repository/service/mapper
+                  chain below was deliberately kept — generic, reusable, matches every other
+                  domain's shape — only the public-facing UI layer was deleted. See ROADMAP.md.)
     leads/        M5 — the first **write**-path feature (every other feature/ folder is read-only)
                   schemas/ — contact-fields.schema.ts + consent.schema.ts (shared Zod bases, factories not
                   static exports — see ROADMAP.md M5 for why) + one schema per form
@@ -54,15 +61,19 @@ src/
                   hooks/ — useSubmitLead (useMutation — the first mutation hook; every other hook is useQuery)
   hooks/          useMediaQuery, useReducedMotion, useDirection, useCanRender3D, useCountUp, useScrolled
   i18n/           i18next bootstrap + locales/{fr,en,ar}/{common,home,trainings,catalog,trainingDetails,
-                  about,trainerPages,testimonials,partners,successStories,events,resources,faq,industries,
+                  about,testimonials,partners,successStories,events,resources,faq,industries,
                   solutions,leadForms,requestInformation,requestQuote,contact,registerInterest,consultation}.json
+                  (the `trainerPages` namespace/`trainers.json` files were removed along with the
+                  public Trainers page — see the `trainers/` note above)
   layouts/        MainLayout (Navbar + Outlet + Footer)
   lib/            cn.ts, motion.ts, gsap.ts, r3f.ts
-  mocks/data/     trainings.ts, categories.ts, trainers.ts, testimonials.ts, events.ts,
-                  partners.ts, success-stories.ts, articles.ts, faqs.ts, industries.ts (M4) — all DTO-shaped
+  mocks/data/     trainings.ts, categories.ts, trainers.ts (empty array — see the `trainers/` note
+                  above), testimonials.ts, events.ts,
+                  partners.ts, success-stories.ts, articles.ts, faqs.ts, industries.ts (M4),
+                  training-domains.ts (ISTAM Full Catalogue pass) — all DTO-shaped
                   (leads has no mock data file — a lead is submitted, never listed/read back in the UI)
   pages/          HomePage, TrainingCatalogPage (M3), TrainingDetailsPage (M3),
-                  AboutPage, TrainersPage, TestimonialsPage, PartnersPage, SuccessStoriesPage,
+                  AboutPage, TestimonialsPage, PartnersPage, SuccessStoriesPage,
                   EventsPage, ResourcesPage, ArticleDetailsPage, FaqPage, IndustriesPage,
                   SolutionsForCompaniesPage (M4),
                   RequestInformationPage, RequestQuotePage, ContactPage, RegisterInterestPage,
@@ -76,6 +87,16 @@ src/
                   (event/ — getAll() added in M4 alongside the original getUpcoming())
     partner/, success-story/, article/, faq/, industry/ — M4, identical shape
                   (article/ additionally has getBySlug(), like category/ and training/)
+    training-domain/ — ISTAM Full Catalogue pass, identical getAll()-only
+                  shape to industry/. Deliberately NOT part of training/: a
+                  `TrainingDomain` only ever carries a name + a flat list of
+                  real course *titles* (from the official ISTAM catalogue),
+                  never the rich fields (objectives/program/prerequisites/
+                  sessions) a bookable `Training` needs — representing the
+                  204 real course names as full `Training` records would
+                  mean inventing ~90% of each one. See `types/dto/training-
+                  domain.dto.ts` and `docs/ROADMAP.md`'s "ISTAM Full
+                  Catalogue" entry.
     lead/         M5 — the odd one out: `submit(dto)`, not `getAll()`/`getBySlug()`. `lead.mapper.ts`
                   has `toDTO()`/`fromResultDTO()` (outbound), not `fromDTO()` (inbound) like every other
                   domain's mapper. `mock-lead.repository.ts` has `SIMULATE_FAILURE_EMAIL`, a deterministic
@@ -83,7 +104,8 @@ src/
   routes/         index.tsx (router — 19 business routes + "/_design-system" + 404 as of M5), lazy-pages.tsx
   services/       training.service.ts, trainer.service.ts, category.service.ts, testimonial.service.ts,
                   event.service.ts, partner.service.ts, success-story.service.ts, article.service.ts,
-                  faq.service.ts, industry.service.ts, lead.service.ts (M5 — also the anti-spam
+                  faq.service.ts, industry.service.ts, training-domain.service.ts (ISTAM Full Catalogue
+                  pass), lead.service.ts (M5 — also the anti-spam
                   honeypot checkpoint, see ROADMAP.md M5)
   store/          ui.store.ts (Zustand — mobile menu state only)
   styles/         globals.css (Tailwind v4 + design tokens), vendor/fontawesome/
@@ -92,9 +114,11 @@ src/
   types/
     dto/          training.dto.ts (extended in M3: description/objectives/program/faq/sessions), category.ts,
                   trainer.ts, testimonial.ts, event.ts, partner.ts, success-story.ts, article.ts, faq.ts,
-                  industry.ts (M4), lead.dto.ts (M5 — LeadRequestDTO, outbound)
+                  industry.ts (M4), training-domain.dto.ts (ISTAM Full Catalogue pass),
+                  lead.dto.ts (M5 — LeadRequestDTO, outbound)
     entities/      training.ts (same M3 extension), category.ts, trainer.ts, testimonial.ts, event.ts,
-                  partner.ts, success-story.ts, article.ts, faq.ts, industry.ts (M4), lead.ts (M5 — one
+                  partner.ts, success-story.ts, article.ts, faq.ts, industry.ts (M4),
+                  training-domain.ts (ISTAM Full Catalogue pass), lead.ts (M5 — one
                   shared Lead type with a formType discriminator, not 5 near-identical types), common.ts
   utils/          localized-text.ts (+ zipLocalizedText, M3), format-date.ts
 ```

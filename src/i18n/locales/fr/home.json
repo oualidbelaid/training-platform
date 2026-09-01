@@ -35,7 +35,7 @@
   },
   "trust": {
     "eyebrow": "Ils nous font confiance",
-    "title": "Une expertise reconnue depuis plus de quinze ans",
+    "title": "Une expertise reconnue depuis 2006",
     "stats": {
       "learners": { "suffix": "+", "label": "professionnels formés" },
       "programs": { "suffix": "+", "label": "programmes de formation" },
@@ -119,12 +119,6 @@
       }
     }
   },
-  "trainers": {
-    "eyebrow": "Notre équipe",
-    "title": "Des experts qui ont vécu ce qu'ils enseignent",
-    "description": "Chaque formateur combine expérience terrain et pédagogie éprouvée.",
-    "cta": "Découvrir tous nos formateurs"
-  },
   "companies": {
     "eyebrow": "Entreprises",
     "title": "Des solutions de formation sur mesure pour votre entreprise",
@@ -179,7 +173,6 @@
       "company": {
         "title": "Entreprise",
         "about": "À propos",
-        "trainers": "Nos formateurs",
         "events": "Événements"
       },
       "contact": {

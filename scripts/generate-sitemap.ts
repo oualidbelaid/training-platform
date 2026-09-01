@@ -25,7 +25,6 @@ const STATIC_PATHS = [
   '/',
   '/trainings',
   '/about',
-  '/trainers',
   '/testimonials',
   '/partners',
   '/success-stories',

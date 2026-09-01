@@ -9,7 +9,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 /**
  * Card primitive (spec M1 §7). Provides surface/border/radius/shadow and an
  * optional hover-depth transition — business cards (TrainingCard,
- * TrainerCard, etc., built in later milestones) compose this with
+ * EventCard, etc., built in later milestones) compose this with
  * CardImage/CardContent/CardFooter rather than reimplementing the surface.
  */
 export function Card({ hoverable = true, className, ...props }: CardProps) {

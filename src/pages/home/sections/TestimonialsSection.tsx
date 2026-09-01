@@ -12,8 +12,16 @@ import { useTestimonials } from '@/features/testimonials/hooks/useTestimonials'
 import type { SupportedLanguage } from '@/i18n'
 
 /**
- * One large client story, with the supporting testimonials stacked
- * alongside it (redesign §19) instead of three equal-weight cards.
+ * One large client story, with the supporting testimonials beside it
+ * (redesign §19) instead of three equal-weight cards.
+ *
+ * Layout-balance pass: the supporting testimonials render as a 2-column
+ * grid (not a single-column vertical stack) so that column's height stays
+ * roughly in step with the featured card instead of running far taller —
+ * the original imbalance this fixes. Left/right are ~50/50 (`lg:grid-cols-2`)
+ * rather than 60/40, and the supporting cards use the `compact-dense`
+ * variant (tighter padding/gap, smaller quote text) so two columns of them
+ * still feel comfortable, not cramped.
  */
 export function TestimonialsSection() {
   const { t, i18n } = useTranslation('home')
@@ -35,22 +43,22 @@ export function TestimonialsSection() {
         {isError ? <ErrorState className="mt-10" onRetry={() => void refetch()} /> : null}
 
         {featured ? (
-          <div className="mt-10 grid gap-8 lg:grid-cols-5 lg:items-stretch">
-            <RevealOnScroll className="lg:col-span-3">
+          <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:items-start lg:gap-8">
+            <RevealOnScroll>
               <TestimonialCard testimonial={featured} language={language} variant="featured" />
             </RevealOnScroll>
 
-            <div className="flex flex-col gap-6 lg:col-span-2">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {rest.map((testimonial) => (
                 <RevealOnScroll key={testimonial.id}>
-                  <TestimonialCard testimonial={testimonial} language={language} variant="compact" />
+                  <TestimonialCard testimonial={testimonial} language={language} variant="compact-dense" />
                 </RevealOnScroll>
               ))}
             </div>
           </div>
         ) : null}
 
-        <p className="mt-8 text-center text-caption text-foreground-faint">
+        <p className="mt-6 text-center text-caption text-foreground-faint">
           {t('testimonials.disclaimer')}
         </p>
       </Container>

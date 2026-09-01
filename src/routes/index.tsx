@@ -19,7 +19,6 @@ import {
   SolutionsForCompaniesPage,
   SuccessStoriesPage,
   TestimonialsPage,
-  TrainersPage,
   TrainingCatalogPage,
   TrainingDetailsPage,
 } from './lazy-pages'
@@ -34,7 +33,7 @@ import {
  * visual/RTL/responsive QA — not a business page, never linked from nav.
  *
  * M4 adds the remaining content pages. Slugs are English, matching the
- * `/trainings` precedent above — `/about`, `/trainers`, `/events` and
+ * `/trainings` precedent above — `/about`, `/events` and
  * `/resources` specifically were **not** a free choice: the Navbar and
  * Footer already hard-linked to those exact paths since M2/M3, so using
  * them is what let this milestone ship without touching Header/Footer
@@ -50,6 +49,12 @@ import {
  * and `/consultation` are new, unclaimed slugs, same kebab-case
  * convention. Legal pages (privacy/legal notice/cookies) remain a later
  * milestone.
+ *
+ * `/trainers` (M4) was later removed at the client's explicit request:
+ * ISTAM does not publicly expose individual trainer identities, profiles,
+ * photos or biographies. No redirect was added — the underlying content
+ * genuinely no longer exists, so the route falls through to the catch-all
+ * `NotFoundPage` like any other unknown path. See docs/ROADMAP.md.
  */
 export const router = createBrowserRouter([
   {
@@ -59,7 +64,6 @@ export const router = createBrowserRouter([
       { path: 'trainings', element: <TrainingCatalogPage /> },
       { path: 'trainings/:slug', element: <TrainingDetailsPage /> },
       { path: 'about', element: <AboutPage /> },
-      { path: 'trainers', element: <TrainersPage /> },
       { path: 'testimonials', element: <TestimonialsPage /> },
       { path: 'partners', element: <PartnersPage /> },
       { path: 'success-stories', element: <SuccessStoriesPage /> },

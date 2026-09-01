@@ -9,7 +9,6 @@ import { CategoriesSection } from '@/pages/home/sections/CategoriesSection'
 import { ProfessionalDevelopmentSection } from '@/pages/home/sections/ProfessionalDevelopmentSection'
 import { FeaturedTrainingsSection } from '@/pages/home/sections/FeaturedTrainingsSection'
 import { ValuePropositionSection } from '@/pages/home/sections/ValuePropositionSection'
-import { TrainersSection } from '@/pages/home/sections/TrainersSection'
 import { CompaniesSection } from '@/pages/home/sections/CompaniesSection'
 import { TestimonialsSection } from '@/pages/home/sections/TestimonialsSection'
 import { LocationSection } from '@/pages/home/sections/LocationSection'
@@ -47,7 +46,6 @@ export default function HomePage() {
       <ProfessionalDevelopmentSection />
       <FeaturedTrainingsSection />
       <ValuePropositionSection />
-      <TrainersSection />
       <CompaniesSection />
       <TestimonialsSection />
       <LocationSection />

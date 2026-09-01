@@ -59,7 +59,10 @@
   --color-success-700: oklch(0.48 0.12 155);
   --color-warning-50: oklch(0.96 0.04 85);
   --color-warning-600: oklch(0.75 0.15 85);
-  --color-warning-700: oklch(0.6 0.14 85);
+  /* M8 a11y audit: darkened from oklch(0.6 0.14 85) — 3.54:1 on
+   * --color-warning-50 failed WCAG AA (4.5:1) for Badge's `warning` variant
+   * and TrustSection's stat badge text. 5.84:1 at this value. */
+  --color-warning-700: oklch(0.48 0.14 85);
   --color-error-50: oklch(0.95 0.04 25);
   --color-error-600: oklch(0.55 0.19 25);
   --color-error-700: oklch(0.45 0.18 25);
@@ -75,7 +78,12 @@
   --color-surface-subtle: var(--color-neutral-50);
   --color-foreground: var(--color-neutral-900);
   --color-foreground-muted: var(--color-neutral-600);
-  --color-foreground-faint: var(--color-neutral-400);
+  /* M8 a11y audit: aliased to neutral-500, not neutral-400 (3.36:1 on
+   * white) — this token renders real disclaimer/hint/meta text at 12–14px,
+   * which needs WCAG AA's 4.5:1. neutral-500 gives 6.00:1. The raw
+   * neutral-400 step itself is untouched (still used for non-text cases
+   * like hover borders). */
+  --color-foreground-faint: var(--color-neutral-500);
   --color-foreground-inverse: var(--color-neutral-0);
   --color-border: var(--color-neutral-200);
   --color-border-strong: var(--color-neutral-300);

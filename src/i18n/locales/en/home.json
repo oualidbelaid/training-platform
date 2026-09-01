@@ -35,7 +35,7 @@
   },
   "trust": {
     "eyebrow": "Trusted by professionals",
-    "title": "Recognized expertise for over fifteen years",
+    "title": "Recognized expertise since 2006",
     "stats": {
       "learners": { "suffix": "+", "label": "Learners trained" },
       "programs": { "suffix": "+", "label": "Training programs" },
@@ -119,12 +119,6 @@
       }
     }
   },
-  "trainers": {
-    "eyebrow": "Our team",
-    "title": "Experts who have lived what they teach",
-    "description": "Every trainer combines field experience with proven teaching methods.",
-    "cta": "Meet all our trainers"
-  },
   "companies": {
     "eyebrow": "Companies",
     "title": "Tailored training solutions for your organization",
@@ -179,7 +173,6 @@
       "company": {
         "title": "Company",
         "about": "About",
-        "trainers": "Our trainers",
         "events": "Events"
       },
       "contact": {

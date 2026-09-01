@@ -37,5 +37,12 @@
   "empty": {
     "title": "No training programs found",
     "description": "Try adjusting your filters or search."
+  },
+  "domains": {
+    "eyebrow": "Full catalogue",
+    "title": "All {{category}} domains",
+    "description": "The full range of topics and modules we offer in this area — from our institutional presentation. The programs below are a detailed selection; contact us about any module on this list.",
+    "courseCount_one": "{{count}} module",
+    "courseCount_other": "{{count}} modules"
   }
 }

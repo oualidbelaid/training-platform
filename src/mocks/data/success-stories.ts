@@ -31,7 +31,7 @@ export const mockSuccessStoryDTOs: SuccessStoryDTO[] = [
       { value: '-40 %', label_fr: 'turnover dans les équipes concernées', label_en: 'turnover in the affected teams', label_ar: 'تسرب الموظفين في الفرق المعنية' },
       { value: '11/12', label_fr: 'managers toujours en poste un an après', label_en: 'managers still in role one year later', label_ar: 'مديرون ما زالوا في مناصبهم بعد عام' },
     ],
-    category_id: 'cat-leadership-management',
+    category_id: 'cat-leadership-people-development',
   },
   {
     id: 'ssc-norda-digital',
@@ -55,7 +55,7 @@ export const mockSuccessStoryDTOs: SuccessStoryDTO[] = [
       { value: '+65 %', label_fr: 'adoption de l’outil dans les 3 premiers mois', label_en: 'tool adoption within the first 3 months', label_ar: 'اعتماد الأداة خلال الأشهر الثلاثة الأولى' },
       { value: '8 sites', label_fr: 'accompagnés sur l’ensemble du déploiement', label_en: 'supported across the full rollout', label_ar: 'مواقع تمت مرافقتها خلال النشر الكامل' },
     ],
-    category_id: 'cat-it-digital',
+    category_id: 'cat-business-functional-excellence',
   },
   {
     id: 'ssc-techbridge-project',
@@ -79,7 +79,7 @@ export const mockSuccessStoryDTOs: SuccessStoryDTO[] = [
       { value: '-25 %', label_fr: 'de retards sur les livrables projet', label_en: 'reduction in project deliverable delays', label_ar: 'انخفاض في تأخيرات مخرجات المشاريع' },
       { value: '20', label_fr: 'chefs de projet certifiés', label_en: 'certified project managers', label_ar: 'مديرو مشاريع معتمدون' },
     ],
-    category_id: 'cat-project-management',
+    category_id: 'cat-business-functional-excellence',
   },
   {
     id: 'ssc-clarte-communication',
@@ -103,6 +103,6 @@ export const mockSuccessStoryDTOs: SuccessStoryDTO[] = [
       { value: '+18 pts', label_fr: 'de score de satisfaction client', label_en: 'increase in customer satisfaction score', label_ar: 'نقاط زيادة في درجة رضا العملاء' },
       { value: '30', label_fr: 'agences formées en 4 mois', label_en: 'branches trained in 4 months', label_ar: 'فروع تم تدريبها خلال 4 أشهر' },
     ],
-    category_id: 'cat-communication',
+    category_id: 'cat-leadership-people-development',
   },
 ]

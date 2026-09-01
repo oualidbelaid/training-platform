@@ -53,9 +53,6 @@ export function Footer() {
             <Link href="/about" variant="subtle">
               {t('footer.columns.company.about', { ns: 'home' })}
             </Link>
-            <Link href="/trainers" variant="subtle">
-              {t('footer.columns.company.trainers', { ns: 'home' })}
-            </Link>
             <Link href="/events" variant="subtle">
               {t('footer.columns.company.events', { ns: 'home' })}
             </Link>

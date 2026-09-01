@@ -12,16 +12,19 @@ import { MEDIA } from '@/config/media'
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import { Seo } from '@/components/seo/Seo'
 
-const VALUE_KEYS = ['expertise', 'impact', 'integrity', 'proximity'] as const
+/** The real ISTAM values — the letters of I-S-T-A-M itself (official presentation). */
+const VALUE_KEYS = ['integrity', 'knowledge', 'transformation', 'ambition', 'mastery'] as const
 const VALUE_ICONS: Record<(typeof VALUE_KEYS)[number], IconName> = {
-  expertise: 'graduation-cap',
-  impact: 'chart-column',
   integrity: 'shield',
-  proximity: 'users',
+  knowledge: 'graduation-cap',
+  transformation: 'arrow-trend-up',
+  ambition: 'rocket',
+  mastery: 'star',
 }
 
 const APPROACH_STEPS = ['diagnose', 'design', 'deliver', 'followUp'] as const
-const FIGURE_KEYS = ['learners', 'programs', 'companies', 'satisfaction'] as const
+/** Real, verifiable facts from the official ISTAM presentation — no "demonstration" disclaimer needed here, unlike Home's stat bar. */
+const FIGURE_KEYS = ['founded', 'staff', 'consultants', 'accreditation'] as const
 
 /**
  * About / À propos (spec §16, M4). Editorial page copy (mission, vision,
@@ -88,7 +91,7 @@ export default function AboutPage() {
       <Section spacing="sm">
         <Container className="flex flex-col gap-10">
           <RevealOnScroll>
-            <SectionHeading eyebrow={t('values.eyebrow')} title={t('values.title')} />
+            <SectionHeading eyebrow={t('values.eyebrow')} title={t('values.title')} description={t('values.description')} />
           </RevealOnScroll>
           <RevealOnScroll>
             <Grid cols={4} gap="lg">
@@ -142,7 +145,6 @@ export default function AboutPage() {
               ))}
             </div>
           </RevealOnScroll>
-          <p className="text-center text-caption text-foreground-faint">{t('figures.disclaimer')}</p>
         </Container>
       </Section>
 

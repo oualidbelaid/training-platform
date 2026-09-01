@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import { Container } from '@/components/layout/Container'
-import { Avatar } from '@/components/ui/Avatar'
 import { Button } from '@/components/ui/Button'
 import { GlassPanel } from '@/components/ui/GlassPanel'
 import { Icon } from '@/components/ui/Icon'
@@ -12,7 +11,6 @@ import { Rating } from '@/components/ui/Rating'
 import { TiltCard } from '@/components/motion/TiltCard'
 import { Scene3D } from '@/components/three/Scene3D'
 import { MEDIA } from '@/config/media'
-import { useFeaturedTrainers } from '@/features/trainers/hooks/useFeaturedTrainers'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { ensureGsapRegistered } from '@/lib/gsap'
 import { fadeInUp, staggerContainer } from '@/lib/motion'
@@ -32,7 +30,6 @@ export function Hero() {
   const prefersReducedMotion = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
   const backgroundRef = useRef<HTMLDivElement>(null)
-  const { data: trainers } = useFeaturedTrainers()
 
   useEffect(() => {
     if (prefersReducedMotion || !sectionRef.current || !backgroundRef.current) return
@@ -111,17 +108,6 @@ export function Hero() {
           </motion.div>
 
           <motion.div variants={fadeInUp} className="flex items-center gap-3 pt-3">
-            <div className="flex -space-x-2 rtl:space-x-reverse">
-              {(trainers ?? []).slice(0, 3).map((trainer) => (
-                <Avatar
-                  key={trainer.id}
-                  name={trainer.name}
-                  src={trainer.photoUrl}
-                  size="sm"
-                  className="ring-2 ring-neutral-0"
-                />
-              ))}
-            </div>
             <Rating value={4.8} />
             <p className="text-small text-foreground-muted">
               {t('hero.trustLabel', { rating: '4.8', count: '2,000' })}
@@ -133,7 +119,7 @@ export function Hero() {
           {/* Ambient 3D backdrop — the orb reads as light/depth behind the
               photo rather than a separate decoration (spec §15B "Everything
               must belong to the same visual system"). */}
-          <div className="absolute inset-0 scale-125">
+          <div aria-hidden="true" className="absolute inset-0 scale-125">
             <Scene3D className="h-full w-full" />
           </div>
 
