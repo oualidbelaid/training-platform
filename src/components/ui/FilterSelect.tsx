@@ -51,7 +51,15 @@ const VIEWPORT_MARGIN = 12
  * focus to the trigger, and the panel flips to open upward when there
  * isn't enough room below (measured on open).
  */
-export function FilterSelect({ label, value, onChange, options, placeholder, disabled, className }: FilterSelectProps) {
+export function FilterSelect({
+  label,
+  value,
+  onChange,
+  options,
+  placeholder,
+  disabled,
+  className,
+}: FilterSelectProps) {
   const prefersReducedMotion = useReducedMotion()
   const [open, setOpen] = useState(false)
   const [placement, setPlacement] = useState<'below' | 'above'>('below')
@@ -61,7 +69,10 @@ export function FilterSelect({ label, value, onChange, options, placeholder, dis
   const listboxId = useId()
   const labelId = useId()
 
-  const selectedIndex = Math.max(0, options.findIndex((option) => option.value === value))
+  const selectedIndex = Math.max(
+    0,
+    options.findIndex((option) => option.value === value),
+  )
   const selectedLabel = options.find((option) => option.value === value)?.label ?? placeholder
 
   useEffect(() => {
@@ -155,7 +166,9 @@ export function FilterSelect({ label, value, onChange, options, placeholder, dis
             )}
           >
             <span className="truncate">{option.label}</span>
-            {isSelected ? <Icon name="check" aria-hidden="true" className="shrink-0 text-small" /> : null}
+            {isSelected ? (
+              <Icon name="check" aria-hidden="true" className="shrink-0 text-small" />
+            ) : null}
           </button>
         )
       })}
@@ -192,12 +205,17 @@ export function FilterSelect({ label, value, onChange, options, placeholder, dis
           <Icon
             name="chevron-down"
             aria-hidden="true"
-            className={cn('shrink-0 text-caption text-foreground-faint transition-transform duration-(--duration-fast)', open && 'rotate-180')}
+            className={cn(
+              'shrink-0 text-caption text-foreground-faint transition-transform duration-(--duration-fast)',
+              open && 'rotate-180',
+            )}
           />
         </button>
 
         {prefersReducedMotion ? (
-          open ? panel : null
+          open ? (
+            panel
+          ) : null
         ) : (
           <AnimatePresence>
             {open ? (

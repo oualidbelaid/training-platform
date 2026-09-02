@@ -12,7 +12,10 @@ import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import { Seo } from '@/components/seo/Seo'
 import { IndustryTile } from '@/features/industries/components/IndustryTile'
-import { DEFAULT_INDUSTRY_VISUAL, INDUSTRY_VISUALS } from '@/features/industries/config/industry-visuals'
+import {
+  DEFAULT_INDUSTRY_VISUAL,
+  INDUSTRY_VISUALS,
+} from '@/features/industries/config/industry-visuals'
 import { useIndustries } from '@/features/industries/hooks/useIndustries'
 import type { SupportedLanguage } from '@/i18n'
 import { getLocalizedText } from '@/utils/localized-text'
@@ -35,7 +38,12 @@ export default function IndustriesPage() {
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -43,7 +51,9 @@ export default function IndustriesPage() {
       <Section spacing="sm" className="pt-0">
         <Container className="flex flex-col gap-6">
           {industriesQuery.isLoading ? <LoadingState /> : null}
-          {industriesQuery.isError ? <ErrorState onRetry={() => void industriesQuery.refetch()} /> : null}
+          {industriesQuery.isError ? (
+            <ErrorState onRetry={() => void industriesQuery.refetch()} />
+          ) : null}
 
           {!industriesQuery.isLoading && !industriesQuery.isError ? (
             industriesQuery.data && industriesQuery.data.length > 0 ? (

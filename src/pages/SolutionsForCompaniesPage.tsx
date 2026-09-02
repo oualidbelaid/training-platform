@@ -40,7 +40,11 @@ export default function SolutionsForCompaniesPage() {
 
   return (
     <>
-      <Seo title={t('seo.title')} description={t('seo.description')} canonicalPath="/solutions-for-companies" />
+      <Seo
+        title={t('seo.title')}
+        description={t('seo.description')}
+        canonicalPath="/solutions-for-companies"
+      />
       <BreadcrumbSchema items={breadcrumbItems} />
 
       <Section spacing="sm">
@@ -49,9 +53,20 @@ export default function SolutionsForCompaniesPage() {
           <RevealOnScroll>
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>
-                <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+                <SectionHeading
+                  as="h1"
+                  eyebrow={t('hero.eyebrow')}
+                  title={t('hero.title')}
+                  description={t('hero.description')}
+                />
               </div>
-              <Image src={MEDIA.companyTraining} alt="" aspectRatio="4 / 3" className="rounded-2xl" loading="eager" />
+              <Image
+                src={MEDIA.companyTraining}
+                alt=""
+                aspectRatio="4 / 3"
+                className="rounded-2xl"
+                loading="eager"
+              />
             </div>
           </RevealOnScroll>
         </Container>
@@ -61,7 +76,9 @@ export default function SolutionsForCompaniesPage() {
         <Container>
           <RevealOnScroll>
             <div className="mx-auto flex max-w-2xl flex-col gap-3 text-center">
-              <p className="text-small font-semibold uppercase tracking-wide text-brand">{t('approach.eyebrow')}</p>
+              <p className="text-small font-semibold uppercase tracking-wide text-brand">
+                {t('approach.eyebrow')}
+              </p>
               <h2 className="text-h2 font-bold text-foreground">{t('approach.title')}</h2>
               <p className="text-body-lg text-foreground-muted">{t('approach.description')}</p>
             </div>
@@ -79,8 +96,12 @@ export default function SolutionsForCompaniesPage() {
                     <Icon name={PILLAR_ICONS[key]} aria-hidden="true" className="text-2xl" />
                   </span>
                   <div>
-                    <p className="text-body-lg font-semibold text-foreground">{t(`${key}.title`)}</p>
-                    <p className="mt-1 text-body text-foreground-muted">{t(`${key}.description`)}</p>
+                    <p className="text-body-lg font-semibold text-foreground">
+                      {t(`${key}.title`)}
+                    </p>
+                    <p className="mt-1 text-body text-foreground-muted">
+                      {t(`${key}.description`)}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -92,16 +113,26 @@ export default function SolutionsForCompaniesPage() {
       <Section spacing="sm" className="bg-surface-subtle">
         <Container className="flex flex-col gap-10">
           <RevealOnScroll>
-            <SectionHeading eyebrow={t('formats.eyebrow')} title={t('formats.title')} description={t('formats.description')} align="center" />
+            <SectionHeading
+              eyebrow={t('formats.eyebrow')}
+              title={t('formats.title')}
+              description={t('formats.description')}
+              align="center"
+            />
           </RevealOnScroll>
           <RevealOnScroll>
             <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 sm:grid-cols-3">
               {FORMAT_KEYS.map((format) => (
-                <div key={format} className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface p-6 text-center">
+                <div
+                  key={format}
+                  className="flex flex-col items-center gap-3 rounded-2xl border border-border bg-surface p-6 text-center"
+                >
                   <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-100 text-primary-600">
                     <Icon name={FORMAT_ICONS[format]} aria-hidden="true" className="text-2xl" />
                   </span>
-                  <p className="text-body-lg font-semibold text-foreground">{tTrainings(`format.${format}`)}</p>
+                  <p className="text-body-lg font-semibold text-foreground">
+                    {tTrainings(`format.${format}`)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -118,9 +149,15 @@ export default function SolutionsForCompaniesPage() {
             <Grid cols={4} gap="lg">
               {PROCESS_STEPS.map((step, index) => (
                 <div key={step} className="flex flex-col gap-3">
-                  <span className="text-h2 font-extrabold text-primary-200">{String(index + 1).padStart(2, '0')}</span>
-                  <p className="text-body-lg font-semibold text-foreground">{t(`process.steps.${step}.title`)}</p>
-                  <p className="text-body text-foreground-muted">{t(`process.steps.${step}.description`)}</p>
+                  <span className="text-h2 font-extrabold text-primary-200">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <p className="text-body-lg font-semibold text-foreground">
+                    {t(`process.steps.${step}.title`)}
+                  </p>
+                  <p className="text-body text-foreground-muted">
+                    {t(`process.steps.${step}.description`)}
+                  </p>
                 </div>
               ))}
             </Grid>
@@ -140,7 +177,10 @@ export default function SolutionsForCompaniesPage() {
                 >
                   {t('relatedLinks.successStories')}
                 </RouterLink>
-                <RouterLink to="/industries" className="text-body text-brand underline-offset-4 hover:underline">
+                <RouterLink
+                  to="/industries"
+                  className="text-body text-brand underline-offset-4 hover:underline"
+                >
                   {t('relatedLinks.industries')}
                 </RouterLink>
               </div>

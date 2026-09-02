@@ -22,7 +22,12 @@ interface AccordionProps {
  */
 export function Accordion({ items, className }: AccordionProps) {
   return (
-    <div className={cn('flex flex-col divide-y divide-border rounded-2xl border border-border bg-surface', className)}>
+    <div
+      className={cn(
+        'flex flex-col divide-y divide-border rounded-2xl border border-border bg-surface',
+        className,
+      )}
+    >
       {items.map((item) => (
         <details key={item.id} className="group p-5">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-body-lg font-medium text-foreground marker:content-none [&::-webkit-details-marker]:hidden">

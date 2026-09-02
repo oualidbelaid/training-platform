@@ -16,7 +16,10 @@ import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import { Seo } from '@/components/seo/Seo'
 import { useCategories } from '@/features/categories/hooks/useCategories'
 import { TrainingCard } from '@/features/trainings/components/TrainingCard'
-import { TrainingFilters, type TrainingFiltersValue } from '@/features/trainings/components/TrainingFilters'
+import {
+  TrainingFilters,
+  type TrainingFiltersValue,
+} from '@/features/trainings/components/TrainingFilters'
 import { useTrainingDomains } from '@/features/trainings/hooks/useTrainingDomains'
 import { useTrainings } from '@/features/trainings/hooks/useTrainings'
 import type { SupportedLanguage } from '@/i18n'
@@ -89,7 +92,10 @@ export default function TrainingCatalogPage() {
           <ul className="grid gap-2 sm:grid-cols-2">
             {domain.courses.map((course) => (
               <li key={getLocalizedText(course.name, language)} className="flex items-start gap-2">
-                <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground-faint" />
+                <span
+                  aria-hidden="true"
+                  className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground-faint"
+                />
                 {getLocalizedText(course.name, language)}
               </li>
             ))}
@@ -138,7 +144,12 @@ export default function TrainingCatalogPage() {
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -158,7 +169,9 @@ export default function TrainingCatalogPage() {
             <RevealOnScroll className="flex flex-col gap-4 rounded-2xl border border-border bg-surface-subtle p-6 sm:p-8">
               <SectionHeading
                 eyebrow={t('domains.eyebrow')}
-                title={t('domains.title', { category: getLocalizedText(selectedCategory.name, language) })}
+                title={t('domains.title', {
+                  category: getLocalizedText(selectedCategory.name, language),
+                })}
                 description={t('domains.description')}
               />
               <Accordion items={domainAccordionItems} />
@@ -166,11 +179,15 @@ export default function TrainingCatalogPage() {
           ) : null}
 
           {trainingsQuery.isLoading ? <LoadingState /> : null}
-          {trainingsQuery.isError ? <ErrorState onRetry={() => void trainingsQuery.refetch()} /> : null}
+          {trainingsQuery.isError ? (
+            <ErrorState onRetry={() => void trainingsQuery.refetch()} />
+          ) : null}
 
           {!trainingsQuery.isLoading && !trainingsQuery.isError ? (
             <>
-              <p className="text-small text-foreground-muted">{t('results.count', { count: total })}</p>
+              <p className="text-small text-foreground-muted">
+                {t('results.count', { count: total })}
+              </p>
 
               {trainingsQuery.data && trainingsQuery.data.items.length > 0 ? (
                 <Grid cols={3}>
@@ -180,7 +197,9 @@ export default function TrainingCatalogPage() {
                       <RevealOnScroll key={training.id}>
                         <TrainingCard
                           training={training}
-                          categoryName={category ? getLocalizedText(category.name, language) : undefined}
+                          categoryName={
+                            category ? getLocalizedText(category.name, language) : undefined
+                          }
                         />
                       </RevealOnScroll>
                     )

@@ -37,9 +37,7 @@ export function SectionHeading({
         <p className="text-caption font-semibold uppercase tracking-wide text-brand">{eyebrow}</p>
       ) : null}
       <Heading className="text-h2 text-foreground">{title}</Heading>
-      {description ? (
-        <p className="text-body-lg text-foreground-muted">{description}</p>
-      ) : null}
+      {description ? <p className="text-body-lg text-foreground-muted">{description}</p> : null}
     </div>
   )
 }

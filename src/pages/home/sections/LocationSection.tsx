@@ -33,18 +33,28 @@ export function LocationSection() {
 
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-3">
-                <Icon name="location-dot" aria-hidden="true" className="mt-0.5 text-lg text-brand" />
+                <Icon
+                  name="location-dot"
+                  aria-hidden="true"
+                  className="mt-0.5 text-lg text-brand"
+                />
                 <span className="text-body text-foreground">{LOCATION.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Icon name="phone" aria-hidden="true" className="text-lg text-brand" />
-                <a href={`tel:${LOCATION.phone.replace(/\s+/g, '')}`} className="text-body text-foreground hover:text-brand">
+                <a
+                  href={`tel:${LOCATION.phone.replace(/\s+/g, '')}`}
+                  className="text-body text-foreground hover:text-brand"
+                >
                   {LOCATION.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Icon name="envelope" aria-hidden="true" className="text-lg text-brand" />
-                <a href={`mailto:${LOCATION.email}`} className="text-body text-foreground hover:text-brand">
+                <a
+                  href={`mailto:${LOCATION.email}`}
+                  className="text-body text-foreground hover:text-brand"
+                >
                   {LOCATION.email}
                 </a>
               </li>

@@ -19,8 +19,9 @@ Think and work like a senior team consisting of:
 - Security Engineer
 
 ==========================================================
+
 1. PROJECT VISION
-==========================================================
+   \==========================================================
 
 Build a premium professional Training & Learning website for a training company.
 
@@ -56,8 +57,7 @@ The primary purpose of the website is:
 
 This is NOT an e-commerce website.
 
-==========================================================
-2. IMPORTANT BUSINESS RULES
+========================================================== 2. IMPORTANT BUSINESS RULES
 ==========================================================
 
 There is NO:
@@ -88,8 +88,7 @@ Instead, users should be able to:
 
 The conversion strategy should be based on contact and lead generation.
 
-==========================================================
-3. TARGET AUDIENCE
+========================================================== 3. TARGET AUDIENCE
 ==========================================================
 
 The website targets:
@@ -114,8 +113,7 @@ The visual identity must communicate:
 - Modernity
 - Corporate credibility
 
-==========================================================
-4. TECHNOLOGY STACK
+========================================================== 4. TECHNOLOGY STACK
 ==========================================================
 
 Use:
@@ -151,8 +149,7 @@ However, only use React Three Fiber when a real 3D experience adds value.
 
 Do not add heavy 3D unnecessarily.
 
-==========================================================
-5. ARCHITECTURE
+========================================================== 5. ARCHITECTURE
 ==========================================================
 
 Use a clean, scalable and feature-oriented architecture.
@@ -228,8 +225,7 @@ Use reusable components.
 
 Use feature-based organization where appropriate.
 
-==========================================================
-6. CLEAN ARCHITECTURE
+========================================================== 6. CLEAN ARCHITECTURE
 ==========================================================
 
 The UI must never directly depend on Dolibarr.
@@ -272,8 +268,7 @@ mocks/
 
 The UI must remain unchanged when switching from Mock API to Dolibarr.
 
-==========================================================
-7. DESIGN SYSTEM
+========================================================== 7. DESIGN SYSTEM
 ==========================================================
 
 Create ONE centralized Design System.
@@ -315,8 +310,7 @@ Do NOT create inconsistent spacing.
 
 Everything should use reusable design tokens.
 
-==========================================================
-8. VISUAL IDENTITY
+========================================================== 8. VISUAL IDENTITY
 ==========================================================
 
 The design must feel:
@@ -358,8 +352,7 @@ Use:
 
 The design should immediately feel like a serious professional training company.
 
-==========================================================
-9. FIRST IMPRESSION
+========================================================== 9. FIRST IMPRESSION
 ==========================================================
 
 The first 5 seconds are extremely important.
@@ -396,8 +389,7 @@ Example CTA concepts:
 
 Do not use generic CTA placement.
 
-==========================================================
-10. PREMIUM 3D EXPERIENCE
+========================================================== 10. PREMIUM 3D EXPERIENCE
 ==========================================================
 
 Create a premium 3D browsing experience.
@@ -429,8 +421,7 @@ Use CSS 3D transforms for simpler effects.
 
 All 3D elements must have fallbacks.
 
-==========================================================
-11. ADVANCED SCROLL EXPERIENCE
+========================================================== 11. ADVANCED SCROLL EXPERIENCE
 ==========================================================
 
 Create a premium scrolling experience.
@@ -462,8 +453,7 @@ Do not use GSAP everywhere.
 
 Choose the correct tool for each situation.
 
-==========================================================
-12. ANIMATION PHILOSOPHY
+========================================================== 12. ANIMATION PHILOSOPHY
 ==========================================================
 
 Animations must feel:
@@ -495,8 +485,7 @@ Respect:
 
 prefers-reduced-motion
 
-==========================================================
-13. RESPONSIVE DESIGN
+========================================================== 13. RESPONSIVE DESIGN
 ==========================================================
 
 The website must be fully responsive.
@@ -530,8 +519,7 @@ Check:
 
 on every breakpoint.
 
-==========================================================
-14. MOBILE EXPERIENCE
+========================================================== 14. MOBILE EXPERIENCE
 ==========================================================
 
 Mobile is a first-class experience.
@@ -549,8 +537,7 @@ Create:
 
 Do not overload mobile devices with heavy effects.
 
-==========================================================
-15. INTERNATIONALIZATION
+========================================================== 15. INTERNATIONALIZATION
 ==========================================================
 
 The website must support:
@@ -606,8 +593,7 @@ Implement:
 - Localized forms
 - Localized validation messages
 
-==========================================================
-16. PAGES
+========================================================== 16. PAGES
 ==========================================================
 
 Create the following pages:
@@ -658,8 +644,7 @@ COOKIE POLICY
 
 404
 
-==========================================================
-17. HOME PAGE
+========================================================== 17. HOME PAGE
 ==========================================================
 
 Create a highly polished homepage.
@@ -706,8 +691,7 @@ Do not blindly follow this order.
 
 Use UX reasoning to determine the best storytelling sequence.
 
-==========================================================
-18. TRAINING CATALOG
+========================================================== 18. TRAINING CATALOG
 ==========================================================
 
 Create a professional training catalog.
@@ -736,8 +720,7 @@ Example formats:
 
 Make filtering intuitive.
 
-==========================================================
-19. TRAINING DETAILS
+========================================================== 19. TRAINING DETAILS
 ==========================================================
 
 Each training page should include:
@@ -766,8 +749,7 @@ Do NOT add Add-to-Cart.
 
 Do NOT add checkout.
 
-==========================================================
-20. LEAD GENERATION
+========================================================== 20. LEAD GENERATION
 ==========================================================
 
 The website must be optimized for lead generation.
@@ -813,8 +795,7 @@ Provide success states.
 
 Provide error states.
 
-==========================================================
-21. CONTACT EXPERIENCE
+========================================================== 21. CONTACT EXPERIENCE
 ==========================================================
 
 Make contacting the company extremely easy.
@@ -832,8 +813,7 @@ Include:
 
 Create a floating contact button on mobile where useful.
 
-==========================================================
-22. NAVIGATION
+========================================================== 22. NAVIGATION
 ==========================================================
 
 Create a premium navigation system.
@@ -858,8 +838,7 @@ Use:
 - Solid state after scrolling
 - Smooth transitions
 
-==========================================================
-23. COMPONENT LIBRARY
+========================================================== 23. COMPONENT LIBRARY
 ==========================================================
 
 Create reusable components.
@@ -930,8 +909,7 @@ ErrorState
 
 LoadingState
 
-==========================================================
-24. MOCK DATA
+========================================================== 24. MOCK DATA
 ==========================================================
 
 The application must work completely without Dolibarr.
@@ -955,8 +933,7 @@ Use realistic French / English / Arabic content structures.
 
 Do not use meaningless lorem ipsum everywhere.
 
-==========================================================
-25. DATA ARCHITECTURE
+========================================================== 25. DATA ARCHITECTURE
 ==========================================================
 
 Use:
@@ -993,8 +970,7 @@ useTraining(id)
 
 The UI must only consume services/hooks.
 
-==========================================================
-26. DOLIBARR INTEGRATION
+========================================================== 26. DOLIBARR INTEGRATION
 ==========================================================
 
 The final system will consume data from Dolibarr ERP.
@@ -1042,8 +1018,7 @@ Later replace them with Dolibarr repositories.
 
 The UI should require little or no modification.
 
-==========================================================
-27. API LAYER
+========================================================== 27. API LAYER
 ==========================================================
 
 Use Axios or an appropriate HTTP client.
@@ -1072,8 +1047,7 @@ Repositories
 
 Do not expose secrets in the frontend.
 
-==========================================================
-28. ENVIRONMENT CONFIGURATION
+========================================================== 28. ENVIRONMENT CONFIGURATION
 ==========================================================
 
 Use environment variables.
@@ -1098,8 +1072,7 @@ Credentials
 
 Environment-specific configuration
 
-==========================================================
-29. SECURITY
+========================================================== 29. SECURITY
 ==========================================================
 
 Apply production security best practices.
@@ -1126,8 +1099,7 @@ Validate all external data.
 
 Sanitize content when necessary.
 
-==========================================================
-30. ERROR HANDLING
+========================================================== 30. ERROR HANDLING
 ==========================================================
 
 Create:
@@ -1152,8 +1124,7 @@ User-friendly error messages
 
 Never leave users with a blank screen.
 
-==========================================================
-31. ACCESSIBILITY
+========================================================== 31. ACCESSIBILITY
 ==========================================================
 
 Follow WCAG principles.
@@ -1184,8 +1155,7 @@ Accessible dialogs
 
 Accessible buttons
 
-==========================================================
-32. SEO
+========================================================== 32. SEO
 ==========================================================
 
 The website must be SEO-ready.
@@ -1224,8 +1194,7 @@ Localized metadata
 
 Clean URLs
 
-==========================================================
-33. PERFORMANCE
+========================================================== 33. PERFORMANCE
 ==========================================================
 
 Performance is critical.
@@ -1272,8 +1241,7 @@ Do not blindly optimize everything.
 
 Measure before optimizing.
 
-==========================================================
-34. 3D PERFORMANCE
+========================================================== 34. 3D PERFORMANCE
 ==========================================================
 
 3D effects must degrade gracefully.
@@ -1294,8 +1262,7 @@ prefers-reduced-motion
 
 Never allow 3D to block page usability.
 
-==========================================================
-35. FORMS
+========================================================== 35. FORMS
 ==========================================================
 
 All forms must use:
@@ -1320,8 +1287,7 @@ Clear feedback
 
 Avoid unnecessary fields.
 
-==========================================================
-36. STATE MANAGEMENT
+========================================================== 36. STATE MANAGEMENT
 ==========================================================
 
 Use Zustand only for real global state.
@@ -1332,8 +1298,7 @@ Do not put everything into Zustand.
 
 Keep local state local.
 
-==========================================================
-37. CACHING
+========================================================== 37. CACHING
 ==========================================================
 
 Use TanStack Query for:
@@ -1362,8 +1327,7 @@ prefetching
 
 where appropriate.
 
-==========================================================
-38. CODE QUALITY
+========================================================== 38. CODE QUALITY
 ==========================================================
 
 Follow:
@@ -1392,8 +1356,7 @@ No huge components.
 
 No duplicated business logic.
 
-==========================================================
-39. TYPESCRIPT
+========================================================== 39. TYPESCRIPT
 ==========================================================
 
 Use strict TypeScript.
@@ -1422,8 +1385,7 @@ schemas
 
 type guards
 
-==========================================================
-40. NAMING
+========================================================== 40. NAMING
 ==========================================================
 
 Use consistent naming.
@@ -1446,8 +1408,7 @@ UPPER_SNAKE_CASE where appropriate
 
 Files should follow a consistent convention.
 
-==========================================================
-41. DOCUMENTATION
+========================================================== 41. DOCUMENTATION
 ==========================================================
 
 Create:
@@ -1482,8 +1443,7 @@ ANIMATION_GUIDE.md
 
 These documents are permanent project references.
 
-==========================================================
-42. CLAUDE CODE CONTEXT
+========================================================== 42. CLAUDE CODE CONTEXT
 ==========================================================
 
 Create a root-level:
@@ -1504,8 +1464,7 @@ before modifying the project.
 
 Never violate documented architecture without explicitly explaining why.
 
-==========================================================
-43. GIT
+========================================================== 43. GIT
 ==========================================================
 
 Prepare professional Git conventions.
@@ -1540,8 +1499,7 @@ credentials
 
 build artifacts
 
-==========================================================
-44. TESTING
+========================================================== 44. TESTING
 ==========================================================
 
 Use Vitest.
@@ -1557,8 +1515,7 @@ Create tests for important:
 
 Focus testing on important behavior.
 
-==========================================================
-45. UI STATES
+========================================================== 45. UI STATES
 ==========================================================
 
 Every data-driven component should handle:
@@ -1579,8 +1536,7 @@ Mobile
 
 Desktop
 
-==========================================================
-46. IMAGE AND MEDIA STRATEGY
+========================================================== 46. IMAGE AND MEDIA STRATEGY
 ==========================================================
 
 Use optimized images.
@@ -1595,8 +1551,7 @@ Use lazy loading.
 
 Create graceful fallbacks.
 
-==========================================================
-47. CONTENT STRATEGY
+========================================================== 47. CONTENT STRATEGY
 ==========================================================
 
 The website must not look like a technical demo.
@@ -1623,8 +1578,7 @@ Testimonials
 
 Company information
 
-==========================================================
-48. UX PRINCIPLES
+========================================================== 48. UX PRINCIPLES
 ==========================================================
 
 Always prioritize:
@@ -1653,8 +1607,7 @@ What can I do?
 
 What happens next?
 
-==========================================================
-49. NO E-COMMERCE
+========================================================== 49. NO E-COMMERCE
 ==========================================================
 
 Absolutely do NOT create:
@@ -1685,8 +1638,7 @@ Register Interest
 
 Consultation
 
-==========================================================
-50. DEVELOPMENT PROCESS
+========================================================== 50. DEVELOPMENT PROCESS
 ==========================================================
 
 Do NOT generate the entire project at once.
@@ -1710,8 +1662,7 @@ Before implementing a milestone:
 
 Never silently change architectural decisions.
 
-==========================================================
-51. INITIAL PROJECT PHASE
+========================================================== 51. INITIAL PROJECT PHASE
 ==========================================================
 
 At the beginning:
@@ -1738,8 +1689,7 @@ First:
 
 Then wait for approval.
 
-==========================================================
-52. IMPORTANT DEVELOPMENT RULE
+========================================================== 52. IMPORTANT DEVELOPMENT RULE
 ==========================================================
 
 Do not make assumptions that could affect the architecture.
@@ -1748,8 +1698,7 @@ If a requirement is ambiguous and materially affects implementation, ask before 
 
 For minor implementation details, make reasonable professional decisions.
 
-==========================================================
-53. FINAL QUALITY STANDARD
+========================================================== 53. FINAL QUALITY STANDARD
 ==========================================================
 
 The final website must look like:
@@ -1794,8 +1743,7 @@ Scalable
 
 Maintainable
 
-==========================================================
-54. FIRST TASK
+========================================================== 54. FIRST TASK
 ==========================================================
 
 Do NOT write application code yet.

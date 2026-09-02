@@ -3,7 +3,6 @@ import { Seo } from '@/components/seo/Seo'
 import { OrganizationSchema } from '@/components/seo/OrganizationSchema'
 import { WebsiteSchema } from '@/components/seo/WebsiteSchema'
 import { Hero } from '@/pages/home/sections/Hero'
-import { TrustSection } from '@/pages/home/sections/TrustSection'
 import { TrustLogosSection } from '@/pages/home/sections/TrustLogosSection'
 import { CategoriesSection } from '@/pages/home/sections/CategoriesSection'
 import { ProfessionalDevelopmentSection } from '@/pages/home/sections/ProfessionalDevelopmentSection'
@@ -26,8 +25,7 @@ import { FinalCtaSection } from '@/pages/home/sections/FinalCtaSection'
  *     — sits right after Categories and before Featured Trainings, exactly
  *     where the redesign brief requested it: after the visitor has seen
  *     *what* is taught, before *which specific programs* are popular.
- * TrustLogosSection (client-recognition) sits right after the numeric
- * TrustSection — two complementary credibility proofs back to back — and
+ * TrustLogosSection (client-recognition) sits right after the Hero, and
  * LocationSection sits after Testimonials, before Events, matching the
  * branding-refinement brief's suggested position (§14).
  */
@@ -40,7 +38,6 @@ export default function HomePage() {
       <OrganizationSchema />
       <WebsiteSchema />
       <Hero />
-      <TrustSection />
       <TrustLogosSection />
       <CategoriesSection />
       <ProfessionalDevelopmentSection />

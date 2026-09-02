@@ -15,7 +15,9 @@ interface DividerProps {
  */
 export function Divider({ orientation = 'horizontal', className }: DividerProps) {
   if (orientation === 'vertical') {
-    return <div aria-hidden="true" className={cn('h-full w-px border-s border-border', className)} />
+    return (
+      <div aria-hidden="true" className={cn('h-full w-px border-s border-border', className)} />
+    )
   }
 
   return <hr className={cn('h-px w-full border-0 border-t border-border', className)} />

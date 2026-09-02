@@ -38,15 +38,15 @@ The app is a client-rendered SPA with no server-side per-language routing — la
 
 ## Structured data (JSON-LD)
 
-| Schema | Where | Notes |
-| --- | --- | --- |
-| `Organization` | Every page (`OrganizationSchema`) | Includes `logo` |
-| `WebSite` | Home only (`WebsiteSchema`) | |
-| `BreadcrumbList` | Every page rendering `Breadcrumb` (`BreadcrumbSchema`) | Mirrors the same `items` shape as the `Breadcrumb` UI component |
-| `Course` | `TrainingDetailsPage` (`CourseSchema`) | `hasCourseInstance`/`CourseInstance.courseMode` mapped from the training's sessions/format; omitted entirely when a training has no scheduled sessions |
-| `Article` | `ArticleDetailsPage` (`ArticleSchema`) | |
-| `Event` | `EventsPage` (`EventSchema`, one per event) | `eventAttendanceMode`/`location` mapped from `TrainingFormat` (in-person → `Place`, online → `VirtualLocation`) |
-| `FAQPage` | `FaqPage` + each training's own FAQ (`FaqSchema`) | One mapper (`faqItemsToFaqPageSchema`) covers both — `Faq` and `TrainingFaqItem` share the same `{question, answer}` shape |
+| Schema           | Where                                                  | Notes                                                                                                                                                  |
+| ---------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Organization`   | Every page (`OrganizationSchema`)                      | Includes `logo`                                                                                                                                        |
+| `WebSite`        | Home only (`WebsiteSchema`)                            |                                                                                                                                                        |
+| `BreadcrumbList` | Every page rendering `Breadcrumb` (`BreadcrumbSchema`) | Mirrors the same `items` shape as the `Breadcrumb` UI component                                                                                        |
+| `Course`         | `TrainingDetailsPage` (`CourseSchema`)                 | `hasCourseInstance`/`CourseInstance.courseMode` mapped from the training's sessions/format; omitted entirely when a training has no scheduled sessions |
+| `Article`        | `ArticleDetailsPage` (`ArticleSchema`)                 |                                                                                                                                                        |
+| `Event`          | `EventsPage` (`EventSchema`, one per event)            | `eventAttendanceMode`/`location` mapped from `TrainingFormat` (in-person → `Place`, online → `VirtualLocation`)                                        |
+| `FAQPage`        | `FaqPage` + each training's own FAQ (`FaqSchema`)      | One mapper (`faqItemsToFaqPageSchema`) covers both — `Faq` and `TrainingFaqItem` share the same `{question, answer}` shape                             |
 
 **Person schema for trainers is deliberately not implemented** — the trainer roster (`TrainersPage`) is a grid of short bios, not individual profile pages; a Person schema per card was judged low-value relative to the effort. A considered exclusion, not a gap.
 

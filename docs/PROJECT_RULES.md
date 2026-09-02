@@ -9,6 +9,7 @@ A premium, professional Training & Learning marketing / lead-generation website 
 ## What this is NOT
 
 There is **no**:
+
 - Login / user authentication
 - User dashboard / customer account area
 - Shopping cart / checkout / online payment / wishlist

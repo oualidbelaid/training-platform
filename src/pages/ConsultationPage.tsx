@@ -19,7 +19,10 @@ import { FormSection } from '@/features/leads/components/FormSection'
 import { HoneypotField } from '@/features/leads/components/HoneypotField'
 import { LeadFormSuccess } from '@/features/leads/components/LeadFormSuccess'
 import { useSubmitLead } from '@/features/leads/hooks/useSubmitLead'
-import { buildConsultationSchema, type ConsultationValues } from '@/features/leads/schemas/consultation.schema'
+import {
+  buildConsultationSchema,
+  type ConsultationValues,
+} from '@/features/leads/schemas/consultation.schema'
 
 /** Consultation (spec M5 §5) — companies/professionals wanting to discuss their training needs directly with an advisor. */
 export default function ConsultationPage() {
@@ -92,14 +95,24 @@ export default function ConsultationPage() {
 
   return (
     <>
-      <Seo title={t('seo.title')} description={t('seo.description')} canonicalPath="/consultation" />
+      <Seo
+        title={t('seo.title')}
+        description={t('seo.description')}
+        canonicalPath="/consultation"
+      />
       <BreadcrumbSchema items={breadcrumbItems} />
 
       <Section spacing="sm">
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} align="center" />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+              align="center"
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -115,15 +128,50 @@ export default function ConsultationPage() {
               <HoneypotField ref={honeypotRef} />
 
               <FormSection title={tFields('sections.personal')}>
-                <Input label={tFields('fields.firstName.label')} placeholder={tFields('fields.firstName.placeholder')} required error={errors.firstName?.message} {...register('firstName')} />
-                <Input label={tFields('fields.lastName.label')} placeholder={tFields('fields.lastName.placeholder')} required error={errors.lastName?.message} {...register('lastName')} />
-                <Input type="email" label={tFields('fields.email.label')} placeholder={tFields('fields.email.placeholder')} required error={errors.email?.message} {...register('email')} />
-                <Input type="tel" label={tFields('fields.phone.label')} placeholder={tFields('fields.phone.placeholder')} error={errors.phone?.message} {...register('phone')} />
+                <Input
+                  label={tFields('fields.firstName.label')}
+                  placeholder={tFields('fields.firstName.placeholder')}
+                  required
+                  error={errors.firstName?.message}
+                  {...register('firstName')}
+                />
+                <Input
+                  label={tFields('fields.lastName.label')}
+                  placeholder={tFields('fields.lastName.placeholder')}
+                  required
+                  error={errors.lastName?.message}
+                  {...register('lastName')}
+                />
+                <Input
+                  type="email"
+                  label={tFields('fields.email.label')}
+                  placeholder={tFields('fields.email.placeholder')}
+                  required
+                  error={errors.email?.message}
+                  {...register('email')}
+                />
+                <Input
+                  type="tel"
+                  label={tFields('fields.phone.label')}
+                  placeholder={tFields('fields.phone.placeholder')}
+                  error={errors.phone?.message}
+                  {...register('phone')}
+                />
               </FormSection>
 
               <FormSection title={tFields('sections.company')}>
-                <Input label={tFields('fields.company.label')} placeholder={tFields('fields.company.placeholder')} error={errors.company?.message} {...register('company')} />
-                <Input label={tFields('fields.jobTitle.label')} placeholder={tFields('fields.jobTitle.placeholder')} error={errors.jobTitle?.message} {...register('jobTitle')} />
+                <Input
+                  label={tFields('fields.company.label')}
+                  placeholder={tFields('fields.company.placeholder')}
+                  error={errors.company?.message}
+                  {...register('company')}
+                />
+                <Input
+                  label={tFields('fields.jobTitle.label')}
+                  placeholder={tFields('fields.jobTitle.placeholder')}
+                  error={errors.jobTitle?.message}
+                  {...register('jobTitle')}
+                />
               </FormSection>
 
               <FormSection title={tFields('sections.training')}>
@@ -147,9 +195,20 @@ export default function ConsultationPage() {
                   error={errors.areasOfInterest?.message}
                   {...register('areasOfInterest')}
                 />
-                <RadioGroup legend={tFields('fields.preferredContactMethod.legend')} className="sm:col-span-2">
-                  <Radio label={tFields('fields.preferredContactMethod.email')} value="email" {...register('preferredContactMethod')} />
-                  <Radio label={tFields('fields.preferredContactMethod.phone')} value="phone" {...register('preferredContactMethod')} />
+                <RadioGroup
+                  legend={tFields('fields.preferredContactMethod.legend')}
+                  className="sm:col-span-2"
+                >
+                  <Radio
+                    label={tFields('fields.preferredContactMethod.email')}
+                    value="email"
+                    {...register('preferredContactMethod')}
+                  />
+                  <Radio
+                    label={tFields('fields.preferredContactMethod.phone')}
+                    value="phone"
+                    {...register('preferredContactMethod')}
+                  />
                 </RadioGroup>
               </FormSection>
 
@@ -164,11 +223,20 @@ export default function ConsultationPage() {
               </FormSection>
 
               <FormSection title={tFields('sections.consent')}>
-                <Checkbox label={tFields('privacy.consentLabel')} error={errors.consent?.message} className="sm:col-span-2" {...register('consent')} />
+                <Checkbox
+                  label={tFields('privacy.consentLabel')}
+                  error={errors.consent?.message}
+                  className="sm:col-span-2"
+                  {...register('consent')}
+                />
               </FormSection>
 
               {mutation.isError ? (
-                <ErrorState title={tFields('error.title')} description={tFields('error.description')} onRetry={handleSubmit(onSubmit)} />
+                <ErrorState
+                  title={tFields('error.title')}
+                  description={tFields('error.description')}
+                  onRetry={handleSubmit(onSubmit)}
+                />
               ) : null}
 
               <Button type="submit" size="lg" loading={mutation.isPending}>

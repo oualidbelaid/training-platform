@@ -51,7 +51,11 @@ export function TestimonialsSection() {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {rest.map((testimonial) => (
                 <RevealOnScroll key={testimonial.id}>
-                  <TestimonialCard testimonial={testimonial} language={language} variant="compact-dense" />
+                  <TestimonialCard
+                    testimonial={testimonial}
+                    language={language}
+                    variant="compact-dense"
+                  />
                 </RevealOnScroll>
               ))}
             </div>

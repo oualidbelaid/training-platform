@@ -25,13 +25,15 @@ describe('MockLeadRepository', () => {
 
   it('rejects when submitted with the deterministic QA failure email', async () => {
     const repository = new MockLeadRepository()
-    await expect(repository.submit(makeDto({ email: SIMULATE_FAILURE_EMAIL }))).rejects.toThrow('Simulated submission failure')
+    await expect(repository.submit(makeDto({ email: SIMULATE_FAILURE_EMAIL }))).rejects.toThrow(
+      'Simulated submission failure',
+    )
   })
 
   it('is case-insensitive when matching the QA failure email', async () => {
     const repository = new MockLeadRepository()
-    await expect(repository.submit(makeDto({ email: SIMULATE_FAILURE_EMAIL.toUpperCase() }))).rejects.toThrow(
-      'Simulated submission failure',
-    )
+    await expect(
+      repository.submit(makeDto({ email: SIMULATE_FAILURE_EMAIL.toUpperCase() })),
+    ).rejects.toThrow('Simulated submission failure')
   })
 })

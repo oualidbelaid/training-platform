@@ -54,7 +54,11 @@ export function Hero() {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden">
-      <div ref={backgroundRef} aria-hidden="true" className="bg-gradient-hero absolute inset-0 -top-24" />
+      <div
+        ref={backgroundRef}
+        aria-hidden="true"
+        className="bg-gradient-hero absolute inset-0 -top-24"
+      />
 
       <Container className="relative grid gap-16 py-20 lg:grid-cols-2 lg:items-center lg:py-28">
         <motion.div
@@ -84,7 +88,10 @@ export function Hero() {
             {t('hero.subheadline')}
           </motion.p>
 
-          <motion.div variants={fadeInUp} className="flex flex-wrap items-center gap-x-6 gap-y-4 pt-2">
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-wrap items-center gap-x-6 gap-y-4 pt-2"
+          >
             <Button asChild size="lg">
               <RouterLink to="/trainings" className="group">
                 {t('hero.primaryCta')}
@@ -125,7 +132,13 @@ export function Hero() {
 
           <TiltCard className="absolute inset-8 sm:inset-12 lg:inset-14" maxTilt={3}>
             <div className="h-full w-full overflow-hidden rounded-[1.75rem] border border-neutral-0/60 shadow-xl ring-1 ring-neutral-900/5">
-              <Image src={MEDIA.heroTraining} alt="" className="h-full" loading="eager" fetchPriority="high" />
+              <Image
+                src={MEDIA.heroTraining}
+                alt=""
+                className="h-full"
+                loading="eager"
+                fetchPriority="high"
+              />
             </div>
           </TiltCard>
 

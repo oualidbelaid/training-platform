@@ -1,20 +1,20 @@
 # Development Roadmap
 
-| #   | Milestone | Status |
-| --- | --- | --- |
-| M0 | Project Foundation | **Done** |
-| M1 | Premium Design System & Visual Identity | **Done** |
-| M2 | Home Page | **Done** |
-| M3 | Training Catalog + Training Details | **Done** |
-| M4 | Remaining Content Pages (About, Trainers, Testimonials, Partners, Success Stories, Events, Articles, FAQ, Industries, Solutions for Companies) | **Done** |
-| M5 | Lead Generation Forms (Request Info, Request Quote, Contact, Register Interest, Consultation) | **Done** |
-| M6 | 3D & Advanced Scroll Animation Pass | **Done — reviewed and approved as-is** |
-| M7 | SEO Pass (full metadata, structured data, sitemap, robots.txt) | **Done** |
-| M8 | Accessibility & Responsive Audit | **Done** |
-| M9 | Performance Audit (Lighthouse > 90) | Not started |
-| M10 | Full Test Coverage Pass | Not started |
-| M11 | Documentation Finalization | Not started |
-| M12 | Dolibarr Integration | Not started — blocked on auth-strategy decision, see `DOLIBARR_GUIDE.md` |
+| #   | Milestone                                                                                                                                      | Status                                                                   |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| M0  | Project Foundation                                                                                                                             | **Done**                                                                 |
+| M1  | Premium Design System & Visual Identity                                                                                                        | **Done**                                                                 |
+| M2  | Home Page                                                                                                                                      | **Done**                                                                 |
+| M3  | Training Catalog + Training Details                                                                                                            | **Done**                                                                 |
+| M4  | Remaining Content Pages (About, Trainers, Testimonials, Partners, Success Stories, Events, Articles, FAQ, Industries, Solutions for Companies) | **Done**                                                                 |
+| M5  | Lead Generation Forms (Request Info, Request Quote, Contact, Register Interest, Consultation)                                                  | **Done**                                                                 |
+| M6  | 3D & Advanced Scroll Animation Pass                                                                                                            | **Done — reviewed and approved as-is**                                   |
+| M7  | SEO Pass (full metadata, structured data, sitemap, robots.txt)                                                                                 | **Done**                                                                 |
+| M8  | Accessibility & Responsive Audit                                                                                                               | **Done**                                                                 |
+| M9  | Performance Audit (Lighthouse > 90)                                                                                                            | Not started                                                              |
+| M10 | Full Test Coverage Pass                                                                                                                        | Not started                                                              |
+| M11 | Documentation Finalization                                                                                                                     | Not started                                                              |
+| M12 | Dolibarr Integration                                                                                                                           | Not started — blocked on auth-strategy decision, see `DOLIBARR_GUIDE.md` |
 
 ---
 
@@ -243,7 +243,7 @@ Built the full training-discovery experience on top of the existing Mock Data �
 
 ## Route decision
 
-Implemented as `/trainings` + `/trainings/:slug`, **not** `/formations/:slug` as originally sketched above. Every link built across the Home Page since M2 (Navbar, Footer, `CategoryTile`, CTAs) already points at `/trainings`; switching the URL segment would have meant touching the *approved* Home Page just to rename a route, for no user-facing benefit. `/formations` remains a reasonable French-language alternative to revisit later (e.g. at the M12 Dolibarr integration, if the real system expects it), but wasn't worth the churn now.
+Implemented as `/trainings` + `/trainings/:slug`, **not** `/formations/:slug` as originally sketched above. Every link built across the Home Page since M2 (Navbar, Footer, `CategoryTile`, CTAs) already points at `/trainings`; switching the URL segment would have meant touching the _approved_ Home Page just to rename a route, for no user-facing benefit. `/formations` remains a reasonable French-language alternative to revisit later (e.g. at the M12 Dolibarr integration, if the real system expects it), but wasn't worth the churn now.
 
 ## Training Catalog (`TrainingCatalogPage`, `/trainings`)
 
@@ -285,18 +285,18 @@ Built the 10 remaining content pages on the same Mock Data → DTO → Mapper �
 
 ## Pages implemented
 
-| Page | Route | Data source |
-| --- | --- | --- |
-| About | `/about` | Static copy in `about.json` (mission/vision/values/approach/figures) — not a mock-data domain, since there's no queryable collection here, the same reasoning the Home Page's own sections already follow |
-| Trainers | `/trainers` | Existing `useTrainers()` + `TrainerPreviewCard` — zero new domain code |
-| Testimonials | `/testimonials` | Existing `useTestimonials()` + `TestimonialCard` (mock data expanded 3 → 7 entries for a fuller listing) |
-| Partners | `/partners` | New `Partner` domain + new `PartnerCard` (Home's `TrustLogosSection` marquee is untouched; this is a separate, additive component) |
-| Success Stories | `/success-stories` | New `SuccessStory` domain (client/industry/challenge/approach/results) + new `SuccessStoryCard` |
-| Events | `/events` | Existing `Event` domain, extended with `getAll()` (upcoming **and** past — previously only `getUpcoming()` existed); mock data grew 3 → 5 events, 2 of them past-dated, to exercise the split |
-| Resources (Articles) | `/resources`, `/resources/:slug` | New `Article` domain (list + `getBySlug`) + new `ArticleCard`; details page mirrors `TrainingDetailsPage`'s loading/error/not-found branch shape |
-| FAQ | `/faq` | New `Faq` domain, grouped by a language-agnostic `categoryKey`; category filter reuses `FilterSelect` (the M3 filter-refinement dropdown) as-is; questions render through the existing `Accordion` |
-| Industries | `/industries` | New `Industry` domain (same minimal shape as `Category`) + new `IndustryTile`, presented as non-interactive content-taxonomy tiles, not a catalog filter |
-| Solutions for Companies | `/solutions-for-companies` | Static copy in `solutions.json` (approach/needs analysis/custom programs/formats/learning paths/business impact/process) — same reasoning as About |
+| Page                    | Route                            | Data source                                                                                                                                                                                               |
+| ----------------------- | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| About                   | `/about`                         | Static copy in `about.json` (mission/vision/values/approach/figures) — not a mock-data domain, since there's no queryable collection here, the same reasoning the Home Page's own sections already follow |
+| Trainers                | `/trainers`                      | Existing `useTrainers()` + `TrainerPreviewCard` — zero new domain code                                                                                                                                    |
+| Testimonials            | `/testimonials`                  | Existing `useTestimonials()` + `TestimonialCard` (mock data expanded 3 → 7 entries for a fuller listing)                                                                                                  |
+| Partners                | `/partners`                      | New `Partner` domain + new `PartnerCard` (Home's `TrustLogosSection` marquee is untouched; this is a separate, additive component)                                                                        |
+| Success Stories         | `/success-stories`               | New `SuccessStory` domain (client/industry/challenge/approach/results) + new `SuccessStoryCard`                                                                                                           |
+| Events                  | `/events`                        | Existing `Event` domain, extended with `getAll()` (upcoming **and** past — previously only `getUpcoming()` existed); mock data grew 3 → 5 events, 2 of them past-dated, to exercise the split             |
+| Resources (Articles)    | `/resources`, `/resources/:slug` | New `Article` domain (list + `getBySlug`) + new `ArticleCard`; details page mirrors `TrainingDetailsPage`'s loading/error/not-found branch shape                                                          |
+| FAQ                     | `/faq`                           | New `Faq` domain, grouped by a language-agnostic `categoryKey`; category filter reuses `FilterSelect` (the M3 filter-refinement dropdown) as-is; questions render through the existing `Accordion`        |
+| Industries              | `/industries`                    | New `Industry` domain (same minimal shape as `Category`) + new `IndustryTile`, presented as non-interactive content-taxonomy tiles, not a catalog filter                                                  |
+| Solutions for Companies | `/solutions-for-companies`       | Static copy in `solutions.json` (approach/needs analysis/custom programs/formats/learning paths/business impact/process) — same reasoning as About                                                        |
 
 ## Route decisions
 
@@ -312,7 +312,7 @@ Five new domains, each following the identical DTO (snake_case, per-language suf
 
 ## i18n
 
-10 new namespaces (`about`, `trainerPages`, `testimonials`, `partners`, `successStories`, `events`, `resources`, `faq`, `industries`, `solutions`) × fr/en/ar = 30 new locale files, registered in `src/i18n/index.ts` alongside the existing 5. No hardcoded user-visible strings; no changes to the i18n *architecture* itself. (`trainerPages`, not `trainers`, to avoid colliding with the pre-existing `trainings` namespace — the two aren't related despite the similar name.)
+10 new namespaces (`about`, `trainerPages`, `testimonials`, `partners`, `successStories`, `events`, `resources`, `faq`, `industries`, `solutions`) × fr/en/ar = 30 new locale files, registered in `src/i18n/index.ts` alongside the existing 5. No hardcoded user-visible strings; no changes to the i18n _architecture_ itself. (`trainerPages`, not `trainers`, to avoid colliding with the pre-existing `trainings` namespace — the two aren't related despite the similar name.)
 
 ## Not done in M4 (by design)
 
@@ -330,13 +330,13 @@ Built the 5 lead-generation experiences on a shared form architecture (one `Lead
 
 ## Forms implemented
 
-| Form | Route | Notes |
-| --- | --- | --- |
-| Request Information | `/request-information` | Training preselected from `?training=<slug>` (the query param `TrainingDetailsPage`'s CTA already passed since M3) |
-| Request a Quote | `/request-quote` | Same preselection; adds participants count, preferred format/date, location |
-| Contact | `/contact` | Adds subject; keeps ISTAM's real address/phone/email/hours and the `Map`/`LOCATION` pieces already used on the Home Page, in this page's own layout/copy |
-| Register Interest | `/register-interest` | New entry point added to `TrainingDetailsPage`'s sidebar; same training preselection |
-| Consultation | `/consultation` | New secondary CTA on `SolutionsForCompaniesPage` (was "Contact us", now "Demander une consultation" — Contact remains reachable everywhere else) |
+| Form                | Route                  | Notes                                                                                                                                                    |
+| ------------------- | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Request Information | `/request-information` | Training preselected from `?training=<slug>` (the query param `TrainingDetailsPage`'s CTA already passed since M3)                                       |
+| Request a Quote     | `/request-quote`       | Same preselection; adds participants count, preferred format/date, location                                                                              |
+| Contact             | `/contact`             | Adds subject; keeps ISTAM's real address/phone/email/hours and the `Map`/`LOCATION` pieces already used on the Home Page, in this page's own layout/copy |
+| Register Interest   | `/register-interest`   | New entry point added to `TrainingDetailsPage`'s sidebar; same training preselection                                                                     |
+| Consultation        | `/consultation`        | New secondary CTA on `SolutionsForCompaniesPage` (was "Contact us", now "Demander une consultation" — Contact remains reachable everywhere else)         |
 
 ## Form architecture
 

@@ -34,15 +34,15 @@ The real client is **ISTAM**, a professional training organization. Brand source
 
 ## Typography
 
-**Revised during the M2 Home Page redesign, then reduced again in the branding-refinement pass.** The original direction paired large serif (Fraunces) display headlines with sans body text — reviewed against a premium-corporate reference and found to read as editorial/dated rather than premium-corporate. Headings now default to **Inter, heavy weight (700–800), tight tracking**. The branding-refinement pass then lowered the whole clamp() scale's ceiling and floor again (e.g. `--text-h1` max 3.25rem → 2.75rem, `--text-h2` max 2.5rem → 2.125rem, `--text-h3` max 1.75rem → 1.375rem) — the previous sizes still read as "volume" rather than a confident, restrained hierarchy. Because every heading consumes these tokens rather than a hardcoded size, this was a **single-file change** (`src/styles/globals.css`) that cascaded everywhere; only a handful of components additionally had their heading *role* stepped down a level (e.g. `CategoryTile`'s featured name and `TrainingCard`'s featured title moved from `text-h1` to `text-h2`, the Hero headline from `text-display` to `text-h1`). Fraunces is kept installed and available via `font-display`, but is now **opt-in only**, for a rare editorial accent (e.g. the oversized quotation mark in `TestimonialCard`) — never the default heading treatment.
+**Revised during the M2 Home Page redesign, then reduced again in the branding-refinement pass.** The original direction paired large serif (Fraunces) display headlines with sans body text — reviewed against a premium-corporate reference and found to read as editorial/dated rather than premium-corporate. Headings now default to **Inter, heavy weight (700–800), tight tracking**. The branding-refinement pass then lowered the whole clamp() scale's ceiling and floor again (e.g. `--text-h1` max 3.25rem → 2.75rem, `--text-h2` max 2.5rem → 2.125rem, `--text-h3` max 1.75rem → 1.375rem) — the previous sizes still read as "volume" rather than a confident, restrained hierarchy. Because every heading consumes these tokens rather than a hardcoded size, this was a **single-file change** (`src/styles/globals.css`) that cascaded everywhere; only a handful of components additionally had their heading _role_ stepped down a level (e.g. `CategoryTile`'s featured name and `TrainingCard`'s featured title moved from `text-h1` to `text-h2`, the Hero headline from `text-display` to `text-h1`). Fraunces is kept installed and available via `font-display`, but is now **opt-in only**, for a rare editorial accent (e.g. the oversized quotation mark in `TestimonialCard`) — never the default heading treatment.
 
 Three font families, self-hosted via `@fontsource` (no external Google Fonts request — see `src/styles/fonts.css` for the exact weight files imported):
 
-| Role | Family | Languages |
-|---|---|---|
-| `--font-sans` | Inter (now also the default for all headings) | fr, en |
-| `--font-display` | Fraunces (serif) — opt-in accent only | fr, en |
-| Arabic override | IBM Plex Sans Arabic | ar — replaces **both** `--font-sans` and `--font-display` |
+| Role             | Family                                        | Languages                                                 |
+| ---------------- | --------------------------------------------- | --------------------------------------------------------- |
+| `--font-sans`    | Inter (now also the default for all headings) | fr, en                                                    |
+| `--font-display` | Fraunces (serif) — opt-in accent only         | fr, en                                                    |
+| Arabic override  | IBM Plex Sans Arabic                          | ar — replaces **both** `--font-sans` and `--font-display` |
 
 Fraunces has no Arabic glyphs, and Arabic serif faces are rare/less legible in UI contexts, so Arabic uses a strong sans weight for display roles instead — a standard bilingual/multiscript pattern, not a compromise. The swap is a pure CSS override:
 
@@ -74,16 +74,16 @@ Centralized image registry: `src/config/media.ts`, mapping semantic keys to impo
 
 **Real photography (branding-refinement pass, spec §11/§12/§13).** 8 keys — `heroTraining`, `leadership`, `management`, `digitalTransformation`, `communication`, `strategy`, `featuredTraining`, `companyTraining` — are now real editorial photography in `src/assets/images/photos/*.webp`, sourced from Unsplash's free tier (Unsplash License: commercial use permitted, no attribution required). Downloaded at 1100px wide / quality 70 / WebP for a small footprint (48–150 KB each vs. 127–452 KB as JPEG at the same width). Source record, for licensing traceability:
 
-| Key | Unsplash photo ID | Photographer |
-|---|---|---|
-| `heroTraining` | `1681949222860-9cb3b0329878` | Sable Flow |
-| `leadership` | `1758691736580-a41e0cfe9e9f` | Vitaly Gariev |
-| `management` | `1758873269035-aae0e1fd3422` | Vitaly Gariev |
-| `digitalTransformation` | `1709281847780-2b34c28853c0` | Lukas Müller |
-| `communication` | `1573166826272-5acd0ef8f650` | Christina @ wocintechchat.com |
-| `strategy` | `1758873268998-2f77c2d38862` | Vitaly Gariev |
-| `featuredTraining` | `1758873269276-9518d0cb4a0b` | Vitaly Gariev |
-| `companyTraining` | `1758518731706-be5d5230e5a5` | Unsplash contributor (uncredited in page metadata) |
+| Key                     | Unsplash photo ID            | Photographer                                       |
+| ----------------------- | ---------------------------- | -------------------------------------------------- |
+| `heroTraining`          | `1681949222860-9cb3b0329878` | Sable Flow                                         |
+| `leadership`            | `1758691736580-a41e0cfe9e9f` | Vitaly Gariev                                      |
+| `management`            | `1758873269035-aae0e1fd3422` | Vitaly Gariev                                      |
+| `digitalTransformation` | `1709281847780-2b34c28853c0` | Lukas Müller                                       |
+| `communication`         | `1573166826272-5acd0ef8f650` | Christina @ wocintechchat.com                      |
+| `strategy`              | `1758873268998-2f77c2d38862` | Vitaly Gariev                                      |
+| `featuredTraining`      | `1758873269276-9518d0cb4a0b` | Vitaly Gariev                                      |
+| `companyTraining`       | `1758518731706-be5d5230e5a5` | Unsplash contributor (uncredited in page metadata) |
 
 **Trainer portraits — removed.** From the trainer-photography update through the roster/size update, 10 mock trainer portraits lived at `src/assets/images/trainers/trainer-{01..10}.webp` (Unsplash, Vitaly Gariev). They were **deleted**, along with the entire public Trainers feature (page, Home section, per-training block), at the client's explicit request: ISTAM does not publicly expose individual trainer identities, profiles, photos or biographies. See `docs/ROADMAP.md` and `docs/COMPONENT_GUIDE.md` → "Removed: public Trainers functionality" for the full record. The `Trainer` DTO/entity/repository/service/mapper chain remains, with `mocks/data/trainers.ts` now an intentionally empty array.
 
@@ -92,6 +92,7 @@ Centralized image registry: `src/config/media.ts`, mapping semantic keys to impo
 Every domain entity that needs a photo carries a plain `image: string` (Training, required) or `image?: string` (Event, optional) field, populated in mock data from `MEDIA.*` — **exactly the shape a future Dolibarr DTO will hand back** (a URL string).
 
 **Replacing any of these with real ISTAM-supplied photography is a data change, not a component change:**
+
 1. Drop the licensed file(s) into `src/assets/images/photos/`.
 2. Point the relevant `MEDIA.*` entry at the new import (or, once Dolibarr is live, the DTO simply carries a real URL and `media.ts` is bypassed entirely for that field).
 
@@ -112,23 +113,23 @@ FontAwesome Free, self-hosted (branding-refinement §9/§10) — replaces the `l
 
 ## Core components (`src/components/ui/`)
 
-| Component | Notes |
-|---|---|
-| `Button` | Variants: `primary`/`secondary`/`outline`/`ghost`/`inverse` (for dark/photo backgrounds). Sizes `sm`/`md`/`lg`. `loading` prop shows a spinner + `aria-busy` + auto-disables. `asChild` via Radix `Slot`. |
-| `IconButton` | Icon-only actions; `aria-label` is **required at the type level**. |
-| `Link` | One primitive for internal (`react-router-dom` `Link`) and external (`<a target="_blank" rel="noopener noreferrer">`) — routes on whether `href` starts with `/`. |
-| `Badge` | `neutral`/`brand`/`success`/`warning`/`error`/`outline`. |
-| `Card` + `CardImage` + `CardContent` + `CardFooter` | Surface/border/radius/shadow + optional hover-depth. The primitive every future TrainingCard/TrainerCard/EventCard composes — **do not build those business cards from scratch**. |
-| `GlassPanel` | `tone`: `light`/`dark`. Restrained per CLAUDE.md §8 — reach for `Card` by default; `GlassPanel` is for a small number of signature moments over imagery/gradients. |
-| `Input`, `Textarea`, `Select` | Share `FormField` internally for label/hint/error layout; all wire `aria-invalid`/`aria-describedby`. `Select` is a styled **native** `<select>` — accessible by default, no custom listbox until a form genuinely needs one. |
-| `Checkbox`, `Radio` + `RadioGroup` | Native inputs styled via the `accent-color` CSS property (Tailwind's `accent-*` utility) rather than custom-drawn controls — keyboard/screen-reader/OS-high-contrast behavior for free. `RadioGroup` provides the `<fieldset>`/`<legend>` grouping. |
-| `FormField` | Shared label/hint/error chrome; also usable standalone when composing a future custom control. |
-| `SectionHeading` | Eyebrow + large headline + supporting text — the recurring section-opener block (CLAUDE.md §8's "editorial layouts, strong typography, visual hierarchy"). |
-| `Avatar` | Circular, with an initials fallback (`role="img"` + `aria-label` on the container — the correct pattern when a real `<img>` can't also render the text fallback). |
-| `Image` | Lazy by default, `decoding="async"`, reserved `aspectRatio` to prevent CLS, subtle fade-in on load, `objectPosition` for off-center editorial crops, and (final pass) a **branded gradient fallback** — shown both on load error and when `src` is empty/undefined — so a missing image is never a broken-image icon or a blank box, and the aspect ratio/layout never shifts. |
-| `Divider` | Horizontal = native `<hr>`. Vertical = `aria-hidden` div (no native vertical-rule element) using `border-s` (logical, RTL-safe). |
-| `Rating` | Fractional star rating via two layered star rows clipped by width; `role="img"`, same composite-visual reasoning as `Avatar`. |
-| `Drawer` | Accessible slide-in panel (`role="dialog"`, focus trap, Escape/backdrop close, focus return) — see `docs/COMPONENT_GUIDE.md`. |
+| Component                                           | Notes                                                                                                                                                                                                                                                                                                                                                                          |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Button`                                            | Variants: `primary`/`secondary`/`outline`/`ghost`/`inverse` (for dark/photo backgrounds). Sizes `sm`/`md`/`lg`. `loading` prop shows a spinner + `aria-busy` + auto-disables. `asChild` via Radix `Slot`.                                                                                                                                                                      |
+| `IconButton`                                        | Icon-only actions; `aria-label` is **required at the type level**.                                                                                                                                                                                                                                                                                                             |
+| `Link`                                              | One primitive for internal (`react-router-dom` `Link`) and external (`<a target="_blank" rel="noopener noreferrer">`) — routes on whether `href` starts with `/`.                                                                                                                                                                                                              |
+| `Badge`                                             | `neutral`/`brand`/`success`/`warning`/`error`/`outline`.                                                                                                                                                                                                                                                                                                                       |
+| `Card` + `CardImage` + `CardContent` + `CardFooter` | Surface/border/radius/shadow + optional hover-depth. The primitive every future TrainingCard/TrainerCard/EventCard composes — **do not build those business cards from scratch**.                                                                                                                                                                                              |
+| `GlassPanel`                                        | `tone`: `light`/`dark`. Restrained per CLAUDE.md §8 — reach for `Card` by default; `GlassPanel` is for a small number of signature moments over imagery/gradients.                                                                                                                                                                                                             |
+| `Input`, `Textarea`, `Select`                       | Share `FormField` internally for label/hint/error layout; all wire `aria-invalid`/`aria-describedby`. `Select` is a styled **native** `<select>` — accessible by default, no custom listbox until a form genuinely needs one.                                                                                                                                                  |
+| `Checkbox`, `Radio` + `RadioGroup`                  | Native inputs styled via the `accent-color` CSS property (Tailwind's `accent-*` utility) rather than custom-drawn controls — keyboard/screen-reader/OS-high-contrast behavior for free. `RadioGroup` provides the `<fieldset>`/`<legend>` grouping.                                                                                                                            |
+| `FormField`                                         | Shared label/hint/error chrome; also usable standalone when composing a future custom control.                                                                                                                                                                                                                                                                                 |
+| `SectionHeading`                                    | Eyebrow + large headline + supporting text — the recurring section-opener block (CLAUDE.md §8's "editorial layouts, strong typography, visual hierarchy").                                                                                                                                                                                                                     |
+| `Avatar`                                            | Circular, with an initials fallback (`role="img"` + `aria-label` on the container — the correct pattern when a real `<img>` can't also render the text fallback).                                                                                                                                                                                                              |
+| `Image`                                             | Lazy by default, `decoding="async"`, reserved `aspectRatio` to prevent CLS, subtle fade-in on load, `objectPosition` for off-center editorial crops, and (final pass) a **branded gradient fallback** — shown both on load error and when `src` is empty/undefined — so a missing image is never a broken-image icon or a blank box, and the aspect ratio/layout never shifts. |
+| `Divider`                                           | Horizontal = native `<hr>`. Vertical = `aria-hidden` div (no native vertical-rule element) using `border-s` (logical, RTL-safe).                                                                                                                                                                                                                                               |
+| `Rating`                                            | Fractional star rating via two layered star rows clipped by width; `role="img"`, same composite-visual reasoning as `Avatar`.                                                                                                                                                                                                                                                  |
+| `Drawer`                                            | Accessible slide-in panel (`role="dialog"`, focus trap, Escape/backdrop close, focus return) — see `docs/COMPONENT_GUIDE.md`.                                                                                                                                                                                                                                                  |
 
 ## Interaction states
 

@@ -8,7 +8,9 @@ function delay<T>(value: T): Promise<T> {
 }
 
 function fail<T>(): Promise<T> {
-  return new Promise((_resolve, reject) => setTimeout(() => reject(new Error('Simulated submission failure')), SIMULATED_LATENCY_MS))
+  return new Promise((_resolve, reject) =>
+    setTimeout(() => reject(new Error('Simulated submission failure')), SIMULATED_LATENCY_MS),
+  )
 }
 
 /**

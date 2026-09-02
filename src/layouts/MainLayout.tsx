@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Outlet, useLocation } from 'react-router-dom'
+import { AnnouncementBar } from '@/components/layout/AnnouncementBar'
 import { Footer } from '@/components/layout/Footer'
 import { Navbar } from '@/components/layout/Navbar'
 
@@ -36,6 +37,7 @@ export function MainLayout() {
       >
         {t('a11y.skipToContent')}
       </a>
+      <AnnouncementBar />
       <Navbar />
       <main id="main-content" ref={mainRef} tabIndex={-1} className="flex-1 outline-none">
         <Outlet />

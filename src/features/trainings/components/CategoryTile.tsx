@@ -50,7 +50,9 @@ export function CategoryTile({
         </span>
         <span className="min-w-0 flex-1">
           <span className="block truncate text-body-lg font-semibold text-foreground">{name}</span>
-          <span className="block text-caption text-foreground-faint">{t('programCount', { count: programCount })}</span>
+          <span className="block text-caption text-foreground-faint">
+            {t('programCount', { count: programCount })}
+          </span>
         </span>
         <Icon
           name="arrow-right"

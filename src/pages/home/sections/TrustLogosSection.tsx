@@ -48,7 +48,9 @@ export function TrustLogosSection() {
     <Section spacing="sm">
       <Container>
         <RevealOnScroll className="flex flex-col items-center gap-2 text-center">
-          <p className="text-caption font-semibold uppercase tracking-wide text-brand">{t('trustLogos.eyebrow')}</p>
+          <p className="text-caption font-semibold uppercase tracking-wide text-brand">
+            {t('trustLogos.eyebrow')}
+          </p>
           <p className="text-body text-foreground-muted">{t('trustLogos.description')}</p>
           <RouterLink
             to="/partners"
@@ -62,7 +64,12 @@ export function TrustLogosSection() {
           {prefersReducedMotion ? (
             <div className="mt-8 flex flex-wrap justify-center gap-10">
               {logoPartners.map((partner) => (
-                <img key={partner.id} src={partner.logoUrl} alt={partner.name} className={LOGO_CLASSNAME} />
+                <img
+                  key={partner.id}
+                  src={partner.logoUrl}
+                  alt={partner.name}
+                  className={LOGO_CLASSNAME}
+                />
               ))}
             </div>
           ) : (
@@ -74,7 +81,11 @@ export function TrustLogosSection() {
                 )}
               >
                 {[0, 1].map((copy) => (
-                  <div key={copy} className="flex shrink-0 gap-10" aria-hidden={copy === 1 || undefined}>
+                  <div
+                    key={copy}
+                    className="flex shrink-0 gap-10"
+                    aria-hidden={copy === 1 || undefined}
+                  >
                     {logoPartners.map((partner) => (
                       <img
                         key={partner.id}
@@ -90,7 +101,9 @@ export function TrustLogosSection() {
           )}
         </RevealOnScroll>
 
-        <p className="mt-6 text-center text-caption text-foreground-faint">{t('trustLogos.disclaimer')}</p>
+        <p className="mt-6 text-center text-caption text-foreground-faint">
+          {t('trustLogos.disclaimer')}
+        </p>
       </Container>
     </Section>
   )

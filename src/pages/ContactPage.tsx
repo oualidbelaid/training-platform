@@ -88,7 +88,13 @@ export default function ContactPage() {
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} align="center" />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+              align="center"
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -112,10 +118,35 @@ export default function ContactPage() {
                 <HoneypotField ref={honeypotRef} />
 
                 <FormSection title={tFields('sections.personal')}>
-                  <Input label={tFields('fields.firstName.label')} placeholder={tFields('fields.firstName.placeholder')} required error={errors.firstName?.message} {...register('firstName')} />
-                  <Input label={tFields('fields.lastName.label')} placeholder={tFields('fields.lastName.placeholder')} required error={errors.lastName?.message} {...register('lastName')} />
-                  <Input type="email" label={tFields('fields.email.label')} placeholder={tFields('fields.email.placeholder')} required error={errors.email?.message} {...register('email')} />
-                  <Input type="tel" label={tFields('fields.phone.label')} placeholder={tFields('fields.phone.placeholder')} error={errors.phone?.message} {...register('phone')} />
+                  <Input
+                    label={tFields('fields.firstName.label')}
+                    placeholder={tFields('fields.firstName.placeholder')}
+                    required
+                    error={errors.firstName?.message}
+                    {...register('firstName')}
+                  />
+                  <Input
+                    label={tFields('fields.lastName.label')}
+                    placeholder={tFields('fields.lastName.placeholder')}
+                    required
+                    error={errors.lastName?.message}
+                    {...register('lastName')}
+                  />
+                  <Input
+                    type="email"
+                    label={tFields('fields.email.label')}
+                    placeholder={tFields('fields.email.placeholder')}
+                    required
+                    error={errors.email?.message}
+                    {...register('email')}
+                  />
+                  <Input
+                    type="tel"
+                    label={tFields('fields.phone.label')}
+                    placeholder={tFields('fields.phone.placeholder')}
+                    error={errors.phone?.message}
+                    {...register('phone')}
+                  />
                   <Input
                     label={tFields('fields.company.label')}
                     placeholder={tFields('fields.company.placeholder')}
@@ -141,18 +172,38 @@ export default function ContactPage() {
                     className="sm:col-span-2"
                     {...register('message')}
                   />
-                  <RadioGroup legend={tFields('fields.preferredContactMethod.legend')} className="sm:col-span-2">
-                    <Radio label={tFields('fields.preferredContactMethod.email')} value="email" {...register('preferredContactMethod')} />
-                    <Radio label={tFields('fields.preferredContactMethod.phone')} value="phone" {...register('preferredContactMethod')} />
+                  <RadioGroup
+                    legend={tFields('fields.preferredContactMethod.legend')}
+                    className="sm:col-span-2"
+                  >
+                    <Radio
+                      label={tFields('fields.preferredContactMethod.email')}
+                      value="email"
+                      {...register('preferredContactMethod')}
+                    />
+                    <Radio
+                      label={tFields('fields.preferredContactMethod.phone')}
+                      value="phone"
+                      {...register('preferredContactMethod')}
+                    />
                   </RadioGroup>
                 </FormSection>
 
                 <FormSection title={tFields('sections.consent')}>
-                  <Checkbox label={tFields('privacy.consentLabel')} error={errors.consent?.message} className="sm:col-span-2" {...register('consent')} />
+                  <Checkbox
+                    label={tFields('privacy.consentLabel')}
+                    error={errors.consent?.message}
+                    className="sm:col-span-2"
+                    {...register('consent')}
+                  />
                 </FormSection>
 
                 {mutation.isError ? (
-                  <ErrorState title={tFields('error.title')} description={tFields('error.description')} onRetry={handleSubmit(onSubmit)} />
+                  <ErrorState
+                    title={tFields('error.title')}
+                    description={tFields('error.description')}
+                    onRetry={handleSubmit(onSubmit)}
+                  />
                 ) : null}
 
                 <Button type="submit" size="lg" loading={mutation.isPending}>
@@ -164,21 +215,33 @@ export default function ContactPage() {
 
           <RevealOnScroll className="flex flex-col gap-6">
             <div className="flex flex-col gap-6 rounded-2xl border border-border bg-surface-subtle p-6 sm:p-8">
-              <p className="text-small font-semibold uppercase tracking-wide text-foreground-faint">{t('info.title')}</p>
+              <p className="text-small font-semibold uppercase tracking-wide text-foreground-faint">
+                {t('info.title')}
+              </p>
               <ul className="flex flex-col gap-4">
                 <li className="flex items-start gap-3">
-                  <Icon name="location-dot" aria-hidden="true" className="mt-0.5 text-lg text-brand" />
+                  <Icon
+                    name="location-dot"
+                    aria-hidden="true"
+                    className="mt-0.5 text-lg text-brand"
+                  />
                   <span className="text-body text-foreground">{LOCATION.address}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <Icon name="phone" aria-hidden="true" className="text-lg text-brand" />
-                  <a href={`tel:${LOCATION.phone.replace(/\s+/g, '')}`} className="text-body text-foreground hover:text-brand">
+                  <a
+                    href={`tel:${LOCATION.phone.replace(/\s+/g, '')}`}
+                    className="text-body text-foreground hover:text-brand"
+                  >
                     {LOCATION.phone}
                   </a>
                 </li>
                 <li className="flex items-center gap-3">
                   <Icon name="envelope" aria-hidden="true" className="text-lg text-brand" />
-                  <a href={`mailto:${LOCATION.email}`} className="text-body text-foreground hover:text-brand">
+                  <a
+                    href={`mailto:${LOCATION.email}`}
+                    className="text-body text-foreground hover:text-brand"
+                  >
                     {LOCATION.email}
                   </a>
                 </li>

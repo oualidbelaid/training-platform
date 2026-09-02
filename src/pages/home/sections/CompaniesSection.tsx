@@ -95,7 +95,9 @@ export function CompaniesSection() {
             <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-500 text-neutral-0">
               <Icon name="building" aria-hidden="true" className="text-base" />
             </span>
-            <span className="text-small font-medium text-neutral-0">{t('companies.imageCaption')}</span>
+            <span className="text-small font-medium text-neutral-0">
+              {t('companies.imageCaption')}
+            </span>
           </GlassPanel>
         </RevealOnScroll>
       </Container>

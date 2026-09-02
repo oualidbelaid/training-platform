@@ -51,9 +51,20 @@ export default function AboutPage() {
           <RevealOnScroll>
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>
-                <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+                <SectionHeading
+                  as="h1"
+                  eyebrow={t('hero.eyebrow')}
+                  title={t('hero.title')}
+                  description={t('hero.description')}
+                />
               </div>
-              <Image src={MEDIA.companyTraining} alt="" aspectRatio="4 / 3" className="rounded-2xl" loading="eager" />
+              <Image
+                src={MEDIA.companyTraining}
+                alt=""
+                aspectRatio="4 / 3"
+                className="rounded-2xl"
+                loading="eager"
+              />
             </div>
           </RevealOnScroll>
         </Container>
@@ -91,7 +102,11 @@ export default function AboutPage() {
       <Section spacing="sm">
         <Container className="flex flex-col gap-10">
           <RevealOnScroll>
-            <SectionHeading eyebrow={t('values.eyebrow')} title={t('values.title')} description={t('values.description')} />
+            <SectionHeading
+              eyebrow={t('values.eyebrow')}
+              title={t('values.title')}
+              description={t('values.description')}
+            />
           </RevealOnScroll>
           <RevealOnScroll>
             <Grid cols={4} gap="lg">
@@ -101,8 +116,12 @@ export default function AboutPage() {
                     <Icon name={VALUE_ICONS[key]} aria-hidden="true" className="text-2xl" />
                   </span>
                   <div>
-                    <p className="text-body-lg font-semibold text-foreground">{t(`values.items.${key}.title`)}</p>
-                    <p className="mt-1 text-body text-foreground-muted">{t(`values.items.${key}.description`)}</p>
+                    <p className="text-body-lg font-semibold text-foreground">
+                      {t(`values.items.${key}.title`)}
+                    </p>
+                    <p className="mt-1 text-body text-foreground-muted">
+                      {t(`values.items.${key}.description`)}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -114,15 +133,25 @@ export default function AboutPage() {
       <Section spacing="sm" className="bg-surface-subtle">
         <Container className="flex flex-col gap-10">
           <RevealOnScroll>
-            <SectionHeading eyebrow={t('approach.eyebrow')} title={t('approach.title')} description={t('approach.description')} />
+            <SectionHeading
+              eyebrow={t('approach.eyebrow')}
+              title={t('approach.title')}
+              description={t('approach.description')}
+            />
           </RevealOnScroll>
           <RevealOnScroll>
             <Grid cols={4} gap="lg">
               {APPROACH_STEPS.map((step, index) => (
                 <div key={step} className="flex flex-col gap-3">
-                  <span className="text-h2 font-extrabold text-primary-200">{String(index + 1).padStart(2, '0')}</span>
-                  <p className="text-body-lg font-semibold text-foreground">{t(`approach.steps.${step}.title`)}</p>
-                  <p className="text-body text-foreground-muted">{t(`approach.steps.${step}.description`)}</p>
+                  <span className="text-h2 font-extrabold text-primary-200">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <p className="text-body-lg font-semibold text-foreground">
+                    {t(`approach.steps.${step}.title`)}
+                  </p>
+                  <p className="text-body text-foreground-muted">
+                    {t(`approach.steps.${step}.description`)}
+                  </p>
                 </div>
               ))}
             </Grid>
@@ -133,14 +162,22 @@ export default function AboutPage() {
       <Section spacing="sm">
         <Container className="flex flex-col gap-8">
           <RevealOnScroll>
-            <SectionHeading eyebrow={t('figures.eyebrow')} title={t('figures.title')} align="center" />
+            <SectionHeading
+              eyebrow={t('figures.eyebrow')}
+              title={t('figures.title')}
+              align="center"
+            />
           </RevealOnScroll>
           <RevealOnScroll>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
               {FIGURE_KEYS.map((key) => (
                 <div key={key} className="text-center">
-                  <p className="text-h1 font-extrabold text-foreground">{t(`figures.items.${key}.value`)}</p>
-                  <p className="mt-1 text-small text-foreground-muted">{t(`figures.items.${key}.label`)}</p>
+                  <p className="text-h1 font-extrabold text-foreground">
+                    {t(`figures.items.${key}.value`)}
+                  </p>
+                  <p className="mt-1 text-small text-foreground-muted">
+                    {t(`figures.items.${key}.label`)}
+                  </p>
                 </div>
               ))}
             </div>

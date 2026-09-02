@@ -4,12 +4,12 @@
 
 `src/config/env.ts` is the **only** place `import.meta.env` is read. It validates every variable through Zod at startup and throws immediately if something is missing/malformed — fail fast rather than surfacing a confusing runtime error later.
 
-| Variable | Purpose |
-|---|---|
-| `VITE_API_URL` | Base URL for the app's own API layer / future BFF |
-| `VITE_DOLIBARR_URL` | Dolibarr REST API base URL (unused while `VITE_USE_MOCK=true`) |
-| `VITE_APP_ENV` | `development` \| `staging` \| `production` |
-| `VITE_USE_MOCK` | When `true`, every repository factory resolves to its Mock implementation |
+| Variable            | Purpose                                                                   |
+| ------------------- | ------------------------------------------------------------------------- |
+| `VITE_API_URL`      | Base URL for the app's own API layer / future BFF                         |
+| `VITE_DOLIBARR_URL` | Dolibarr REST API base URL (unused while `VITE_USE_MOCK=true`)            |
+| `VITE_APP_ENV`      | `development` \| `staging` \| `production`                                |
+| `VITE_USE_MOCK`     | When `true`, every repository factory resolves to its Mock implementation |
 
 `.env.example` is committed; `.env` is gitignored and must be created locally (`cp .env.example .env`).
 

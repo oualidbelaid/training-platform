@@ -10,7 +10,9 @@ function delay<T>(value: T): Promise<T> {
 }
 
 export class MockTrainingDomainRepository implements TrainingDomainRepository {
-  private readonly domains: TrainingDomain[] = mockTrainingDomainDTOs.map(TrainingDomainMapper.fromDTO)
+  private readonly domains: TrainingDomain[] = mockTrainingDomainDTOs.map(
+    TrainingDomainMapper.fromDTO,
+  )
 
   async getAll(): Promise<TrainingDomain[]> {
     return delay(this.domains)

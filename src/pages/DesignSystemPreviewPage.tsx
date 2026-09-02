@@ -110,10 +110,16 @@ export default function DesignSystemPreviewPage() {
             <p className="text-display text-foreground">Display — training excellence</p>
             <p className="text-h1 text-foreground">H1 — Leadership programs</p>
             <p className="text-h2 text-foreground">H2 — Project management</p>
-            <p className="font-display text-h3 text-foreground">Fraunces (opt-in editorial accent only)</p>
+            <p className="font-display text-h3 text-foreground">
+              Fraunces (opt-in editorial accent only)
+            </p>
             <p className="text-h3 font-medium text-foreground">H3 — Course details</p>
-            <p className="text-body-lg text-foreground">Body large — supporting hero copy sits here.</p>
-            <p className="text-body text-foreground">Body — the default paragraph size for content.</p>
+            <p className="text-body-lg text-foreground">
+              Body large — supporting hero copy sits here.
+            </p>
+            <p className="text-body text-foreground">
+              Body — the default paragraph size for content.
+            </p>
             <p className="text-small text-foreground-muted">Small — secondary metadata text.</p>
             <p className="text-caption uppercase tracking-wide text-foreground-faint">
               Caption — eyebrows and labels
@@ -172,11 +178,7 @@ export default function DesignSystemPreviewPage() {
           <Grid cols={3} className="mt-8">
             <RevealOnScroll>
               <Card>
-                <CardImage
-                  src="/icons.svg"
-                  alt=""
-                  className="bg-primary-100 object-contain p-8"
-                />
+                <CardImage src="/icons.svg" alt="" className="bg-primary-100 object-contain p-8" />
                 <CardContent>
                   <p className="text-h3 font-medium text-foreground">Card title</p>
                   <p className="mt-2 text-body text-foreground-muted">
@@ -210,7 +212,9 @@ export default function DesignSystemPreviewPage() {
                 <FloatingElement className="absolute end-6 top-6 h-10 w-10 rounded-full bg-accent-400/80" />
                 <GlassPanel className="p-6" tone="dark">
                   <p className="text-h3 font-medium text-neutral-0">Glass panel</p>
-                  <p className="mt-1 text-small text-neutral-0/80">Restrained, one signature moment.</p>
+                  <p className="mt-1 text-small text-neutral-0/80">
+                    Restrained, one signature moment.
+                  </p>
                 </GlassPanel>
               </div>
             </RevealOnScroll>
@@ -223,8 +227,17 @@ export default function DesignSystemPreviewPage() {
           <Grid cols={2} className="mt-8">
             <Stack gap="lg">
               <Input label="First name" placeholder="Sophie" required />
-              <Input label="Email" type="email" placeholder="sophie@example.com" error="Enter a valid email address" />
-              <Textarea label="Message" placeholder="How can we help?" hint="Optional — max 2000 characters" />
+              <Input
+                label="Email"
+                type="email"
+                placeholder="sophie@example.com"
+                error="Enter a valid email address"
+              />
+              <Textarea
+                label="Message"
+                placeholder="How can we help?"
+                hint="Optional — max 2000 characters"
+              />
             </Stack>
             <Stack gap="lg">
               <Select
@@ -252,7 +265,9 @@ export default function DesignSystemPreviewPage() {
             <Avatar name="Claire Dubois" size="lg" />
             <Avatar name="Karim El Amrani" size="md" />
             <Divider orientation="vertical" className="h-12" />
-            <p className="text-body text-foreground-muted">Vertical divider — RTL-safe via logical border</p>
+            <p className="text-body text-foreground-muted">
+              Vertical divider — RTL-safe via logical border
+            </p>
           </Stack>
           <Divider className="mt-8" />
         </Section>

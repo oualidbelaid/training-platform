@@ -31,7 +31,8 @@ export default function FaqPage() {
   const categoryOptions = useMemo(() => {
     const seen = new Map<string, string>()
     for (const faq of faqsQuery.data ?? []) {
-      if (!seen.has(faq.categoryKey)) seen.set(faq.categoryKey, getLocalizedText(faq.category, language))
+      if (!seen.has(faq.categoryKey))
+        seen.set(faq.categoryKey, getLocalizedText(faq.category, language))
     }
     return Array.from(seen, ([value, label]) => ({ value, label }))
   }, [faqsQuery.data, language])
@@ -50,7 +51,12 @@ export default function FaqPage() {
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+            />
           </RevealOnScroll>
         </Container>
       </Section>

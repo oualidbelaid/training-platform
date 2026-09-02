@@ -28,7 +28,11 @@ interface TestimonialCardProps {
  * any one author, same reasoning as category-visuals.ts); `compact` keeps
  * the original small card for the supporting testimonials beside it.
  */
-export function TestimonialCard({ testimonial, language, variant = 'compact' }: TestimonialCardProps) {
+export function TestimonialCard({
+  testimonial,
+  language,
+  variant = 'compact',
+}: TestimonialCardProps) {
   if (variant === 'featured') {
     return (
       <div className="relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-md sm:p-9">
@@ -66,8 +70,14 @@ export function TestimonialCard({ testimonial, language, variant = 'compact' }: 
 
   return (
     <Card className="h-full" hoverable={false}>
-      <CardContent className={dense ? 'flex h-full flex-col gap-4 p-5' : 'flex h-full flex-col gap-5'}>
-        <p className={dense ? 'flex-1 text-small text-foreground' : 'flex-1 text-body text-foreground'}>
+      <CardContent
+        className={dense ? 'flex h-full flex-col gap-4 p-5' : 'flex h-full flex-col gap-5'}
+      >
+        <p
+          className={
+            dense ? 'flex-1 text-small text-foreground' : 'flex-1 text-body text-foreground'
+          }
+        >
           {getLocalizedText(testimonial.quote, language)}
         </p>
         <div className="flex items-center gap-3">

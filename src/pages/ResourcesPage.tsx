@@ -36,7 +36,12 @@ export default function ResourcesPage() {
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -44,7 +49,9 @@ export default function ResourcesPage() {
       <Section spacing="sm" className="pt-0">
         <Container className="flex flex-col gap-10">
           {articlesQuery.isLoading ? <LoadingState /> : null}
-          {articlesQuery.isError ? <ErrorState onRetry={() => void articlesQuery.refetch()} /> : null}
+          {articlesQuery.isError ? (
+            <ErrorState onRetry={() => void articlesQuery.refetch()} />
+          ) : null}
 
           {!articlesQuery.isLoading && !articlesQuery.isError ? (
             articles.length > 0 ? (

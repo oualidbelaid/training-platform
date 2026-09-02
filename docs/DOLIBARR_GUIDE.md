@@ -20,6 +20,7 @@ This works because Mock data is authored in the DTO shape and passed through the
 Dolibarr's REST API requires an API key/token. Any `VITE_`-prefixed environment variable is compiled into the **public** client bundle — it is not a safe place for a write-capable credential (e.g. one that creates Leads/Quotes as CRM records in Dolibarr).
 
 Before the Dolibarr Integration milestone can ship a write path safely, one of these needs to be decided:
+
 - **(a)** Dolibarr is configured with a public, read-only, origin-restricted key acceptable for client-side use (fine for reading Trainings/Trainers/Categories; **not** fine for writing Leads).
 - **(b)** A minimal backend/BFF proxies authenticated requests so the real token never reaches the browser.
 

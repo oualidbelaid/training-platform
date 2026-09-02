@@ -1,7 +1,8 @@
 import type { TrainingFormat } from '@/types/entities/common'
 
 /** Which of the 5 lead-generation experiences a submission came from (spec M5). */
-export type LeadFormType = 'request-information' | 'request-quote' | 'contact' | 'register-interest' | 'consultation'
+export type LeadFormType =
+  'request-information' | 'request-quote' | 'contact' | 'register-interest' | 'consultation'
 
 export type PreferredContactMethod = 'email' | 'phone'
 

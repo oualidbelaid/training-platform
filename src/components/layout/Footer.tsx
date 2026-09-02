@@ -28,16 +28,25 @@ export function Footer() {
               alt={t('app.name', { ns: 'common' })}
               className="h-9 w-auto max-w-full mix-blend-multiply"
             />
-            <p className="max-w-xs text-body text-foreground-muted">{t('footer.tagline', { ns: 'home' })}</p>
+            <p className="max-w-xs text-body text-foreground-muted">
+              {t('footer.tagline', { ns: 'home' })}
+            </p>
             <LanguageSwitcher />
           </div>
 
-          <nav aria-label={t('footer.columns.training.title', { ns: 'home' })} className="flex flex-col gap-3">
+          <nav
+            aria-label={t('footer.columns.training.title', { ns: 'home' })}
+            className="flex flex-col gap-3"
+          >
             <p className="text-small font-semibold text-neutral-900">
               {t('footer.columns.training.title', { ns: 'home' })}
             </p>
             {categories?.slice(0, 4).map((category) => (
-              <Link key={category.id} href={`/trainings?category=${category.slug}`} variant="subtle">
+              <Link
+                key={category.id}
+                href={`/trainings?category=${category.slug}`}
+                variant="subtle"
+              >
                 {getLocalizedText(category.name, language)}
               </Link>
             ))}
@@ -46,7 +55,10 @@ export function Footer() {
             </Link>
           </nav>
 
-          <nav aria-label={t('footer.columns.company.title', { ns: 'home' })} className="flex flex-col gap-3">
+          <nav
+            aria-label={t('footer.columns.company.title', { ns: 'home' })}
+            className="flex flex-col gap-3"
+          >
             <p className="text-small font-semibold text-neutral-900">
               {t('footer.columns.company.title', { ns: 'home' })}
             </p>
@@ -58,7 +70,10 @@ export function Footer() {
             </Link>
           </nav>
 
-          <nav aria-label={t('footer.columns.contact.title', { ns: 'home' })} className="flex flex-col gap-3">
+          <nav
+            aria-label={t('footer.columns.contact.title', { ns: 'home' })}
+            className="flex flex-col gap-3"
+          >
             <p className="text-small font-semibold text-neutral-900">
               {t('footer.columns.contact.title', { ns: 'home' })}
             </p>
@@ -78,7 +93,8 @@ export function Footer() {
 
         <div className="flex flex-col gap-4 text-small text-foreground-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} {t('app.name', { ns: 'common' })} — {t('footer.copyright', { ns: 'home' })}
+            © {new Date().getFullYear()} {t('app.name', { ns: 'common' })} —{' '}
+            {t('footer.copyright', { ns: 'home' })}
           </p>
           <div className="flex gap-6">
             <Link href="/legal" variant="subtle">

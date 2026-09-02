@@ -36,7 +36,7 @@ Only `common` exists today (`app`, `nav`, `language`, `feedback`, `notFound`, `f
 ## Rules
 
 - Never hardcode user-facing text in a component — always `t('key')`.
-- Dynamic *content* (Training titles, Trainer bios, Article bodies) is **not** an i18next concern — it's modeled as a `LocalizedText` (`Record<SupportedLanguage, string>`) directly on the domain entity (see `types/entities/training.ts` and `utils/localized-text.ts`). i18next only covers static UI chrome.
+- Dynamic _content_ (Training titles, Trainer bios, Article bodies) is **not** an i18next concern — it's modeled as a `LocalizedText` (`Record<SupportedLanguage, string>`) directly on the domain entity (see `types/entities/training.ts` and `utils/localized-text.ts`). i18next only covers static UI chrome.
 
 ## Arabic typography — resolved in M1
 

@@ -75,7 +75,13 @@ const BRAND_NAMES = new Set<string>(['linkedin', 'facebook', 'instagram', 'youtu
  * `aria-label` is supplied, in which case it takes `role="img"` — the same
  * pattern used throughout the design system for non-text visual content.
  */
-export function Icon({ name, variant = 'solid', className, 'aria-label': ariaLabel, ...props }: IconProps) {
+export function Icon({
+  name,
+  variant = 'solid',
+  className,
+  'aria-label': ariaLabel,
+  ...props
+}: IconProps) {
   const style = BRAND_NAMES.has(name) ? 'fa-brands' : `fa-${variant}`
 
   return (

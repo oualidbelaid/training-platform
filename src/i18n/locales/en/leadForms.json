@@ -8,13 +8,20 @@
     "jobTitle": { "label": "Job title", "placeholder": "Your job title" },
     "message": { "label": "Message", "placeholder": "Share any details (optional)" },
     "training": { "label": "Training program", "placeholder": "Select a training" },
-    "preferredContactMethod": { "legend": "Preferred contact method", "email": "Email", "phone": "Phone" },
+    "preferredContactMethod": {
+      "legend": "Preferred contact method",
+      "email": "Email",
+      "phone": "Phone"
+    },
     "participantsCount": { "label": "Number of participants", "placeholder": "E.g. 8" },
     "preferredFormat": { "label": "Preferred format", "placeholder": "Select a format" },
     "preferredDate": { "label": "Preferred date" },
     "location": { "label": "Preferred location", "placeholder": "E.g. at your premises, Algiers" },
     "trainingNeeds": { "label": "Training needs", "placeholder": "Describe your needs (optional)" },
-    "areasOfInterest": { "label": "Areas of interest", "placeholder": "E.g. leadership, project management..." },
+    "areasOfInterest": {
+      "label": "Areas of interest",
+      "placeholder": "E.g. leadership, project management..."
+    },
     "subject": { "label": "Subject", "placeholder": "What is this about?" }
   },
   "sections": {

@@ -38,7 +38,9 @@ export function PartnerCard({ partner, language }: PartnerCardProps) {
           </span>
         )}
         <p className="text-body-lg font-semibold text-foreground">{partner.name}</p>
-        <p className="flex-1 text-body text-foreground-muted">{getLocalizedText(partner.description, language)}</p>
+        <p className="flex-1 text-body text-foreground-muted">
+          {getLocalizedText(partner.description, language)}
+        </p>
       </CardContent>
     </Card>
   )

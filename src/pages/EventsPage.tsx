@@ -35,8 +35,12 @@ export default function EventsPage() {
     const today = new Date().toISOString().slice(0, 10)
     const events = eventsQuery.data ?? []
     return {
-      upcoming: events.filter((event) => event.startDate >= today).sort((a, b) => a.startDate.localeCompare(b.startDate)),
-      past: events.filter((event) => event.startDate < today).sort((a, b) => b.startDate.localeCompare(a.startDate)),
+      upcoming: events
+        .filter((event) => event.startDate >= today)
+        .sort((a, b) => a.startDate.localeCompare(b.startDate)),
+      past: events
+        .filter((event) => event.startDate < today)
+        .sort((a, b) => b.startDate.localeCompare(a.startDate)),
     }
   }, [eventsQuery.data])
 
@@ -54,7 +58,12 @@ export default function EventsPage() {
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -77,7 +86,10 @@ export default function EventsPage() {
                     ))}
                   </Grid>
                 ) : (
-                  <EmptyState title={t('empty.upcomingTitle')} description={t('empty.upcomingDescription')} />
+                  <EmptyState
+                    title={t('empty.upcomingTitle')}
+                    description={t('empty.upcomingDescription')}
+                  />
                 )}
               </div>
 
@@ -92,7 +104,10 @@ export default function EventsPage() {
                     ))}
                   </Grid>
                 ) : (
-                  <EmptyState title={t('empty.pastTitle')} description={t('empty.pastDescription')} />
+                  <EmptyState
+                    title={t('empty.pastTitle')}
+                    description={t('empty.pastDescription')}
+                  />
                 )}
               </div>
             </>

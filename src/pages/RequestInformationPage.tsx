@@ -112,14 +112,24 @@ export default function RequestInformationPage() {
 
   return (
     <>
-      <Seo title={t('seo.title')} description={t('seo.description')} canonicalPath="/request-information" />
+      <Seo
+        title={t('seo.title')}
+        description={t('seo.description')}
+        canonicalPath="/request-information"
+      />
       <BreadcrumbSchema items={breadcrumbItems} />
 
       <Section spacing="sm">
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} align="center" />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+              align="center"
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -189,9 +199,20 @@ export default function RequestInformationPage() {
                   className="sm:col-span-2"
                   {...register('trainingId')}
                 />
-                <RadioGroup legend={tFields('fields.preferredContactMethod.legend')} className="sm:col-span-2">
-                  <Radio label={tFields('fields.preferredContactMethod.email')} value="email" {...register('preferredContactMethod')} />
-                  <Radio label={tFields('fields.preferredContactMethod.phone')} value="phone" {...register('preferredContactMethod')} />
+                <RadioGroup
+                  legend={tFields('fields.preferredContactMethod.legend')}
+                  className="sm:col-span-2"
+                >
+                  <Radio
+                    label={tFields('fields.preferredContactMethod.email')}
+                    value="email"
+                    {...register('preferredContactMethod')}
+                  />
+                  <Radio
+                    label={tFields('fields.preferredContactMethod.phone')}
+                    value="phone"
+                    {...register('preferredContactMethod')}
+                  />
                 </RadioGroup>
               </FormSection>
 
@@ -215,7 +236,11 @@ export default function RequestInformationPage() {
               </FormSection>
 
               {mutation.isError ? (
-                <ErrorState title={tFields('error.title')} description={tFields('error.description')} onRetry={handleSubmit(onSubmit)} />
+                <ErrorState
+                  title={tFields('error.title')}
+                  description={tFields('error.description')}
+                  onRetry={handleSubmit(onSubmit)}
+                />
               ) : null}
 
               <Button type="submit" size="lg" loading={mutation.isPending}>

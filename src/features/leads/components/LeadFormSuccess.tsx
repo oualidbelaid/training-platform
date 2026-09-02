@@ -22,7 +22,12 @@ interface LeadFormSuccessProps {
  * management needed. Never an unexpected redirect: the form's own page
  * swaps to this panel in place.
  */
-export function LeadFormSuccess({ title, description, primaryAction, secondaryAction }: LeadFormSuccessProps) {
+export function LeadFormSuccess({
+  title,
+  description,
+  primaryAction,
+  secondaryAction,
+}: LeadFormSuccessProps) {
   return (
     <RevealOnScroll>
       <output className="flex flex-col items-center gap-6 rounded-2xl border border-border bg-surface p-10 text-center sm:p-14">

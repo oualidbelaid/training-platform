@@ -8,13 +8,23 @@
     "jobTitle": { "label": "Fonction", "placeholder": "Votre fonction" },
     "message": { "label": "Message", "placeholder": "Précisez votre demande (facultatif)" },
     "training": { "label": "Formation concernée", "placeholder": "Sélectionner une formation" },
-    "preferredContactMethod": { "legend": "Moyen de contact préféré", "email": "E-mail", "phone": "Téléphone" },
+    "preferredContactMethod": {
+      "legend": "Moyen de contact préféré",
+      "email": "E-mail",
+      "phone": "Téléphone"
+    },
     "participantsCount": { "label": "Nombre de participants", "placeholder": "Ex. 8" },
     "preferredFormat": { "label": "Format préféré", "placeholder": "Sélectionner un format" },
     "preferredDate": { "label": "Date souhaitée" },
     "location": { "label": "Lieu souhaité", "placeholder": "Ex. dans vos locaux, Alger" },
-    "trainingNeeds": { "label": "Besoins en formation", "placeholder": "Décrivez vos besoins (facultatif)" },
-    "areasOfInterest": { "label": "Domaines d'intérêt", "placeholder": "Ex. leadership, gestion de projet..." },
+    "trainingNeeds": {
+      "label": "Besoins en formation",
+      "placeholder": "Décrivez vos besoins (facultatif)"
+    },
+    "areasOfInterest": {
+      "label": "Domaines d'intérêt",
+      "placeholder": "Ex. leadership, gestion de projet..."
+    },
     "subject": { "label": "Sujet", "placeholder": "Objet de votre message" }
   },
   "sections": {

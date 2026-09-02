@@ -46,8 +46,14 @@ export const staggerContainer: Variants = {
 }
 
 /** Hover/press micro-interaction presets — pass directly as whileHover/whileTap. */
-export const hoverLift = { y: -4, transition: { duration: motionDurations.fast, ease: motionEasing.out } }
-export const pressScale = { scale: 0.98, transition: { duration: motionDurations.fast, ease: motionEasing.out } }
+export const hoverLift = {
+  y: -4,
+  transition: { duration: motionDurations.fast, ease: motionEasing.out },
+}
+export const pressScale = {
+  scale: 0.98,
+  transition: { duration: motionDurations.fast, ease: motionEasing.out },
+}
 
 /**
  * Page transition variants (spec M1 §9). Defined here as the shared token;

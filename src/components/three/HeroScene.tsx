@@ -38,7 +38,12 @@ function Orb() {
       {/* Inner glowing core, visible through the translucent shell */}
       <mesh scale={0.62}>
         <sphereGeometry args={[1, 32, 32]} />
-        <meshStandardMaterial color="#8c1e4b" emissive="#8c1e4b" emissiveIntensity={0.9} roughness={0.4} />
+        <meshStandardMaterial
+          color="#8c1e4b"
+          emissive="#8c1e4b"
+          emissiveIntensity={0.9}
+          roughness={0.4}
+        />
       </mesh>
 
       {/* Soft glass shell */}

@@ -153,12 +153,21 @@ describe('faqItemsToFaqPageSchema', () => {
 
 describe('breadcrumbToSchema', () => {
   it('maps breadcrumb items to a schema.org BreadcrumbList with 1-based positions', () => {
-    const schema = breadcrumbToSchema([{ label: 'Home', href: '/' }, { label: 'Trainings', href: '/trainings' }, { label: 'Leadership 101' }])
+    const schema = breadcrumbToSchema([
+      { label: 'Home', href: '/' },
+      { label: 'Trainings', href: '/trainings' },
+      { label: 'Leadership 101' },
+    ])
 
     expect(schema['@type']).toBe('BreadcrumbList')
     expect(schema.itemListElement).toEqual([
       { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoConfig.siteUrl}/` },
-      { '@type': 'ListItem', position: 2, name: 'Trainings', item: `${seoConfig.siteUrl}/trainings` },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Trainings',
+        item: `${seoConfig.siteUrl}/trainings`,
+      },
       { '@type': 'ListItem', position: 3, name: 'Leadership 101' },
     ])
   })

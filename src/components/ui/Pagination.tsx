@@ -32,7 +32,10 @@ export function Pagination({
   const pages = Array.from({ length: pageCount }, (_, index) => index + 1)
 
   return (
-    <nav aria-label={statusLabel} className={cn('flex items-center justify-center gap-2', className)}>
+    <nav
+      aria-label={statusLabel}
+      className={cn('flex items-center justify-center gap-2', className)}
+    >
       <button
         type="button"
         onClick={() => onPageChange(page - 1)}

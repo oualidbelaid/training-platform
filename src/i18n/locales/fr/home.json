@@ -43,12 +43,12 @@
       "countries": { "suffix": "", "label": "pays couverts" },
       "satisfaction": { "suffix": " %", "label": "taux de satisfaction" }
     },
-    "disclaimer": "Chiffres de démonstration"
+    "disclaimer": ""
   },
   "trustLogos": {
     "eyebrow": "Ils nous font confiance",
     "description": "Une confiance construite avec des organisations de tous secteurs.",
-    "disclaimer": "Logos de démonstration",
+    "disclaimer": "",
     "cta": "Voir nos partenaires"
   },
   "categories": {
@@ -135,7 +135,7 @@
   "testimonials": {
     "eyebrow": "Témoignages",
     "title": "Ce que nos clients en disent",
-    "disclaimer": "Témoignages de démonstration",
+    "disclaimer": "",
     "cta": "Voir tous les témoignages"
   },
   "location": {

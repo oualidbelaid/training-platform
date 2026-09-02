@@ -32,8 +32,7 @@ const iconButtonVariants = cva(
 )
 
 export interface IconButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof iconButtonVariants> {
+  extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof iconButtonVariants> {
   /** Required — an icon-only button has no accessible name without it. */
   'aria-label': string
 }

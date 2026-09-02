@@ -78,7 +78,9 @@ export function ProfessionalDevelopmentSection() {
       <p className="text-caption font-semibold uppercase tracking-wide text-accent-400">
         {t('professionalDevelopment.eyebrow')}
       </p>
-      <h2 className="text-h2 font-extrabold text-neutral-0">{t('professionalDevelopment.title')}</h2>
+      <h2 className="text-h2 font-extrabold text-neutral-0">
+        {t('professionalDevelopment.title')}
+      </h2>
       <p className="text-body-lg text-neutral-0/70">{t('professionalDevelopment.description')}</p>
     </div>
   )
@@ -88,11 +90,27 @@ export function ProfessionalDevelopmentSection() {
       {DEVELOPMENT_STAGES.map((stage, index) => {
         const isActive = index === stageIndex
         return (
-          <li key={stage.key} className={cn('flex items-center gap-3 transition-opacity duration-(--duration-base)', isActive ? 'opacity-100' : 'opacity-40')}>
-            <span className={cn('text-caption font-semibold tabular-nums', isActive ? 'text-accent-400' : 'text-neutral-0/60')}>
+          <li
+            key={stage.key}
+            className={cn(
+              'flex items-center gap-3 transition-opacity duration-(--duration-base)',
+              isActive ? 'opacity-100' : 'opacity-40',
+            )}
+          >
+            <span
+              className={cn(
+                'text-caption font-semibold tabular-nums',
+                isActive ? 'text-accent-400' : 'text-neutral-0/60',
+              )}
+            >
               {String(index + 1).padStart(2, '0')}
             </span>
-            <span className={cn('text-small font-medium uppercase tracking-wide', isActive ? 'text-neutral-0' : 'text-neutral-0/60')}>
+            <span
+              className={cn(
+                'text-small font-medium uppercase tracking-wide',
+                isActive ? 'text-neutral-0' : 'text-neutral-0/60',
+              )}
+            >
               {t(`professionalDevelopment.stages.${stage.key}.label`)}
             </span>
           </li>
@@ -109,16 +127,31 @@ export function ProfessionalDevelopmentSection() {
           <div className="flex flex-col gap-12">
             {DEVELOPMENT_STAGES.map((stage, index) => {
               return (
-                <div key={stage.key} className="grid gap-6 sm:grid-cols-2 sm:items-center sm:gap-10">
+                <div
+                  key={stage.key}
+                  className="grid gap-6 sm:grid-cols-2 sm:items-center sm:gap-10"
+                >
                   <div className="overflow-hidden rounded-2xl border border-neutral-0/10">
-                    <img src={stage.image} alt="" className="h-56 w-full object-cover sm:h-64" loading="lazy" />
+                    <img
+                      src={stage.image}
+                      alt=""
+                      className="h-56 w-full object-cover sm:h-64"
+                      loading="lazy"
+                    />
                   </div>
                   <div className="flex flex-col gap-3">
-                    <span className={cn('flex h-11 w-11 items-center justify-center rounded-xl', stage.badgeClassName)}>
+                    <span
+                      className={cn(
+                        'flex h-11 w-11 items-center justify-center rounded-xl',
+                        stage.badgeClassName,
+                      )}
+                    >
                       <Icon name={stage.icon} aria-hidden="true" className="text-xl" />
                     </span>
                     <p className="text-caption font-semibold uppercase tracking-wide text-accent-400">
-                      {t('professionalDevelopment.stepLabel', { number: String(index + 1).padStart(2, '0') })}
+                      {t('professionalDevelopment.stepLabel', {
+                        number: String(index + 1).padStart(2, '0'),
+                      })}
                     </p>
                     <h3 className="text-h3 font-semibold text-neutral-0">
                       {t(`professionalDevelopment.stages.${stage.key}.title`)}
@@ -137,7 +170,11 @@ export function ProfessionalDevelopmentSection() {
   }
 
   return (
-    <section ref={outerRef} className="relative bg-neutral-950" style={{ height: `${STAGE_COUNT * VH_PER_STAGE}vh` }}>
+    <section
+      ref={outerRef}
+      className="relative bg-neutral-950"
+      style={{ height: `${STAGE_COUNT * VH_PER_STAGE}vh` }}
+    >
       <div className="sticky top-0 flex h-screen flex-col justify-center overflow-hidden pt-16 text-neutral-0 sm:pt-20 lg:pt-24">
         <Container className="flex w-full flex-col gap-10 lg:gap-14">
           {header}
@@ -153,11 +190,18 @@ export function ProfessionalDevelopmentSection() {
                   transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   className="flex flex-col gap-4"
                 >
-                  <span className={cn('flex h-11 w-11 items-center justify-center rounded-xl', activeStage.badgeClassName)}>
+                  <span
+                    className={cn(
+                      'flex h-11 w-11 items-center justify-center rounded-xl',
+                      activeStage.badgeClassName,
+                    )}
+                  >
                     <Icon name={activeStage.icon} aria-hidden="true" className="text-xl" />
                   </span>
                   <p className="text-caption font-semibold uppercase tracking-wide text-accent-400">
-                    {t('professionalDevelopment.stepLabel', { number: String(stageIndex + 1).padStart(2, '0') })}
+                    {t('professionalDevelopment.stepLabel', {
+                      number: String(stageIndex + 1).padStart(2, '0'),
+                    })}
                   </p>
                   <h3 className="text-h2 font-extrabold text-neutral-0">
                     {t(`professionalDevelopment.stages.${activeStage.key}.title`)}

@@ -15,14 +15,14 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     title_en: 'Leadership: Succeeding as a New Manager',
     title_ar: 'القيادة: النجاح في تولي منصب إداري جديد',
     summary_fr:
-      "Développez les postures et les outils essentiels pour encadrer une équipe avec confiance dès les premiers mois.",
+      'Développez les postures et les outils essentiels pour encadrer une équipe avec confiance dès les premiers mois.',
     summary_en:
       'Build the posture and practical tools needed to lead a team with confidence from day one.',
     summary_ar: 'طوّر السلوكيات والأدوات الأساسية لقيادة فريق بثقة منذ الأشهر الأولى.',
     description_fr:
-      "Prendre son premier poste de manager implique un changement de posture profond : passer du faire au faire-faire, gagner en légitimité et construire la confiance de son équipe. Cette formation donne aux nouveaux managers les repères, les outils et la pratique nécessaires pour aborder cette transition avec sérénité et efficacité.",
+      'Prendre son premier poste de manager implique un changement de posture profond : passer du faire au faire-faire, gagner en légitimité et construire la confiance de son équipe. Cette formation donne aux nouveaux managers les repères, les outils et la pratique nécessaires pour aborder cette transition avec sérénité et efficacité.',
     description_en:
-      "Taking on a first management role means a deep shift in posture — from doing the work to enabling others to do it, building legitimacy and earning the trust of a team. This training gives new managers the frameworks, tools and practice they need to navigate that transition with confidence and effectiveness.",
+      'Taking on a first management role means a deep shift in posture — from doing the work to enabling others to do it, building legitimacy and earning the trust of a team. This training gives new managers the frameworks, tools and practice they need to navigate that transition with confidence and effectiveness.',
     description_ar:
       'يتطلب تولي أول منصب إداري تحوّلًا عميقًا في السلوك: الانتقال من التنفيذ المباشر إلى تمكين الآخرين من التنفيذ، وبناء الشرعية وكسب ثقة الفريق. يمنح هذا التدريب المديرين الجدد الأطر والأدوات والممارسة اللازمة لاجتياز هذا التحول بثقة وفعالية.',
     objectives_fr: [
@@ -60,7 +60,7 @@ export const mockTrainingDTOs: TrainingDTO[] = [
         description_fr:
           'Clarifier son rôle, ses responsabilités et les attentes de sa hiérarchie et de son équipe.',
         description_en:
-          "Clarify your role, responsibilities, and the expectations of your leadership and your team.",
+          'Clarify your role, responsibilities, and the expectations of your leadership and your team.',
         description_ar: 'توضيح دورك ومسؤولياتك وتوقعات إدارتك وفريقك.',
       },
       {
@@ -85,17 +85,19 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     methodology_fr:
       "Alternance d'apports théoriques, de mises en situation et de retours d'expérience entre pairs.",
     methodology_en: 'A mix of theoretical input, role-play scenarios, and peer feedback.',
-    methodology_ar: 'مزيج من المدخلات النظرية وسيناريوهات تمثيل الأدوار وتبادل الخبرات بين الأقران.',
+    methodology_ar:
+      'مزيج من المدخلات النظرية وسيناريوهات تمثيل الأدوار وتبادل الخبرات بين الأقران.',
     faq: [
       {
         question_fr: 'Cette formation est-elle adaptée si je manage déjà depuis plusieurs mois ?',
         question_en: "Is this training suitable if I've already been managing for a few months?",
         question_ar: 'هل هذا التدريب مناسب إذا كنت أدير فريقًا منذ عدة أشهر؟',
         answer_fr:
-          "Oui, elle est conçue pour les managers en poste depuis moins de deux ans, quelle que soit leur ancienneté exacte.",
+          'Oui, elle est conçue pour les managers en poste depuis moins de deux ans, quelle que soit leur ancienneté exacte.',
         answer_en:
           "Yes — it's designed for managers who have been in the role for under two years, regardless of exact tenure.",
-        answer_ar: 'نعم، هو مصمم للمديرين الذين توليوا مناصبهم منذ أقل من عامين، بغض النظر عن الأقدمية الدقيقة.',
+        answer_ar:
+          'نعم، هو مصمم للمديرين الذين توليوا مناصبهم منذ أقل من عامين، بغض النظر عن الأقدمية الدقيقة.',
       },
       {
         question_fr: 'La formation est-elle disponible en intra-entreprise ?',
@@ -129,14 +131,13 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     title_en: 'Project Management Fundamentals',
     title_ar: 'أساسيات إدارة المشاريع',
     summary_fr:
-      "Maîtrisez les méthodes et les outils clés pour planifier, piloter et livrer vos projets dans les délais.",
-    summary_en:
-      'Master the core methods and tools to plan, run and deliver projects on time.',
+      'Maîtrisez les méthodes et les outils clés pour planifier, piloter et livrer vos projets dans les délais.',
+    summary_en: 'Master the core methods and tools to plan, run and deliver projects on time.',
     summary_ar: 'أتقن الأساليب والأدوات الرئيسية لتخطيط مشاريعك وتنفيذها وتسليمها في الوقت المحدد.',
     description_fr:
       "Cette formation couvre l'intégralité du cycle de vie d'un projet, du cadrage initial à la clôture, en passant par la planification, le pilotage de l'exécution et la gestion des risques. Elle s'appuie sur des méthodes éprouvées et des outils concrets, directement transposables à vos projets.",
     description_en:
-      "This training covers the full project lifecycle, from initial framing to closing, including planning, execution management and risk management. It relies on proven methods and practical tools you can apply directly to your own projects.",
+      'This training covers the full project lifecycle, from initial framing to closing, including planning, execution management and risk management. It relies on proven methods and practical tools you can apply directly to your own projects.',
     description_ar:
       'يغطي هذا التدريب دورة حياة المشروع بالكامل، من التأطير الأولي إلى الإغلاق، مرورًا بالتخطيط وقيادة التنفيذ وإدارة المخاطر. يعتمد على أساليب مثبتة وأدوات عملية قابلة للتطبيق مباشرة على مشاريعكم.',
     objectives_fr: [
@@ -154,7 +155,10 @@ export const mockTrainingDTOs: TrainingDTO[] = [
       'إتقان أدوات التخطيط والمتابعة',
       'توقع مخاطر المشروع وإدارتها',
     ],
-    target_audience_fr: ['Chefs de projet débutants', 'Collaborateurs amenés à piloter des projets ponctuellement'],
+    target_audience_fr: [
+      'Chefs de projet débutants',
+      'Collaborateurs amenés à piloter des projets ponctuellement',
+    ],
     target_audience_en: ['Beginner project managers', 'Employees who occasionally lead projects'],
     target_audience_ar: ['مديرو مشاريع مبتدئون', 'موظفون يقودون مشاريع بين الحين والآخر'],
     prerequisites_fr: ['Aucun prérequis'],
@@ -196,7 +200,8 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     ],
     methodology_fr:
       'Formation hybride combinant sessions à distance et ateliers pratiques sur cas réels.',
-    methodology_en: 'A hybrid format combining remote sessions and hands-on workshops using real cases.',
+    methodology_en:
+      'A hybrid format combining remote sessions and hands-on workshops using real cases.',
     methodology_ar: 'تدريب مختلط يجمع بين جلسات عن بُعد وورشات عملية على حالات حقيقية.',
     faq: [
       {
@@ -211,7 +216,8 @@ export const mockTrainingDTOs: TrainingDTO[] = [
         question_fr: 'Un support de cours est-il fourni ?',
         question_en: 'Is course material provided?',
         question_ar: 'هل يتم توفير مواد تدريبية؟',
-        answer_fr: 'Oui, un support complet et des modèles réutilisables sont remis à chaque participant.',
+        answer_fr:
+          'Oui, un support complet et des modèles réutilisables sont remis à chaque participant.',
         answer_en: 'Yes, each participant receives a complete handout and reusable templates.',
         answer_ar: 'نعم، يحصل كل مشارك على دليل شامل ونماذج قابلة لإعادة الاستخدام.',
       },
@@ -240,8 +246,7 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     title_ar: 'إكسل المتقدم للتحليل المالي',
     summary_fr:
       "Exploitez les fonctions avancées d'Excel pour fiabiliser vos modèles et tableaux de bord financiers.",
-    summary_en:
-      "Use Excel's advanced functions to build reliable financial models and dashboards.",
+    summary_en: "Use Excel's advanced functions to build reliable financial models and dashboards.",
     summary_ar: 'استخدم دوال إكسل المتقدمة لبناء نماذج ولوحات تحكم مالية موثوقة.',
     description_fr:
       "Une formation intensive pour aller au-delà des fonctions de base d'Excel et construire des modèles financiers robustes, des tableaux de bord dynamiques et des analyses fiables, directement applicables à votre environnement de travail.",
@@ -270,9 +275,12 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     ],
     target_audience_en: [
       'Financial controllers and analysts',
-      "Accountants looking to deepen their Excel expertise",
+      'Accountants looking to deepen their Excel expertise',
     ],
-    target_audience_ar: ['مراقبو التسيير والمحللون الماليون', 'محاسبون يرغبون في تعميق إتقانهم لإكسل'],
+    target_audience_ar: [
+      'مراقبو التسيير والمحللون الماليون',
+      'محاسبون يرغبون في تعميق إتقانهم لإكسل',
+    ],
     prerequisites_fr: ['Bonne maîtrise des fonctions de base d’Excel'],
     prerequisites_en: ['Solid command of basic Excel functions'],
     prerequisites_ar: ['إتقان جيد لوظائف إكسل الأساسية'],
@@ -297,29 +305,36 @@ export const mockTrainingDTOs: TrainingDTO[] = [
         title_fr: 'Tableaux de bord dynamiques',
         title_en: 'Dynamic dashboards',
         title_ar: 'لوحات تحكم ديناميكية',
-        description_fr: 'Tableaux croisés dynamiques, mise en forme conditionnelle, automatisation simple.',
+        description_fr:
+          'Tableaux croisés dynamiques, mise en forme conditionnelle, automatisation simple.',
         description_en: 'Pivot tables, conditional formatting, simple automation.',
         description_ar: 'الجداول المحورية والتنسيق الشرطي والأتمتة البسيطة.',
       },
     ],
     methodology_fr:
       'Formation 100% à distance, en petit groupe, avec exercices sur des cas financiers réels.',
-    methodology_en: 'A fully remote, small-group training with exercises based on real financial cases.',
-    methodology_ar: 'تدريب عن بُعد بالكامل، ضمن مجموعة صغيرة، مع تمارين مبنية على حالات مالية حقيقية.',
+    methodology_en:
+      'A fully remote, small-group training with exercises based on real financial cases.',
+    methodology_ar:
+      'تدريب عن بُعد بالكامل، ضمن مجموعة صغيرة، مع تمارين مبنية على حالات مالية حقيقية.',
     faq: [
       {
         question_fr: "Quelle version d'Excel est utilisée ?",
         question_en: 'Which version of Excel is used?',
         question_ar: 'ما إصدار إكسل المستخدم؟',
-        answer_fr: 'La formation s’appuie sur Excel 365, mais les techniques restent applicables aux versions récentes.',
-        answer_en: 'The training uses Excel 365, but the techniques apply to recent versions as well.',
-        answer_ar: 'يعتمد التدريب على إكسل 365، لكن التقنيات قابلة للتطبيق على الإصدارات الحديثة أيضًا.',
+        answer_fr:
+          'La formation s’appuie sur Excel 365, mais les techniques restent applicables aux versions récentes.',
+        answer_en:
+          'The training uses Excel 365, but the techniques apply to recent versions as well.',
+        answer_ar:
+          'يعتمد التدريب على إكسل 365، لكن التقنيات قابلة للتطبيق على الإصدارات الحديثة أيضًا.',
       },
       {
         question_fr: 'La formation est-elle enregistrée ?',
         question_en: 'Is the training recorded?',
         question_ar: 'هل يتم تسجيل التدريب؟',
-        answer_fr: 'Les sessions en ligne sont enregistrées et mises à disposition des participants pendant 30 jours.',
+        answer_fr:
+          'Les sessions en ligne sont enregistrées et mises à disposition des participants pendant 30 jours.',
         answer_en: 'Online sessions are recorded and made available to participants for 30 days.',
         answer_ar: 'يتم تسجيل الجلسات عبر الإنترنت وإتاحتها للمشاركين لمدة 30 يومًا.',
       },
@@ -365,8 +380,14 @@ export const mockTrainingDTOs: TrainingDTO[] = [
       'تحديد الأدوات الرقمية المناسبة لفريقك',
       'مرافقة فريقك في مسار التغيير',
     ],
-    target_audience_fr: ['Managers et responsables d’équipe', 'Collaborateurs impliqués dans un projet de digitalisation'],
-    target_audience_en: ['Managers and team leads', 'Employees involved in a digitalization project'],
+    target_audience_fr: [
+      'Managers et responsables d’équipe',
+      'Collaborateurs impliqués dans un projet de digitalisation',
+    ],
+    target_audience_en: [
+      'Managers and team leads',
+      'Employees involved in a digitalization project',
+    ],
     target_audience_ar: ['المديرون ورؤساء الفرق', 'الموظفون المشاركون في مشروع رقمنة'],
     prerequisites_fr: ['Aucun prérequis technique'],
     prerequisites_en: ['No technical prerequisites'],
@@ -399,7 +420,8 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     ],
     methodology_fr:
       'Formation en ligne interactive, ponctuée d’ateliers collaboratifs et d’études de cas.',
-    methodology_en: 'An interactive online training punctuated by collaborative workshops and case studies.',
+    methodology_en:
+      'An interactive online training punctuated by collaborative workshops and case studies.',
     methodology_ar: 'تدريب تفاعلي عبر الإنترنت يتضمن ورشات تعاونية ودراسات حالة.',
     faq: [
       {
@@ -414,7 +436,8 @@ export const mockTrainingDTOs: TrainingDTO[] = [
         question_fr: "Peut-on adapter le contenu à notre secteur d'activité ?",
         question_en: 'Can the content be tailored to our industry?',
         question_ar: 'هل يمكن تكييف المحتوى مع قطاع نشاطنا؟',
-        answer_fr: 'Oui, les études de cas peuvent être adaptées sur demande pour un groupe intra-entreprise.',
+        answer_fr:
+          'Oui, les études de cas peuvent être adaptées sur demande pour un groupe intra-entreprise.',
         answer_en: 'Yes, case studies can be tailored on request for an in-company group.',
         answer_ar: 'نعم، يمكن تكييف دراسات الحالة عند الطلب لمجموعة داخل الشركة.',
       },
@@ -435,14 +458,13 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     title_en: 'Building an Effective Training Policy',
     title_ar: 'بناء سياسة تدريب فعّالة',
     summary_fr:
-      "Structurez le plan de développement des compétences de votre entreprise et mesurez son impact.",
-    summary_en:
-      "Structure your company's skills-development plan and measure its business impact.",
+      'Structurez le plan de développement des compétences de votre entreprise et mesurez son impact.',
+    summary_en: "Structure your company's skills-development plan and measure its business impact.",
     summary_ar: 'نظّم خطة تطوير المهارات في شركتك وقِس أثرها على الأعمال.',
     description_fr:
-      "Une politique de formation efficace repose sur un diagnostic précis des besoins, un plan structuré et des indicateurs de suivi pertinents. Cette formation outille les professionnels RH pour construire, piloter et valoriser leur politique de formation auprès de leur direction.",
+      'Une politique de formation efficace repose sur un diagnostic précis des besoins, un plan structuré et des indicateurs de suivi pertinents. Cette formation outille les professionnels RH pour construire, piloter et valoriser leur politique de formation auprès de leur direction.',
     description_en:
-      "An effective training policy relies on a precise needs diagnosis, a structured plan, and relevant tracking indicators. This training equips HR professionals to build, steer, and showcase their training policy to leadership.",
+      'An effective training policy relies on a precise needs diagnosis, a structured plan, and relevant tracking indicators. This training equips HR professionals to build, steer, and showcase their training policy to leadership.',
     description_ar:
       'تعتمد سياسة التدريب الفعّالة على تشخيص دقيق للاحتياجات وخطة منظمة ومؤشرات متابعة مناسبة. يزوّد هذا التدريب متخصصي الموارد البشرية بالأدوات اللازمة لبناء سياسة التدريب وقيادتها وإبرازها أمام الإدارة.',
     objectives_fr: [
@@ -492,8 +514,10 @@ export const mockTrainingDTOs: TrainingDTO[] = [
         description_ar: 'مؤشرات المتابعة وقياس العائد على استثمار التدريب.',
       },
     ],
-    methodology_fr: 'Formation en présentiel, avec ateliers pratiques sur les outils RH de l’entreprise.',
-    methodology_en: "An in-person training with hands-on workshops using the company's own HR tools.",
+    methodology_fr:
+      'Formation en présentiel, avec ateliers pratiques sur les outils RH de l’entreprise.',
+    methodology_en:
+      "An in-person training with hands-on workshops using the company's own HR tools.",
     methodology_ar: 'تدريب حضوري يتضمن ورشات عملية على أدوات الموارد البشرية الخاصة بالشركة.',
     faq: [
       {
@@ -543,7 +567,7 @@ export const mockTrainingDTOs: TrainingDTO[] = [
     description_fr:
       "Savoir communiquer avec impact est une compétence clé à tous les niveaux de l'entreprise. Cette formation, riche en mises en situation, permet à chacun de structurer son discours, d'adapter son message et de gagner en aisance face à un public, quel qu'il soit.",
     description_en:
-      "Communicating with impact is a key skill at every level of an organization. Rich in role-play exercises, this training helps participants structure their message, adapt it to their audience, and build confidence speaking in front of any group.",
+      'Communicating with impact is a key skill at every level of an organization. Rich in role-play exercises, this training helps participants structure their message, adapt it to their audience, and build confidence speaking in front of any group.',
     description_ar:
       'التواصل المؤثر مهارة أساسية على جميع مستويات الشركة. يساعد هذا التدريب الغني بتمارين تمثيل الأدوار كل مشارك على هيكلة خطابه وتكييف رسالته واكتساب الثقة أمام أي جمهور.',
     objectives_fr: [
@@ -561,8 +585,14 @@ export const mockTrainingDTOs: TrainingDTO[] = [
       'تكييف التواصل حسب المخاطبين',
       'اكتساب الثقة في التحدث أمام الجمهور',
     ],
-    target_audience_fr: ['Tout professionnel amené à s’exprimer devant un groupe', 'Collaborateurs en relation avec des clients'],
-    target_audience_en: ['Any professional who speaks in front of a group', 'Client-facing employees'],
+    target_audience_fr: [
+      'Tout professionnel amené à s’exprimer devant un groupe',
+      'Collaborateurs en relation avec des clients',
+    ],
+    target_audience_en: [
+      'Any professional who speaks in front of a group',
+      'Client-facing employees',
+    ],
     target_audience_ar: ['أي محترف يتحدث أمام مجموعة', 'الموظفون على تواصل مباشر مع العملاء'],
     prerequisites_fr: ['Aucun prérequis'],
     prerequisites_en: ['No prerequisites'],
@@ -593,7 +623,8 @@ export const mockTrainingDTOs: TrainingDTO[] = [
         description_ar: 'الصوت والوضعية والتحكم في التوتر أمام الجمهور.',
       },
     ],
-    methodology_fr: 'Formation hybride avec de nombreuses mises en situation filmées et débriefées.',
+    methodology_fr:
+      'Formation hybride avec de nombreuses mises en situation filmées et débriefées.',
     methodology_en: 'A hybrid training with numerous filmed, debriefed role-play exercises.',
     methodology_ar: 'تدريب مختلط يتضمن تمارين تمثيل أدوار مصوّرة ومناقشتها.',
     faq: [
@@ -601,8 +632,9 @@ export const mockTrainingDTOs: TrainingDTO[] = [
         question_fr: 'Vais-je devoir parler devant le groupe ?',
         question_en: 'Will I have to speak in front of the group?',
         question_ar: 'هل سأتحدث أمام المجموعة؟',
-        answer_fr: 'Oui, les mises en situation sont au cœur de la formation, dans un cadre bienveillant.',
-        answer_en: "Yes — role-play is central to the training, in a supportive environment.",
+        answer_fr:
+          'Oui, les mises en situation sont au cœur de la formation, dans un cadre bienveillant.',
+        answer_en: 'Yes — role-play is central to the training, in a supportive environment.',
         answer_ar: 'نعم، تمثيل الأدوار هو جوهر التدريب، ضمن أجواء داعمة.',
       },
       {
@@ -610,7 +642,7 @@ export const mockTrainingDTOs: TrainingDTO[] = [
         question_en: 'Is the training suitable for shy people?',
         question_ar: 'هل التدريب مناسب للأشخاص الخجولين؟',
         answer_fr: 'Absolument, le rythme est adapté pour progresser à son propre pas.',
-        answer_en: "Absolutely — the pace is adapted so everyone can progress at their own speed.",
+        answer_en: 'Absolutely — the pace is adapted so everyone can progress at their own speed.',
         answer_ar: 'بالتأكيد، الوتيرة مصممة للتقدم بالسرعة الخاصة بكل شخص.',
       },
     ],

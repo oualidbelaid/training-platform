@@ -26,7 +26,10 @@ export function ValuePropositionSection() {
     <Section spacing="md" className="bg-surface-subtle">
       <Container>
         <RevealOnScroll>
-          <SectionHeading eyebrow={t('valueProposition.eyebrow')} title={t('valueProposition.title')} />
+          <SectionHeading
+            eyebrow={t('valueProposition.eyebrow')}
+            title={t('valueProposition.title')}
+          />
         </RevealOnScroll>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:gap-16">

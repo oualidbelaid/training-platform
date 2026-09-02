@@ -8,7 +8,10 @@ import { LoadingState } from '@/components/feedback/LoadingState'
 import { ErrorState } from '@/components/feedback/ErrorState'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { CategoryTile } from '@/features/trainings/components/CategoryTile'
-import { CATEGORY_VISUALS, DEFAULT_CATEGORY_VISUAL } from '@/features/trainings/config/category-visuals'
+import {
+  CATEGORY_VISUALS,
+  DEFAULT_CATEGORY_VISUAL,
+} from '@/features/trainings/config/category-visuals'
 import { useTrainings } from '@/features/trainings/hooks/useTrainings'
 import { useCategories } from '@/features/categories/hooks/useCategories'
 import type { SupportedLanguage } from '@/i18n'
@@ -31,7 +34,10 @@ export function CategoriesSection() {
 
   const programCountByCategory = new Map<string, number>()
   for (const training of trainingsQuery.data?.items ?? []) {
-    programCountByCategory.set(training.categoryId, (programCountByCategory.get(training.categoryId) ?? 0) + 1)
+    programCountByCategory.set(
+      training.categoryId,
+      (programCountByCategory.get(training.categoryId) ?? 0) + 1,
+    )
   }
 
   const [featured, ...rest] = categories ?? []
@@ -51,7 +57,9 @@ export function CategoriesSection() {
         </RevealOnScroll>
 
         {isLoading ? <LoadingState className="mt-10" /> : null}
-        {isError ? <ErrorState className="mt-10" onRetry={() => void categoriesQuery.refetch()} /> : null}
+        {isError ? (
+          <ErrorState className="mt-10" onRetry={() => void categoriesQuery.refetch()} />
+        ) : null}
 
         {featured ? (
           <div className="mt-10 grid gap-8 lg:grid-cols-5">
@@ -62,7 +70,9 @@ export function CategoriesSection() {
                 description={getLocalizedText(featured.description, language)}
                 programCount={programCountByCategory.get(featured.id) ?? 0}
                 icon={(CATEGORY_VISUALS[featured.slug] ?? DEFAULT_CATEGORY_VISUAL).icon}
-                badgeClassName={(CATEGORY_VISUALS[featured.slug] ?? DEFAULT_CATEGORY_VISUAL).badgeClassName}
+                badgeClassName={
+                  (CATEGORY_VISUALS[featured.slug] ?? DEFAULT_CATEGORY_VISUAL).badgeClassName
+                }
                 variant="featured"
               />
             </RevealOnScroll>

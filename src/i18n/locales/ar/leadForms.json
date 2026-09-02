@@ -8,13 +8,20 @@
     "jobTitle": { "label": "المنصب", "placeholder": "منصبكم" },
     "message": { "label": "الرسالة", "placeholder": "أضف أي تفاصيل (اختياري)" },
     "training": { "label": "التدريب المعني", "placeholder": "اختر تدريباً" },
-    "preferredContactMethod": { "legend": "وسيلة التواصل المفضلة", "email": "البريد الإلكتروني", "phone": "الهاتف" },
+    "preferredContactMethod": {
+      "legend": "وسيلة التواصل المفضلة",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف"
+    },
     "participantsCount": { "label": "عدد المشاركين", "placeholder": "مثال: 8" },
     "preferredFormat": { "label": "الصيغة المفضلة", "placeholder": "اختر صيغة" },
     "preferredDate": { "label": "التاريخ المفضل" },
     "location": { "label": "المكان المفضل", "placeholder": "مثال: في مقركم، الجزائر" },
     "trainingNeeds": { "label": "احتياجات التدريب", "placeholder": "صف احتياجاتكم (اختياري)" },
-    "areasOfInterest": { "label": "مجالات الاهتمام", "placeholder": "مثال: القيادة، إدارة المشاريع..." },
+    "areasOfInterest": {
+      "label": "مجالات الاهتمام",
+      "placeholder": "مثال: القيادة، إدارة المشاريع..."
+    },
     "subject": { "label": "الموضوع", "placeholder": "ما هو موضوع رسالتكم؟" }
   },
   "sections": {

@@ -18,7 +18,9 @@ interface IndustryTileProps {
 export function IndustryTile({ name, description, icon, badgeClassName }: IndustryTileProps) {
   return (
     <div className="flex h-full flex-col gap-4 rounded-2xl border border-border bg-surface p-7 shadow-sm">
-      <span className={cn('flex h-12 w-12 items-center justify-center rounded-2xl', badgeClassName)}>
+      <span
+        className={cn('flex h-12 w-12 items-center justify-center rounded-2xl', badgeClassName)}
+      >
         <Icon name={icon} aria-hidden="true" className="text-2xl" />
       </span>
       <div>

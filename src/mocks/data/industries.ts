@@ -53,8 +53,10 @@ export const mockIndustryDTOs: IndustryDTO[] = [
     name_fr: 'Secteur public',
     name_en: 'Public Sector',
     name_ar: 'القطاع العام',
-    description_fr: 'Développement des compétences managériales pour les administrations et collectivités.',
-    description_en: 'Management skills development for public administrations and local authorities.',
+    description_fr:
+      'Développement des compétences managériales pour les administrations et collectivités.',
+    description_en:
+      'Management skills development for public administrations and local authorities.',
     description_ar: 'تطوير المهارات الإدارية للإدارات العامة والهيئات المحلية.',
   },
   {
@@ -63,7 +65,8 @@ export const mockIndustryDTOs: IndustryDTO[] = [
     name_fr: 'Distribution & Commerce',
     name_en: 'Retail',
     name_ar: 'التجزئة',
-    description_fr: 'Formation des équipes terrain à la relation client et au management de proximité.',
+    description_fr:
+      'Formation des équipes terrain à la relation client et au management de proximité.',
     description_en: 'Training frontline teams in customer relations and on-the-ground management.',
     description_ar: 'تدريب فرق الميدان على علاقات العملاء والإدارة المباشرة.',
   },
@@ -73,8 +76,10 @@ export const mockIndustryDTOs: IndustryDTO[] = [
     name_fr: 'Services professionnels',
     name_en: 'Professional Services',
     name_ar: 'الخدمات المهنية',
-    description_fr: 'Communication, gestion de projet et développement commercial pour cabinets et prestataires.',
-    description_en: 'Communication, project management and business development for firms and service providers.',
+    description_fr:
+      'Communication, gestion de projet et développement commercial pour cabinets et prestataires.',
+    description_en:
+      'Communication, project management and business development for firms and service providers.',
     description_ar: 'التواصل وإدارة المشاريع وتطوير الأعمال للمكاتب ومقدمي الخدمات.',
   },
 ]

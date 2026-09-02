@@ -10,9 +10,7 @@ function delay<T>(value: T): Promise<T> {
 }
 
 export class MockTestimonialRepository implements TestimonialRepository {
-  private readonly testimonials: Testimonial[] = mockTestimonialDTOs.map(
-    TestimonialMapper.fromDTO,
-  )
+  private readonly testimonials: Testimonial[] = mockTestimonialDTOs.map(TestimonialMapper.fromDTO)
 
   async getAll(): Promise<Testimonial[]> {
     return delay(this.testimonials)

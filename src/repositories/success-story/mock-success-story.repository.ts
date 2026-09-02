@@ -10,7 +10,9 @@ function delay<T>(value: T): Promise<T> {
 }
 
 export class MockSuccessStoryRepository implements SuccessStoryRepository {
-  private readonly successStories: SuccessStory[] = mockSuccessStoryDTOs.map(SuccessStoryMapper.fromDTO)
+  private readonly successStories: SuccessStory[] = mockSuccessStoryDTOs.map(
+    SuccessStoryMapper.fromDTO,
+  )
 
   async getAll(): Promise<SuccessStory[]> {
     return delay(this.successStories)

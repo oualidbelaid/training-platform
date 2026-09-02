@@ -46,7 +46,14 @@ const dto: TrainingDTO = {
       answer_ar: 'إجابة',
     },
   ],
-  sessions: [{ start_date: '2026-01-15', location_fr: 'Alger', location_en: 'Algiers', location_ar: 'الجزائر' }],
+  sessions: [
+    {
+      start_date: '2026-01-15',
+      location_fr: 'Alger',
+      location_en: 'Algiers',
+      location_ar: 'الجزائر',
+    },
+  ],
   format: 'online',
   level: 'beginner',
   duration_hours: 7,
@@ -82,7 +89,9 @@ describe('TrainingMapper.fromDTO', () => {
           answer: { fr: 'Réponse FR', en: 'Answer EN', ar: 'إجابة' },
         },
       ],
-      sessions: [{ startDate: '2026-01-15', location: { fr: 'Alger', en: 'Algiers', ar: 'الجزائر' } }],
+      sessions: [
+        { startDate: '2026-01-15', location: { fr: 'Alger', en: 'Algiers', ar: 'الجزائر' } },
+      ],
       format: 'online',
       level: 'beginner',
       durationHours: 7,

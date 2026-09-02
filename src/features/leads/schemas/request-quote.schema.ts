@@ -12,10 +12,18 @@ export function buildRequestQuoteSchema(t: Translate) {
         .trim()
         .optional()
         .or(z.literal(''))
-        .refine((value) => !value || (/^\d+$/.test(value) && Number(value) > 0), t('validation.invalidNumber')),
+        .refine(
+          (value) => !value || (/^\d+$/.test(value) && Number(value) > 0),
+          t('validation.invalidNumber'),
+        ),
       preferredFormat: optionalEnum(['in-person', 'online', 'hybrid']),
       preferredDate: z.string().trim().optional().or(z.literal('')),
-      location: z.string().trim().max(160, t('validation.tooLong', { max: 160 })).optional().or(z.literal('')),
+      location: z
+        .string()
+        .trim()
+        .max(160, t('validation.tooLong', { max: 160 }))
+        .optional()
+        .or(z.literal('')),
     })
 }
 

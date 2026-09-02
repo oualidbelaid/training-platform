@@ -22,7 +22,22 @@ export interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
  * genuinely needs multi-select or async options.
  */
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
-  ({ label, options, placeholder, error, hint, id, className, required, value, defaultValue, ...props }, ref) => {
+  (
+    {
+      label,
+      options,
+      placeholder,
+      error,
+      hint,
+      id,
+      className,
+      required,
+      value,
+      defaultValue,
+      ...props
+    },
+    ref,
+  ) => {
     const generatedId = useId()
     const selectId = id ?? generatedId
     const describedBy = error ? `${selectId}-error` : hint ? `${selectId}-hint` : undefined

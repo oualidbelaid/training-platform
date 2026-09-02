@@ -9,7 +9,9 @@ import { SIMULATE_FAILURE_EMAIL } from '@/repositories/lead/mock-lead.repository
 import RequestInformationPage from './RequestInformationPage'
 
 function renderPage(initialEntries: string[] = ['/request-information']) {
-  const queryClient = new QueryClient({ defaultOptions: { queries: { retry: false }, mutations: { retry: false } } })
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
+  })
   function Wrapper({ children }: { children: ReactNode }) {
     return (
       <QueryClientProvider client={queryClient}>
@@ -20,7 +22,10 @@ function renderPage(initialEntries: string[] = ['/request-information']) {
   return render(<RequestInformationPage />, { wrapper: Wrapper })
 }
 
-async function fillRequiredFields(user: ReturnType<typeof userEvent.setup>, email = 'jane.doe@example.com') {
+async function fillRequiredFields(
+  user: ReturnType<typeof userEvent.setup>,
+  email = 'jane.doe@example.com',
+) {
   await user.type(screen.getByLabelText(/prénom/i), 'Jane')
   await user.type(screen.getByLabelText(/^nom\b/i), 'Doe')
   await user.type(screen.getByLabelText(/e-mail professionnel/i), email)
@@ -73,7 +78,9 @@ describe('RequestInformationPage', () => {
     await fillRequiredFields(user, SIMULATE_FAILURE_EMAIL)
     await user.click(screen.getByRole('button', { name: /envoyer la demande/i }))
 
-    expect(await screen.findByRole('button', { name: /réessayer/i }, { timeout: 3000 })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('button', { name: /réessayer/i }, { timeout: 3000 }),
+    ).toBeInTheDocument()
     expect(screen.getByLabelText(/e-mail professionnel/i)).toHaveValue(SIMULATE_FAILURE_EMAIL)
   })
 })

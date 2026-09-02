@@ -54,9 +54,24 @@ export function buildContactFieldsSchema(t: Translate) {
       .max(20, t('validation.invalidPhone'))
       .optional()
       .or(z.literal('')),
-    company: z.string().trim().max(120, t('validation.tooLong', { max: 120 })).optional().or(z.literal('')),
-    jobTitle: z.string().trim().max(120, t('validation.tooLong', { max: 120 })).optional().or(z.literal('')),
-    message: z.string().trim().max(2000, t('validation.tooLong', { max: 2000 })).optional().or(z.literal('')),
+    company: z
+      .string()
+      .trim()
+      .max(120, t('validation.tooLong', { max: 120 }))
+      .optional()
+      .or(z.literal('')),
+    jobTitle: z
+      .string()
+      .trim()
+      .max(120, t('validation.tooLong', { max: 120 }))
+      .optional()
+      .or(z.literal('')),
+    message: z
+      .string()
+      .trim()
+      .max(2000, t('validation.tooLong', { max: 2000 }))
+      .optional()
+      .or(z.literal('')),
   })
 }
 

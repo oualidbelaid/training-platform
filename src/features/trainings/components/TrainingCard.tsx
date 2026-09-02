@@ -1,4 +1,3 @@
-
 import { useTranslation } from 'react-i18next'
 import { Badge } from '@/components/ui/Badge'
 import { Card, CardContent } from '@/components/ui/Card'
@@ -37,7 +36,9 @@ export function TrainingCard({ training, categoryName, featured = false }: Train
             <Badge variant="outline">{t(`format.${training.format}`)}</Badge>
           </div>
 
-          <h3 className="text-h2 font-extrabold text-foreground">{getLocalizedText(training.title, language)}</h3>
+          <h3 className="text-h2 font-extrabold text-foreground">
+            {getLocalizedText(training.title, language)}
+          </h3>
           <p className="max-w-lg text-body text-foreground-muted">
             {getLocalizedText(training.summary, language)}
           </p>
@@ -74,8 +75,12 @@ export function TrainingCard({ training, categoryName, featured = false }: Train
           <Badge variant="outline">{t(`format.${training.format}`)}</Badge>
         </div>
 
-        <h3 className="text-h3 font-semibold text-foreground">{getLocalizedText(training.title, language)}</h3>
-        <p className="text-small text-foreground-muted">{getLocalizedText(training.summary, language)}</p>
+        <h3 className="text-h3 font-semibold text-foreground">
+          {getLocalizedText(training.title, language)}
+        </h3>
+        <p className="text-small text-foreground-muted">
+          {getLocalizedText(training.summary, language)}
+        </p>
 
         <div className="mt-2 flex items-center justify-between border-t border-border pt-3">
           <span className="flex items-center gap-1.5 text-small text-foreground-faint">

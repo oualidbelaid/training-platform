@@ -5,6 +5,14 @@
   "a11y": {
     "skipToContent": "Aller au contenu principal"
   },
+  "promoBar": {
+    "messages": [
+      "Formations inter-entreprises et sur mesure — contactez un conseiller",
+      "Plus de 50 domaines de formation au catalogue",
+      "Solutions de formation pour entreprises — devis gratuit"
+    ],
+    "dismiss": "Fermer cette annonce"
+  },
   "nav": {
     "home": "Accueil"
   },

@@ -45,7 +45,9 @@ describe('LeadMapper.toDTO', () => {
 
 describe('LeadMapper.fromResultDTO', () => {
   it('maps the submission result DTO to the domain shape', () => {
-    expect(LeadMapper.fromResultDTO({ id: 'lead-123', submitted_at: '2026-01-10T10:00:00.000Z' })).toEqual({
+    expect(
+      LeadMapper.fromResultDTO({ id: 'lead-123', submitted_at: '2026-01-10T10:00:00.000Z' }),
+    ).toEqual({
       id: 'lead-123',
       submittedAt: '2026-01-10T10:00:00.000Z',
     })

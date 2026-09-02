@@ -17,14 +17,34 @@ export interface DevelopmentStage {
  * any entity (same reasoning as category-visuals.ts).
  */
 export const DEVELOPMENT_STAGES: DevelopmentStage[] = [
-  { key: 'leadership', icon: 'user-group', image: MEDIA.leadership, badgeClassName: 'bg-primary-100 text-primary-600' },
-  { key: 'management', icon: 'diagram-project', image: MEDIA.management, badgeClassName: 'bg-warning-50 text-warning-700' },
+  {
+    key: 'leadership',
+    icon: 'user-group',
+    image: MEDIA.leadership,
+    badgeClassName: 'bg-primary-100 text-primary-600',
+  },
+  {
+    key: 'management',
+    icon: 'diagram-project',
+    image: MEDIA.management,
+    badgeClassName: 'bg-warning-50 text-warning-700',
+  },
   {
     key: 'digitalTransformation',
     icon: 'network-wired',
     image: MEDIA.digitalTransformation,
     badgeClassName: 'bg-success-50 text-success-700',
   },
-  { key: 'communication', icon: 'compass', image: MEDIA.communication, badgeClassName: 'bg-accent-400/20 text-accent-600' },
-  { key: 'strategy', icon: 'rocket', image: MEDIA.strategy, badgeClassName: 'bg-primary-100 text-primary-600' },
+  {
+    key: 'communication',
+    icon: 'compass',
+    image: MEDIA.communication,
+    badgeClassName: 'bg-accent-400/20 text-accent-600',
+  },
+  {
+    key: 'strategy',
+    icon: 'rocket',
+    image: MEDIA.strategy,
+    badgeClassName: 'bg-primary-100 text-primary-600',
+  },
 ]

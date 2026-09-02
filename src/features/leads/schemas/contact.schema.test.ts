@@ -23,7 +23,12 @@ describe('buildContactSchema', () => {
   })
 
   it('rejects missing required fields (first name, last name, subject)', () => {
-    const result = buildContactSchema(t).safeParse({ ...validValues, firstName: '', lastName: '', subject: '' })
+    const result = buildContactSchema(t).safeParse({
+      ...validValues,
+      firstName: '',
+      lastName: '',
+      subject: '',
+    })
     expect(result.success).toBe(false)
     const paths = (result.error?.issues ?? []).map((issue) => issue.path[0])
     expect(paths).toEqual(expect.arrayContaining(['firstName', 'lastName', 'subject']))

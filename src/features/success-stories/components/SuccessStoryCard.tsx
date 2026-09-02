@@ -33,12 +33,20 @@ export function SuccessStoryCard({ story, language }: SuccessStoryCardProps) {
 
         <div className="flex flex-col gap-4">
           <div>
-            <p className="text-small font-semibold uppercase tracking-wide text-foreground-faint">{t('card.challenge')}</p>
-            <p className="mt-1 text-body text-foreground-muted">{getLocalizedText(story.challenge, language)}</p>
+            <p className="text-small font-semibold uppercase tracking-wide text-foreground-faint">
+              {t('card.challenge')}
+            </p>
+            <p className="mt-1 text-body text-foreground-muted">
+              {getLocalizedText(story.challenge, language)}
+            </p>
           </div>
           <div>
-            <p className="text-small font-semibold uppercase tracking-wide text-foreground-faint">{t('card.approach')}</p>
-            <p className="mt-1 text-body text-foreground-muted">{getLocalizedText(story.approach, language)}</p>
+            <p className="text-small font-semibold uppercase tracking-wide text-foreground-faint">
+              {t('card.approach')}
+            </p>
+            <p className="mt-1 text-body text-foreground-muted">
+              {getLocalizedText(story.approach, language)}
+            </p>
           </div>
         </div>
 
@@ -48,7 +56,9 @@ export function SuccessStoryCard({ story, language }: SuccessStoryCardProps) {
           {story.results.map((result, index) => (
             <div key={index}>
               <p className="text-h3 font-extrabold text-brand">{result.value}</p>
-              <p className="text-caption text-foreground-muted">{getLocalizedText(result.label, language)}</p>
+              <p className="text-caption text-foreground-muted">
+                {getLocalizedText(result.label, language)}
+              </p>
             </div>
           ))}
         </div>

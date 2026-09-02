@@ -26,7 +26,12 @@ export function EventPreviewCard({ event, language, variant = 'compact' }: Event
       <Card className="group overflow-hidden md:flex-row" hoverable>
         {event.image ? (
           <div className="md:w-2/5 md:shrink-0">
-            <Image src={event.image} alt={t('eventImageAlt')} aspectRatio="4 / 3" className="h-full" />
+            <Image
+              src={event.image}
+              alt={t('eventImageAlt')}
+              aspectRatio="4 / 3"
+              className="h-full"
+            />
           </div>
         ) : null}
         <CardContent className="flex flex-1 gap-5">
@@ -39,12 +44,18 @@ export function EventPreviewCard({ event, language, variant = 'compact' }: Event
             </span>
           </div>
           <div className="flex flex-col gap-3">
-            <h3 className="text-h3 font-semibold text-foreground">{getLocalizedText(event.title, language)}</h3>
-            <p className="text-body text-foreground-muted">{getLocalizedText(event.description, language)}</p>
+            <h3 className="text-h3 font-semibold text-foreground">
+              {getLocalizedText(event.title, language)}
+            </h3>
+            <p className="text-body text-foreground-muted">
+              {getLocalizedText(event.description, language)}
+            </p>
             <div className="mt-1 flex flex-wrap items-center gap-2">
               <Badge variant="outline">{t(`format.${event.format}`)}</Badge>
               {event.location ? (
-                <span className="text-small text-foreground-faint">{getLocalizedText(event.location, language)}</span>
+                <span className="text-small text-foreground-faint">
+                  {getLocalizedText(event.location, language)}
+                </span>
               ) : null}
             </div>
           </div>
@@ -56,8 +67,12 @@ export function EventPreviewCard({ event, language, variant = 'compact' }: Event
   return (
     <Card className="h-full">
       <CardContent className="flex flex-col gap-3">
-        <p className="text-small font-semibold text-brand">{formatDate(event.startDate, language)}</p>
-        <h3 className="text-h3 font-medium text-foreground">{getLocalizedText(event.title, language)}</h3>
+        <p className="text-small font-semibold text-brand">
+          {formatDate(event.startDate, language)}
+        </p>
+        <h3 className="text-h3 font-medium text-foreground">
+          {getLocalizedText(event.title, language)}
+        </h3>
         <p className="text-body text-foreground-muted">
           {getLocalizedText(event.description, language)}
         </p>

@@ -22,7 +22,8 @@ const buttonVariants = cva(
         // variant is used on (CompaniesSection, ProfessionalDevelopmentSection,
         // dark CtaBanner usages) — fails the 3:1 non-text contrast minimum.
         // Overridden here to a white ring (19.67:1 on neutral-900).
-        inverse: 'border border-neutral-0/40 text-neutral-0 hover:bg-neutral-0/10 focus-visible:outline-neutral-0',
+        inverse:
+          'border border-neutral-0/40 text-neutral-0 hover:bg-neutral-0/10 focus-visible:outline-neutral-0',
       },
       size: {
         sm: 'h-9 px-3',
@@ -38,14 +39,16 @@ const buttonVariants = cva(
 )
 
 export interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean
   loading?: boolean
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, loading = false, disabled, children, ...props }, ref) => {
+  (
+    { className, variant, size, asChild = false, loading = false, disabled, children, ...props },
+    ref,
+  ) => {
     const Comp = asChild ? Slot : 'button'
     // Slot (Radix) requires exactly one React element child, so the loading
     // spinner can only be spliced in for the real <button> case — asChild

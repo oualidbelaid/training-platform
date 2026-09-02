@@ -59,7 +59,9 @@ describe('MockTrainingRepository', () => {
     const repository = new MockTrainingRepository()
 
     const frResult = await repository.getAll({ search: 'LEADERSHIP', searchLanguage: 'fr' })
-    expect(frResult.items.some((training) => training.slug === 'leadership-nouveaux-managers')).toBe(true)
+    expect(
+      frResult.items.some((training) => training.slug === 'leadership-nouveaux-managers'),
+    ).toBe(true)
 
     const noMatch = await repository.getAll({ search: 'zzzznotfound', searchLanguage: 'fr' })
     expect(noMatch.items).toHaveLength(0)

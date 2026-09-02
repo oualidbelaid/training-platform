@@ -22,14 +22,21 @@ interface BreadcrumbProps {
  */
 export function Breadcrumb({ items, className }: BreadcrumbProps) {
   return (
-    <nav aria-label="Breadcrumb" className={cn('flex flex-wrap items-center gap-2 text-small', className)}>
+    <nav
+      aria-label="Breadcrumb"
+      className={cn('flex flex-wrap items-center gap-2 text-small', className)}
+    >
       <ol className="flex flex-wrap items-center gap-2">
         {items.map((item, index) => {
           const isLast = index === items.length - 1
           return (
             <Fragment key={item.label}>
               {index > 0 ? (
-                <Icon name="chevron-right" aria-hidden="true" className="text-caption text-foreground-faint rtl:rotate-180" />
+                <Icon
+                  name="chevron-right"
+                  aria-hidden="true"
+                  className="text-caption text-foreground-faint rtl:rotate-180"
+                />
               ) : null}
               <li>
                 {item.href && !isLast ? (
@@ -37,7 +44,10 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
                     {item.label}
                   </Link>
                 ) : (
-                  <span aria-current={isLast ? 'page' : undefined} className="text-foreground-muted">
+                  <span
+                    aria-current={isLast ? 'page' : undefined}
+                    className="text-foreground-muted"
+                  >
                     {item.label}
                   </span>
                 )}

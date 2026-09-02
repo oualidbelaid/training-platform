@@ -26,14 +26,23 @@ export default function TestimonialsPage() {
 
   return (
     <>
-      <Seo title={t('seo.title')} description={t('seo.description')} canonicalPath="/testimonials" />
+      <Seo
+        title={t('seo.title')}
+        description={t('seo.description')}
+        canonicalPath="/testimonials"
+      />
       <BreadcrumbSchema items={breadcrumbItems} />
 
       <Section spacing="sm">
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -41,7 +50,9 @@ export default function TestimonialsPage() {
       <Section spacing="sm" className="pt-0">
         <Container className="flex flex-col gap-6">
           {testimonialsQuery.isLoading ? <LoadingState /> : null}
-          {testimonialsQuery.isError ? <ErrorState onRetry={() => void testimonialsQuery.refetch()} /> : null}
+          {testimonialsQuery.isError ? (
+            <ErrorState onRetry={() => void testimonialsQuery.refetch()} />
+          ) : null}
 
           {!testimonialsQuery.isLoading && !testimonialsQuery.isError ? (
             testimonialsQuery.data && testimonialsQuery.data.length > 0 ? (

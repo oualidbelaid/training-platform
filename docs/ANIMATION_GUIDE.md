@@ -2,14 +2,14 @@
 
 ## Tool selection (decision table)
 
-| Use case | Tool |
-|---|---|
-| Component mount/unmount transitions, hover/tap micro-interactions, staggered reveals | **Framer Motion** |
-| Scroll-position-driven background/parallax movement, scroll-linked scale/opacity reveals | **GSAP + ScrollTrigger** |
-| Always-on simple loops, focus states | **CSS animations/transitions** |
-| Genuine 3D (hero object, real depth/lighting) | **React Three Fiber**, used sparingly |
-| Card "tilt"/perspective effects | **CSS 3D transforms** (Framer-driven), not R3F — see `TiltCard` below |
-| Numbers counting up on scroll-into-view | **Framer Motion** (`animate()` + `useInView`, see `useCountUp`) |
+| Use case                                                                                 | Tool                                                                  |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Component mount/unmount transitions, hover/tap micro-interactions, staggered reveals     | **Framer Motion**                                                     |
+| Scroll-position-driven background/parallax movement, scroll-linked scale/opacity reveals | **GSAP + ScrollTrigger**                                              |
+| Always-on simple loops, focus states                                                     | **CSS animations/transitions**                                        |
+| Genuine 3D (hero object, real depth/lighting)                                            | **React Three Fiber**, used sparingly                                 |
+| Card "tilt"/perspective effects                                                          | **CSS 3D transforms** (Framer-driven), not R3F — see `TiltCard` below |
+| Numbers counting up on scroll-into-view                                                  | **Framer Motion** (`animate()` + `useInView`, see `useCountUp`)       |
 
 Rule of thumb: if it can be CSS, use CSS; if it's tied to React component state, use Framer Motion; if it's tied to scroll position independent of mount state, use GSAP ScrollTrigger; if it's genuinely three-dimensional, use R3F.
 

@@ -58,7 +58,9 @@ export default function ArticleDetailsPage() {
       <Section spacing="lg">
         <Container className="flex flex-col items-center gap-4 text-center">
           <h1 className="text-h1 font-extrabold text-foreground">{t('details.notFoundTitle')}</h1>
-          <p className="max-w-md text-body-lg text-foreground-muted">{t('details.notFoundDescription')}</p>
+          <p className="max-w-md text-body-lg text-foreground-muted">
+            {t('details.notFoundDescription')}
+          </p>
           <Button asChild size="lg">
             <RouterLink to="/resources">{t('details.back')}</RouterLink>
           </Button>
@@ -93,9 +95,12 @@ export default function ArticleDetailsPage() {
 
           <RevealOnScroll className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
             <Badge variant="brand">{getLocalizedText(article.category, language)}</Badge>
-            <h1 className="text-h1 font-extrabold text-foreground">{getLocalizedText(article.title, language)}</h1>
+            <h1 className="text-h1 font-extrabold text-foreground">
+              {getLocalizedText(article.title, language)}
+            </h1>
             <p className="text-small text-foreground-faint">
-              {article.authorName} · {formatDate(article.publishedDate, language)} · {t('readingTime', { count: article.readingTimeMinutes })}
+              {article.authorName} · {formatDate(article.publishedDate, language)} ·{' '}
+              {t('readingTime', { count: article.readingTimeMinutes })}
             </p>
           </RevealOnScroll>
         </Container>
@@ -104,7 +109,13 @@ export default function ArticleDetailsPage() {
       <Section spacing="sm" className="pt-0">
         <Container>
           <RevealOnScroll>
-            <Image src={article.image} alt="" aspectRatio="21 / 9" className="mx-auto max-w-4xl rounded-2xl" loading="eager" />
+            <Image
+              src={article.image}
+              alt=""
+              aspectRatio="21 / 9"
+              className="mx-auto max-w-4xl rounded-2xl"
+              loading="eager"
+            />
           </RevealOnScroll>
         </Container>
       </Section>

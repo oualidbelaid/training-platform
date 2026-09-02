@@ -27,5 +27,5 @@ Conventional commit prefixes: `feat:`, `fix:`, `refactor:`, `style:`, `docs:`, `
 ## Architecture discipline
 
 - UI never imports a repository directly — only a service (see `ARCHITECTURE.md`).
-- No component contains data-fetching *and* heavy business logic *and* presentation — split across hook/service/component.
+- No component contains data-fetching _and_ heavy business logic _and_ presentation — split across hook/service/component.
 - No new top-level `src/` folder without updating `ARCHITECTURE.md` first.

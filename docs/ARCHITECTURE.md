@@ -16,6 +16,7 @@ Repositories (interface, e.g. TrainingRepository)
 ```
 
 Rules that keep this real, not just diagrammed:
+
 - Components/hooks never import a repository directly — only a service.
 - Services never import `Mock*`/`Dolibarr*` by name — only the repository interface, resolved through one factory per domain (`repositories/<domain>/index.ts`).
 - DTOs never cross above the mapper. A component sees a `Training` entity, never a `TrainingDTO`.
@@ -30,7 +31,7 @@ src/
     ui/           Design System primitives — Button, Input, Textarea, Select, Checkbox, Radio/RadioGroup,
                   FilterSelect, Icon, SearchBar, Pagination, Accordion, Breadcrumb, Image, Card, Badge,
                   CtaBanner (M4), etc. (see COMPONENT_GUIDE.md)
-    layout/       Navbar, Footer, Container, Section, LanguageSwitcher
+    layout/       Navbar, Footer, Container, Section, LanguageSwitcher, AnnouncementBar
     motion/       RevealOnScroll, TiltCard, FloatingElement (Framer Motion)
     three/        HeroScene (R3F), Scene3D (lazy-load + gating wrapper)
     map/          Map, LocationMap (lazy-loaded Leaflet/OpenStreetMap)
@@ -107,7 +108,10 @@ src/
                   faq.service.ts, industry.service.ts, training-domain.service.ts (ISTAM Full Catalogue
                   pass), lead.service.ts (M5 — also the anti-spam
                   honeypot checkpoint, see ROADMAP.md M5)
-  store/          ui.store.ts (Zustand — mobile menu state only)
+  store/          ui.store.ts (Zustand — mobile menu state only),
+                  promo-bar.store.ts (Zustand + persist — AnnouncementBar dismissal,
+                  kept as its own store rather than folded into ui.store.ts since it's a
+                  genuinely different, localStorage-persisted concern)
   styles/         globals.css (Tailwind v4 + design tokens), vendor/fontawesome/
   test/           setup.ts — jest-dom matchers + jsdom polyfills (matchMedia, IntersectionObserver) every
                   full-page component test needs, since every page renders RevealOnScroll
@@ -140,5 +144,5 @@ This chain was deliberately exercised end-to-end starting in M0 so the mapper is
 ## State management split
 
 - **TanStack Query** — all server/mock data (`features/*/hooks`).
-- **Zustand** (`store/ui.store.ts`) — UI-only global state. Only one slice exists today: mobile menu open/closed. Nothing server-derived belongs here.
-- **URL (`useSearchParams`)** — added in M3 for the Training Catalog's search/filter/sort/page state. Deliberately *not* Zustand or local `useState`: filter state that lives in the URL is shareable/bookmarkable/back-button-friendly for free, and it's exactly the shape `CategoryTile` on the Home Page already links to (`/trainings?category=<slug>`) — using the URL as the source of truth means that link needed zero changes when the Catalog page was built.
+- **Zustand** — UI-only global state, never server-derived data. `store/ui.store.ts` — mobile menu open/closed. `store/promo-bar.store.ts` — `AnnouncementBar` dismissal, wrapped in `persist` (writes to `localStorage`) so a dismissal survives reloads/navigation; kept separate from `ui.store.ts` rather than added to it, since `ui.store.ts` is documented as non-persisted, mobile-menu-only state.
+- **URL (`useSearchParams`)** — added in M3 for the Training Catalog's search/filter/sort/page state. Deliberately _not_ Zustand or local `useState`: filter state that lives in the URL is shareable/bookmarkable/back-button-friendly for free, and it's exactly the shape `CategoryTile` on the Home Page already links to (`/trainings?category=<slug>`) — using the URL as the source of truth means that link needed zero changes when the Catalog page was built.

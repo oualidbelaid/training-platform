@@ -16,9 +16,12 @@ export const mockArticleDTOs: ArticleDTO[] = [
     title_fr: '5 leviers pour réussir sa première année de management',
     title_en: '5 levers for succeeding in your first year as a manager',
     title_ar: '5 روافع للنجاح في أول سنة كمدير',
-    excerpt_fr: 'Passer de collègue à manager change plus de choses qu’il n’y paraît. Voici les repères qui font la différence la première année.',
-    excerpt_en: 'Moving from peer to manager changes more than it seems. Here are the reference points that make a difference in the first year.',
-    excerpt_ar: 'الانتقال من زميل إلى مدير يغيّر أكثر مما يبدو. إليك المعايير التي تُحدث الفرق في السنة الأولى.',
+    excerpt_fr:
+      'Passer de collègue à manager change plus de choses qu’il n’y paraît. Voici les repères qui font la différence la première année.',
+    excerpt_en:
+      'Moving from peer to manager changes more than it seems. Here are the reference points that make a difference in the first year.',
+    excerpt_ar:
+      'الانتقال من زميل إلى مدير يغيّر أكثر مما يبدو. إليك المعايير التي تُحدث الفرق في السنة الأولى.',
     content_fr:
       'Devenir manager pour la première fois est rarement une simple formalité : la posture, la légitimité et les repères changent d’un coup, souvent sans préparation.\n\nLe premier levier est la clarté : fixer des attentes explicites avec chaque membre de l’équipe évite la plupart des malentendus des premières semaines.\n\nLe deuxième est la régularité des points individuels, même courts — ils valent mieux qu’un seul entretien annuel.\n\nEnfin, accepter de ne pas tout savoir immédiatement, et le dire, construit davantage de confiance qu’une posture d’expert forcée.',
     content_en:
@@ -40,9 +43,12 @@ export const mockArticleDTOs: ArticleDTO[] = [
     title_fr: 'Piloter la transformation digitale sans perdre ses équipes en route',
     title_en: 'Leading digital transformation without losing your teams along the way',
     title_ar: 'قيادة التحول الرقمي دون فقدان الفرق في الطريق',
-    excerpt_fr: 'Un nouvel outil ne suffit jamais à transformer une organisation. Ce qui fait vraiment la différence, c’est l’accompagnement des équipes.',
-    excerpt_en: 'A new tool is never enough to transform an organization on its own. What really makes the difference is how teams are supported.',
-    excerpt_ar: 'أداة جديدة وحدها لا تكفي أبداً لتحويل مؤسسة. ما يُحدث الفرق الحقيقي هو مرافقة الفرق.',
+    excerpt_fr:
+      'Un nouvel outil ne suffit jamais à transformer une organisation. Ce qui fait vraiment la différence, c’est l’accompagnement des équipes.',
+    excerpt_en:
+      'A new tool is never enough to transform an organization on its own. What really makes the difference is how teams are supported.',
+    excerpt_ar:
+      'أداة جديدة وحدها لا تكفي أبداً لتحويل مؤسسة. ما يُحدث الفرق الحقيقي هو مرافقة الفرق.',
     content_fr:
       'La plupart des projets de transformation digitale échouent moins pour des raisons techniques que pour des raisons humaines.\n\nImpliquer des relais internes dès la phase de test permet de repérer les points de friction avant le déploiement général.\n\nCommuniquer sur le pourquoi, pas seulement sur le comment, aide les équipes à comprendre l’intérêt du changement plutôt que de le subir.\n\nEnfin, prévoir un accompagnement après le lancement — pas seulement avant — évite que l’adoption ne retombe après les premières semaines.',
     content_en:
@@ -64,8 +70,10 @@ export const mockArticleDTOs: ArticleDTO[] = [
     title_fr: 'Structurer une réunion d’équipe vraiment efficace',
     title_en: 'Structuring a genuinely effective team meeting',
     title_ar: 'هيكلة اجتماع فريق فعّال حقاً',
-    excerpt_fr: 'Trop de réunions, pas assez de décisions. Quelques principes simples suffisent à changer la donne.',
-    excerpt_en: 'Too many meetings, not enough decisions. A few simple principles are enough to change that.',
+    excerpt_fr:
+      'Trop de réunions, pas assez de décisions. Quelques principes simples suffisent à changer la donne.',
+    excerpt_en:
+      'Too many meetings, not enough decisions. A few simple principles are enough to change that.',
     excerpt_ar: 'اجتماعات كثيرة وقرارات قليلة. بضعة مبادئ بسيطة كافية لتغيير الوضع.',
     content_fr:
       'Une réunion sans objectif clair produit rarement une décision claire.\n\nCommencer chaque réunion en rappelant sa finalité — informer, décider ou co-construire — évite qu’elle ne dérive.\n\nLimiter le nombre de participants aux personnes réellement concernées accélère les échanges et les décisions.\n\nTerminer systématiquement par un récapitulatif des actions et des responsables évite les réunions qui se répètent sans avancer.',
@@ -88,9 +96,12 @@ export const mockArticleDTOs: ArticleDTO[] = [
     title_fr: 'Communiquer efficacement en période de changement',
     title_en: 'Communicating effectively during periods of change',
     title_ar: 'التواصل الفعّال في فترات التغيير',
-    excerpt_fr: 'Le silence est souvent perçu comme un signal négatif. Ce que les équipes attendent vraiment pendant une période de transition.',
-    excerpt_en: 'Silence is often read as a bad sign. What teams really need to hear during a period of transition.',
-    excerpt_ar: 'الصمت غالباً ما يُفهم كإشارة سلبية. ما تحتاج الفرق فعلاً سماعه خلال فترة انتقالية.',
+    excerpt_fr:
+      'Le silence est souvent perçu comme un signal négatif. Ce que les équipes attendent vraiment pendant une période de transition.',
+    excerpt_en:
+      'Silence is often read as a bad sign. What teams really need to hear during a period of transition.',
+    excerpt_ar:
+      'الصمت غالباً ما يُفهم كإشارة سلبية. ما تحتاج الفرق فعلاً سماعه خلال فترة انتقالية.',
     content_fr:
       'En période de changement, l’absence d’information est presque toujours interprétée négativement.\n\nCommuniquer régulièrement, même sans nouvelle majeure, rassure davantage qu’un long silence suivi d’une grande annonce.\n\nReconnaître les incertitudes plutôt que les masquer renforce la crédibilité du message.\n\nEnfin, donner un espace pour les questions — et y répondre réellement — fait la différence entre une communication descendante et un vrai dialogue.',
     content_en:
@@ -112,9 +123,12 @@ export const mockArticleDTOs: ArticleDTO[] = [
     title_fr: 'Aligner la stratégie RH sur la stratégie d’entreprise',
     title_en: 'Aligning HR strategy with business strategy',
     title_ar: 'مواءمة استراتيجية الموارد البشرية مع استراتيجية المؤسسة',
-    excerpt_fr: 'La formation n’a d’impact réel que lorsqu’elle sert directement les priorités de l’entreprise. Comment faire le lien.',
-    excerpt_en: 'Training only has real impact when it directly serves business priorities. How to make that connection.',
-    excerpt_ar: 'التدريب له أثر حقيقي فقط عندما يخدم أولويات المؤسسة مباشرة. كيفية إقامة هذا الرابط.',
+    excerpt_fr:
+      'La formation n’a d’impact réel que lorsqu’elle sert directement les priorités de l’entreprise. Comment faire le lien.',
+    excerpt_en:
+      'Training only has real impact when it directly serves business priorities. How to make that connection.',
+    excerpt_ar:
+      'التدريب له أثر حقيقي فقط عندما يخدم أولويات المؤسسة مباشرة. كيفية إقامة هذا الرابط.',
     content_fr:
       'Un plan de formation déconnecté des priorités business reste, au mieux, un investissement isolé.\n\nPartir des objectifs stratégiques de l’entreprise pour identifier les compétences critiques évite de disperser le budget formation.\n\nImpliquer les responsables métiers dans la construction du plan de formation en renforce l’adhésion et la pertinence.\n\nMesurer l’impact sur des indicateurs business — pas uniquement sur la satisfaction des participants — permet de justifier l’investissement dans la durée.',
     content_en:
@@ -136,8 +150,10 @@ export const mockArticleDTOs: ArticleDTO[] = [
     title_fr: 'Former ses équipes en entreprise : par où commencer ?',
     title_en: 'Training your teams in-house: where to start',
     title_ar: 'تدريب فرق شركتك: من أين تبدأ؟',
-    excerpt_fr: 'Un premier programme de formation d’entreprise réussi commence toujours par un diagnostic honnête des besoins réels.',
-    excerpt_en: 'A successful first corporate training program always starts with an honest diagnosis of real needs.',
+    excerpt_fr:
+      'Un premier programme de formation d’entreprise réussi commence toujours par un diagnostic honnête des besoins réels.',
+    excerpt_en:
+      'A successful first corporate training program always starts with an honest diagnosis of real needs.',
     excerpt_ar: 'أول برنامج تدريب ناجح للمؤسسة يبدأ دائماً بتشخيص صادق للاحتياجات الفعلية.',
     content_fr:
       'Se lancer dans la formation d’entreprise sans diagnostic préalable mène souvent à des programmes génériques, peu suivis.\n\nCommencer par des entretiens courts avec quelques managers et collaborateurs permet d’identifier les besoins réels, souvent différents des besoins supposés.\n\nPrivilégier un premier programme pilote sur une équipe restreinte permet d’ajuster l’approche avant un déploiement plus large.\n\nEnfin, prévoir dès le départ un moyen simple de mesurer l’impact évite de devoir le justifier a posteriori.',

@@ -21,7 +21,10 @@ import { HoneypotField } from '@/features/leads/components/HoneypotField'
 import { LeadFormSuccess } from '@/features/leads/components/LeadFormSuccess'
 import { TrainingSelectField } from '@/features/leads/components/TrainingSelectField'
 import { useSubmitLead } from '@/features/leads/hooks/useSubmitLead'
-import { buildRegisterInterestSchema, type RegisterInterestValues } from '@/features/leads/schemas/register-interest.schema'
+import {
+  buildRegisterInterestSchema,
+  type RegisterInterestValues,
+} from '@/features/leads/schemas/register-interest.schema'
 import { useTrainings } from '@/features/trainings/hooks/useTrainings'
 import type { SupportedLanguage } from '@/i18n'
 
@@ -103,14 +106,24 @@ export default function RegisterInterestPage() {
 
   return (
     <>
-      <Seo title={t('seo.title')} description={t('seo.description')} canonicalPath="/register-interest" />
+      <Seo
+        title={t('seo.title')}
+        description={t('seo.description')}
+        canonicalPath="/register-interest"
+      />
       <BreadcrumbSchema items={breadcrumbItems} />
 
       <Section spacing="sm">
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} align="center" />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+              align="center"
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -145,10 +158,35 @@ export default function RegisterInterestPage() {
               </FormSection>
 
               <FormSection title={tFields('sections.personal')}>
-                <Input label={tFields('fields.firstName.label')} placeholder={tFields('fields.firstName.placeholder')} required error={errors.firstName?.message} {...register('firstName')} />
-                <Input label={tFields('fields.lastName.label')} placeholder={tFields('fields.lastName.placeholder')} required error={errors.lastName?.message} {...register('lastName')} />
-                <Input type="email" label={tFields('fields.email.label')} placeholder={tFields('fields.email.placeholder')} required error={errors.email?.message} {...register('email')} />
-                <Input type="tel" label={tFields('fields.phone.label')} placeholder={tFields('fields.phone.placeholder')} error={errors.phone?.message} {...register('phone')} />
+                <Input
+                  label={tFields('fields.firstName.label')}
+                  placeholder={tFields('fields.firstName.placeholder')}
+                  required
+                  error={errors.firstName?.message}
+                  {...register('firstName')}
+                />
+                <Input
+                  label={tFields('fields.lastName.label')}
+                  placeholder={tFields('fields.lastName.placeholder')}
+                  required
+                  error={errors.lastName?.message}
+                  {...register('lastName')}
+                />
+                <Input
+                  type="email"
+                  label={tFields('fields.email.label')}
+                  placeholder={tFields('fields.email.placeholder')}
+                  required
+                  error={errors.email?.message}
+                  {...register('email')}
+                />
+                <Input
+                  type="tel"
+                  label={tFields('fields.phone.label')}
+                  placeholder={tFields('fields.phone.placeholder')}
+                  error={errors.phone?.message}
+                  {...register('phone')}
+                />
                 <Input
                   label={tFields('fields.company.label')}
                   placeholder={tFields('fields.company.placeholder')}
@@ -169,11 +207,20 @@ export default function RegisterInterestPage() {
               </FormSection>
 
               <FormSection title={tFields('sections.consent')}>
-                <Checkbox label={tFields('privacy.consentLabel')} error={errors.consent?.message} className="sm:col-span-2" {...register('consent')} />
+                <Checkbox
+                  label={tFields('privacy.consentLabel')}
+                  error={errors.consent?.message}
+                  className="sm:col-span-2"
+                  {...register('consent')}
+                />
               </FormSection>
 
               {mutation.isError ? (
-                <ErrorState title={tFields('error.title')} description={tFields('error.description')} onRetry={handleSubmit(onSubmit)} />
+                <ErrorState
+                  title={tFields('error.title')}
+                  description={tFields('error.description')}
+                  onRetry={handleSubmit(onSubmit)}
+                />
               ) : null}
 
               <Button type="submit" size="lg" loading={mutation.isPending}>

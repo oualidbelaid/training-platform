@@ -51,7 +51,7 @@ describe('optionalEnum', () => {
     expect(schema.safeParse({ choice: '' }).success).toBe(true)
   })
 
-  it('accepts null (React Hook Form\'s read of an unchecked RadioGroup with no matching defaultValues entry — regression test: this exact case silently broke every optional radio/select field across all 5 lead forms, since it\'s the default, most common state)', () => {
+  it("accepts null (React Hook Form's read of an unchecked RadioGroup with no matching defaultValues entry — regression test: this exact case silently broke every optional radio/select field across all 5 lead forms, since it's the default, most common state)", () => {
     expect(schema.safeParse({ choice: null }).success).toBe(true)
   })
 

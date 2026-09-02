@@ -33,7 +33,12 @@ export default function PartnersPage() {
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -41,7 +46,9 @@ export default function PartnersPage() {
       <Section spacing="sm" className="pt-0">
         <Container className="flex flex-col gap-6">
           {partnersQuery.isLoading ? <LoadingState /> : null}
-          {partnersQuery.isError ? <ErrorState onRetry={() => void partnersQuery.refetch()} /> : null}
+          {partnersQuery.isError ? (
+            <ErrorState onRetry={() => void partnersQuery.refetch()} />
+          ) : null}
 
           {!partnersQuery.isLoading && !partnersQuery.isError ? (
             partnersQuery.data && partnersQuery.data.length > 0 ? (
@@ -66,7 +73,9 @@ export default function PartnersPage() {
         <Container>
           <RevealOnScroll>
             <div className="mx-auto flex max-w-2xl flex-col gap-3 text-center">
-              <p className="text-small font-semibold uppercase tracking-wide text-brand">{t('approach.eyebrow')}</p>
+              <p className="text-small font-semibold uppercase tracking-wide text-brand">
+                {t('approach.eyebrow')}
+              </p>
               <h2 className="text-h2 font-bold text-foreground">{t('approach.title')}</h2>
               <p className="text-body-lg text-foreground-muted">{t('approach.description')}</p>
             </div>

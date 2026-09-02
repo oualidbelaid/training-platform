@@ -3,3 +3,9 @@ dist
 dist-ssr
 coverage
 package-lock.json
+
+# Third-party vendor bundles — not project code, never hand-formatted;
+# reformatting minified/vendor CSS would bloat or mangle it for no benefit.
+src/styles/*.min.css
+src/styles/jquery-ui.css
+src/styles/vendor/

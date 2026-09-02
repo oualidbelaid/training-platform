@@ -51,7 +51,9 @@ export function FeaturedTrainingsSection() {
         {isError ? (
           <ErrorState className="mt-10" onRetry={() => void trainingsQuery.refetch()} />
         ) : null}
-        {!isLoading && !isError && trainings?.length === 0 ? <EmptyState className="mt-10" /> : null}
+        {!isLoading && !isError && trainings?.length === 0 ? (
+          <EmptyState className="mt-10" />
+        ) : null}
 
         {dominant ? (
           <div className="mt-10 flex flex-col gap-8">
@@ -75,7 +77,9 @@ export function FeaturedTrainingsSection() {
                     <RevealOnScroll key={training.id}>
                       <TrainingCard
                         training={training}
-                        categoryName={category ? getLocalizedText(category.name, language) : undefined}
+                        categoryName={
+                          category ? getLocalizedText(category.name, language) : undefined
+                        }
                       />
                     </RevealOnScroll>
                   )

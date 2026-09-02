@@ -49,7 +49,12 @@ export function trainingToCourseSchema(training: Training, language: SupportedLa
             courseMode: COURSE_MODE[training.format],
             startDate: session.startDate,
             ...(session.location
-              ? { location: { '@type': 'Place', name: getLocalizedText(session.location, language) } }
+              ? {
+                  location: {
+                    '@type': 'Place',
+                    name: getLocalizedText(session.location, language),
+                  },
+                }
               : {}),
           })),
         }
@@ -81,7 +86,10 @@ export function eventToEventSchema(event: Event, language: SupportedLanguage) {
   const location =
     event.format === 'online'
       ? { '@type': 'VirtualLocation', url: seoConfig.siteUrl }
-      : { '@type': 'Place', name: event.location ? getLocalizedText(event.location, language) : seoConfig.siteName }
+      : {
+          '@type': 'Place',
+          name: event.location ? getLocalizedText(event.location, language) : seoConfig.siteName,
+        }
 
   return {
     '@context': 'https://schema.org',

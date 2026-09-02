@@ -40,7 +40,9 @@ export function ArticleCard({ article, language, variant = 'compact' }: ArticleC
               {getLocalizedText(article.title, language)}
             </h3>
           </Link>
-          <p className="text-body text-foreground-muted">{getLocalizedText(article.excerpt, language)}</p>
+          <p className="text-body text-foreground-muted">
+            {getLocalizedText(article.excerpt, language)}
+          </p>
           <p className="text-small text-foreground-faint">{meta}</p>
           <Link
             href={`/resources/${article.slug}`}
@@ -67,7 +69,9 @@ export function ArticleCard({ article, language, variant = 'compact' }: ArticleC
             {getLocalizedText(article.title, language)}
           </h3>
         </Link>
-        <p className="flex-1 text-body text-foreground-muted">{getLocalizedText(article.excerpt, language)}</p>
+        <p className="flex-1 text-body text-foreground-muted">
+          {getLocalizedText(article.excerpt, language)}
+        </p>
         <p className="text-caption text-foreground-faint">{meta}</p>
       </CardContent>
     </Card>

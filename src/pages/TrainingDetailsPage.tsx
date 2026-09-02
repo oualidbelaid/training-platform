@@ -87,8 +87,12 @@ export default function TrainingDetailsPage() {
 
   const category = categoriesQuery.data?.find((item) => item.id === training.categoryId)
   const categoryName = category ? getLocalizedText(category.name, language) : undefined
-  const related = (relatedQuery.data?.items ?? []).filter((item) => item.id !== training.id).slice(0, 3)
-  const testimonials = (testimonialsQuery.data ?? []).filter((item) => item.trainingId === training.id)
+  const related = (relatedQuery.data?.items ?? [])
+    .filter((item) => item.id !== training.id)
+    .slice(0, 3)
+  const testimonials = (testimonialsQuery.data ?? []).filter(
+    (item) => item.trainingId === training.id,
+  )
   const requestParams = `?training=${training.slug}`
 
   const breadcrumbItems = [
@@ -120,8 +124,12 @@ export default function TrainingDetailsPage() {
                 <Badge variant="outline">{tTrainings(`format.${training.format}`)}</Badge>
                 <Badge variant="outline">{tTrainings(`level.${training.level}`)}</Badge>
               </div>
-              <h1 className="text-h1 font-extrabold text-foreground">{getLocalizedText(training.title, language)}</h1>
-              <p className="text-body-lg text-foreground-muted">{getLocalizedText(training.summary, language)}</p>
+              <h1 className="text-h1 font-extrabold text-foreground">
+                {getLocalizedText(training.title, language)}
+              </h1>
+              <p className="text-body-lg text-foreground-muted">
+                {getLocalizedText(training.summary, language)}
+              </p>
 
               <div className="flex items-center gap-2 text-small text-foreground-faint">
                 <Icon name="clock" aria-hidden="true" className="text-base" />
@@ -140,7 +148,9 @@ export default function TrainingDetailsPage() {
                   </RouterLink>
                 </Button>
                 <Button asChild size="lg" variant="outline">
-                  <RouterLink to={`/request-quote${requestParams}`}>{t('cta.requestQuote')}</RouterLink>
+                  <RouterLink to={`/request-quote${requestParams}`}>
+                    {t('cta.requestQuote')}
+                  </RouterLink>
                 </Button>
               </div>
             </RevealOnScroll>
@@ -158,8 +168,12 @@ export default function TrainingDetailsPage() {
         <Container className="grid gap-12 lg:grid-cols-[2fr_1fr]">
           <div className="flex flex-col gap-12">
             <RevealOnScroll className="flex flex-col gap-4">
-              <h2 className="text-h3 font-semibold text-foreground">{getLocalizedText(training.title, language)}</h2>
-              <p className="text-body-lg text-foreground-muted">{getLocalizedText(training.description, language)}</p>
+              <h2 className="text-h3 font-semibold text-foreground">
+                {getLocalizedText(training.title, language)}
+              </h2>
+              <p className="text-body-lg text-foreground-muted">
+                {getLocalizedText(training.description, language)}
+              </p>
             </RevealOnScroll>
 
             {training.objectives.length > 0 ? (
@@ -168,8 +182,14 @@ export default function TrainingDetailsPage() {
                 <ul className="flex flex-col gap-3">
                   {training.objectives.map((objective, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <Icon name="check" aria-hidden="true" className="mt-1 text-small text-brand" />
-                      <span className="text-body text-foreground-muted">{getLocalizedText(objective, language)}</span>
+                      <Icon
+                        name="check"
+                        aria-hidden="true"
+                        className="mt-1 text-small text-brand"
+                      />
+                      <span className="text-body text-foreground-muted">
+                        {getLocalizedText(objective, language)}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -201,7 +221,9 @@ export default function TrainingDetailsPage() {
 
             <RevealOnScroll className="flex flex-col gap-4">
               <h2 className="text-h3 font-semibold text-foreground">{t('methodology')}</h2>
-              <p className="text-body text-foreground-muted">{getLocalizedText(training.methodology, language)}</p>
+              <p className="text-body text-foreground-muted">
+                {getLocalizedText(training.methodology, language)}
+              </p>
             </RevealOnScroll>
 
             {training.faq.length > 0 ? (
@@ -226,10 +248,16 @@ export default function TrainingDetailsPage() {
               <ul className="mt-4 flex flex-col gap-3 text-small">
                 <li className="flex items-center gap-2">
                   <Icon name="clock" aria-hidden="true" className="text-foreground-faint" />
-                  <span className="text-foreground">{tTrainings('duration', { count: training.durationHours })}</span>
+                  <span className="text-foreground">
+                    {tTrainings('duration', { count: training.durationHours })}
+                  </span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <Icon name="diagram-project" aria-hidden="true" className="text-foreground-faint" />
+                  <Icon
+                    name="diagram-project"
+                    aria-hidden="true"
+                    className="text-foreground-faint"
+                  />
                   <span className="text-foreground">{tTrainings(`format.${training.format}`)}</span>
                 </li>
                 <li className="flex items-center gap-2">
@@ -276,11 +304,20 @@ export default function TrainingDetailsPage() {
                 </p>
                 <ul className="mt-3 flex flex-col gap-2">
                   {training.sessions.map((session, index) => (
-                    <li key={index} className="flex items-start gap-2 text-small text-foreground-muted">
-                      <Icon name="calendar-days" aria-hidden="true" className="mt-0.5 text-foreground-faint" />
+                    <li
+                      key={index}
+                      className="flex items-start gap-2 text-small text-foreground-muted"
+                    >
+                      <Icon
+                        name="calendar-days"
+                        aria-hidden="true"
+                        className="mt-0.5 text-foreground-faint"
+                      />
                       <span>
                         {formatDate(session.startDate, language)}
-                        {session.location ? ` — ${getLocalizedText(session.location, language)}` : ''}
+                        {session.location
+                          ? ` — ${getLocalizedText(session.location, language)}`
+                          : ''}
                       </span>
                     </li>
                   ))}
@@ -289,7 +326,9 @@ export default function TrainingDetailsPage() {
             ) : null}
 
             <Button asChild variant="outline">
-              <RouterLink to={`/register-interest${requestParams}`}>{t('cta.registerInterest')}</RouterLink>
+              <RouterLink to={`/register-interest${requestParams}`}>
+                {t('cta.registerInterest')}
+              </RouterLink>
             </Button>
             <Button asChild variant="outline">
               <RouterLink to="/contact">{t('cta.contact')}</RouterLink>
@@ -335,10 +374,14 @@ export default function TrainingDetailsPage() {
       <Section spacing="sm">
         <Container>
           <div className="bg-gradient-brand flex flex-col items-center gap-6 rounded-2xl px-6 py-16 text-center sm:px-16">
-            <h2 className="max-w-2xl text-h2 font-extrabold text-neutral-0">{t('cta.requestInfo')}</h2>
+            <h2 className="max-w-2xl text-h2 font-extrabold text-neutral-0">
+              {t('cta.requestInfo')}
+            </h2>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" variant="secondary">
-                <RouterLink to={`/request-quote${requestParams}`}>{t('cta.requestQuote')}</RouterLink>
+                <RouterLink to={`/request-quote${requestParams}`}>
+                  {t('cta.requestQuote')}
+                </RouterLink>
               </Button>
               <Button asChild size="lg" variant="inverse">
                 <RouterLink to="/contact">{t('cta.contact')}</RouterLink>

@@ -26,14 +26,23 @@ export default function SuccessStoriesPage() {
 
   return (
     <>
-      <Seo title={t('seo.title')} description={t('seo.description')} canonicalPath="/success-stories" />
+      <Seo
+        title={t('seo.title')}
+        description={t('seo.description')}
+        canonicalPath="/success-stories"
+      />
       <BreadcrumbSchema items={breadcrumbItems} />
 
       <Section spacing="sm">
         <Container className="flex flex-col gap-6">
           <Breadcrumb items={breadcrumbItems} />
           <RevealOnScroll>
-            <SectionHeading as="h1" eyebrow={t('hero.eyebrow')} title={t('hero.title')} description={t('hero.description')} />
+            <SectionHeading
+              as="h1"
+              eyebrow={t('hero.eyebrow')}
+              title={t('hero.title')}
+              description={t('hero.description')}
+            />
           </RevealOnScroll>
         </Container>
       </Section>
@@ -41,7 +50,9 @@ export default function SuccessStoriesPage() {
       <Section spacing="sm" className="pt-0">
         <Container className="flex flex-col gap-6">
           {successStoriesQuery.isLoading ? <LoadingState /> : null}
-          {successStoriesQuery.isError ? <ErrorState onRetry={() => void successStoriesQuery.refetch()} /> : null}
+          {successStoriesQuery.isError ? (
+            <ErrorState onRetry={() => void successStoriesQuery.refetch()} />
+          ) : null}
 
           {!successStoriesQuery.isLoading && !successStoriesQuery.isError ? (
             successStoriesQuery.data && successStoriesQuery.data.length > 0 ? (

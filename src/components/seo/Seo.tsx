@@ -26,14 +26,23 @@ interface SeoProps {
  * for why the `?lng=` variants are real, crawlable content rather than a
  * symbolic self-reference.
  */
-export function Seo({ title, description, canonicalPath, noIndex = false, image, type = 'website' }: SeoProps) {
+export function Seo({
+  title,
+  description,
+  canonicalPath,
+  noIndex = false,
+  image,
+  type = 'website',
+}: SeoProps) {
   const { i18n } = useTranslation()
   const language = i18n.language as SupportedLanguage
   const fullTitle = `${title} | ${seoConfig.siteName}`
   const canonicalUrl = canonicalPath ? `${seoConfig.siteUrl}${canonicalPath}` : undefined
   const hreflangLinks = canonicalPath ? buildHreflangLinks(canonicalPath) : []
   const resolvedImage = image ?? seoConfig.defaultOgImage
-  const absoluteImage = resolvedImage.startsWith('http') ? resolvedImage : `${seoConfig.siteUrl}${resolvedImage}`
+  const absoluteImage = resolvedImage.startsWith('http')
+    ? resolvedImage
+    : `${seoConfig.siteUrl}${resolvedImage}`
 
   return (
     <Helmet>
@@ -49,7 +58,10 @@ export function Seo({ title, description, canonicalPath, noIndex = false, image,
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={seoConfig.siteName} />
       <meta property="og:type" content={type} />
-      <meta property="og:locale" content={seoConfig.ogLocale[language] ?? seoConfig.ogLocale[seoConfig.defaultLocale]} />
+      <meta
+        property="og:locale"
+        content={seoConfig.ogLocale[language] ?? seoConfig.ogLocale[seoConfig.defaultLocale]}
+      />
       {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
       <meta property="og:image" content={absoluteImage} />
 

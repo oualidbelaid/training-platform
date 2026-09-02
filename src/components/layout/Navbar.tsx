@@ -37,7 +37,9 @@ const NAV_ITEMS = [
 function desktopNavLinkClassName({ isActive }: { isActive: boolean }) {
   return cn(
     'border-b-2 text-nav no-underline transition-colors duration-(--duration-fast) ease-(--ease-out)',
-    isActive ? 'border-brand font-semibold text-brand' : 'border-transparent text-foreground-muted hover:text-foreground',
+    isActive
+      ? 'border-brand font-semibold text-brand'
+      : 'border-transparent text-foreground-muted hover:text-foreground',
   )
 }
 
@@ -117,10 +119,19 @@ export function Navbar() {
         </IconButton>
       </Container>
 
-      <Drawer open={mobileOpen} onClose={() => setMobileOpen(false)} titleId={drawerTitleId} title={t('nav.openMenu')}>
+      <Drawer
+        open={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        titleId={drawerTitleId}
+        title={t('nav.openMenu')}
+      >
         <div className="flex items-center justify-between border-b border-border p-4">
           <Wordmark />
-          <IconButton aria-label={t('nav.closeMenu')} variant="ghost" onClick={() => setMobileOpen(false)}>
+          <IconButton
+            aria-label={t('nav.closeMenu')}
+            variant="ghost"
+            onClick={() => setMobileOpen(false)}
+          >
             <Icon name="xmark" aria-hidden="true" className="text-xl" />
           </IconButton>
         </div>

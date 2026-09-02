@@ -19,11 +19,7 @@ interface GlassPanelProps extends HTMLAttributes<HTMLDivElement> {
 export function GlassPanel({ tone = 'light', className, ...props }: GlassPanelProps) {
   return (
     <div
-      className={cn(
-        'rounded-xl border shadow-md backdrop-blur-md',
-        toneClasses[tone],
-        className,
-      )}
+      className={cn('rounded-xl border shadow-md backdrop-blur-md', toneClasses[tone], className)}
       {...props}
     />
   )

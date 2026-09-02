@@ -56,7 +56,10 @@ function priorityFor(path: string): string {
 function buildUrlEntry(path: string): string {
   const loc = `${seoConfig.siteUrl}${path}`
   const alternates = supportedLanguages
-    .map((lang) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${seoConfig.siteUrl}${path}?lng=${lang}" />`)
+    .map(
+      (lang) =>
+        `    <xhtml:link rel="alternate" hreflang="${lang}" href="${seoConfig.siteUrl}${path}?lng=${lang}" />`,
+    )
     .join('\n')
   const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${loc}" />`
 

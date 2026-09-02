@@ -18,7 +18,11 @@ export function Rating({ value, max = 5, className }: RatingProps) {
   const percent = Math.max(0, Math.min(100, (value / max) * 100))
 
   return (
-    <span role="img" aria-label={`${value} / ${max}`} className={cn('relative inline-flex', className)}>
+    <span
+      role="img"
+      aria-label={`${value} / ${max}`}
+      className={cn('relative inline-flex', className)}
+    >
       <span className="flex gap-0.5 text-neutral-200" aria-hidden="true">
         {Array.from({ length: max }).map((_, index) => (
           <Icon key={index} name="star" className="text-base" />
