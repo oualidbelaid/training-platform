@@ -1,0 +1,17 @@
+{
+  "format": {
+    "in-person": "In-person",
+    "online": "Online",
+    "hybrid": "Hybrid"
+  },
+  "level": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "duration": "{{count}}h",
+  "viewDetails": "Learn more",
+  "programCount_one": "{{count}} program",
+  "programCount_other": "{{count}} programs",
+  "eventImageAlt": "Professionals attending a training session"
+}

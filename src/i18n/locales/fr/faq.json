@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "title": "Questions fréquentes",
+    "description": "Réponses aux questions les plus fréquentes sur nos formations, inscriptions, formats et certifications."
+  },
+  "hero": {
+    "eyebrow": "FAQ",
+    "title": "Questions fréquentes",
+    "description": "Retrouvez les réponses aux questions les plus courantes sur nos formations, inscriptions et modalités."
+  },
+  "categoryFilterLabel": "Catégorie",
+  "allCategories": "Toutes les catégories",
+  "empty": {
+    "title": "Aucune question dans cette catégorie",
+    "description": "Choisissez une autre catégorie ou contactez-nous directement."
+  },
+  "cta": {
+    "title": "Une autre question ?",
+    "description": "Notre équipe est à votre disposition pour répondre à toutes vos questions.",
+    "primaryCta": "Nous contacter",
+    "secondaryCta": "Demander des informations"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Inscrire mon intérêt",
+    "description": "Inscrivez votre intérêt pour une formation ISTAM et soyez informé des prochaines sessions."
+  },
+  "hero": {
+    "eyebrow": "Inscription d'intérêt",
+    "title": "Inscrire mon intérêt",
+    "description": "Une formation vous intéresse mais aucune session ne correspond à vos disponibilités ? Laissez-nous vos coordonnées, nous vous tiendrons informé."
+  },
+  "success": {
+    "title": "Merci pour votre inscription.",
+    "description": "Notre équipe ISTAM vous tiendra informé des prochaines sessions.",
+    "primaryCta": "Voir nos formations",
+    "secondaryCta": "Retour à l'accueil"
+  }
+}

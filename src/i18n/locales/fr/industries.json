@@ -1,0 +1,18 @@
+{
+  "seo": {
+    "title": "Secteurs d'activité",
+    "description": "Découvrez comment nos formations s'adaptent aux enjeux spécifiques de chaque secteur d'activité."
+  },
+  "hero": {
+    "eyebrow": "Secteurs",
+    "title": "Des formations adaptées à votre secteur",
+    "description": "Chaque secteur a ses propres enjeux — nos formations s'adaptent au contexte et au vocabulaire de votre activité."
+  },
+  "disclaimer": "Ces secteurs illustrent nos domaines d'intervention et ne constituent pas une liste exhaustive de nos clients actuels.",
+  "cta": {
+    "title": "Votre secteur n'est pas listé ?",
+    "description": "Nos programmes s'adaptent à tous les contextes professionnels — parlons de vos besoins spécifiques.",
+    "primaryCta": "Nous contacter",
+    "secondaryCta": "Solutions pour entreprises"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "seo": {
+    "title": "Témoignages clients",
+    "description": "Découvrez ce que nos clients disent de leur expérience de formation avec ISTAM."
+  },
+  "hero": {
+    "eyebrow": "Témoignages",
+    "title": "Ce que nos clients en disent",
+    "description": "Managers, responsables RH et dirigeants partagent leur expérience des formations ISTAM."
+  },
+  "disclaimer": "Témoignages de démonstration",
+  "empty": {
+    "title": "Aucun témoignage disponible",
+    "description": "Revenez bientôt pour découvrir les retours de nos clients."
+  },
+  "cta": {
+    "title": "Prêt à vivre la même expérience ?",
+    "description": "Discutons de vos objectifs et trouvons ensemble la formation la plus adaptée à vos équipes.",
+    "primaryCta": "Demander un devis",
+    "secondaryCta": "Nous contacter"
+  }
+}

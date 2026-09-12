@@ -1,0 +1,31 @@
+{
+  "seo": {
+    "title": "Ressources",
+    "description": "Articles et conseils pratiques sur le management, le digital, la communication et la formation professionnelle."
+  },
+  "hero": {
+    "eyebrow": "Ressources",
+    "title": "Nos derniers articles",
+    "description": "Des conseils concrets rédigés par nos formateurs, sur le management, le digital, la communication et la formation en entreprise."
+  },
+  "featuredLabel": "À la une",
+  "readingTime_one": "{{count}} min de lecture",
+  "readingTime_other": "{{count}} min de lecture",
+  "readArticle": "Lire l'article",
+  "empty": {
+    "title": "Aucun article disponible",
+    "description": "De nouveaux articles seront bientôt publiés."
+  },
+  "details": {
+    "back": "Retour aux ressources",
+    "relatedTitle": "À lire aussi",
+    "notFoundTitle": "Article introuvable",
+    "notFoundDescription": "Cet article n'existe pas ou a été déplacé."
+  },
+  "cta": {
+    "title": "Un besoin de formation spécifique ?",
+    "description": "Discutons de vos enjeux et trouvons ensemble le programme le plus adapté.",
+    "primaryCta": "Découvrir nos formations",
+    "secondaryCta": "Nous contacter"
+  }
+}

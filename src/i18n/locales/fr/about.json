@@ -1,0 +1,90 @@
+{
+  "seo": {
+    "title": "À propos d'ISTAM",
+    "description": "Organisme de Conseil et de Formation agréé par l'État N°1967, ISTAM accompagne depuis 2006 les entreprises et organisations dans leur recherche de performance."
+  },
+  "hero": {
+    "eyebrow": "À propos",
+    "title": "ISTAM — Conseil et formation professionnelle",
+    "description": "Organisme de Conseil et de Formation agréé par l'État N°1967, ISTAM accompagne depuis 2006 les entreprises et organisations dans leur recherche de performance et d'excellence opérationnelle."
+  },
+  "intro": {
+    "title": "Conseil, gestion de projet et formation au service de la performance",
+    "paragraph1": "Fondé en 2006, l'Institut ISTAM accompagne les entreprises et organisations dans leur recherche de performance et d'excellence opérationnelle, à travers trois expertises complémentaires : le conseil en stratégie, dédié à l'optimisation organisationnelle et au développement durable des entreprises ; la gestion de projet (PMO/PMA), avec une expérience solide sur les environnements ERP ; et la formation continue.",
+    "paragraph2": "Nos programmes de formation couvrent le leadership, le management, la gestion de projet et le développement des soft-skills, animés par une équipe de collaborateurs permanents et un large réseau de consultants experts qui conçoivent des programmes de conseil et de formation adaptés à chaque projet professionnel."
+  },
+  "mission": {
+    "title": "Notre mission",
+    "description": "Permettre aux individus et aux organisations de révéler leur plein potentiel, en cultivant une dynamique d'apprentissage et de progrès continus."
+  },
+  "vision": {
+    "title": "Notre vision",
+    "description": "Former la prochaine génération de leaders, à travers des programmes d'accompagnement complets et sur mesure."
+  },
+  "values": {
+    "eyebrow": "Nos valeurs",
+    "title": "Intégrité • Savoir • Transformation • Ambition • Maîtrise",
+    "description": "Cinq principes qui épellent ISTAM et guident chacune de nos actions.",
+    "items": {
+      "integrity": {
+        "title": "Intégrité",
+        "description": "Nous agissons avec honnêteté, éthique et transparence dans toutes nos relations. « La confiance est le fondement de notre réussite. »"
+      },
+      "knowledge": {
+        "title": "Savoir",
+        "description": "Nous croyons que le savoir est le premier levier de transformation des individus et des organisations. « Apprendre aujourd'hui pour réussir demain. »"
+      },
+      "transformation": {
+        "title": "Transformation",
+        "description": "Nous développons des compétences qui produisent des résultats concrets et durables. « Transformer les connaissances en performance. »"
+      },
+      "ambition": {
+        "title": "Ambition",
+        "description": "Nous encourageons chacun à viser l'excellence et à dépasser ses limites. « Oser, progresser et réussir. »"
+      },
+      "mastery": {
+        "title": "Maîtrise",
+        "description": "Nous recherchons l'excellence dans nos formations, nos méthodes et nos interventions. « L'expertise au service de la performance. »"
+      }
+    }
+  },
+  "approach": {
+    "eyebrow": "Notre méthode",
+    "title": "Une méthode ancrée dans le terrain",
+    "description": "Nous coconstruisons chaque intervention avec vos équipes, en tenant compte de la culture et des réalités propres à votre organisation. Du diagnostic initial à la mise en œuvre, nous appliquons une méthodologie rigoureuse qui allie conseil stratégique, gestion de projet et développement des compétences.",
+    "steps": {
+      "diagnose": {
+        "title": "Diagnostic",
+        "description": "Comprendre les besoins réels de vos équipes avant de concevoir le programme."
+      },
+      "design": {
+        "title": "Conception",
+        "description": "Construire un parcours pédagogique adapté au niveau et aux objectifs des participants."
+      },
+      "deliver": {
+        "title": "Animation",
+        "description": "Délivrer la formation avec des mises en situation concrètes et un formateur expert du sujet."
+      },
+      "followUp": {
+        "title": "Suivi",
+        "description": "Mesurer la progression et accompagner l'application des acquis dans la durée."
+      }
+    }
+  },
+  "figures": {
+    "eyebrow": "ISTAM en quelques chiffres",
+    "title": "Une structure au service de nos clients",
+    "items": {
+      "founded": { "value": "2006", "label": "année de création" },
+      "staff": { "value": "10", "label": "collaborateurs permanents" },
+      "consultants": { "value": "100+", "label": "consultants experts" },
+      "accreditation": { "value": "N°1967", "label": "agrément de formation délivré par l'État" }
+    }
+  },
+  "cta": {
+    "title": "Envie d'en savoir plus sur nos formations ?",
+    "description": "Nos conseillers sont à votre écoute pour vous orienter vers le programme le plus adapté à vos objectifs.",
+    "primaryCta": "Découvrir nos formations",
+    "secondaryCta": "Nous contacter"
+  }
+}

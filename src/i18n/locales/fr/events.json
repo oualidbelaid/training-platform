@@ -1,0 +1,27 @@
+{
+  "seo": {
+    "title": "Événements",
+    "description": "Webinaires, journées portes ouvertes et rencontres organisés par ISTAM."
+  },
+  "hero": {
+    "eyebrow": "Événements",
+    "title": "Rencontrez nos équipes et notre approche",
+    "description": "Webinaires, journées portes ouvertes et rencontres professionnelles, en ligne ou sur site."
+  },
+  "tabs": {
+    "upcoming": "À venir",
+    "past": "Passés"
+  },
+  "empty": {
+    "upcomingTitle": "Aucun événement à venir",
+    "upcomingDescription": "De nouveaux événements seront bientôt annoncés — revenez prochainement.",
+    "pastTitle": "Aucun événement passé",
+    "pastDescription": "L'historique de nos événements s'affichera ici."
+  },
+  "cta": {
+    "title": "Ne manquez aucun de nos événements",
+    "description": "Contactez-nous pour être informé de nos prochaines rencontres et webinaires.",
+    "primaryCta": "Demander des informations",
+    "secondaryCta": "Nous contacter"
+  }
+}

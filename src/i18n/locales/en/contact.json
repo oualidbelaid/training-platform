@@ -1,0 +1,20 @@
+{
+  "seo": {
+    "title": "Contact",
+    "description": "Get in touch with the ISTAM team — contact form, details and location."
+  },
+  "hero": {
+    "eyebrow": "Contact",
+    "title": "Contact us",
+    "description": "A question, a training project? Write to us and our team will respond quickly."
+  },
+  "info": {
+    "title": "Our details"
+  },
+  "success": {
+    "title": "Thank you for your message.",
+    "description": "The ISTAM team will get back to you shortly.",
+    "primaryCta": "Browse our training",
+    "secondaryCta": "Back to home"
+  }
+}

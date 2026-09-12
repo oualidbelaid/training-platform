@@ -1,0 +1,21 @@
+{
+  "format": {
+    "in-person": "حضوري",
+    "online": "عن بُعد",
+    "hybrid": "مختلط"
+  },
+  "level": {
+    "beginner": "مبتدئ",
+    "intermediate": "متوسط",
+    "advanced": "متقدم"
+  },
+  "duration": "{{count}} س",
+  "viewDetails": "معرفة المزيد",
+  "programCount_zero": "لا برامج",
+  "programCount_one": "برنامج واحد",
+  "programCount_two": "برنامجان",
+  "programCount_few": "{{count}} برامج",
+  "programCount_many": "{{count}} برنامجًا",
+  "programCount_other": "{{count}} برنامج",
+  "eventImageAlt": "محترفون يحضرون جلسة تدريبية"
+}

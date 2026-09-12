@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "Request a Consultation",
+    "description": "Talk to an ISTAM advisor about your company's training needs."
+  },
+  "hero": {
+    "eyebrow": "Consultation",
+    "title": "Request a consultation",
+    "description": "Want to talk through your organization's training needs? An ISTAM advisor offers a no-commitment conversation."
+  },
+  "success": {
+    "title": "Thank you for your consultation request.",
+    "description": "The ISTAM team will contact you shortly to schedule a conversation.",
+    "primaryCta": "Solutions for companies",
+    "secondaryCta": "Back to home"
+  }
+}
