@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink } from 'react-router-dom'
 import { Container } from '@/components/layout/Container'
+import { Grid } from '@/components/layout/Grid'
 import { Section } from '@/components/layout/Section'
 import { Button } from '@/components/ui/Button'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -18,9 +19,11 @@ import type { SupportedLanguage } from '@/i18n'
 import { getLocalizedText } from '@/utils/localized-text'
 
 /**
- * Editorial "one large panel + a list" composition (redesign §12) —
- * deliberately not a repeated card grid. The featured category gets full
- * typographic and visual weight; the rest are a compact, scannable list.
+ * The 4 ISTAM service pillars in equal-size boxes (Home refinement pass) —
+ * previously an asymmetric "1 featured + list" composition; now every
+ * category renders through `CategoryTile`'s existing `featured` variant
+ * (same TiltCard hover, icon, description, count, CTA) inside a 4-up `Grid`,
+ * so no new card design or hover treatment was introduced.
  */
 export function CategoriesSection() {
   const { t, i18n } = useTranslation('home')
@@ -30,7 +33,7 @@ export function CategoriesSection() {
 
   const isLoading = categoriesQuery.isLoading || trainingsQuery.isLoading
   const isError = categoriesQuery.isError || trainingsQuery.isError
-  const categories = categoriesQuery.data
+  const categories = categoriesQuery.data ?? []
 
   const programCountByCategory = new Map<string, number>()
   for (const training of trainingsQuery.data?.items ?? []) {
@@ -39,8 +42,6 @@ export function CategoriesSection() {
       (programCountByCategory.get(training.categoryId) ?? 0) + 1,
     )
   }
-
-  const [featured, ...rest] = categories ?? []
 
   return (
     <Section spacing="md">
@@ -61,42 +62,25 @@ export function CategoriesSection() {
           <ErrorState className="mt-10" onRetry={() => void categoriesQuery.refetch()} />
         ) : null}
 
-        {featured ? (
-          <div className="mt-10 grid gap-8 lg:grid-cols-5">
-            <RevealOnScroll className="lg:col-span-3">
-              <CategoryTile
-                category={featured}
-                name={getLocalizedText(featured.name, language)}
-                description={getLocalizedText(featured.description, language)}
-                programCount={programCountByCategory.get(featured.id) ?? 0}
-                icon={(CATEGORY_VISUALS[featured.slug] ?? DEFAULT_CATEGORY_VISUAL).icon}
-                badgeClassName={
-                  (CATEGORY_VISUALS[featured.slug] ?? DEFAULT_CATEGORY_VISUAL).badgeClassName
-                }
-                variant="featured"
-              />
-            </RevealOnScroll>
-
-            <RevealOnScroll className="lg:col-span-2">
-              <div className="flex h-full flex-col justify-center rounded-2xl border border-border bg-surface p-6 sm:p-8">
-                {rest.map((category) => {
-                  const visual = CATEGORY_VISUALS[category.slug] ?? DEFAULT_CATEGORY_VISUAL
-                  return (
-                    <CategoryTile
-                      key={category.id}
-                      category={category}
-                      name={getLocalizedText(category.name, language)}
-                      description={getLocalizedText(category.description, language)}
-                      programCount={programCountByCategory.get(category.id) ?? 0}
-                      icon={visual.icon}
-                      badgeClassName={visual.badgeClassName}
-                      variant="compact"
-                    />
-                  )
-                })}
-              </div>
-            </RevealOnScroll>
-          </div>
+        {categories.length > 0 ? (
+          <Grid cols={4} gap="lg" className="mt-10">
+            {categories.map((category) => {
+              const visual = CATEGORY_VISUALS[category.slug] ?? DEFAULT_CATEGORY_VISUAL
+              return (
+                <RevealOnScroll key={category.id} className="h-full">
+                  <CategoryTile
+                    category={category}
+                    name={getLocalizedText(category.name, language)}
+                    description={getLocalizedText(category.description, language)}
+                    programCount={programCountByCategory.get(category.id) ?? 0}
+                    icon={visual.icon}
+                    badgeClassName={visual.badgeClassName}
+                    variant="featured"
+                  />
+                </RevealOnScroll>
+              )
+            })}
+          </Grid>
         ) : null}
       </Container>
     </Section>

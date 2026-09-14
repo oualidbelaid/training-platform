@@ -10,9 +10,9 @@ import type { PartnerDTO } from '@/types/dto/partner.dto'
  *    Wikimedia Commons (`logo_url` set — see `config/media.ts` for the
  *    exact source file per client, for traceability).
  * 2. Clients for which no such logo file could be confidently sourced
- *    (`logo_url` omitted) — `PartnerCard`/`TrustLogosSection` render these
- *    as a plain text wordmark tile rather than pairing a real company name
- *    with an unrelated placeholder mark.
+ *    (`logo_url` omitted) — `TrustLogosSection` simply excludes these from
+ *    its logo marquee (its `logoUrl`-filter) rather than pairing a real
+ *    company name with an unrelated placeholder mark.
  *
  * No per-client engagement description is invented: the source states only
  * that ISTAM counts them as a client, so that is all `description_*` says.

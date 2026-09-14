@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import { Link as RouterLink } from 'react-router-dom'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
 import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
@@ -52,12 +51,6 @@ export function TrustLogosSection() {
             {t('trustLogos.eyebrow')}
           </p>
           <p className="text-body text-foreground-muted">{t('trustLogos.description')}</p>
-          <RouterLink
-            to="/partners"
-            className="text-caption font-semibold text-brand underline-offset-4 hover:underline"
-          >
-            {t('trustLogos.cta')}
-          </RouterLink>
         </RevealOnScroll>
 
         <RevealOnScroll>

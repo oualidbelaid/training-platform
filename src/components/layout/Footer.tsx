@@ -26,7 +26,7 @@ export function Footer() {
             <img
               src={BRAND.logo}
               alt={t('app.name', { ns: 'common' })}
-              className="h-9 w-auto max-w-full mix-blend-multiply"
+              className="h-9 w-auto max-w-full mix-blend-multiply w-180"
             />
             <p className="max-w-xs text-body text-foreground-muted">
               {t('footer.tagline', { ns: 'home' })}
@@ -65,9 +65,6 @@ export function Footer() {
             <Link href="/about" variant="subtle">
               {t('footer.columns.company.about', { ns: 'home' })}
             </Link>
-            <Link href="/events" variant="subtle">
-              {t('footer.columns.company.events', { ns: 'home' })}
-            </Link>
           </nav>
 
           <nav
@@ -96,17 +93,6 @@ export function Footer() {
             © {new Date().getFullYear()} {t('app.name', { ns: 'common' })} —{' '}
             {t('footer.copyright', { ns: 'home' })}
           </p>
-          <div className="flex gap-6">
-            <Link href="/legal" variant="subtle">
-              {t('footer.legal.legalNotice', { ns: 'home' })}
-            </Link>
-            <Link href="/privacy" variant="subtle">
-              {t('footer.legal.privacyPolicy', { ns: 'home' })}
-            </Link>
-            <Link href="/cookies" variant="subtle">
-              {t('footer.legal.cookiePolicy', { ns: 'home' })}
-            </Link>
-          </div>
         </div>
       </Container>
     </footer>

@@ -7,7 +7,6 @@ import strategy from '@/assets/images/photos/strategy.webp'
 import featuredTraining from '@/assets/images/photos/featured-training.webp'
 import companyTraining from '@/assets/images/photos/company-training.webp'
 import testimonial from '@/assets/images/placeholders/testimonial.svg'
-import events from '@/assets/images/events/event-01.webp'
 import partner1 from '@/assets/images/placeholders/partners/partner-1.svg'
 import partner2 from '@/assets/images/placeholders/partners/partner-2.svg'
 import partner3 from '@/assets/images/placeholders/partners/partner-3.svg'
@@ -36,23 +35,23 @@ import clientYassir from '@/assets/images/clients/yassir.png'
  * `src/assets/images/photos/`, all sourced from Unsplash's free tier
  * (commercial use permitted, no attribution required under the Unsplash
  * License). See `docs/DESIGN_SYSTEM.md` → "Imagery" for the full source
- * list (photo ID + photographer, per key) and licensing note. `events` is
- * likewise a real photo, from `src/assets/images/events/`. `testimonial`
+ * list (photo ID + photographer, per key) and licensing note. `testimonial`
  * remains the one locally generated decorative abstract texture — it was
  * never meant to be literal photography.
  *
  * Trainer portraits (`trainer1`–`trainer10`, `src/assets/images/trainers/`)
  * were removed at the client's explicit request: ISTAM does not publicly
  * expose individual trainer identities, profiles, photos or biographies.
- * See `docs/ROADMAP.md`.
+ * See `docs/ROADMAP.md`. The `events` key/photo (`src/assets/images/events/`)
+ * was likewise removed when the Events feature was deleted entirely — see
+ * `docs/ROADMAP.md`.
  *
  * Swapping in client photography later means only:
- *   1. Drop the licensed file(s) into src/assets/images/photos/ (or
- *      src/assets/images/events/ for event photos).
+ *   1. Drop the licensed file(s) into src/assets/images/photos/.
  *   2. Point the relevant MEDIA entry (or entries) at the new import.
  *
  * No component, DTO, mapper, or entity changes required — every consumer
- * only ever sees a plain `image: string` URL (see Training/Event entities).
+ * only ever sees a plain `image: string` URL (see the `Training` entity).
  *
  * `client*` keys (ISTAM Full Catalogue pass) are real official logos for
  * real ISTAM clients named in the official institutional presentation —
@@ -65,8 +64,8 @@ import clientYassir from '@/assets/images/clients/yassir.png'
  * Logo-Institut-Pasteur-Algerie-1024x638.png, Logo_Yassir_2023.png — all
  * from commons.wikimedia.org. Client names the presentation lists but for
  * which no rights-appropriate logo file could be confidently sourced are
- * shown as a plain text wordmark instead (`PartnerCard`'s `logoUrl`-absent
- * branch) rather than paired with an unrelated placeholder mark.
+ * simply omitted from `TrustLogosSection`'s marquee (its `logoUrl`-filter)
+ * rather than paired with an unrelated placeholder mark.
  */
 export const MEDIA = {
   heroTraining,
@@ -78,7 +77,6 @@ export const MEDIA = {
   featuredTraining,
   companyTraining,
   testimonial,
-  events,
   partner1,
   partner2,
   partner3,

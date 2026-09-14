@@ -7,7 +7,7 @@
     "training": "التدريب",
     "solutions": "حلول للشركات",
     "about": "من نحن",
-    "resources": "الموارد",
+    "resources": "جديدنا",
     "contact": "اتصل بنا",
     "cta": "طلب معلومات",
     "openMenu": "فتح القائمة",
@@ -16,16 +16,17 @@
   "hero": {
     "eyebrow": "تدريب مهني يحقق نتائج فعلية",
     "headline": {
-      "line1": "طوّروا المهارات.",
-      "line2": "حوّلوا الفرق.",
-      "prefix": "",
-      "accent": "نمّوا",
-      "suffix": "أعمالكم."
+      "prefix": "من التعلّم إلى",
+      "accent": "التأثير"
     },
-    "subheadline": "برامج عملية بأثر قابل للقياس، يقدمها خبراء مارسوا فعليًا المهن التي يدرّسونها.",
     "primaryCta": "اكتشف تدريباتنا",
     "secondaryCta": "حلول للشركات",
-    "trustLabel": "{{rating}}/5 من أكثر من {{count}} مشارك",
+    "ratingLabel_zero": "{{rating}}/5",
+    "ratingLabel_one": "{{rating}}/5 استنادًا إلى تقييم واحد",
+    "ratingLabel_two": "{{rating}}/5 استنادًا إلى تقييمين",
+    "ratingLabel_few": "{{rating}}/5 استنادًا إلى {{count}} تقييمات",
+    "ratingLabel_many": "{{rating}}/5 استنادًا إلى {{count}} تقييمًا",
+    "ratingLabel_other": "{{rating}}/5 استنادًا إلى {{count}} تقييم",
     "cards": {
       "impactTitle": "أثر ملموس",
       "impactDescription": "نتائج قابلة للقياس لمؤسستكم",
@@ -48,8 +49,7 @@
   "trustLogos": {
     "eyebrow": "يثقون بنا",
     "description": "ثقة بُنيت مع مؤسسات من مختلف القطاعات.",
-    "disclaimer": "شعارات توضيحية",
-    "cta": "اطّلع على شركائنا"
+    "disclaimer": "شعارات توضيحية"
   },
   "categories": {
     "eyebrow": "الدليل التدريبي",
@@ -90,16 +90,7 @@
       }
     }
   },
-  "featuredTrainings": {
-    "eyebrow": "التدريبات الأكثر طلبًا",
-    "title": "أكثر برامجنا طلبًا",
-    "description": "مجموعة مختارة من البرامج المصممة لتحدث أثرًا فوريًا في ممارساتكم المهنية.",
-    "cta": "عرض جميع التدريبات",
-    "cardCta": "معرفة المزيد"
-  },
   "valueProposition": {
-    "eyebrow": "لماذا تختارنا",
-    "title": "من التعلّم إلى الأثر.",
     "items": {
       "experts": {
         "title": "مدربون خبراء",
@@ -144,17 +135,11 @@
     "companyName": "ISTAM — تدريب مهني",
     "description": "تعالوا لمقابلة فريقنا شخصيًا أو تواصلوا معنا — يسعدنا مساعدتكم.",
     "hours": {
-      "weekdays": "الإثنين – الجمعة",
-      "saturday": "السبت"
+      "openDays": "الأحد – الخميس — 09:00 – 16:00",
+      "closedDays": "الجمعة – السبت — مغلق"
     },
     "cta": "احصل على الاتجاهات",
     "mapUnavailable": "الخريطة غير متاحة — راجع العنوان أعلاه"
-  },
-  "events": {
-    "eyebrow": "الفعاليات",
-    "title": "المواعيد القادمة",
-    "description": "التقوا بفريقنا واكتشفوا منهجيتنا التعليمية.",
-    "cta": "عرض جميع الفعاليات"
   },
   "finalCta": {
     "title": "هل أنتم مستعدون لتطوير فرقكم؟",
@@ -172,8 +157,7 @@
       },
       "company": {
         "title": "الشركة",
-        "about": "من نحن",
-        "events": "الفعاليات"
+        "about": "من نحن"
       },
       "contact": {
         "title": "اتصل بنا",
@@ -181,11 +165,6 @@
         "requestQuote": "طلب عرض سعر",
         "contactUs": "تواصل معنا"
       }
-    },
-    "legal": {
-      "legalNotice": "الإشعار القانوني",
-      "privacyPolicy": "سياسة الخصوصية",
-      "cookiePolicy": "سياسة ملفات تعريف الارتباط"
     },
     "copyright": "جميع الحقوق محفوظة."
   }

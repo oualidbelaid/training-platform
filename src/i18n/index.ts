@@ -6,16 +6,15 @@ import catalogAr from './locales/ar/catalog.json'
 import commonAr from './locales/ar/common.json'
 import consultationAr from './locales/ar/consultation.json'
 import contactAr from './locales/ar/contact.json'
-import eventsAr from './locales/ar/events.json'
 import faqAr from './locales/ar/faq.json'
 import homeAr from './locales/ar/home.json'
 import industriesAr from './locales/ar/industries.json'
 import leadFormsAr from './locales/ar/leadForms.json'
-import partnersAr from './locales/ar/partners.json'
 import registerInterestAr from './locales/ar/registerInterest.json'
 import requestInformationAr from './locales/ar/requestInformation.json'
 import requestQuoteAr from './locales/ar/requestQuote.json'
 import resourcesAr from './locales/ar/resources.json'
+import reviewsAr from './locales/ar/reviews.json'
 import solutionsAr from './locales/ar/solutions.json'
 import successStoriesAr from './locales/ar/successStories.json'
 import testimonialsAr from './locales/ar/testimonials.json'
@@ -26,16 +25,15 @@ import catalogEn from './locales/en/catalog.json'
 import commonEn from './locales/en/common.json'
 import consultationEn from './locales/en/consultation.json'
 import contactEn from './locales/en/contact.json'
-import eventsEn from './locales/en/events.json'
 import faqEn from './locales/en/faq.json'
 import homeEn from './locales/en/home.json'
 import industriesEn from './locales/en/industries.json'
 import leadFormsEn from './locales/en/leadForms.json'
-import partnersEn from './locales/en/partners.json'
 import registerInterestEn from './locales/en/registerInterest.json'
 import requestInformationEn from './locales/en/requestInformation.json'
 import requestQuoteEn from './locales/en/requestQuote.json'
 import resourcesEn from './locales/en/resources.json'
+import reviewsEn from './locales/en/reviews.json'
 import solutionsEn from './locales/en/solutions.json'
 import successStoriesEn from './locales/en/successStories.json'
 import testimonialsEn from './locales/en/testimonials.json'
@@ -46,16 +44,15 @@ import catalogFr from './locales/fr/catalog.json'
 import commonFr from './locales/fr/common.json'
 import consultationFr from './locales/fr/consultation.json'
 import contactFr from './locales/fr/contact.json'
-import eventsFr from './locales/fr/events.json'
 import faqFr from './locales/fr/faq.json'
 import homeFr from './locales/fr/home.json'
 import industriesFr from './locales/fr/industries.json'
 import leadFormsFr from './locales/fr/leadForms.json'
-import partnersFr from './locales/fr/partners.json'
 import registerInterestFr from './locales/fr/registerInterest.json'
 import requestInformationFr from './locales/fr/requestInformation.json'
 import requestQuoteFr from './locales/fr/requestQuote.json'
 import resourcesFr from './locales/fr/resources.json'
+import reviewsFr from './locales/fr/reviews.json'
 import solutionsFr from './locales/fr/solutions.json'
 import successStoriesFr from './locales/fr/successStories.json'
 import testimonialsFr from './locales/fr/testimonials.json'
@@ -96,9 +93,7 @@ void i18n
         trainingDetails: trainingDetailsFr,
         about: aboutFr,
         testimonials: testimonialsFr,
-        partners: partnersFr,
         successStories: successStoriesFr,
-        events: eventsFr,
         resources: resourcesFr,
         faq: faqFr,
         industries: industriesFr,
@@ -109,6 +104,7 @@ void i18n
         contact: contactFr,
         registerInterest: registerInterestFr,
         consultation: consultationFr,
+        reviews: reviewsFr,
       },
       en: {
         common: commonEn,
@@ -118,9 +114,7 @@ void i18n
         trainingDetails: trainingDetailsEn,
         about: aboutEn,
         testimonials: testimonialsEn,
-        partners: partnersEn,
         successStories: successStoriesEn,
-        events: eventsEn,
         resources: resourcesEn,
         faq: faqEn,
         industries: industriesEn,
@@ -131,6 +125,7 @@ void i18n
         contact: contactEn,
         registerInterest: registerInterestEn,
         consultation: consultationEn,
+        reviews: reviewsEn,
       },
       ar: {
         common: commonAr,
@@ -140,9 +135,7 @@ void i18n
         trainingDetails: trainingDetailsAr,
         about: aboutAr,
         testimonials: testimonialsAr,
-        partners: partnersAr,
         successStories: successStoriesAr,
-        events: eventsAr,
         resources: resourcesAr,
         faq: faqAr,
         industries: industriesAr,
@@ -153,6 +146,7 @@ void i18n
         contact: contactAr,
         registerInterest: registerInterestAr,
         consultation: consultationAr,
+        reviews: reviewsAr,
       },
     },
     supportedLngs: supportedLanguages,
@@ -166,9 +160,7 @@ void i18n
       'trainingDetails',
       'about',
       'testimonials',
-      'partners',
       'successStories',
-      'events',
       'resources',
       'faq',
       'industries',
@@ -179,6 +171,7 @@ void i18n
       'contact',
       'registerInterest',
       'consultation',
+      'reviews',
     ],
     interpolation: {
       escapeValue: false,

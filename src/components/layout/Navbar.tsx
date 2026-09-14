@@ -14,9 +14,9 @@ import { cn } from '@/lib/cn'
 
 const NAV_ITEMS = [
   { key: 'training', href: '/trainings' },
+  { key: 'resources', href: '/resources' },
   { key: 'solutions', href: '/solutions-for-companies' },
   { key: 'about', href: '/about' },
-  { key: 'resources', href: '/resources' },
   { key: 'contact', href: '/contact' },
 ] as const
 

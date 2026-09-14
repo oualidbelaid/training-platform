@@ -6,12 +6,10 @@ import {
   ConsultationPage,
   ContactPage,
   DesignSystemPreviewPage,
-  EventsPage,
   FaqPage,
   HomePage,
   IndustriesPage,
   NotFoundPage,
-  PartnersPage,
   RegisterInterestPage,
   RequestInformationPage,
   RequestQuotePage,
@@ -33,11 +31,11 @@ import {
  * visual/RTL/responsive QA — not a business page, never linked from nav.
  *
  * M4 adds the remaining content pages. Slugs are English, matching the
- * `/trainings` precedent above — `/about`, `/events` and
- * `/resources` specifically were **not** a free choice: the Navbar and
+ * `/trainings` precedent above — `/about` and `/resources` specifically
+ * were **not** a free choice: the Navbar and
  * Footer already hard-linked to those exact paths since M2/M3, so using
  * them is what let this milestone ship without touching Header/Footer
- * markup at all. The remaining slugs (`/testimonials`, `/partners`,
+ * markup at all. The remaining slugs (`/testimonials`,
  * `/success-stories`, `/faq`, `/industries`, `/solutions-for-companies`)
  * follow the same English-kebab-case convention for consistency.
  *
@@ -55,6 +53,19 @@ import {
  * photos or biographies. No redirect was added — the underlying content
  * genuinely no longer exists, so the route falls through to the catch-all
  * `NotFoundPage` like any other unknown path. See docs/ROADMAP.md.
+ *
+ * `/events` (M4) was later removed entirely — page, Home section,
+ * repository, DTO/entity, i18n, sitemap entry — with no architecture kept
+ * for later reuse (unlike `/trainers`). No redirect: falls through to
+ * `NotFoundPage`. See docs/ROADMAP.md.
+ *
+ * `/partners` (M4) was later removed the same way as `/events` — page,
+ * `PartnerCard`, `partners.json` i18n namespace, sitemap entry — after its
+ * only entry point (Home's `TrustLogosSection` "Voir nos partenaires" CTA)
+ * was removed. Unlike `/events`, the underlying `Partner` DTO/entity/
+ * repository/service/`usePartners()` hook were **kept**: `TrustLogosSection`
+ * still sources its logo marquee from them. No redirect: falls through to
+ * `NotFoundPage`. See docs/ROADMAP.md.
  */
 export const router = createBrowserRouter([
   {
@@ -65,9 +76,7 @@ export const router = createBrowserRouter([
       { path: 'trainings/:slug', element: <TrainingDetailsPage /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'testimonials', element: <TestimonialsPage /> },
-      { path: 'partners', element: <PartnersPage /> },
       { path: 'success-stories', element: <SuccessStoriesPage /> },
-      { path: 'events', element: <EventsPage /> },
       { path: 'resources', element: <ResourcesPage /> },
       { path: 'resources/:slug', element: <ArticleDetailsPage /> },
       { path: 'faq', element: <FaqPage /> },

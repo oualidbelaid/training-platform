@@ -5,7 +5,7 @@ Status: **implemented (M7)**. This document describes the SEO architecture as bu
 ## Architecture
 
 ```
-Training / Article / Event / Faq entity (existing, from the mock repository chain)
+Training / Article / Faq entity (existing, from the mock repository chain)
         ↓
 lib/seo/structured-data.ts   — pure mapper fns → schema.org shape (never touches a DTO)
         ↓
@@ -45,8 +45,9 @@ The app is a client-rendered SPA with no server-side per-language routing — la
 | `BreadcrumbList` | Every page rendering `Breadcrumb` (`BreadcrumbSchema`) | Mirrors the same `items` shape as the `Breadcrumb` UI component                                                                                        |
 | `Course`         | `TrainingDetailsPage` (`CourseSchema`)                 | `hasCourseInstance`/`CourseInstance.courseMode` mapped from the training's sessions/format; omitted entirely when a training has no scheduled sessions |
 | `Article`        | `ArticleDetailsPage` (`ArticleSchema`)                 |                                                                                                                                                        |
-| `Event`          | `EventsPage` (`EventSchema`, one per event)            | `eventAttendanceMode`/`location` mapped from `TrainingFormat` (in-person → `Place`, online → `VirtualLocation`)                                        |
 | `FAQPage`        | `FaqPage` + each training's own FAQ (`FaqSchema`)      | One mapper (`faqItemsToFaqPageSchema`) covers both — `Faq` and `TrainingFaqItem` share the same `{question, answer}` shape                             |
+
+An `Event` schema (`EventsPage`/`EventSchema`) existed here until the Events feature was removed entirely — see `docs/ROADMAP.md`.
 
 **Person schema for trainers is deliberately not implemented** — the trainer roster (`TrainersPage`) is a grid of short bios, not individual profile pages; a Person schema per card was judged low-value relative to the effort. A considered exclusion, not a gap.
 

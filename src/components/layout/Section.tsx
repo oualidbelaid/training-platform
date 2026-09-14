@@ -3,9 +3,9 @@ import { cn } from '@/lib/cn'
 
 const spacingClasses = {
   none: '',
-  sm: 'py-10 lg:py-14',
-  md: 'py-16 lg:py-24',
-  lg: 'py-24 lg:py-32',
+  sm: 'py-10 lg:py-8',
+  md: 'py-12 lg:py-18',
+  lg: 'py-20 lg:py-28',
 } as const
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {

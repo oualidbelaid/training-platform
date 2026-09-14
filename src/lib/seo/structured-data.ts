@@ -4,7 +4,6 @@ import { seoConfig } from '@/config/seo.config'
 import type { SupportedLanguage } from '@/i18n'
 import type { Article } from '@/types/entities/article'
 import type { LocalizedText, TrainingFormat } from '@/types/entities/common'
-import type { Event } from '@/types/entities/event'
 import type { Training } from '@/types/entities/training'
 import { getLocalizedText } from '@/utils/localized-text'
 
@@ -73,35 +72,6 @@ export function articleToArticleSchema(article: Article, language: SupportedLang
     author: { '@type': 'Person', name: article.authorName },
     publisher: ORGANIZATION_REF,
     mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(`/resources/${article.slug}`) },
-  }
-}
-
-const ATTENDANCE_MODE: Record<TrainingFormat, string> = {
-  'in-person': 'https://schema.org/OfflineEventAttendanceMode',
-  online: 'https://schema.org/OnlineEventAttendanceMode',
-  hybrid: 'https://schema.org/MixedEventAttendanceMode',
-}
-
-export function eventToEventSchema(event: Event, language: SupportedLanguage) {
-  const location =
-    event.format === 'online'
-      ? { '@type': 'VirtualLocation', url: seoConfig.siteUrl }
-      : {
-          '@type': 'Place',
-          name: event.location ? getLocalizedText(event.location, language) : seoConfig.siteName,
-        }
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Event',
-    name: getLocalizedText(event.title, language),
-    description: getLocalizedText(event.description, language),
-    startDate: event.startDate,
-    eventAttendanceMode: ATTENDANCE_MODE[event.format],
-    eventStatus: 'https://schema.org/EventScheduled',
-    location,
-    image: absoluteUrl(event.image ?? seoConfig.defaultOgImage),
-    organizer: { '@type': 'Organization', name: seoConfig.siteName, url: seoConfig.siteUrl },
   }
 }
 

@@ -1,12 +1,12 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router-dom'
 import { Container } from '@/components/layout/Container'
 import { Section } from '@/components/layout/Section'
-import { Grid } from '@/components/layout/Grid'
 import { Accordion, type AccordionItemData } from '@/components/ui/Accordion'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
-import { Pagination } from '@/components/ui/Pagination'
+import { FilterSelect } from '@/components/ui/FilterSelect'
+import { SearchBar } from '@/components/ui/SearchBar'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { EmptyState } from '@/components/feedback/EmptyState'
 import { ErrorState } from '@/components/feedback/ErrorState'
@@ -15,124 +15,75 @@ import { RevealOnScroll } from '@/components/motion/RevealOnScroll'
 import { BreadcrumbSchema } from '@/components/seo/BreadcrumbSchema'
 import { Seo } from '@/components/seo/Seo'
 import { useCategories } from '@/features/categories/hooks/useCategories'
-import { TrainingCard } from '@/features/trainings/components/TrainingCard'
-import {
-  TrainingFilters,
-  type TrainingFiltersValue,
-} from '@/features/trainings/components/TrainingFilters'
 import { useTrainingDomains } from '@/features/trainings/hooks/useTrainingDomains'
-import { useTrainings } from '@/features/trainings/hooks/useTrainings'
+import { groupDomainsByCategory } from '@/features/trainings/utils/group-domains-by-category'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 import type { SupportedLanguage } from '@/i18n'
-import type { TrainingSortBy } from '@/repositories/training'
-import type { TrainingFormat, TrainingLevel } from '@/types/entities/common'
 import { getLocalizedText } from '@/utils/localized-text'
 
-const PAGE_SIZE = 9
-
 /**
- * Training Catalog (spec §18, M3). Filter/search/sort/page state lives in
- * the URL (`useSearchParams`) rather than local component state — the
- * result is shareable/bookmarkable, and it's how `CategoryTile` already
- * links here (`/trainings?category=<slug>`) from the Home Page, so no
- * change was needed there. No cart, no checkout — every card's CTA is
- * "Learn more" through to the Training Details page.
+ * Training Catalog (spec §18, M3 — later simplified in a client-directed
+ * change, see docs/ROADMAP.md). No longer a filterable grid of individual
+ * `Training` records: the page browses straight to the "categories +
+ * thématiques" level. Each `Category` with at least one matching
+ * `TrainingDomain` gets its own heading + `Accordion` — the exact block
+ * that used to only render once a category was filtered now renders for
+ * every visible category. Search narrows domain/course names
+ * (`groupDomainsByCategory`) instead of training titles; the Category
+ * `FilterSelect` beside it narrows which category (or categories) are
+ * visible at all — `visibleCategories` is computed before grouping, so the
+ * pure helper itself stays filter-agnostic. Format/Level/Sort do not come
+ * back. `?category=<slug>` — still linked from Home's `CategoryTile` and
+ * the Footer, both untouched — drives the same filter and scrolls to/
+ * focuses that category's section, so those existing links keep doing
+ * something useful.
  */
 export default function TrainingCatalogPage() {
   const { t, i18n } = useTranslation('catalog')
   const { t: tCommon } = useTranslation('common')
   const language = i18n.language as SupportedLanguage
+  const prefersReducedMotion = useReducedMotion()
   const [searchParams, setSearchParams] = useSearchParams()
 
   const categoriesQuery = useCategories()
   const domainsQuery = useTrainingDomains()
+  const search = searchParams.get('q') ?? ''
   const categorySlug = searchParams.get('category') ?? ''
-  const selectedCategory = categoriesQuery.data?.find((category) => category.slug === categorySlug)
-  const categoryId = selectedCategory?.id
 
-  const page = Number(searchParams.get('page') ?? '1') || 1
-  const filters: TrainingFiltersValue = {
-    search: searchParams.get('q') ?? '',
-    categorySlug,
-    format: searchParams.get('format') ?? '',
-    level: searchParams.get('level') ?? '',
-    sortBy: searchParams.get('sort') ?? 'relevance',
-  }
+  const visibleCategories = useMemo(() => {
+    const categories = categoriesQuery.data ?? []
+    return categorySlug ? categories.filter((category) => category.slug === categorySlug) : categories
+  }, [categoriesQuery.data, categorySlug])
 
-  const trainingsQuery = useTrainings({
-    page,
-    pageSize: PAGE_SIZE,
-    categoryId: categorySlug ? categoryId : undefined,
-    search: filters.search || undefined,
-    searchLanguage: language,
-    format: (filters.format || undefined) as TrainingFormat | undefined,
-    level: (filters.level || undefined) as TrainingLevel | undefined,
-    sortBy: filters.sortBy as TrainingSortBy,
-  })
-
-  const categoryById = useMemo(
-    () => new Map(categoriesQuery.data?.map((category) => [category.id, category])),
-    [categoriesQuery.data],
+  const groups = useMemo(
+    () => groupDomainsByCategory(visibleCategories, domainsQuery.data ?? [], search, language),
+    [visibleCategories, domainsQuery.data, search, language],
   )
 
-  const domainAccordionItems: AccordionItemData[] = useMemo(() => {
-    if (!categoryId || !domainsQuery.data) return []
-    return domainsQuery.data
-      .filter((domain) => domain.categoryId === categoryId)
-      .map((domain) => ({
-        id: domain.id,
-        question: (
-          <span className="flex flex-1 items-center justify-between gap-4">
-            <span>{getLocalizedText(domain.name, language)}</span>
-            <span className="shrink-0 text-caption font-normal text-foreground-faint">
-              {t('domains.courseCount', { count: domain.courses.length })}
-            </span>
-          </span>
-        ),
-        answer: (
-          <ul className="grid gap-2 sm:grid-cols-2">
-            {domain.courses.map((course) => (
-              <li key={getLocalizedText(course.name, language)} className="flex items-start gap-2">
-                <span
-                  aria-hidden="true"
-                  className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground-faint"
-                />
-                {getLocalizedText(course.name, language)}
-              </li>
-            ))}
-          </ul>
-        ),
-      }))
-  }, [categoryId, domainsQuery.data, language, t])
+  useEffect(() => {
+    if (!categorySlug || groups.length === 0) return
+    const target = document.getElementById(categorySlug)
+    if (!target) return
+    target.focus({ preventScroll: true })
+    target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' })
+  }, [categorySlug, groups, prefersReducedMotion])
 
-  function updateFilters(patch: Partial<TrainingFiltersValue>) {
+  function updateSearch(value: string) {
     const next = new URLSearchParams(searchParams)
-    const merged = { ...filters, ...patch }
-
-    if (merged.search) next.set('q', merged.search)
+    if (value) next.set('q', value)
     else next.delete('q')
-    if (merged.categorySlug) next.set('category', merged.categorySlug)
-    else next.delete('category')
-    if (merged.format) next.set('format', merged.format)
-    else next.delete('format')
-    if (merged.level) next.set('level', merged.level)
-    else next.delete('level')
-    if (merged.sortBy && merged.sortBy !== 'relevance') next.set('sort', merged.sortBy)
-    else next.delete('sort')
-    next.delete('page')
-
     setSearchParams(next)
   }
 
-  function goToPage(nextPage: number) {
+  function updateCategory(slug: string) {
     const next = new URLSearchParams(searchParams)
-    if (nextPage <= 1) next.delete('page')
-    else next.set('page', String(nextPage))
+    if (slug) next.set('category', slug)
+    else next.delete('category')
     setSearchParams(next)
-    window.scrollTo({ top: 0, behavior: 'instant' })
   }
 
-  const total = trainingsQuery.data?.total ?? 0
-  const pageCount = Math.max(1, Math.ceil(total / PAGE_SIZE))
+  const isLoading = categoriesQuery.isLoading || domainsQuery.isLoading
+  const isError = categoriesQuery.isError || domainsQuery.isError
   const breadcrumbItems = [{ label: tCommon('nav.home'), href: '/' }, { label: t('hero.title') }]
 
   return (
@@ -155,69 +106,104 @@ export default function TrainingCatalogPage() {
       </Section>
 
       <Section spacing="sm" className="pt-0">
-        <Container className="flex flex-col gap-8">
+        <Container className="flex flex-col gap-10">
           <RevealOnScroll>
-            <TrainingFilters
-              value={filters}
-              onChange={updateFilters}
-              categories={categoriesQuery.data ?? []}
-              language={language}
-            />
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end">
+              <SearchBar
+                label={t('filters.searchLabel')}
+                placeholder={t('filters.searchPlaceholder')}
+                clearLabel={t('filters.clearSearch')}
+                value={search}
+                onChange={(event) => updateSearch(event.target.value)}
+                onClear={() => updateSearch('')}
+                className="max-w-md"
+              />
+              <FilterSelect
+                label={t('filters.categoryLabel')}
+                placeholder={t('filters.allCategories')}
+                value={categorySlug}
+                onChange={updateCategory}
+                options={[
+                  { value: '', label: t('filters.allCategories') },
+                  ...(categoriesQuery.data ?? []).map((category) => ({
+                    value: category.slug,
+                    label: getLocalizedText(category.name, language),
+                  })),
+                ]}
+                className="w-full sm:w-56"
+              />
+            </div>
           </RevealOnScroll>
 
-          {selectedCategory && domainAccordionItems.length > 0 ? (
-            <RevealOnScroll className="flex flex-col gap-4 rounded-2xl border border-border bg-surface-subtle p-6 sm:p-8">
-              <SectionHeading
-                eyebrow={t('domains.eyebrow')}
-                title={t('domains.title', {
-                  category: getLocalizedText(selectedCategory.name, language),
-                })}
-                description={t('domains.description')}
-              />
-              <Accordion items={domainAccordionItems} />
-            </RevealOnScroll>
+          {isLoading ? <LoadingState /> : null}
+          {isError ? (
+            <ErrorState
+              onRetry={() => {
+                void categoriesQuery.refetch()
+                void domainsQuery.refetch()
+              }}
+            />
           ) : null}
 
-          {trainingsQuery.isLoading ? <LoadingState /> : null}
-          {trainingsQuery.isError ? (
-            <ErrorState onRetry={() => void trainingsQuery.refetch()} />
-          ) : null}
+          {!isLoading && !isError ? (
+            groups.length > 0 ? (
+              <>
+                <RevealOnScroll>
+                  <SectionHeading
+                    eyebrow={t('domains.eyebrow')}
+                    title={t('domains.title')}
+                    description={t('domains.description')}
+                  />
+                </RevealOnScroll>
 
-          {!trainingsQuery.isLoading && !trainingsQuery.isError ? (
-            <>
-              <p className="text-small text-foreground-muted">
-                {t('results.count', { count: total })}
-              </p>
+                <div className="flex flex-col gap-10">
+                  {groups.map(({ category, domains }) => {
+                    const items: AccordionItemData[] = domains.map((domain) => ({
+                      id: domain.id,
+                      question: (
+                        <span className="flex flex-1 items-center justify-between gap-4">
+                          <span>{getLocalizedText(domain.name, language)}</span>
+                          <span className="shrink-0 text-caption font-normal text-foreground-faint">
+                            {t('domains.courseCount', { count: domain.courses.length })}
+                          </span>
+                        </span>
+                      ),
+                      answer: (
+                        <ul className="grid gap-2 sm:grid-cols-2">
+                          {domain.courses.map((course) => (
+                            <li
+                              key={getLocalizedText(course.name, language)}
+                              className="flex items-start gap-2"
+                            >
+                              <span
+                                aria-hidden="true"
+                                className="mt-2 h-1 w-1 shrink-0 rounded-full bg-foreground-faint"
+                              />
+                              {getLocalizedText(course.name, language)}
+                            </li>
+                          ))}
+                        </ul>
+                      ),
+                    }))
 
-              {trainingsQuery.data && trainingsQuery.data.items.length > 0 ? (
-                <Grid cols={3}>
-                  {trainingsQuery.data.items.map((training) => {
-                    const category = categoryById.get(training.categoryId)
                     return (
-                      <RevealOnScroll key={training.id}>
-                        <TrainingCard
-                          training={training}
-                          categoryName={
-                            category ? getLocalizedText(category.name, language) : undefined
-                          }
-                        />
+                      <RevealOnScroll key={category.id} className="flex flex-col gap-4">
+                        <h2
+                          id={category.slug}
+                          tabIndex={-1}
+                          className="text-h2 font-bold text-foreground outline-none"
+                        >
+                          {getLocalizedText(category.name, language)}
+                        </h2>
+                        <Accordion items={items} />
                       </RevealOnScroll>
                     )
                   })}
-                </Grid>
-              ) : (
-                <EmptyState title={t('empty.title')} description={t('empty.description')} />
-              )}
-
-              <Pagination
-                page={page}
-                pageCount={pageCount}
-                onPageChange={goToPage}
-                statusLabel={t('pagination.status', { page, pageCount })}
-                previousLabel={t('pagination.previous')}
-                nextLabel={t('pagination.next')}
-              />
-            </>
+                </div>
+              </>
+            ) : (
+              <EmptyState title={t('empty.title')} description={t('empty.description')} />
+            )
           ) : null}
         </Container>
       </Section>

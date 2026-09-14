@@ -14,6 +14,8 @@ import { MEDIA } from '@/config/media'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
 import { ensureGsapRegistered } from '@/lib/gsap'
 import { fadeInUp, staggerContainer } from '@/lib/motion'
+import { useReviews } from '@/features/reviews/hooks/useReviews'
+import { getApprovedReviewStats } from '@/features/reviews/utils/getApprovedReviewStats'
 
 /**
  * The most important section on the page (spec §4/§5, redesigned, then
@@ -24,12 +26,19 @@ import { fadeInUp, staggerContainer } from '@/lib/motion'
  * composition — all three sharing depth/light language. Headline uses
  * `text-h1`, not `text-display` (branding-refinement §6 — the Hero no
  * longer takes up most of the viewport with oversized type).
+ *
+ * The rating line under the CTAs used to be a fabricated `4.8/5 sur
+ * 2,000+ participants`. It now reads the real `getApprovedReviewStats()`
+ * from the Reviews feature (`useReviews()`) and renders nothing at all when
+ * there are zero approved reviews yet, rather than show a fake number.
  */
 export function Hero() {
   const { t } = useTranslation('home')
   const prefersReducedMotion = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
   const backgroundRef = useRef<HTMLDivElement>(null)
+  const { data: reviews = [] } = useReviews()
+  const reviewStats = getApprovedReviewStats(reviews)
 
   useEffect(() => {
     if (prefersReducedMotion || !sectionRef.current || !backgroundRef.current) return
@@ -75,18 +84,9 @@ export function Hero() {
           </motion.p>
 
           <motion.h1 variants={fadeInUp} className="text-h1 font-extrabold text-foreground">
-            <span className="block">{t('hero.headline.line1')}</span>
-            <span className="block">{t('hero.headline.line2')}</span>
-            <span className="block">
-              {t('hero.headline.prefix') ? `${t('hero.headline.prefix')} ` : ''}
-              <span className="text-gradient-brand">{t('hero.headline.accent')}</span>{' '}
-              {t('hero.headline.suffix')}
-            </span>
+            {t('hero.headline.prefix')}{' '}
+            <span className="text-gradient-brand">{t('hero.headline.accent')}</span>
           </motion.h1>
-
-          <motion.p variants={fadeInUp} className="max-w-xl text-body-lg text-foreground-muted">
-            {t('hero.subheadline')}
-          </motion.p>
 
           <motion.div
             variants={fadeInUp}
@@ -114,12 +114,17 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <motion.div variants={fadeInUp} className="flex items-center gap-3 pt-3">
-            <Rating value={4.8} />
-            <p className="text-small text-foreground-muted">
-              {t('hero.trustLabel', { rating: '4.8', count: '2,000' })}
-            </p>
-          </motion.div>
+          {reviewStats.count > 0 ? (
+            <motion.div variants={fadeInUp} className="flex items-center gap-3 pt-3">
+              <Rating value={reviewStats.average} />
+              <p className="text-small text-foreground-muted">
+                {t('hero.ratingLabel', {
+                  rating: reviewStats.average.toFixed(1),
+                  count: reviewStats.count,
+                })}
+              </p>
+            </motion.div>
+          ) : null}
         </motion.div>
 
         <div className="relative h-[26rem] sm:h-[30rem] lg:h-[38rem]">
@@ -158,7 +163,7 @@ export function Hero() {
             </GlassPanel>
           </TiltCard>
 
-          <TiltCard className="absolute bottom-2 end-0 sm:end-0" maxTilt={5}>
+          {/* <TiltCard className="absolute bottom-2 end-0 sm:end-0" maxTilt={5}>
             <GlassPanel tone="light" className="flex w-56 items-start gap-3 p-4">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-500 text-neutral-0">
                 <Icon name="users" aria-hidden="true" className="text-base" />
@@ -172,14 +177,14 @@ export function Hero() {
                 </span>
               </span>
             </GlassPanel>
-          </TiltCard>
+          </TiltCard> */}
 
-          <span
+          {/* <span
             aria-hidden="true"
             className="absolute -top-2 end-6 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-0 shadow-md sm:end-10"
           >
             <Icon name="award" className="text-base text-accent-500" />
-          </span>
+          </span> */}
         </div>
       </Container>
     </section>

@@ -13,8 +13,5 @@ export const LOCATION = {
   longitude: 2.9934,
   phone: '0555 07 96 00',
   email: 'contact@istam.fr',
-  hours: [
-    { day: 'weekdays', value: '08:30 – 16:30' },
-    { day: 'saturday', value: 'Fermé' },
-  ],
+  hours: [{ day: 'openDays' }, { day: 'closedDays' }],
 } as const

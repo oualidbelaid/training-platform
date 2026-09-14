@@ -13,7 +13,9 @@
       "files": [
         "src/components/ui/Avatar.tsx",
         "src/components/ui/Drawer.tsx",
+        "src/components/ui/Modal.tsx",
         "src/components/ui/Rating.tsx",
+        "src/components/ui/RatingInput.tsx",
         "src/components/ui/FilterSelect.tsx",
         "src/components/layout/LanguageSwitcher.tsx"
       ],

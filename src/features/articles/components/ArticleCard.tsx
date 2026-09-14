@@ -16,10 +16,10 @@ interface ArticleCardProps {
 }
 
 /**
- * Resources/Articles grid card (spec §7). `featured` mirrors `TrainingCard`/
- * `EventPreviewCard`'s dominant-treatment pattern (larger image, bigger
- * type) for the single most recent article; `compact` is the standard grid
- * card. The whole card links to `/resources/:slug`.
+ * Resources/Articles grid card (spec §7). `featured` mirrors `TrainingCard`'s
+ * dominant-treatment pattern (larger image, bigger type) for the single most
+ * recent article; `compact` is the standard grid card. The whole card links
+ * to `/resources/:slug`.
  */
 export function ArticleCard({ article, language, variant = 'compact' }: ArticleCardProps) {
   const { t } = useTranslation('resources')

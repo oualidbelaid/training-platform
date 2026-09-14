@@ -182,8 +182,8 @@ export default function DesignSystemPreviewPage() {
                 <CardContent>
                   <p className="text-h3 font-medium text-foreground">Card title</p>
                   <p className="mt-2 text-body text-foreground-muted">
-                    Surface, border, radius, shadow and hover depth — the primitive future
-                    TrainingCard/EventCard components compose.
+                    Surface, border, radius, shadow and hover depth — the primitive
+                    TrainingCard/ArticleCard components compose.
                   </p>
                 </CardContent>
                 <CardFooter>

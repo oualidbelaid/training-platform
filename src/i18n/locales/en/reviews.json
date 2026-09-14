@@ -1,0 +1,40 @@
+{
+  "section": {
+    "eyebrow": "Participant reviews",
+    "title": "What our participants think",
+    "count_one": "Based on {{count}} review",
+    "count_other": "Based on {{count}} reviews",
+    "empty": "Reviews from our participants — be the first to share your experience of an ISTAM training.",
+    "cta": "Leave a review"
+  },
+  "modal": {
+    "title": "Evaluate a training",
+    "description": "Your feedback helps future participants choose their training with confidence.",
+    "close": "Close",
+    "fields": {
+      "rating": {
+        "label": "Your rating",
+        "starLabel": "{{value}} star out of {{max}}"
+      },
+      "comment": {
+        "label": "Your comment",
+        "placeholder": "Share your experience: content, trainer, hands-on practice…"
+      }
+    },
+    "error": "Something went wrong. Please try again.",
+    "actions": {
+      "submit": "Send my review",
+      "submitting": "Sending…"
+    },
+    "success": {
+      "title": "Thank you for your review!",
+      "description": "Your feedback has been recorded and is now reflected in the rating shown.",
+      "cta": "Close"
+    }
+  },
+  "validation": {
+    "ratingRequired": "Please select a rating.",
+    "tooShort": "Your comment must be at least {{min}} characters long.",
+    "tooLong": "Your comment cannot exceed {{max}} characters."
+  }
+}

@@ -62,9 +62,7 @@ export function LocationSection() {
                 <Icon name="clock" aria-hidden="true" className="mt-0.5 text-lg text-brand" />
                 <span className="flex flex-col gap-0.5 text-body text-foreground">
                   {LOCATION.hours.map((entry) => (
-                    <span key={entry.day}>
-                      {t(`location.hours.${entry.day}`)} — {entry.value}
-                    </span>
+                    <span key={entry.day}>{t(`location.hours.${entry.day}`)}</span>
                   ))}
                 </span>
               </li>

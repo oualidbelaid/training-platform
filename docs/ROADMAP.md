@@ -627,7 +627,6 @@ Potential data domains:
 - Trainings
 - Categories
 - Trainers (private/admin use only — not publicly displayed, see "Removed: public Trainers functionality" below)
-- Events
 - Companies
 - Contact/lead information
 - Other approved ERP data
@@ -666,6 +665,101 @@ Also kept: generic, non-identifying mentions of "expert trainers"/"formateurs ex
 ## Verification
 
 `tsc -b` clean, `oxlint` clean, full Vitest suite passing, production build succeeding. Re-grepped the full source tree for `trainer`/`formateur` after the pass — every remaining hit is either the kept generic architecture above, a kept non-identifying mention, or a doc-comment example (`Card.tsx`, `DesignSystemPreviewPage.tsx`) updated to reference `EventCard` instead. No live-browser QA (disclosed limitation, as always) — verified via code review that removing each section leaves no fixed-height gap (all conditional/flex-stacked, no absolute positioning depended on the removed content) and that no other approved section, animation, or the 3D hero were touched.
+
+---
+
+# Client-directed change — Removed: Events feature
+
+**Status: Done.** Not a numbered milestone — the Events feature (introduced in M4) was removed entirely at the user's request. Unlike the Trainers removal above, **no generic architecture was kept** — this is a full, clean deletion (page, section, repository, DTO/entity, i18n, sitemap), not a "hide the public UI, keep the pipeline" change.
+
+The feature had briefly reappeared after an unrelated full local+remote git-history loss forced a from-scratch reconstruction of the working tree from memory/architecture analysis; that reconstruction restored an earlier snapshot that still had Events in it. This change removes it again, completely, this time.
+
+## Removed
+
+- `EventsPage` (`/events` route, page, lazy-page export)
+- Home's `EventsSection` (and its usage in `HomePage.tsx`)
+- `features/events/` — `EventPreviewCard` component, `useEvents`/`useUpcomingEvents` hooks
+- `repositories/event/` — `event.repository.ts` (interface), `event.mapper.ts`, `mock-event.repository.ts` (+ its test), `index.ts` (factory)
+- `services/event.service.ts`
+- `types/dto/event.dto.ts`, `types/entities/event.ts`
+- `mocks/data/events.ts`
+- `components/seo/EventSchema.tsx`, the `eventToEventSchema` mapper and `ATTENDANCE_MODE` map in `lib/seo/structured-data.ts` (+ its 3 tests in `structured-data.test.ts`)
+- `formatEventDay`/`formatEventMonth` in `utils/format-date.ts` (only ever consumed by the now-deleted `EventPreviewCard`)
+- The `events` i18n namespace (`events.json` × 3 languages, plus its import/registration/`ns` entry in `src/i18n/index.ts`)
+- `home.json`'s `events.*` section (eyebrow/title/description/cta) and `footer.columns.company.events` key — fr/en/ar
+- Footer's "Events"/"Événements" link
+- The `events` image (`src/assets/images/events/event-01.webp`) and its `MEDIA.events` import/export
+- `/events` from the sitemap generator's static route list (`scripts/generate-sitemap.ts`)
+- Doc-comment mentions of `EventPreviewCard`/`EventCard` as a compositional example, updated to reference `ArticleCard`/`TrainingCard` instead (`Card.tsx`, `ArticleCard.tsx`, `DesignSystemPreviewPage.tsx`, `OrganizationSchema.tsx`)
+
+## Verification
+
+`tsc -b` clean, `oxlint` clean, full Vitest suite passing (`structured-data.test.ts`'s 3 event-specific cases removed, its training/article/faq/breadcrumb cases untouched and still passing), production build succeeding, `npm run generate:sitemap` re-run and confirmed to emit zero `/events` entries. Re-grepped the full source tree for `event`/`Event` after the pass — every remaining hit is either DOM `Event`/`*Event` handler code (`onClick`, `KeyboardEvent`, etc., unrelated), or an intentional removal note in this doc/`ARCHITECTURE.md`/`COMPONENT_GUIDE.md`. No live-browser QA (disclosed limitation, as always) — verified via code review that removing `EventsSection` leaves no fixed-height gap on the Home page (conditional/flex-stacked layout, nothing absolutely positioned depended on it) and that no other approved section, animation, the 3D hero, or the Reviews feature built in a separate pass were touched.
+
+---
+
+# Client-directed change — Removed: Partners page
+
+**Status: Done.** Not a numbered milestone. In Home's "Ils nous font confiance" (`TrustLogosSection`), the "Voir nos partenaires" CTA link and its destination, `PartnersPage` (`/partners`), were removed at the user's request.
+
+## Removed
+
+- The "Voir nos partenaires"/"View our partners" CTA link (`TrustLogosSection`'s `RouterLink to="/partners"`) and its `home.json` `trustLogos.cta` key (fr/en/ar)
+- `PartnersPage` (`/partners` route, page, lazy-page export)
+- `PartnerCard` component (its only consumer was `PartnersPage`)
+- The `partners` i18n namespace (`partners.json` × 3 languages, plus its import/registration/`ns` entry in `src/i18n/index.ts`)
+- `/partners` from the sitemap generator's static route list
+
+## Deliberately kept
+
+Unlike the Events removal, the underlying `Partner` DTO/entity/`repositories/partner/*`/`partner.service.ts`/`usePartners()` hook, and `mocks/data/partners.ts`, were **not** touched — `TrustLogosSection`'s logo marquee (the row of client logos in the same "Ils nous font confiance" section) still reads from `usePartners()`. Only the dedicated full-catalog page and its card component, reachable solely through the now-removed CTA, are gone.
+
+## Verification
+
+`tsc -b` clean, `oxlint` clean, full Vitest suite passing, production build succeeding (no `PartnersPage` chunk), `npm run generate:sitemap` re-run and confirmed to emit zero `/partners` entries. Confirmed via grep that `/partners`, `PartnersPage`, and `PartnerCard` have no remaining references outside this doc/`ARCHITECTURE.md`/`COMPONENT_GUIDE.md`, and that `TrustLogosSection`'s marquee (still consuming `usePartners()`) and every other Home section were untouched.
+
+---
+
+# Client-directed change — Removed: AnnouncementBar close button
+
+**Status: Done.** Not a numbered milestone. The top `AnnouncementBar`'s dismiss/close button — already non-functional, commented out in JSX — was removed at the user's request, along with its now-dead supporting code, rather than left as inert commented-out code.
+
+## Removed
+
+- The commented-out dismiss `IconButton` (with `Icon name="xmark"`) in `AnnouncementBar.tsx`, and its now-unused `IconButton`/`Icon` imports
+- `store/promo-bar.store.ts` (Zustand + `persist`) — its sole purpose was backing this button; with no way to ever set `isDismissed`, keeping it would have been dead state
+- The `isDismissed` read and the `if (isDismissed || …) return null` gate — the bar is no longer conditionally hidden by a prior dismissal
+- The `promoBar.dismiss` i18n key (fr/en/ar `common.json`)
+- The wrapper `<div>`'s now-unneeded `relative`/asymmetric end-padding (`pe-2`, reserved for the button) — simplified to symmetric `px-4`
+
+The bar itself (rotating marquee messages, RTL mirroring, `prefers-reduced-motion` fallback) is unchanged — it is simply no longer dismissible.
+
+## Verification
+
+`tsc -b` clean, `oxlint` clean, full Vitest suite passing, production build succeeding. Confirmed no remaining references to `promo-bar.store.ts`/`usePromoBarStore`/`promoBar.dismiss` anywhere in the source tree.
+
+---
+
+# Client-directed change — Training Catalog: browse by category, not individual trainings
+
+**Status: Done.** Not a numbered milestone. `TrainingCatalogPage` (`/trainings`) dropped its "filterable grid of individual `Training` records" model at the user's request. The "categories + thématiques" accordion — which previously only appeared once a category was selected via `?category=<slug>`, sitting above the grid — is now the page's entire content. A follow-up request, minutes later in the same session, asked for the Category filter back (alongside search, same row) — folded into this entry rather than logged as a separate "removed X / re-added X" pair.
+
+## Changed
+
+- Removed: the `TrainingCard` grid, the "X formations trouvées" results count, `Pagination`, and the old Category/Format/Level/Sort `FilterSelect` toolbar (`TrainingFilters` component deleted entirely). Format/Level/Sort do not come back; Category does (see below).
+- Kept, repurposed: the search box — narrows `TrainingDomain`s by domain name or course name (case-insensitive, active-language-aware) instead of training titles, via a new pure helper `features/trainings/utils/group-domains-by-category.ts` (`groupDomainsByCategory(categories, domains, search, language)`), with a unit test covering grouping order, search-by-domain-name, search-by-nested-course-name, case-insensitivity, and categories with zero matches being excluded. The helper stays filter-agnostic (no notion of "one selected category") — the page computes `visibleCategories` before calling it.
+- **Category filter restored**, on the same row as the search box (`FilterSelect`, reused as-is — not redesigned), rather than the old stacked "search, then a row of 4 selects" toolbar layout. Unlike the old grid-filtering behavior, selecting a category now hides every other category's section entirely (a real filter over `visibleCategories`, computed from `?category=<slug>` before grouping) — "Toutes les catégories" clears it. Search and the category filter compose (narrow to one category, then search within it).
+- Each `Category` with ≥1 matching `TrainingDomain` renders its own heading + `Accordion` — the exact `Accordion`/`SectionHeading` markup and classes the single-category block already used. No new visual design.
+- `?category=<slug>` — still linked from Home's `CategoryTile` (both variants) and the Footer's training column, neither touched — drives the same filter (whether set by an incoming link or the new dropdown) and scrolls to/focuses that category's section (`id={category.slug}`, `tabIndex={-1}`, same programmatic-focus-target pattern `MainLayout`'s skip-link already uses), so those existing links keep doing something useful. Scroll respects `prefers-reduced-motion` (instant jump instead of smooth scroll).
+- `catalog.json` (fr/en/ar): removed `filters.formatLabel/allFormats/levelLabel/allLevels/sortLabel/sort.*`, `results.*`, `pagination.*`. Reworded `filters.searchLabel/searchPlaceholder`, `empty.title/description`, `hero.description`, and `domains.eyebrow/title/description` (the latter's `{{category}}` interpolation removed — it's now a page-level intro shown once, not per selected category). `filters.categoryLabel/allCategories` were removed then restored (unchanged text) once the filter came back. `domains.courseCount_*` (incl. Arabic's full plural set) unchanged — still used per domain.
+
+## Deliberately kept untouched
+
+`CategoryTile`, `CategoriesSection` (Home), `Footer`'s training column, `TrainingDetailsPage` (its own, separate "related trainings" `TrainingCard` grid), `TrainingCard`, `useTrainings`, `Pagination` — none deleted, none redesigned; `TrainingCard`/`useTrainings`/`Pagination` are simply no longer used by this one page (still used elsewhere). `FilterSelect` was briefly unused by this page, then put back to work for the Category filter — never deleted.
+
+## Verification
+
+`tsc -b` clean, `oxlint` clean, full Vitest suite passing (`group-domains-by-category.test.ts` untouched by the later Category-filter change — the helper's contract didn't change), production build succeeding, `prettier --check` clean. Confirmed no remaining references to `TrainingFilters`/`TrainingFiltersValue` anywhere in the source tree. No live-browser QA (disclosed limitation, as always) — verified via code review that every category with real domain data renders a section, that selecting a category hides the others and "Toutes les catégories" restores them, that Home/Footer/`TrainingDetailsPage` were untouched, and that the removed `catalog.json` keys have no other readers.
 
 ---
 

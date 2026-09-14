@@ -1,12 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { seoConfig } from '@/config/seo.config'
 import type { Article } from '@/types/entities/article'
-import type { Event } from '@/types/entities/event'
 import type { Training } from '@/types/entities/training'
 import {
   articleToArticleSchema,
   breadcrumbToSchema,
-  eventToEventSchema,
   faqItemsToFaqPageSchema,
   trainingToCourseSchema,
 } from './structured-data'
@@ -48,26 +46,6 @@ const article: Article = {
   readingTimeMinutes: 6,
   image: '/images/articles/future-of-leadership.webp',
   featured: false,
-}
-
-const onsiteEvent: Event = {
-  id: 'evt-1',
-  slug: 'open-house-2026',
-  title: { fr: 'Portes ouvertes', en: 'Open House', ar: 'يوم مفتوح' },
-  description: { fr: 'Description', en: 'Description', ar: 'وصف' },
-  startDate: '2026-04-05',
-  format: 'in-person',
-  location: { fr: 'Casablanca', en: 'Casablanca', ar: 'الدار البيضاء' },
-  image: '/images/events/open-house-2026.webp',
-}
-
-const onlineEvent: Event = {
-  id: 'evt-2',
-  slug: 'webinar-2026',
-  title: { fr: 'Webinaire', en: 'Webinar', ar: 'ندوة عبر الإنترنت' },
-  description: { fr: 'Description', en: 'Description', ar: 'وصف' },
-  startDate: '2026-06-15',
-  format: 'online',
 }
 
 describe('trainingToCourseSchema', () => {
@@ -114,29 +92,6 @@ describe('articleToArticleSchema', () => {
       '@type': 'WebPage',
       '@id': `${seoConfig.siteUrl}/resources/future-of-leadership`,
     })
-  })
-})
-
-describe('eventToEventSchema', () => {
-  it('maps an in-person event to an offline attendance mode with a Place location', () => {
-    const schema = eventToEventSchema(onsiteEvent, 'en')
-
-    expect(schema['@type']).toBe('Event')
-    expect(schema.eventAttendanceMode).toBe('https://schema.org/OfflineEventAttendanceMode')
-    expect(schema.location).toEqual({ '@type': 'Place', name: 'Casablanca' })
-  })
-
-  it('maps an online event to an online attendance mode with a VirtualLocation', () => {
-    const schema = eventToEventSchema(onlineEvent, 'en')
-
-    expect(schema.eventAttendanceMode).toBe('https://schema.org/OnlineEventAttendanceMode')
-    expect(schema.location).toEqual({ '@type': 'VirtualLocation', url: seoConfig.siteUrl })
-  })
-
-  it('falls back to the default OG image when an event has no image of its own', () => {
-    const schema = eventToEventSchema(onlineEvent, 'en')
-
-    expect(schema.image).toBe(`${seoConfig.siteUrl}${seoConfig.defaultOgImage}`)
   })
 })
 

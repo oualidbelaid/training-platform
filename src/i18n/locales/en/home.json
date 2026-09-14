@@ -7,7 +7,7 @@
     "training": "Training",
     "solutions": "Solutions for Companies",
     "about": "About",
-    "resources": "Resources",
+    "resources": "What's New",
     "contact": "Contact",
     "cta": "Request Information",
     "openMenu": "Open menu",
@@ -16,16 +16,13 @@
   "hero": {
     "eyebrow": "Professional training that delivers results",
     "headline": {
-      "line1": "Develop skills.",
-      "line2": "Transform people.",
-      "prefix": "",
-      "accent": "Grow",
-      "suffix": "your business."
+      "prefix": "From Learning to",
+      "accent": "Impact"
     },
-    "subheadline": "Practical, impact-driven training programs led by experts who have actually done the jobs they teach.",
     "primaryCta": "Explore training",
     "secondaryCta": "Solutions for Companies",
-    "trustLabel": "{{rating}}/5 from {{count}}+ participants",
+    "ratingLabel_one": "{{rating}}/5 based on {{count}} review",
+    "ratingLabel_other": "{{rating}}/5 based on {{count}} reviews",
     "cards": {
       "impactTitle": "Business Impact",
       "impactDescription": "Measurable results for your organization",
@@ -48,8 +45,7 @@
   "trustLogos": {
     "eyebrow": "Trusted by organizations",
     "description": "Trust built with organizations across every sector.",
-    "disclaimer": "Demonstration logos",
-    "cta": "View our partners"
+    "disclaimer": "Demonstration logos"
   },
   "categories": {
     "eyebrow": "Catalog",
@@ -90,16 +86,7 @@
       }
     }
   },
-  "featuredTrainings": {
-    "eyebrow": "Popular training",
-    "title": "Our most requested programs",
-    "description": "A selection of programs designed for immediate impact on your professional practice.",
-    "cta": "View all training",
-    "cardCta": "Learn more"
-  },
   "valueProposition": {
-    "eyebrow": "Why choose us",
-    "title": "From learning to impact.",
     "items": {
       "experts": {
         "title": "Expert trainers",
@@ -144,17 +131,11 @@
     "companyName": "ISTAM — Professional Training",
     "description": "Come meet our team in person or reach out — we're happy to help.",
     "hours": {
-      "weekdays": "Monday – Friday",
-      "saturday": "Saturday"
+      "openDays": "Sunday – Thursday — 09:00 – 16:00",
+      "closedDays": "Friday – Saturday — Closed"
     },
     "cta": "Get directions",
     "mapUnavailable": "Map unavailable — see the address above"
-  },
-  "events": {
-    "eyebrow": "Events",
-    "title": "Upcoming events",
-    "description": "Meet our team and discover our teaching approach.",
-    "cta": "View all events"
   },
   "finalCta": {
     "title": "Ready to help your teams grow?",
@@ -172,8 +153,7 @@
       },
       "company": {
         "title": "Company",
-        "about": "About",
-        "events": "Events"
+        "about": "About"
       },
       "contact": {
         "title": "Contact",
@@ -181,11 +161,6 @@
         "requestQuote": "Request a quote",
         "contactUs": "Contact us"
       }
-    },
-    "legal": {
-      "legalNotice": "Legal notice",
-      "privacyPolicy": "Privacy policy",
-      "cookiePolicy": "Cookie policy"
     },
     "copyright": "All rights reserved."
   }

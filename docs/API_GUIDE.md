@@ -32,4 +32,4 @@ See `ARCHITECTURE.md` for the full data-flow diagram. The Training domain is the
 - `services/training.service.ts` — orchestration layer hooks call
 - `features/trainings/hooks/{useTrainings,useTraining,useFeaturedTrainings}.ts` — TanStack Query wrappers
 
-Adding a new domain (Category, Trainer, Testimonial, Event, Article, FAQ) means repeating this exact shape — no new pattern to invent.
+Adding a new domain (Category, Trainer, Testimonial, Article, FAQ, Review) means repeating this exact shape — no new pattern to invent.

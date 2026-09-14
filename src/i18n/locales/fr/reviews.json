@@ -1,0 +1,40 @@
+{
+  "section": {
+    "eyebrow": "Avis participants",
+    "title": "Ce que pensent nos participants",
+    "count_one": "Basé sur {{count}} évaluation",
+    "count_other": "Basé sur {{count}} évaluations",
+    "empty": "Évaluations de nos participants — soyez le premier à partager votre expérience d'une formation ISTAM.",
+    "cta": "Laisser une évaluation"
+  },
+  "modal": {
+    "title": "Évaluer une formation",
+    "description": "Votre avis aide les futurs participants à choisir leur formation en toute confiance.",
+    "close": "Fermer",
+    "fields": {
+      "rating": {
+        "label": "Votre note",
+        "starLabel": "{{value}} étoile sur {{max}}"
+      },
+      "comment": {
+        "label": "Votre commentaire",
+        "placeholder": "Partagez votre expérience : contenu, formateur, mise en pratique…"
+      }
+    },
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "actions": {
+      "submit": "Envoyer mon évaluation",
+      "submitting": "Envoi en cours…"
+    },
+    "success": {
+      "title": "Merci pour votre évaluation !",
+      "description": "Votre avis a bien été enregistré et pris en compte dans la note affichée.",
+      "cta": "Fermer"
+    }
+  },
+  "validation": {
+    "ratingRequired": "Merci de sélectionner une note.",
+    "tooShort": "Votre commentaire doit contenir au moins {{min}} caractères.",
+    "tooLong": "Votre commentaire ne peut pas dépasser {{max}} caractères."
+  }
+}

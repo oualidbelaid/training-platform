@@ -6,43 +6,24 @@
   "hero": {
     "eyebrow": "Catalog",
     "title": "All our training programs",
-    "description": "Search and filter our programs to find the training that matches your goals."
+    "description": "Browse our categories and their topics to find the training that matches your goals."
   },
   "filters": {
-    "searchLabel": "Search for a training program",
-    "searchPlaceholder": "Search by title or keyword…",
+    "searchLabel": "Search for a topic",
+    "searchPlaceholder": "Search by keyword…",
     "clearSearch": "Clear search",
     "categoryLabel": "Category",
-    "allCategories": "All categories",
-    "formatLabel": "Format",
-    "allFormats": "All formats",
-    "levelLabel": "Level",
-    "allLevels": "All levels",
-    "sortLabel": "Sort by",
-    "sort": {
-      "relevance": "Relevance",
-      "durationAsc": "Shortest duration",
-      "durationDesc": "Longest duration"
-    }
-  },
-  "results": {
-    "count_one": "{{count}} training program found",
-    "count_other": "{{count}} training programs found"
-  },
-  "pagination": {
-    "status": "Page {{page}} of {{pageCount}}",
-    "previous": "Previous page",
-    "next": "Next page"
+    "allCategories": "All categories"
   },
   "empty": {
-    "title": "No training programs found",
-    "description": "Try adjusting your filters or search."
+    "title": "No topics found",
+    "description": "Try a different keyword."
   },
   "domains": {
     "eyebrow": "Full catalogue",
-    "title": "All {{category}} domains",
-    "description": "The full range of topics and modules we offer in this area — from our institutional presentation. The programs below are a detailed selection; contact us about any module on this list.",
-    "courseCount_one": "{{count}} module",
-    "courseCount_other": "{{count}} modules"
+    "title": "All our topics",
+    "description": "The full range of topics and modules we offer — from our institutional presentation. The programs below are a detailed selection; contact us about any module on this list.",
+    "courseCount_one": "{{count}} topic",
+    "courseCount_other": "{{count}} topics"
   }
 }

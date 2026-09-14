@@ -6,51 +6,28 @@
   "hero": {
     "eyebrow": "الدليل",
     "title": "جميع تدريباتنا",
-    "description": "ابحث وصفِّ برامجنا لإيجاد التدريب الذي يناسب أهدافك."
+    "description": "تصفّحوا فئاتنا ومحاورها لإيجاد التدريب الذي يناسب أهدافكم."
   },
   "filters": {
-    "searchLabel": "البحث عن تدريب",
-    "searchPlaceholder": "ابحث بالعنوان أو كلمة مفتاحية…",
+    "searchLabel": "البحث عن محور",
+    "searchPlaceholder": "ابحث بكلمة مفتاحية…",
     "clearSearch": "مسح البحث",
     "categoryLabel": "الفئة",
-    "allCategories": "جميع الفئات",
-    "formatLabel": "الصيغة",
-    "allFormats": "جميع الصيغ",
-    "levelLabel": "المستوى",
-    "allLevels": "جميع المستويات",
-    "sortLabel": "الترتيب حسب",
-    "sort": {
-      "relevance": "الأكثر صلة",
-      "durationAsc": "المدة الأقصر",
-      "durationDesc": "المدة الأطول"
-    }
-  },
-  "results": {
-    "count_zero": "لا توجد تدريبات",
-    "count_one": "تدريب واحد",
-    "count_two": "تدريبان",
-    "count_few": "{{count}} تدريبات",
-    "count_many": "{{count}} تدريبًا",
-    "count_other": "{{count}} تدريب"
-  },
-  "pagination": {
-    "status": "الصفحة {{page}} من {{pageCount}}",
-    "previous": "الصفحة السابقة",
-    "next": "الصفحة التالية"
+    "allCategories": "جميع الفئات"
   },
   "empty": {
-    "title": "لم يتم العثور على تدريبات",
-    "description": "حاول تعديل عوامل التصفية أو البحث."
+    "title": "لم يتم العثور على محاور",
+    "description": "جرّبوا كلمة مفتاحية أخرى."
   },
   "domains": {
     "eyebrow": "الدليل الكامل",
-    "title": "جميع مجالات {{category}}",
-    "description": "مجموع المحاور والوحدات التي نقدمها في هذا المجال — وفق عرضنا التعريفي المؤسسي. البرامج أدناه هي مجموعة مفصلة مختارة؛ تواصلوا معنا بخصوص أي وحدة من هذه القائمة.",
-    "courseCount_zero": "لا توجد وحدات",
-    "courseCount_one": "وحدة واحدة",
-    "courseCount_two": "وحدتان",
-    "courseCount_few": "{{count}} وحدات",
-    "courseCount_many": "{{count}} وحدة",
-    "courseCount_other": "{{count}} وحدة"
+    "title": "جميع محاورنا",
+    "description": "مجموع المحاور والوحدات التي نقدمها — وفق عرضنا التعريفي المؤسسي. البرامج أدناه هي مجموعة مفصلة مختارة؛ تواصلوا معنا بخصوص أي وحدة من هذه القائمة.",
+    "courseCount_zero": "لا توجد محاور",
+    "courseCount_one": "محور واحد",
+    "courseCount_two": "محوران",
+    "courseCount_few": "{{count}} محاور",
+    "courseCount_many": "{{count}} محورًا",
+    "courseCount_other": "{{count}} محور"
   }
 }
